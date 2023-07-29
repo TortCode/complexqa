@@ -1,0 +1,557 @@
+<crowd-form answer-format="flatten-objects">
+  <section class="container-fluid" id="Relevancy">
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <div class="panel panel-primary">
+          <a class="panel-heading" href="javascript:void(0);" id="collapseTrigger">
+            <strong>Annotation Instructions</strong>
+            <span class="collapse-text">(Click to expand)</span>
+          </a>
+          <div class="panel-body" id="instructionBody">
+            {{INSTRUCTIONS}}
+            {{LINK}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Document</h3>
+    <div id="document-text" class="ann well well-sm">
+      Accused Boston Bomber Followed Brother's Lead, Defense Argues BOSTON — Accused <role id='role-0-Place'trigno='0'>Boston</role> Marathon bomber Dzhokhar Tsarnaev followed his older <role id='role-0-Attacker'trigno='0'>brother</role>'s lead in carrying out the 2013 <trigger id='trigger-0'>bombing</trigger> that <trigger id='trigger-1'>killed</trigger> three <role id='role-1-Victim'trigno='1'>people</role>, rather than acting on his own motivation, one of his attorneys argued on Monday. Tsarnaev, 21, could be sentenced to death if a jury finds him guilty of carrying out the April 15, 2013, attack and fatally shooting a police officer three days later as he and his brother, 26-year-old Tamerlan Tsarnaev, tried to flee the city. Following the prosecution's closing argument, that the ethnic Chechen defendant was an extremist who had"wanted to punish America"with the bombing attack, Tsarnaev's lawyers argued that he had been in the thrall of his older brother. Defense attorney Judith Clarke, who opened the trial last month by admitting that her client had committed all the crimes of which he is accused, repeated that assertion on Monday."There is no excuse. No one is trying to make one. Planting bombs at the Boston Marathon one year and 51 weeks ago was a senseless act,"Clarke said. But in a counterpoint to the blunt"it was him"admission of her opening statement, Clarke told the jury that <role id='role-5-ManufacturerAssembler'trigno='5'><role id='role-4-Victim'trigno='4'>Tamerlan</role></role>, who <trigger id='trigger-4'>died</trigger> four days after the bombing following a gunfight with <role id='role-4-Killer'trigno='4'>police</role>, had planned the attack and <trigger id='trigger-5'>built</trigger> the <role id='role-5-Artifact'trigno='5'>bombs</role>."Tamerlan did that,"she said."We need to understand who was leading and who was following."By shifting some of the blame to the older brother, Tsarnaev's lawyers are trying to persuade the jury, if they find the defendant guilty, to sentence him to life in prison without the possibility of parole rather than death. The jury on Monday also viewed video of Tsarnaev standing with a backpack in the crowd at the marathon's finish line minutes before the blasts that <trigger id='trigger-2'>killed</trigger> restaurant manager Krystle Campbell, 29, Chinese exchange student Lingzi Lu, 23, and 8-year-old <role id='role-2-Victim'trigno='2'>Martin</role> Richard. Tsarnaev is also accused of the fatal shooting of Massachusetts of Institute of Technology police officer Sean Collier, 26.'Wanted to Punish America'Prosecutors argued that the younger Tsarnaev shared his brother's violent ideology."The defendant thought that his values were more important than the people around him. He wanted to awake the mujahedeen, the holy warriors,"Assistant U. S. Attorney Aloke Chakravarty said."He wanted to terrorize this country. He wanted to punish America for what it was doing to his people."Chakravarty noted that evidence showed that <role id='role-3-PassengerArtifact'trigno='3'>Tsarnaev</role>, who <trigger id='trigger-3'>moved</trigger> to the <role id='role-3-Destination'trigno='3'>United</role> States from <role id='role-3-Origin'trigno='3'>Russia</role> a decade before the attack, had copies of al-Qaida's"Inspire"magazine on his computers."These were political choices,"he said of Tsarnaev's actions."He was making a statement,'an eye for an eye.'"Hours after the gunfight with police, which ended when Dzhokhar sped off in a car, running his brother over in the process, the defendant hid in a boat parked in a backyard. While there, he wrote a note suggesting the attack was an act of retribution for U. S. military campaigns in Muslim-dominated countries. Monday's closing statements could be a preview of the arguments each side plans to make during the next phase of the trial, when the same jury will hear a fresh round of witness testimony before determining whether to sentence Tsarnaev to life in prison without possibility of parole, or to death. Richard's parents, William and Denise; dancer Heather Abbott, who lost both legs in the blast, and former Boston Police Commissioner Ed Davis were among the people who packed the courtroom for closing arguments. The defendant sat quietly in court on Monday, dressed in a white shirt, dark jacket and no tie. He did not speak. The surveillance video viewed by the jury on Monday shows a bomb, which the defendant is charged with leaving in front of the Forum restaurant near the finish line, going off with a blinding flash, killing Richard and Lu. The jury also saw video taken by a man injured in the blast. The graphic video captures the chaos of the immediate aftermath, with one responder yelling that he was worried about the possibility of an additional blast and another voice screaming,"We're on fire here. We're on fire."
+    </div>
+
+    <div id='raw-data' hidden>
+      [{"event_id": "27_VOA_EN_NW_2015.04.06.2708308-E1", "text": "bombing", "offset": 31, "template": "[Attacker] detonated or exploded [ExplosiveDevice] explosive device using [Instrument] to attack [Target] target at [Place] place", "role_text_map": [{"role": "Attacker", "token": {"text": "brother", "offset": 22}}, {"role": "Target", "token": null}, {"role": "Instrument", "token": null}, {"role": "ExplosiveDevice", "token": null}, {"role": "Place", "token": {"text": "Boston", "offset": 14}}]}, {"event_id": "27_VOA_EN_NW_2015.04.06.2708308-E2", "text": "killed", "offset": 33, "template": "[Victim] died at [Place] place from [MedicalIssue] medical issue, killed by [Killer] killer", "role_text_map": [{"role": "Victim", "token": {"text": "people", "offset": 35}}, {"role": "Place", "token": null}, {"role": "Killer", "token": null}, {"role": "MedicalIssue", "token": null}]}, {"event_id": "27_VOA_EN_NW_2015.04.06.2708308-E3", "text": "killed", "offset": 364, "template": "[Victim] died at [Place] place from [MedicalIssue] medical issue, killed by [Killer] killer", "role_text_map": [{"role": "Victim", "token": {"text": "Martin Richard", "offset": 386}}, {"role": "Place", "token": null}, {"role": "Killer", "token": null}, {"role": "MedicalIssue", "token": null}]}, {"event_id": "27_VOA_EN_NW_2015.04.06.2708308-E4", "text": "moved", "offset": 500, "template": "[Transporter] transported [PassengerArtifact] in [Vehicle] from [Origin] place to [Destination] place", "role_text_map": [{"role": "Transporter", "token": null}, {"role": "PassengerArtifact", "token": {"text": "Tsarnaev", "offset": 497}}, {"role": "Vehicle", "token": null}, {"role": "Origin", "token": {"text": "Russia", "offset": 506}}, {"role": "Destination", "token": {"text": "United States", "offset": 503}}]}, {"event_id": "27_VOA_EN_NW_2015.04.06.2708308-E5", "text": "died", "offset": 247, "template": "[Victim] died at [Place] place from [MedicalIssue] medical issue, killed by [Killer] killer", "role_text_map": [{"role": "Victim", "token": {"text": "Tamerlan", "offset": 244}}, {"role": "Place", "token": null}, {"role": "Killer", "token": {"text": "police", "offset": 257}}, {"role": "MedicalIssue", "token": null}]}, {"event_id": "27_VOA_EN_NW_2015.04.06.2708308-E6", "text": "built", "offset": 264, "template": "[ManufacturerAssembler] manufactured or assembled or produced [Artifact] from [Components] components using [Instrument] at [Place] place", "role_text_map": [{"role": "ManufacturerAssembler", "token": {"text": "Tamerlan", "offset": 244}}, {"role": "Artifact", "token": {"text": "bombs", "offset": 266}}, {"role": "Components", "token": null}, {"role": "Instrument", "token": null}, {"role": "Place", "token": null}]}]
+    </div>
+
+    <p>
+      You can navigate all of the triggers by clicking the following buttons. <br>
+      You have to finish all the triggers before submitting. (Remember that you can't refresh the page otherwise
+      the progress will be gone, <br>
+      to prevent this from happening, we suggest that you write the QA pairs in the google doc and copy paste them
+      here)
+    </p>
+    <!-- Tabs for each trigger -->
+    <div class="btn-toolbar" id="button-bar">
+    </div>
+
+    <section>
+      <div style="margin-top:10px;">
+        <em>
+          These are bootstrap question answer pairs generated by GPT. Not all QA
+          pairs are correct or relevant, but feel free to copy/paste the samples that are accurate
+          enough, and make edits on top.
+        </em>
+        <div id='bootstrap-area' class='ann well well-sm'>
+        </div>
+      </div>
+
+      <div style="margin-top:10px;">
+        <em>
+          These are KAIROS event arguments for the trigger. You can use them to help you write QA pairs.
+          The underlying meaning of such pairs should be "Q: What is arg X of the event? A: arg X is Y".
+          But the formatting of the QA pairs must be as in the instructions.
+        </em>
+        <div id='template-area' class='ann well well-sm'>
+        </div>
+      </div>
+
+      <div class="btn-container">
+        <button id="addbtn" class="btn btn-success" type="button" onclick="add_qa_input()">+</button>
+        <label for="addbtn">Add a QA pair</label>
+      </div>
+      <div class="btn-container">
+        <button id="rmbtn" class="btn btn-danger" type="button" onclick="remove_qa_input()">-</button>
+        <label for="rmbtn">Remove a QA pair</label>
+      </div>
+
+      <div id="input-area">
+
+      </div>
+    </section>
+
+    <div title="Highlight all fields before submitting">
+      <button id="save" class="btn btn-default" type="button">Save</button>
+      <button id="submitButton" class="btn btn-default" type="button">Submit</button>
+    </div>
+  </section>
+
+
+  <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js"
+    integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+
+  <style>
+    .mg-15 {
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+
+    .container-fluid {
+      max-width: 1800px;
+      margin: 30px;
+    }
+
+    .btn-container {
+      display: inline-block;
+      margin: 10px;
+    }
+
+    #collapseTrigger {
+      color: #fff;
+      display: block;
+      text-decoration: none;
+    }
+
+    #submitButton {
+      white-space: normal;
+    }
+
+    #input-area {
+      display: block;
+      margin: 10px;
+    }
+
+    #input-area>div {
+      margin: 10px;
+      background-color: #ffe3e3;
+    }
+
+    #bootstrap-area {
+      background-color: #f7dec5;
+    }
+
+    #template-area {
+      background-color: #75c3e7;
+    }
+
+    .btn-container>button {
+      min-width: 3em;
+    }
+
+    trigger {
+      display: inline;
+      background-color: lightgoldenrodyellow;
+    }
+
+    role {
+      display: inline;
+      background-color: lightblue;
+    }
+
+    .highlight-trigger {
+      background-color: palevioletred
+    }
+
+    .highlight-role {
+      background-color: lightgreen;
+    }
+
+    .btn-group {
+      vertical-align: middle;
+    }
+
+    .content {
+      margin-bottom: 15px;
+    }
+
+    .ann {
+      font-size: 16px;
+    }
+
+    .disp {
+      font-size: 20px;
+    }
+
+    .ann>span.token {
+      cursor: pointer;
+    }
+
+    .ann>span.token:hover {
+      text-decoration: underline;
+    }
+
+    .ann>strong.annotation:hover {
+      text-decoration: line-through;
+    }
+
+    input[disabled] {
+      color: #000
+    }
+  </style>
+
+  <script>
+    // ---------------------------------------------------------
+    // Global
+    // ---------------------------------------------------------
+
+    var page_num = 0;
+
+    // ---------------------------------------------------------
+    // Create jQuery elements
+    // ---------------------------------------------------------
+
+    var submit = $('#submitButton');
+
+    // list of text/offset objects 
+    var triggers_list = JSON.parse($('#raw-data').text().trim());
+
+    const empty_template_area = function () {
+      return $('<div id="template-area">');
+    }
+
+    let save_record = [];
+    let template_record = [];
+    triggers_list.forEach(function (_, idx) {
+      template_record[idx] = empty_template_area();
+    });
+
+    // implementation of string formatting
+    if (!String.prototype.format) {
+      String.prototype.format = function () {
+        var args = arguments;
+        return this.replace(/{(\d+)}/g, function (match, number) {
+          return typeof args[number] != 'undefined'
+            ? args[number]
+            : match
+            ;
+        });
+      };
+    }
+
+    // ---------------------------------------------------------
+    // Create elements
+    // ---------------------------------------------------------
+
+    var makeDom = function (page_count) {
+      make_trigger(page_count);
+      recoverUserInput(page_count);
+    };
+
+    var make_trigger = function (question_num) {
+      /* highlight trigger within document */
+
+      const trigger = triggers_list[question_num];
+      // remove previous highlights
+      $('trigger').removeClass('highlight-trigger');
+      $('role').removeClass('highlight-role');
+      // highlight trigger
+      $('#trigger-' + question_num).addClass('highlight-trigger');
+      $('role[trigno=' + question_num + ']').addClass('highlight-role');
+
+      /* update bootstrap questions */
+      $('#bootstrap-area').html(trigger.bootstrap ?? 'no bootstrap available');
+
+    }
+
+    // restore input from other trigger
+    var recoverUserInput = function (claim_num) {
+      // simply swap out the input area DOM element!
+      $('#template-area').replaceWith(template_record[claim_num]);
+    };
+
+    // ensure something is in the input box
+    var canSubmit = function () {
+      return true;
+    };
+
+    // template role fields
+    const make_role_mapping_element = function (role, text) {
+      const role_text = $('<label>').html('<b>' + role + '</b>:');
+      const role_field = $('<span>')
+        .addClass('role-field')
+        .attr({
+          role: role,
+          rows: 1,
+        })
+        .text(text)
+
+      const role_div = $('<div>')
+        .addClass('role-container')
+        .append(role_text)
+        .append(role_field);
+
+      return role_div;
+    }
+
+    // number of QA pairs at the moment
+    var input_count = 0;
+
+    const add_qa_input = function () {
+      const current_idx = input_count;
+      let question_text = $('<label>').text('question:');
+      let question_input = $('<textarea>')
+        .addClass('question-input')
+        .addClass('mg-15')
+        .attr({
+          id: 'input-question' + input_count,
+          name: 'input-question' + input_count,
+          placeholder: 'write down your question',
+          rows: 1,
+          cols: 80,
+        });
+      question_input.on("input", function () {
+        // if (is_wh_question(question_input.val())) {
+        //     window.alert("It seems you are not writing a yes/no question, make sure " +
+        //         "you are writing questions of which the answer is yes or no!")
+        // }
+        show();
+      });
+      let answer_text = $('<label>').text('answer:');
+      let answer_input = $('<textarea>')
+        .addClass('answer-input')
+        .addClass('mg-15')
+        .attr({
+          id: 'input-answer' + input_count,
+          name: 'input-answer' + input_count,
+          placeholder: 'write down your answer',
+          rows: 1,
+          cols: 80,
+        });
+      answer_input.on("input", function () {
+        show();
+      });
+
+      let input_fields = $(
+        '<div>').addClass('input-fields')
+        .append(question_text)
+        .append(question_input)
+        .append(answer_text)
+        .append(answer_input)
+      $('#input-area').append(input_fields);
+
+      input_count += 1;
+      show();
+    };
+
+    const remove_qa_input = function () {
+      if (input_count <= 0) {
+        return;
+      }
+      $('#input-area').children().last().remove();
+      input_count -= 1;
+      show();
+    };
+
+    var enable_button = function (button) {
+      button.removeAttr("disabled");
+      button.removeClass("btn-default");
+      button.addClass("btn-success");
+    };
+
+    var disable_button = function (button) {
+      button.attr("disabled", "disabled");
+      button.removeClass("btn-success");
+      button.addClass("btn-default");
+    };
+
+    var select_button = function (button) {
+      button.removeClass("btn-default");
+      button.addClass("btn-primary");
+    };
+
+    var deselect_button = function (button) {
+      button.removeClass("btn-primary");
+      button.addClass("btn-default");
+    };
+
+    var is_wh_question = function (question) {
+      let tokens = question.split(' ');
+      if (tokens.length <= 1) {
+        return false;
+      }
+      console.log(tokens);
+
+      // let wh_pattern = /^Wh\|wh\|How\|how/;
+      let wh_pattern = /^wh|Wh|how|How/;
+      // console.log(question.match(wh_pattern));
+      return !!question.match(wh_pattern);
+    };
+
+
+    var show = function () {
+      for (button of document.getElementById('button-bar').getElementsByTagName('*')) {
+        if (page_num == button.getAttribute('page-no'))
+          select_button($(button));
+        else
+          deselect_button($(button));
+      }
+
+      if (canSubmit()) {
+        enable_button(submit);
+        // enable_button($('#next-btn'));
+      } else {
+        disable_button(submit);
+        // disable_button($('#next-btn'));
+      }
+    };
+
+    // dynamically create buttons for each SRL arg
+    triggers_list.forEach(function (trigger, i) {
+      if (trigger.text.trim()) {
+        console.log(trigger);
+        var button = document.createElement("button");
+        button.setAttribute("type", "button");
+        button.setAttribute("id", "button-page-" + i);
+        button.setAttribute("page-no", i);
+        button.setAttribute("class", "btn btn-default");
+        button.innerHTML = trigger.text + " @ token " + trigger.offset;
+        button.onclick = function () {
+          page_num = parseInt(this.getAttribute("page-no"));
+          makeDom(page_num);
+          let instruction = $('#instructionBody');
+          if (instruction.is(':visible')) {
+            instruction.toggle();
+          }
+          //window.scrollTo(0, 0); // scroll to top
+          show();
+        }
+        document.getElementById('button-bar').appendChild(button);
+      }
+
+      // replace newlines with HTML line breaks
+      const bootstrap = trigger.bootstrap;
+      if (bootstrap !== undefined)
+        trigger.bootstrap = bootstrap.replaceAll('\n', '<br>');
+
+      // format template area with role mappings
+      // if template not null or undefined
+      if (trigger.template !== null) {
+        const template_area = template_record[i];
+        const template = $('<p>').text(trigger.template);
+        template_area.append(template);
+        trigger.role_text_map.forEach(function (pairing) {
+          template_area.append(make_role_mapping_element(pairing.role, pairing.token?.text));
+        });
+      }
+    })
+
+    // ---------------------------------------------------------
+    // Initialize
+    // ---------------------------------------------------------
+
+    makeDom(0);
+
+    var save_all = function () {
+      save_record.qapairs = [];
+      save_record.triggers = [];
+      // save all input
+      triggers_list.forEach(function (trigger, idx) {
+        // initialize record
+        save_record.triggers[idx] = {
+          event_id: trigger.event_id,
+          trigger: {
+            text: trigger.text,
+            offset: trigger.offset
+          },
+          template: trigger.template,
+          role_map: {},
+        };
+
+        // get input elements
+        const template_input_area = template_record[idx];
+        const template_inputs = template_input_area.children();
+
+        // traverse over elements to get role mappings
+        template_inputs.each(function (_, input) {
+          const role = $(input).children('.role-field').attr('role');
+          const text = $(input).children('.role-field').val();
+
+          save_record.triggers[idx].role_map[role] = text;
+        });
+      });
+
+      const trigger_input_area = $('#input-area');
+      const trigger_inputs = trigger_input_area.children();
+
+      // traverse over elements to get QA pairs
+      trigger_inputs.each(function (_, input) {
+        // save qa pairs
+        const question = $(input).children('.question-input').val();
+        const answer = $(input).children('.answer-input').val();
+        save_record.qapairs.push({
+          'question': question,
+          'answer': answer
+        });
+      });
+
+      console.log(save_record);
+    };
+
+    var submit_form = function () {
+      save_all();
+
+      const urlParams = new URLSearchParams(window.location.search)
+
+      // create the form element and point it to the correct endpoint
+      const form = document.createElement('form')
+      form.action = (new URL('mturk/externalSubmit', urlParams.get('turkSubmitTo'))).href
+      form.method = 'post'
+
+      // attach the assignmentId
+      const inputAssignmentId = document.createElement('input')
+      inputAssignmentId.name = 'assignmentId'
+      inputAssignmentId.value = urlParams.get('assignmentId')
+      inputAssignmentId.hidden = true
+      form.appendChild(inputAssignmentId)
+
+      // attach data I want to send back
+      const inputResults = document.createElement('input')
+      inputResults.name = 'results'
+      inputResults.value = JSON.stringify(save_record)
+      inputResults.hidden = true
+      form.appendChild(inputResults)
+
+      // attach the form to the HTML document and trigger submission
+      document.body.appendChild(form)
+      form.submit()
+    }
+
+    $('#save').on('click', save_all);
+    submit.on('click', submit_form);
+
+    var popup_alert = function (alert_box, text) {
+      alert_box.html(text);
+      alert_box.css({
+        'background-color': 'fec5bb',
+        'padding': '5px',
+        'border': '1px solid lightgray',
+        'border-radius': '10px',
+        'margin-top': '10px',
+        'margin-bottom': '10px'
+      });
+      displaying = true;
+      setTimeout(function () {
+        alert_box.html('');
+        alert_box.css({
+          'padding': '0px',
+          'border': '0px'
+        });
+        displaying = false;
+      }, 7000);
+    };
+
+    // Instructions expand/collapse
+    var content = $('#instructionBody');
+    var instructions_trigger = $('#collapseTrigger');
+    // content.hide();
+    $('.collapse-text').text('(Click to collapse)');
+    instructions_trigger.click(function () {
+      content.toggle();
+      var isVisible = content.is(':visible');
+      if (isVisible) {
+        $('.collapse-text').text('(Click to collapse)');
+      } else {
+        $('.collapse-text').text('(Click to expand)');
+      }
+    });
+
+    show();
+
+  </script>
+</crowd-form>

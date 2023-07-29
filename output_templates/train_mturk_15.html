@@ -1,0 +1,557 @@
+<crowd-form answer-format="flatten-objects">
+  <section class="container-fluid" id="Relevancy">
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <div class="panel panel-primary">
+          <a class="panel-heading" href="javascript:void(0);" id="collapseTrigger">
+            <strong>Annotation Instructions</strong>
+            <span class="collapse-text">(Click to expand)</span>
+          </a>
+          <div class="panel-body" id="instructionBody">
+            {{INSTRUCTIONS}}
+            {{LINK}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Document</h3>
+    <div id="document-text" class="ann well well-sm">
+      DIY Drone Instructable: How To <trigger id='trigger-0'>Deliver</trigger> a <role id='role-0-PassengerArtifact'trigno='0'>Payload</role> Overview These instructions guide <role id='role-5-ManufacturerAssembler'trigno='5'><role id='role-4-ManufacturerAssembler'trigno='4'>you</role></role> to <trigger id='trigger-5'>build</trigger> a <role id='role-5-Artifact'trigno='5'><role id='role-4-Components'trigno='4'>DIY</role></role> payload delivery drone system that can be <trigger id='trigger-4'>mounted</trigger> on <role id='role-1-Transporter'trigno='1'>your</role> <role id='role-4-Artifact'trigno='4'><role id='role-1-Vehicle'trigno='1'>drone</role></role> / quadcopter and used to <trigger id='trigger-1'>deliver</trigger> a <role id='role-1-PassengerArtifact'trigno='1'>package</role> to any <role id='role-1-Destination'trigno='1'>address</role>. The smart, low-cost delivery solution uses <role id='role-18-Instrument'trigno='18'>GPS</role> to <trigger id='trigger-18'>find</trigger> its destination and then employs an <role id='role-6-Instrument'trigno='6'>ultrasonic</role> sensor to <trigger id='trigger-6'>measure</trigger> the ground clearance. Depending on your drone capabilities, this payload system can lift up to 2kg freight. A <role id='role-7-Instrument'trigno='7'>servo</role> motor is used to <trigger id='trigger-7'>release</trigger> the <role id='role-7-Components'trigno='7'>payload</role> at the <role id='role-7-Place'trigno='7'>desired</role> location. This guide also provides a solution to the sensor integration problem. <role id='role-8-ManufacturerAssembler'trigno='8'>You</role> can <trigger id='trigger-8'>integrate</trigger> GPS, <role id='role-8-Components'trigno='8'>servo</role>, and <role id='role-8-Artifact'trigno='8'>ultrasonic</role> sensors without any serial interference. DIY payload delivery drone system Components Breadboard Arduino Mega / Uno Servo motor SG90 Ultrasonic sensor HC-SR04 GPS module NEO-6M-001 Connecting wires A bottle cap Glue / Tape Hair pin Breadboard Arduino Mega / Uno Servo motor SG90 Ultrasonic sensor HC-SR04 GPS module NEO-6M-001 connecting wires bottle cap hair pin Step 1: Connecting the Ultrasonic Sensor Take the <role id='role-9-Artifact'trigno='9'>breadboard</role> and <trigger id='trigger-9'>affix</trigger> the <role id='role-9-Components'trigno='9'>Arduino</role> to its one side, as shown in the picture. Now, take the <role id='role-10-Components'trigno='10'>HC</role>-SR04 ultrasonic sensor and <trigger id='trigger-10'>attach</trigger> it to the lower side of the <role id='role-10-Artifact'trigno='10'>breadboard</role>. Make the connections as shown in Figure 1. Connect the pins as follows: Vcc (Ultrasonic)-> 5V (Arduino) GND (Ultrasonic)-> GND (Arduino) Trig pin (Ultrasonic)-> pin 8 (Arduino) Echo pin (Ultrasonic)-> pin 9 (Arduino) Run the following code to check if the ultrasonic sensor is functional. The Serial Monitor will show the following output: Step 2: <trigger id='trigger-11'>Connecting</trigger> the <role id='role-11-Components'trigno='11'>GPS</role> Module Take the NEO-6M GPS module and <trigger id='trigger-12'>insert</trigger> its <role id='role-12-Components'trigno='12'>pins</role> into the <role id='role-12-Artifact'trigno='12'>breadboard</role>. Make connections as shown in Figure 2. Don’t forget to download TinyGPS ++ library if missing. Connect the pins as follows: Vcc (GPS module)-> 3. 3V (Arduino) 2 GND (GPS module)-> GND (Arduino) RX pin (GPS module)-> pin 1 (Arduino) TX pin (GPS module)-> pin 0 (Arduino) Figure 2 Run the following code and check if the GPS sensor is functional. DON’T FORGET to <trigger id='trigger-20'>remove</trigger> the TX pin of <role id='role-20-Components'trigno='20'>GPS</role> module from pin 0 of Arduino; otherwise, your code won’t upload. Once the code is uploaded, first open Serial Monitor; then, <trigger id='trigger-21'>connect</trigger> the TX pin of <role id='role-21-Components'trigno='21'>GPS</role> to pin 0 to view the current location of drone, time, and date. The Serial Monitor will show output: Step 3: <trigger id='trigger-13'>Connecting</trigger> the <role id='role-13-Components'trigno='13'>Bottle</role> Cap Now, take a bottle cap to prepare the payload-releasing mechanism. The mechanism itself is simple. You hook the payload on the hairpin inside the bottle cap, and when the servo moves it pulls off the hairpin from the bottle cap, resulting the payload to drop. Make holes on both sides of the cap. <trigger id='trigger-22'>Attach</trigger> the <role id='role-22-Components'trigno='22'>cap</role> on the lower side of the breadboard, as shown in the pictures. Step 4: <trigger id='trigger-14'>Connecting</trigger> the <role id='role-14-Components'trigno='14'>Servo</role> First, take a hair pin and connect it to the limb of the servo using a staple, as shown in the picture. Take the servo and attach it under the breadboard such that the hair pin passes through both the holes of the bottle cap. <trigger id='trigger-15'>Connect</trigger> the <role id='role-15-Components'trigno='15'>Servo</role> with <role id='role-15-Artifact'trigno='15'>Arduino</role> in the following way, as shown in Figure 3. PWM Pin (Servo)-> Pin 14 (Arduino) Vcc Pin (Servo)-> 5V (Arduino) GND Pin (Servo)-> GND (Arduino) Figure 3 It will look like this when you <trigger id='trigger-19'>attach</trigger> the <role id='role-19-Components'trigno='19'>whole</role> system to your <role id='role-19-Artifact'trigno='19'>drone</role>. Run the following code to check if the servo is functional. Step 5: Putting it All Together Make sure you make all the connections as shown in Figure 4. You’ll <trigger id='trigger-23'>integrate</trigger> the <role id='role-23-Components'trigno='23'>sensors</role> without using SoftwareSerial library. Employing hardware serial ports of your Arduino will minimize serial interference between libraries; hence, eliminating the servo vibration. Figure 4 Open the Arduino window and paste the following code. In the code, set the desired GPS coordinates (latitude, longitude) where you need to drop off the basket. Once the desired location is added, click Upload. Again, don’t forget to remove the TX pin of GPS from pin 0 before uploading the code. Upload the code on your Arduino and click the Serial Monitor icon in the top right corner. You’ll see the current GPS coordinates of your drone. Let <role id='role-2-Transporter'trigno='2'>your</role> <role id='role-2-Vehicle'trigno='2'>drone</role> <trigger id='trigger-2'>fly</trigger> to the <role id='role-2-Destination'trigno='2'>desired</role> location. When your <role id='role-17-Vehicle'trigno='17'>drone</role> <trigger id='trigger-17'>reaches</trigger> the <role id='role-17-Destination'trigno='17'>desired</role> address, bring it closer to the ground. The <role id='role-16-Instrument'trigno='16'>ultrasonic</role> sensor will <trigger id='trigger-16'>calculate</trigger> the ground clearance. When it’s about 15 cm, the <role id='role-24-Artifact'trigno='24'>servo</role> <trigger id='trigger-24'>releases</trigger> the <role id='role-24-Components'trigno='24'>payload</role>. The serial monitor prompts you when the package is delivered, and records the time as well. After dropping the payload, <trigger id='trigger-3'>fly</trigger> <role id='role-3-Transporter'trigno='3'>your</role> <role id='role-3-Vehicle'trigno='3'>drone</role> back to its <role id='role-3-Destination'trigno='3'>initial</role> point. Precaution DO NOT put more than 2 kg load in the basket otherwise it will damage the assembly. Also be sure to check the spec of your drone so you will know how much weight that drone can handle. 
+    </div>
+
+    <div id='raw-data' hidden>
+      [{"event_id": "JC002YBVX-E1", "text": "Deliver", "offset": 6, "template": "[Transporter] transported [PassengerArtifact] in [Vehicle] from [Origin] place to [Destination] place", "role_text_map": [{"role": "Transporter", "token": null}, {"role": "PassengerArtifact", "token": {"text": "Payload", "offset": 8}}, {"role": "Vehicle", "token": null}, {"role": "Origin", "token": null}, {"role": "Destination", "token": null}]}, {"event_id": "JC002YBVX-E2", "text": "deliver", "offset": 34, "template": "[Transporter] transported [PassengerArtifact] in [Vehicle] from [Origin] place to [Destination] place", "role_text_map": [{"role": "Transporter", "token": {"text": "your", "offset": 27}}, {"role": "PassengerArtifact", "token": {"text": "package", "offset": 36}}, {"role": "Vehicle", "token": {"text": "drone/quadcopter", "offset": 28}}, {"role": "Origin", "token": null}, {"role": "Destination", "token": {"text": "address", "offset": 39}}]}, {"event_id": "JC002YBVX-E3", "text": "fly", "offset": 866, "template": "[Transporter] transported [PassengerArtifact] in [Vehicle] from [Origin] place to [Destination] place", "role_text_map": [{"role": "Transporter", "token": {"text": "your", "offset": 864}}, {"role": "PassengerArtifact", "token": null}, {"role": "Vehicle", "token": {"text": "drone", "offset": 865}}, {"role": "Origin", "token": null}, {"role": "Destination", "token": {"text": "desired location", "offset": 869}}]}, {"event_id": "JC002YBVX-E4", "text": "fly", "offset": 933, "template": "[Transporter] transported [PassengerArtifact] in [Vehicle] from [Origin] place to [Destination] place", "role_text_map": [{"role": "Transporter", "token": {"text": "your", "offset": 934}}, {"role": "PassengerArtifact", "token": null}, {"role": "Vehicle", "token": {"text": "drone", "offset": 935}}, {"role": "Origin", "token": null}, {"role": "Destination", "token": {"text": "initial point", "offset": 939}}]}, {"event_id": "JC002YBVX-E5", "text": "mounted", "offset": 25, "template": "[ManufacturerAssembler] manufactured or assembled or produced [Artifact] from [Components] components using [Instrument] at [Place] place", "role_text_map": [{"role": "ManufacturerAssembler", "token": {"text": "you", "offset": 13}}, {"role": "Artifact", "token": {"text": "drone/quadcopter", "offset": 28}}, {"role": "Components", "token": {"text": "DIY payload delivery drone system", "offset": 17}}, {"role": "Instrument", "token": null}, {"role": "Place", "token": null}]}, {"event_id": "JC002YBVX-E6", "text": "build", "offset": 15, "template": "[ManufacturerAssembler] manufactured or assembled or produced [Artifact] from [Components] components using [Instrument] at [Place] place", "role_text_map": [{"role": "ManufacturerAssembler", "token": {"text": "you", "offset": 13}}, {"role": "Artifact", "token": {"text": "DIY payload delivery drone system", "offset": 17}}, {"role": "Components", "token": null}, {"role": "Instrument", "token": null}, {"role": "Place", "token": null}]}, {"event_id": "JC002YBVX-E7", "text": "measure", "offset": 62, "template": "[Observer] observed [ObservedEntity] using [Instrument] in [Place] place", "role_text_map": [{"role": "Observer", "token": null}, {"role": "ObservedEntity", "token": null}, {"role": "Instrument", "token": {"text": "ultrasonic sensor", "offset": 59}}, {"role": "Place", "token": null}]}, {"event_id": "JC002YBVX-E8", "text": "release", "offset": 89, "template": "[Dismantler] dismantled [Artifact] using [Instrument] instrument in [Components] place", "role_text_map": [{"role": "Dismantler", "token": null}, {"role": "Artifact", "token": null}, {"role": "Instrument", "token": {"text": "servo motor", "offset": 84}}, {"role": "Components", "token": {"text": "payload", "offset": 91}}, {"role": "Place", "token": {"text": "desired location", "offset": 94}}]}, {"event_id": "JC002YBVX-E9", "text": "integrate", "offset": 111, "template": "[ManufacturerAssembler] manufactured or assembled or produced [Artifact] from [Components] components using [Instrument] at [Place] place", "role_text_map": [{"role": "ManufacturerAssembler", "token": {"text": "You", "offset": 109}}, {"role": "Artifact", "token": {"text": "ultrasonic sensors", "offset": 117}}, {"role": "Components", "token": {"text": "servo", "offset": 114}}, {"role": "Instrument", "token": null}, {"role": "Place", "token": null}]}, {"event_id": "JC002YBVX-E10", "text": "affix", "offset": 197, "template": "[ManufacturerAssembler] manufactured or assembled or produced [Artifact] from [Components] components using [Instrument] at [Place] place", "role_text_map": [{"role": "ManufacturerAssembler", "token": null}, {"role": "Artifact", "token": {"text": "breadboard", "offset": 195}}, {"role": "Components", "token": {"text": "Arduino", "offset": 199}}, {"role": "Instrument", "token": null}, {"role": "Place", "token": null}]}, {"event_id": "JC002YBVX-E11", "text": "attach", "offset": 221, "template": "[ManufacturerAssembler] manufactured or assembled or produced [Artifact] from [Components] components using [Instrument] at [Place] place", "role_text_map": [{"role": "ManufacturerAssembler", "token": null}, {"role": "Artifact", "token": {"text": "breadboard", "offset": 229}}, {"role": "Components", "token": {"text": "HC-SR04 ultrasonic sensor", "offset": 215}}, {"role": "Instrument", "token": null}, {"role": "Place", "token": null}]}, {"event_id": "JC002YBVX-E12", "text": "Connecting", "offset": 315, "template": "[ManufacturerAssembler] manufactured or assembled or produced [Artifact] from [Components] components using [Instrument] at [Place] place", "role_text_map": [{"role": "ManufacturerAssembler", "token": null}, {"role": "Artifact", "token": null}, {"role": "Components", "token": {"text": "GPS Module", "offset": 317}}, {"role": "Instrument", "token": null}, {"role": "Place", "token": null}]}, {"event_id": "JC002YBVX-E13", "text": "insert", "offset": 327, "template": "[ManufacturerAssembler] manufactured or assembled or produced [Artifact] from [Components] components using [Instrument] at [Place] place", "role_text_map": [{"role": "ManufacturerAssembler", "token": null}, {"role": "Artifact", "token": {"text": "breadboard", "offset": 332}}, {"role": "Components", "token": {"text": "pins", "offset": 329}}, {"role": "Instrument", "token": null}, {"role": "Place", "token": null}]}, {"event_id": "JC002YBVX-E14", "text": "Connecting", "offset": 498, "template": "[ManufacturerAssembler] manufactured or assembled or produced [Artifact] from [Components] components using [Instrument] at [Place] place", "role_text_map": [{"role": "ManufacturerAssembler", "token": null}, {"role": "Artifact", "token": null}, {"role": "Components", "token": {"text": "Bottle Cap", "offset": 500}}, {"role": "Instrument", "token": null}, {"role": "Place", "token": null}]}, {"event_id": "JC002YBVX-E15", "text": "Connecting", "offset": 584, "template": "[ManufacturerAssembler] manufactured or assembled or produced [Artifact] from [Components] components using [Instrument] at [Place] place", "role_text_map": [{"role": "ManufacturerAssembler", "token": null}, {"role": "Artifact", "token": null}, {"role": "Components", "token": {"text": "Servo", "offset": 586}}, {"role": "Instrument", "token": null}, {"role": "Place", "token": null}]}, {"event_id": "JC002YBVX-E16", "text": "Connect", "offset": 636, "template": "[ManufacturerAssembler] manufactured or assembled or produced [Artifact] from [Components] components using [Instrument] at [Place] place", "role_text_map": [{"role": "ManufacturerAssembler", "token": null}, {"role": "Artifact", "token": {"text": "Arduino", "offset": 640}}, {"role": "Components", "token": {"text": "Servo", "offset": 638}}, {"role": "Instrument", "token": null}, {"role": "Place", "token": null}]}, {"event_id": "JC002YBVX-E17", "text": "calculate", "offset": 891, "template": "[Observer] observed [ObservedEntity] using [Instrument] in [Place] place", "role_text_map": [{"role": "Observer", "token": null}, {"role": "ObservedEntity", "token": null}, {"role": "Instrument", "token": {"text": "ultrasonic sensor", "offset": 888}}, {"role": "Place", "token": null}]}, {"event_id": "JC002YBVX-E18", "text": "reaches", "offset": 875, "template": "[Transporter] transported [PassengerArtifact] in [Vehicle] from [Origin] place to [Destination] place", "role_text_map": [{"role": "Transporter", "token": null}, {"role": "PassengerArtifact", "token": null}, {"role": "Vehicle", "token": {"text": "drone", "offset": 874}}, {"role": "Origin", "token": null}, {"role": "Destination", "token": {"text": "desired address,", "offset": 877}}]}, {"event_id": "JC002YBVX-E19", "text": "find", "offset": 52, "template": "[Observer] observed [ObservedEntity] using [Instrument] in [Place] place", "role_text_map": [{"role": "Observer", "token": null}, {"role": "ObservedEntity", "token": null}, {"role": "Instrument", "token": {"text": "GPS", "offset": 50}}, {"role": "Place", "token": null}]}, {"event_id": "JC002YBVX-E20", "text": "attach", "offset": 695, "template": "[ManufacturerAssembler] manufactured or assembled or produced [Artifact] from [Components] components using [Instrument] at [Place] place", "role_text_map": [{"role": "ManufacturerAssembler", "token": null}, {"role": "Artifact", "token": {"text": "drone", "offset": 701}}, {"role": "Components", "token": {"text": "whole system", "offset": 697}}, {"role": "Instrument", "token": null}, {"role": "Place", "token": null}]}, {"event_id": "JC002YBVX-E21", "text": "remove", "offset": 431, "template": "[Dismantler] dismantled [Artifact] using [Instrument] instrument in [Components] place", "role_text_map": [{"role": "Dismantler", "token": null}, {"role": "Artifact", "token": null}, {"role": "Instrument", "token": null}, {"role": "Components", "token": {"text": "GPS module", "offset": 436}}, {"role": "Place", "token": null}]}, {"event_id": "JC002YBVX-E22", "text": "connect", "offset": 466, "template": "[ManufacturerAssembler] manufactured or assembled or produced [Artifact] from [Components] components using [Instrument] at [Place] place", "role_text_map": [{"role": "ManufacturerAssembler", "token": null}, {"role": "Artifact", "token": null}, {"role": "Components", "token": {"text": "GPS", "offset": 471}}, {"role": "Instrument", "token": null}, {"role": "Place", "token": null}]}, {"event_id": "JC002YBVX-E23", "text": "Attach", "offset": 564, "template": "[ManufacturerAssembler] manufactured or assembled or produced [Artifact] from [Components] components using [Instrument] at [Place] place", "role_text_map": [{"role": "ManufacturerAssembler", "token": null}, {"role": "Artifact", "token": null}, {"role": "Components", "token": {"text": "cap", "offset": 566}}, {"role": "Instrument", "token": null}, {"role": "Place", "token": null}]}, {"event_id": "JC002YBVX-E24", "text": "integrate", "offset": 738, "template": "[ManufacturerAssembler] manufactured or assembled or produced [Artifact] from [Components] components using [Instrument] at [Place] place", "role_text_map": [{"role": "ManufacturerAssembler", "token": null}, {"role": "Artifact", "token": null}, {"role": "Components", "token": {"text": "sensors", "offset": 740}}, {"role": "Instrument", "token": null}, {"role": "Place", "token": null}]}, {"event_id": "JC002YBVX-E25", "text": "releases", "offset": 906, "template": "[Dismantler] dismantled [Artifact] using [Instrument] instrument in [Components] place", "role_text_map": [{"role": "Dismantler", "token": null}, {"role": "Artifact", "token": {"text": "servo", "offset": 905}}, {"role": "Instrument", "token": null}, {"role": "Components", "token": {"text": "payload", "offset": 908}}, {"role": "Place", "token": null}]}]
+    </div>
+
+    <p>
+      You can navigate all of the triggers by clicking the following buttons. <br>
+      You have to finish all the triggers before submitting. (Remember that you can't refresh the page otherwise
+      the progress will be gone, <br>
+      to prevent this from happening, we suggest that you write the QA pairs in the google doc and copy paste them
+      here)
+    </p>
+    <!-- Tabs for each trigger -->
+    <div class="btn-toolbar" id="button-bar">
+    </div>
+
+    <section>
+      <div style="margin-top:10px;">
+        <em>
+          These are bootstrap question answer pairs generated by GPT. Not all QA
+          pairs are correct or relevant, but feel free to copy/paste the samples that are accurate
+          enough, and make edits on top.
+        </em>
+        <div id='bootstrap-area' class='ann well well-sm'>
+        </div>
+      </div>
+
+      <div style="margin-top:10px;">
+        <em>
+          These are KAIROS event arguments for the trigger. You can use them to help you write QA pairs.
+          The underlying meaning of such pairs should be "Q: What is arg X of the event? A: arg X is Y".
+          But the formatting of the QA pairs must be as in the instructions.
+        </em>
+        <div id='template-area' class='ann well well-sm'>
+        </div>
+      </div>
+
+      <div class="btn-container">
+        <button id="addbtn" class="btn btn-success" type="button" onclick="add_qa_input()">+</button>
+        <label for="addbtn">Add a QA pair</label>
+      </div>
+      <div class="btn-container">
+        <button id="rmbtn" class="btn btn-danger" type="button" onclick="remove_qa_input()">-</button>
+        <label for="rmbtn">Remove a QA pair</label>
+      </div>
+
+      <div id="input-area">
+
+      </div>
+    </section>
+
+    <div title="Highlight all fields before submitting">
+      <button id="save" class="btn btn-default" type="button">Save</button>
+      <button id="submitButton" class="btn btn-default" type="button">Submit</button>
+    </div>
+  </section>
+
+
+  <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js"
+    integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+
+  <style>
+    .mg-15 {
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+
+    .container-fluid {
+      max-width: 1800px;
+      margin: 30px;
+    }
+
+    .btn-container {
+      display: inline-block;
+      margin: 10px;
+    }
+
+    #collapseTrigger {
+      color: #fff;
+      display: block;
+      text-decoration: none;
+    }
+
+    #submitButton {
+      white-space: normal;
+    }
+
+    #input-area {
+      display: block;
+      margin: 10px;
+    }
+
+    #input-area>div {
+      margin: 10px;
+      background-color: #ffe3e3;
+    }
+
+    #bootstrap-area {
+      background-color: #f7dec5;
+    }
+
+    #template-area {
+      background-color: #75c3e7;
+    }
+
+    .btn-container>button {
+      min-width: 3em;
+    }
+
+    trigger {
+      display: inline;
+      background-color: lightgoldenrodyellow;
+    }
+
+    role {
+      display: inline;
+      background-color: lightblue;
+    }
+
+    .highlight-trigger {
+      background-color: palevioletred
+    }
+
+    .highlight-role {
+      background-color: lightgreen;
+    }
+
+    .btn-group {
+      vertical-align: middle;
+    }
+
+    .content {
+      margin-bottom: 15px;
+    }
+
+    .ann {
+      font-size: 16px;
+    }
+
+    .disp {
+      font-size: 20px;
+    }
+
+    .ann>span.token {
+      cursor: pointer;
+    }
+
+    .ann>span.token:hover {
+      text-decoration: underline;
+    }
+
+    .ann>strong.annotation:hover {
+      text-decoration: line-through;
+    }
+
+    input[disabled] {
+      color: #000
+    }
+  </style>
+
+  <script>
+    // ---------------------------------------------------------
+    // Global
+    // ---------------------------------------------------------
+
+    var page_num = 0;
+
+    // ---------------------------------------------------------
+    // Create jQuery elements
+    // ---------------------------------------------------------
+
+    var submit = $('#submitButton');
+
+    // list of text/offset objects 
+    var triggers_list = JSON.parse($('#raw-data').text().trim());
+
+    const empty_template_area = function () {
+      return $('<div id="template-area">');
+    }
+
+    let save_record = [];
+    let template_record = [];
+    triggers_list.forEach(function (_, idx) {
+      template_record[idx] = empty_template_area();
+    });
+
+    // implementation of string formatting
+    if (!String.prototype.format) {
+      String.prototype.format = function () {
+        var args = arguments;
+        return this.replace(/{(\d+)}/g, function (match, number) {
+          return typeof args[number] != 'undefined'
+            ? args[number]
+            : match
+            ;
+        });
+      };
+    }
+
+    // ---------------------------------------------------------
+    // Create elements
+    // ---------------------------------------------------------
+
+    var makeDom = function (page_count) {
+      make_trigger(page_count);
+      recoverUserInput(page_count);
+    };
+
+    var make_trigger = function (question_num) {
+      /* highlight trigger within document */
+
+      const trigger = triggers_list[question_num];
+      // remove previous highlights
+      $('trigger').removeClass('highlight-trigger');
+      $('role').removeClass('highlight-role');
+      // highlight trigger
+      $('#trigger-' + question_num).addClass('highlight-trigger');
+      $('role[trigno=' + question_num + ']').addClass('highlight-role');
+
+      /* update bootstrap questions */
+      $('#bootstrap-area').html(trigger.bootstrap ?? 'no bootstrap available');
+
+    }
+
+    // restore input from other trigger
+    var recoverUserInput = function (claim_num) {
+      // simply swap out the input area DOM element!
+      $('#template-area').replaceWith(template_record[claim_num]);
+    };
+
+    // ensure something is in the input box
+    var canSubmit = function () {
+      return true;
+    };
+
+    // template role fields
+    const make_role_mapping_element = function (role, text) {
+      const role_text = $('<label>').html('<b>' + role + '</b>:');
+      const role_field = $('<span>')
+        .addClass('role-field')
+        .attr({
+          role: role,
+          rows: 1,
+        })
+        .text(text)
+
+      const role_div = $('<div>')
+        .addClass('role-container')
+        .append(role_text)
+        .append(role_field);
+
+      return role_div;
+    }
+
+    // number of QA pairs at the moment
+    var input_count = 0;
+
+    const add_qa_input = function () {
+      const current_idx = input_count;
+      let question_text = $('<label>').text('question:');
+      let question_input = $('<textarea>')
+        .addClass('question-input')
+        .addClass('mg-15')
+        .attr({
+          id: 'input-question' + input_count,
+          name: 'input-question' + input_count,
+          placeholder: 'write down your question',
+          rows: 1,
+          cols: 80,
+        });
+      question_input.on("input", function () {
+        // if (is_wh_question(question_input.val())) {
+        //     window.alert("It seems you are not writing a yes/no question, make sure " +
+        //         "you are writing questions of which the answer is yes or no!")
+        // }
+        show();
+      });
+      let answer_text = $('<label>').text('answer:');
+      let answer_input = $('<textarea>')
+        .addClass('answer-input')
+        .addClass('mg-15')
+        .attr({
+          id: 'input-answer' + input_count,
+          name: 'input-answer' + input_count,
+          placeholder: 'write down your answer',
+          rows: 1,
+          cols: 80,
+        });
+      answer_input.on("input", function () {
+        show();
+      });
+
+      let input_fields = $(
+        '<div>').addClass('input-fields')
+        .append(question_text)
+        .append(question_input)
+        .append(answer_text)
+        .append(answer_input)
+      $('#input-area').append(input_fields);
+
+      input_count += 1;
+      show();
+    };
+
+    const remove_qa_input = function () {
+      if (input_count <= 0) {
+        return;
+      }
+      $('#input-area').children().last().remove();
+      input_count -= 1;
+      show();
+    };
+
+    var enable_button = function (button) {
+      button.removeAttr("disabled");
+      button.removeClass("btn-default");
+      button.addClass("btn-success");
+    };
+
+    var disable_button = function (button) {
+      button.attr("disabled", "disabled");
+      button.removeClass("btn-success");
+      button.addClass("btn-default");
+    };
+
+    var select_button = function (button) {
+      button.removeClass("btn-default");
+      button.addClass("btn-primary");
+    };
+
+    var deselect_button = function (button) {
+      button.removeClass("btn-primary");
+      button.addClass("btn-default");
+    };
+
+    var is_wh_question = function (question) {
+      let tokens = question.split(' ');
+      if (tokens.length <= 1) {
+        return false;
+      }
+      console.log(tokens);
+
+      // let wh_pattern = /^Wh\|wh\|How\|how/;
+      let wh_pattern = /^wh|Wh|how|How/;
+      // console.log(question.match(wh_pattern));
+      return !!question.match(wh_pattern);
+    };
+
+
+    var show = function () {
+      for (button of document.getElementById('button-bar').getElementsByTagName('*')) {
+        if (page_num == button.getAttribute('page-no'))
+          select_button($(button));
+        else
+          deselect_button($(button));
+      }
+
+      if (canSubmit()) {
+        enable_button(submit);
+        // enable_button($('#next-btn'));
+      } else {
+        disable_button(submit);
+        // disable_button($('#next-btn'));
+      }
+    };
+
+    // dynamically create buttons for each SRL arg
+    triggers_list.forEach(function (trigger, i) {
+      if (trigger.text.trim()) {
+        console.log(trigger);
+        var button = document.createElement("button");
+        button.setAttribute("type", "button");
+        button.setAttribute("id", "button-page-" + i);
+        button.setAttribute("page-no", i);
+        button.setAttribute("class", "btn btn-default");
+        button.innerHTML = trigger.text + " @ token " + trigger.offset;
+        button.onclick = function () {
+          page_num = parseInt(this.getAttribute("page-no"));
+          makeDom(page_num);
+          let instruction = $('#instructionBody');
+          if (instruction.is(':visible')) {
+            instruction.toggle();
+          }
+          //window.scrollTo(0, 0); // scroll to top
+          show();
+        }
+        document.getElementById('button-bar').appendChild(button);
+      }
+
+      // replace newlines with HTML line breaks
+      const bootstrap = trigger.bootstrap;
+      if (bootstrap !== undefined)
+        trigger.bootstrap = bootstrap.replaceAll('\n', '<br>');
+
+      // format template area with role mappings
+      // if template not null or undefined
+      if (trigger.template !== null) {
+        const template_area = template_record[i];
+        const template = $('<p>').text(trigger.template);
+        template_area.append(template);
+        trigger.role_text_map.forEach(function (pairing) {
+          template_area.append(make_role_mapping_element(pairing.role, pairing.token?.text));
+        });
+      }
+    })
+
+    // ---------------------------------------------------------
+    // Initialize
+    // ---------------------------------------------------------
+
+    makeDom(0);
+
+    var save_all = function () {
+      save_record.qapairs = [];
+      save_record.triggers = [];
+      // save all input
+      triggers_list.forEach(function (trigger, idx) {
+        // initialize record
+        save_record.triggers[idx] = {
+          event_id: trigger.event_id,
+          trigger: {
+            text: trigger.text,
+            offset: trigger.offset
+          },
+          template: trigger.template,
+          role_map: {},
+        };
+
+        // get input elements
+        const template_input_area = template_record[idx];
+        const template_inputs = template_input_area.children();
+
+        // traverse over elements to get role mappings
+        template_inputs.each(function (_, input) {
+          const role = $(input).children('.role-field').attr('role');
+          const text = $(input).children('.role-field').val();
+
+          save_record.triggers[idx].role_map[role] = text;
+        });
+      });
+
+      const trigger_input_area = $('#input-area');
+      const trigger_inputs = trigger_input_area.children();
+
+      // traverse over elements to get QA pairs
+      trigger_inputs.each(function (_, input) {
+        // save qa pairs
+        const question = $(input).children('.question-input').val();
+        const answer = $(input).children('.answer-input').val();
+        save_record.qapairs.push({
+          'question': question,
+          'answer': answer
+        });
+      });
+
+      console.log(save_record);
+    };
+
+    var submit_form = function () {
+      save_all();
+
+      const urlParams = new URLSearchParams(window.location.search)
+
+      // create the form element and point it to the correct endpoint
+      const form = document.createElement('form')
+      form.action = (new URL('mturk/externalSubmit', urlParams.get('turkSubmitTo'))).href
+      form.method = 'post'
+
+      // attach the assignmentId
+      const inputAssignmentId = document.createElement('input')
+      inputAssignmentId.name = 'assignmentId'
+      inputAssignmentId.value = urlParams.get('assignmentId')
+      inputAssignmentId.hidden = true
+      form.appendChild(inputAssignmentId)
+
+      // attach data I want to send back
+      const inputResults = document.createElement('input')
+      inputResults.name = 'results'
+      inputResults.value = JSON.stringify(save_record)
+      inputResults.hidden = true
+      form.appendChild(inputResults)
+
+      // attach the form to the HTML document and trigger submission
+      document.body.appendChild(form)
+      form.submit()
+    }
+
+    $('#save').on('click', save_all);
+    submit.on('click', submit_form);
+
+    var popup_alert = function (alert_box, text) {
+      alert_box.html(text);
+      alert_box.css({
+        'background-color': 'fec5bb',
+        'padding': '5px',
+        'border': '1px solid lightgray',
+        'border-radius': '10px',
+        'margin-top': '10px',
+        'margin-bottom': '10px'
+      });
+      displaying = true;
+      setTimeout(function () {
+        alert_box.html('');
+        alert_box.css({
+          'padding': '0px',
+          'border': '0px'
+        });
+        displaying = false;
+      }, 7000);
+    };
+
+    // Instructions expand/collapse
+    var content = $('#instructionBody');
+    var instructions_trigger = $('#collapseTrigger');
+    // content.hide();
+    $('.collapse-text').text('(Click to collapse)');
+    instructions_trigger.click(function () {
+      content.toggle();
+      var isVisible = content.is(':visible');
+      if (isVisible) {
+        $('.collapse-text').text('(Click to collapse)');
+      } else {
+        $('.collapse-text').text('(Click to expand)');
+      }
+    });
+
+    show();
+
+  </script>
+</crowd-form>

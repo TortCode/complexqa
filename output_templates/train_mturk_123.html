@@ -1,0 +1,557 @@
+<crowd-form answer-format="flatten-objects">
+  <section class="container-fluid" id="Relevancy">
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <div class="panel panel-primary">
+          <a class="panel-heading" href="javascript:void(0);" id="collapseTrigger">
+            <strong>Annotation Instructions</strong>
+            <span class="collapse-text">(Click to expand)</span>
+          </a>
+          <div class="panel-body" id="instructionBody">
+            {{INSTRUCTIONS}}
+            {{LINK}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Document</h3>
+    <div id="document-text" class="ann well well-sm">
+      And just like that, Boston’s mind-boggling week of murder and mayhem was over. A law enforcement ensemble from what looked like every jurisdiction in copdom caught the last terrorist punk Friday night. Nineteen-year-old Dzhokhar Tsarnaev, bloodied and dazed from a shootout, was found cowering in a Watertown resident’s backyard boat, out of bombs, bullets and bravado. “YES!” I yelled at the TV, and I know I wasn’t the only one. Now come the questions … Why didn’t any of this kid’s family members or classmates see this coming? Was Dzhokhar’s older brother, Tamerlan, who was killed in a shootout with police the night before, the radical mastermind who orchestrated the Boston Marathon <trigger id='trigger-0'>bombings</trigger> and turned his younger brother to the Dark Side? Will Boston ever be the same? Then another thought came to mind that was closer to home. Three years ago, Spokane had its own brush with a backpack bomb and human evil. A novel I read recently spoke of how life and death are sometimes separated by the thinnest of circumstances. That was certainly the case here on Martin Luther King Jr. Day, Jan. 17, 2011. I shudder to think how different things would have been for us were it not for three temporary workers who were pulling a shift for the city’s Public Utilities District: Mark Steiner, Brandon Klaus and Sherman Welpton. Ring a bell? Didn’t with me, either. I’m embarrassed to say that I had to do a computer search to get the names of the trio that arguably saved Spokane from a Boston-like carnage. The men noticed the backpack. It had been placed along the route soon to be filled with marchers honoring the late civil rights leader. They could have just as easily ignored it, but they didn’t. They opened the package, saw wires and called authorities. Eric Olsen and Jason Hartman, two police sergeants, smoothly ordered the march diverted. It took some time, but the clues led investigators to the cancer behind this mad act: Kevin W. Harpham, a 36-year-old self-avowed white supremacist from rural Addy, Wash. Racist. Islamic fanatics … A terrorist by any other name still stinks the same. In federal court, Harpham made a ludicrous and failed attempt to dismiss his unexploded handiwork as a “creative” protest against the so-called evils of multiculturalism. Those in the know say Harpham’s bomb was beyond diabolical. Laced with rat poison, the weapon was designed to be detonated from as far as 1, 000 feet away. Dozens could have died or been mutilated horribly. Harpham was sentenced to 32 years in prison, the maximum allowed under a plea bargain struck between Harpham’s attorneys and prosecutors. That still doesn’t seem like enough. It’s easy to take for granted the things that don’t happen, but watching the horrors unfold in Boston should drive home just how lucky we were. Limbs blown off. Lives lost. In an eye blink, one of the nation’s most revered athletic events had turned into a bloody war zone. Then things got even more surreal. <trigger id='trigger-1'>Carjacking</trigger>. <trigger id='trigger-2'>Kidnapping</trigger>. A police officer <trigger id='trigger-3'>killed</trigger>. Citizens told to stay in their homes. Before last Monday, would anyone have imagined that two angry young men could paralyze a city such as Boston? And who would imagine that Spokane would be spared by the grace of God and a few contract workers? It’s true. History sometimes really does turn on a dime. 
+    </div>
+
+    <div id='raw-data' hidden>
+      [{"event_id": "scenario_en_kairos_67-E1", "text": "bombings", "offset": 147, "template": "[Perpetrator] committed a crime against [Victim] at [Place] place", "role_text_map": [{"role": "Perpetrator", "token": null}, {"role": "Victim", "token": null}, {"role": "Place", "token": null}]}, {"event_id": "scenario_en_kairos_67-E2", "text": "Carjacking", "offset": 622, "template": "[Perpetrator] committed a crime against [Victim] at [Place] place", "role_text_map": [{"role": "Perpetrator", "token": null}, {"role": "Victim", "token": null}, {"role": "Place", "token": null}]}, {"event_id": "scenario_en_kairos_67-E3", "text": "Kidnapping", "offset": 624, "template": "[Perpetrator] committed a crime against [Victim] at [Place] place", "role_text_map": [{"role": "Perpetrator", "token": null}, {"role": "Victim", "token": null}, {"role": "Place", "token": null}]}, {"event_id": "scenario_en_kairos_67-E4", "text": "killed", "offset": 629, "template": "[Victim] died at [Place] place from [MedicalIssue] medical issue, killed by [Killer] killer", "role_text_map": [{"role": "Victim", "token": null}, {"role": "Place", "token": null}, {"role": "Killer", "token": null}, {"role": "MedicalIssue", "token": null}]}]
+    </div>
+
+    <p>
+      You can navigate all of the triggers by clicking the following buttons. <br>
+      You have to finish all the triggers before submitting. (Remember that you can't refresh the page otherwise
+      the progress will be gone, <br>
+      to prevent this from happening, we suggest that you write the QA pairs in the google doc and copy paste them
+      here)
+    </p>
+    <!-- Tabs for each trigger -->
+    <div class="btn-toolbar" id="button-bar">
+    </div>
+
+    <section>
+      <div style="margin-top:10px;">
+        <em>
+          These are bootstrap question answer pairs generated by GPT. Not all QA
+          pairs are correct or relevant, but feel free to copy/paste the samples that are accurate
+          enough, and make edits on top.
+        </em>
+        <div id='bootstrap-area' class='ann well well-sm'>
+        </div>
+      </div>
+
+      <div style="margin-top:10px;">
+        <em>
+          These are KAIROS event arguments for the trigger. You can use them to help you write QA pairs.
+          The underlying meaning of such pairs should be "Q: What is arg X of the event? A: arg X is Y".
+          But the formatting of the QA pairs must be as in the instructions.
+        </em>
+        <div id='template-area' class='ann well well-sm'>
+        </div>
+      </div>
+
+      <div class="btn-container">
+        <button id="addbtn" class="btn btn-success" type="button" onclick="add_qa_input()">+</button>
+        <label for="addbtn">Add a QA pair</label>
+      </div>
+      <div class="btn-container">
+        <button id="rmbtn" class="btn btn-danger" type="button" onclick="remove_qa_input()">-</button>
+        <label for="rmbtn">Remove a QA pair</label>
+      </div>
+
+      <div id="input-area">
+
+      </div>
+    </section>
+
+    <div title="Highlight all fields before submitting">
+      <button id="save" class="btn btn-default" type="button">Save</button>
+      <button id="submitButton" class="btn btn-default" type="button">Submit</button>
+    </div>
+  </section>
+
+
+  <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js"
+    integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+
+  <style>
+    .mg-15 {
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+
+    .container-fluid {
+      max-width: 1800px;
+      margin: 30px;
+    }
+
+    .btn-container {
+      display: inline-block;
+      margin: 10px;
+    }
+
+    #collapseTrigger {
+      color: #fff;
+      display: block;
+      text-decoration: none;
+    }
+
+    #submitButton {
+      white-space: normal;
+    }
+
+    #input-area {
+      display: block;
+      margin: 10px;
+    }
+
+    #input-area>div {
+      margin: 10px;
+      background-color: #ffe3e3;
+    }
+
+    #bootstrap-area {
+      background-color: #f7dec5;
+    }
+
+    #template-area {
+      background-color: #75c3e7;
+    }
+
+    .btn-container>button {
+      min-width: 3em;
+    }
+
+    trigger {
+      display: inline;
+      background-color: lightgoldenrodyellow;
+    }
+
+    role {
+      display: inline;
+      background-color: lightblue;
+    }
+
+    .highlight-trigger {
+      background-color: palevioletred
+    }
+
+    .highlight-role {
+      background-color: lightgreen;
+    }
+
+    .btn-group {
+      vertical-align: middle;
+    }
+
+    .content {
+      margin-bottom: 15px;
+    }
+
+    .ann {
+      font-size: 16px;
+    }
+
+    .disp {
+      font-size: 20px;
+    }
+
+    .ann>span.token {
+      cursor: pointer;
+    }
+
+    .ann>span.token:hover {
+      text-decoration: underline;
+    }
+
+    .ann>strong.annotation:hover {
+      text-decoration: line-through;
+    }
+
+    input[disabled] {
+      color: #000
+    }
+  </style>
+
+  <script>
+    // ---------------------------------------------------------
+    // Global
+    // ---------------------------------------------------------
+
+    var page_num = 0;
+
+    // ---------------------------------------------------------
+    // Create jQuery elements
+    // ---------------------------------------------------------
+
+    var submit = $('#submitButton');
+
+    // list of text/offset objects 
+    var triggers_list = JSON.parse($('#raw-data').text().trim());
+
+    const empty_template_area = function () {
+      return $('<div id="template-area">');
+    }
+
+    let save_record = [];
+    let template_record = [];
+    triggers_list.forEach(function (_, idx) {
+      template_record[idx] = empty_template_area();
+    });
+
+    // implementation of string formatting
+    if (!String.prototype.format) {
+      String.prototype.format = function () {
+        var args = arguments;
+        return this.replace(/{(\d+)}/g, function (match, number) {
+          return typeof args[number] != 'undefined'
+            ? args[number]
+            : match
+            ;
+        });
+      };
+    }
+
+    // ---------------------------------------------------------
+    // Create elements
+    // ---------------------------------------------------------
+
+    var makeDom = function (page_count) {
+      make_trigger(page_count);
+      recoverUserInput(page_count);
+    };
+
+    var make_trigger = function (question_num) {
+      /* highlight trigger within document */
+
+      const trigger = triggers_list[question_num];
+      // remove previous highlights
+      $('trigger').removeClass('highlight-trigger');
+      $('role').removeClass('highlight-role');
+      // highlight trigger
+      $('#trigger-' + question_num).addClass('highlight-trigger');
+      $('role[trigno=' + question_num + ']').addClass('highlight-role');
+
+      /* update bootstrap questions */
+      $('#bootstrap-area').html(trigger.bootstrap ?? 'no bootstrap available');
+
+    }
+
+    // restore input from other trigger
+    var recoverUserInput = function (claim_num) {
+      // simply swap out the input area DOM element!
+      $('#template-area').replaceWith(template_record[claim_num]);
+    };
+
+    // ensure something is in the input box
+    var canSubmit = function () {
+      return true;
+    };
+
+    // template role fields
+    const make_role_mapping_element = function (role, text) {
+      const role_text = $('<label>').html('<b>' + role + '</b>:');
+      const role_field = $('<span>')
+        .addClass('role-field')
+        .attr({
+          role: role,
+          rows: 1,
+        })
+        .text(text)
+
+      const role_div = $('<div>')
+        .addClass('role-container')
+        .append(role_text)
+        .append(role_field);
+
+      return role_div;
+    }
+
+    // number of QA pairs at the moment
+    var input_count = 0;
+
+    const add_qa_input = function () {
+      const current_idx = input_count;
+      let question_text = $('<label>').text('question:');
+      let question_input = $('<textarea>')
+        .addClass('question-input')
+        .addClass('mg-15')
+        .attr({
+          id: 'input-question' + input_count,
+          name: 'input-question' + input_count,
+          placeholder: 'write down your question',
+          rows: 1,
+          cols: 80,
+        });
+      question_input.on("input", function () {
+        // if (is_wh_question(question_input.val())) {
+        //     window.alert("It seems you are not writing a yes/no question, make sure " +
+        //         "you are writing questions of which the answer is yes or no!")
+        // }
+        show();
+      });
+      let answer_text = $('<label>').text('answer:');
+      let answer_input = $('<textarea>')
+        .addClass('answer-input')
+        .addClass('mg-15')
+        .attr({
+          id: 'input-answer' + input_count,
+          name: 'input-answer' + input_count,
+          placeholder: 'write down your answer',
+          rows: 1,
+          cols: 80,
+        });
+      answer_input.on("input", function () {
+        show();
+      });
+
+      let input_fields = $(
+        '<div>').addClass('input-fields')
+        .append(question_text)
+        .append(question_input)
+        .append(answer_text)
+        .append(answer_input)
+      $('#input-area').append(input_fields);
+
+      input_count += 1;
+      show();
+    };
+
+    const remove_qa_input = function () {
+      if (input_count <= 0) {
+        return;
+      }
+      $('#input-area').children().last().remove();
+      input_count -= 1;
+      show();
+    };
+
+    var enable_button = function (button) {
+      button.removeAttr("disabled");
+      button.removeClass("btn-default");
+      button.addClass("btn-success");
+    };
+
+    var disable_button = function (button) {
+      button.attr("disabled", "disabled");
+      button.removeClass("btn-success");
+      button.addClass("btn-default");
+    };
+
+    var select_button = function (button) {
+      button.removeClass("btn-default");
+      button.addClass("btn-primary");
+    };
+
+    var deselect_button = function (button) {
+      button.removeClass("btn-primary");
+      button.addClass("btn-default");
+    };
+
+    var is_wh_question = function (question) {
+      let tokens = question.split(' ');
+      if (tokens.length <= 1) {
+        return false;
+      }
+      console.log(tokens);
+
+      // let wh_pattern = /^Wh\|wh\|How\|how/;
+      let wh_pattern = /^wh|Wh|how|How/;
+      // console.log(question.match(wh_pattern));
+      return !!question.match(wh_pattern);
+    };
+
+
+    var show = function () {
+      for (button of document.getElementById('button-bar').getElementsByTagName('*')) {
+        if (page_num == button.getAttribute('page-no'))
+          select_button($(button));
+        else
+          deselect_button($(button));
+      }
+
+      if (canSubmit()) {
+        enable_button(submit);
+        // enable_button($('#next-btn'));
+      } else {
+        disable_button(submit);
+        // disable_button($('#next-btn'));
+      }
+    };
+
+    // dynamically create buttons for each SRL arg
+    triggers_list.forEach(function (trigger, i) {
+      if (trigger.text.trim()) {
+        console.log(trigger);
+        var button = document.createElement("button");
+        button.setAttribute("type", "button");
+        button.setAttribute("id", "button-page-" + i);
+        button.setAttribute("page-no", i);
+        button.setAttribute("class", "btn btn-default");
+        button.innerHTML = trigger.text + " @ token " + trigger.offset;
+        button.onclick = function () {
+          page_num = parseInt(this.getAttribute("page-no"));
+          makeDom(page_num);
+          let instruction = $('#instructionBody');
+          if (instruction.is(':visible')) {
+            instruction.toggle();
+          }
+          //window.scrollTo(0, 0); // scroll to top
+          show();
+        }
+        document.getElementById('button-bar').appendChild(button);
+      }
+
+      // replace newlines with HTML line breaks
+      const bootstrap = trigger.bootstrap;
+      if (bootstrap !== undefined)
+        trigger.bootstrap = bootstrap.replaceAll('\n', '<br>');
+
+      // format template area with role mappings
+      // if template not null or undefined
+      if (trigger.template !== null) {
+        const template_area = template_record[i];
+        const template = $('<p>').text(trigger.template);
+        template_area.append(template);
+        trigger.role_text_map.forEach(function (pairing) {
+          template_area.append(make_role_mapping_element(pairing.role, pairing.token?.text));
+        });
+      }
+    })
+
+    // ---------------------------------------------------------
+    // Initialize
+    // ---------------------------------------------------------
+
+    makeDom(0);
+
+    var save_all = function () {
+      save_record.qapairs = [];
+      save_record.triggers = [];
+      // save all input
+      triggers_list.forEach(function (trigger, idx) {
+        // initialize record
+        save_record.triggers[idx] = {
+          event_id: trigger.event_id,
+          trigger: {
+            text: trigger.text,
+            offset: trigger.offset
+          },
+          template: trigger.template,
+          role_map: {},
+        };
+
+        // get input elements
+        const template_input_area = template_record[idx];
+        const template_inputs = template_input_area.children();
+
+        // traverse over elements to get role mappings
+        template_inputs.each(function (_, input) {
+          const role = $(input).children('.role-field').attr('role');
+          const text = $(input).children('.role-field').val();
+
+          save_record.triggers[idx].role_map[role] = text;
+        });
+      });
+
+      const trigger_input_area = $('#input-area');
+      const trigger_inputs = trigger_input_area.children();
+
+      // traverse over elements to get QA pairs
+      trigger_inputs.each(function (_, input) {
+        // save qa pairs
+        const question = $(input).children('.question-input').val();
+        const answer = $(input).children('.answer-input').val();
+        save_record.qapairs.push({
+          'question': question,
+          'answer': answer
+        });
+      });
+
+      console.log(save_record);
+    };
+
+    var submit_form = function () {
+      save_all();
+
+      const urlParams = new URLSearchParams(window.location.search)
+
+      // create the form element and point it to the correct endpoint
+      const form = document.createElement('form')
+      form.action = (new URL('mturk/externalSubmit', urlParams.get('turkSubmitTo'))).href
+      form.method = 'post'
+
+      // attach the assignmentId
+      const inputAssignmentId = document.createElement('input')
+      inputAssignmentId.name = 'assignmentId'
+      inputAssignmentId.value = urlParams.get('assignmentId')
+      inputAssignmentId.hidden = true
+      form.appendChild(inputAssignmentId)
+
+      // attach data I want to send back
+      const inputResults = document.createElement('input')
+      inputResults.name = 'results'
+      inputResults.value = JSON.stringify(save_record)
+      inputResults.hidden = true
+      form.appendChild(inputResults)
+
+      // attach the form to the HTML document and trigger submission
+      document.body.appendChild(form)
+      form.submit()
+    }
+
+    $('#save').on('click', save_all);
+    submit.on('click', submit_form);
+
+    var popup_alert = function (alert_box, text) {
+      alert_box.html(text);
+      alert_box.css({
+        'background-color': 'fec5bb',
+        'padding': '5px',
+        'border': '1px solid lightgray',
+        'border-radius': '10px',
+        'margin-top': '10px',
+        'margin-bottom': '10px'
+      });
+      displaying = true;
+      setTimeout(function () {
+        alert_box.html('');
+        alert_box.css({
+          'padding': '0px',
+          'border': '0px'
+        });
+        displaying = false;
+      }, 7000);
+    };
+
+    // Instructions expand/collapse
+    var content = $('#instructionBody');
+    var instructions_trigger = $('#collapseTrigger');
+    // content.hide();
+    $('.collapse-text').text('(Click to collapse)');
+    instructions_trigger.click(function () {
+      content.toggle();
+      var isVisible = content.is(':visible');
+      if (isVisible) {
+        $('.collapse-text').text('(Click to collapse)');
+      } else {
+        $('.collapse-text').text('(Click to expand)');
+      }
+    });
+
+    show();
+
+  </script>
+</crowd-form>
