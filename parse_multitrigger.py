@@ -35,7 +35,9 @@ def main():
             tokens = example['tokens']
             docid = example['doc_id']
 
-            entity_map = {entity['id']:entity['start'] for entity in example['entity_mentions']}
+            entity_map = {entity['id']:
+                {'offset': entity['start'], 'length': entity['end'] - entity['start']}
+            for entity in example['entity_mentions']}
             # convert events to metatriggers
             metatriggers = [event_to_metatrigger(event, entity_map) for event in example['event_mentions']]
 
@@ -52,16 +54,18 @@ def event_to_metatrigger(event, entity_map) -> dict:
     trigger = event['trigger']
     text = trigger['text']
     offset = trigger['start']
+    length = trigger['end'] - offset
     # if debug:
     #     print(f"text:{text} offset:{offset} template:{template} role_text_map:{role_text_map}")
-    return {'event_id': event_id, 'text':text, 'offset':offset, 'template':template, 'role_text_map':role_text_map}
+    return {'event_id': event_id, 'text':text, 'offset':offset, 'length':length, 'template':template, 'role_text_map':role_text_map}
 
 def get_template_and_role_mapping(event, entity_map) -> Tuple[str, List[dict]]:
     """Returns the template and role mapping for the given event"""
     role_mapping_dict = {
         arg['role']:{
             'text':arg['text'],
-            'offset':entity_map[arg['entity_id']]}
+            **entity_map[arg['entity_id']]
+        }
         for arg in event['arguments']}
     
     event_type = event['event_type']
@@ -125,11 +129,15 @@ def add_indices(raw_tokens: List[str], triggers: List[dict]):
     """Marks each trigger with an HTML tag"""
     for i, t in enumerate(triggers):
         p = t['offset']
-        raw_tokens[p] = f"<trigger id='trigger-{i}'>{raw_tokens[p]}</trigger>"
+        pl = t['length']
+        raw_tokens[p] = f"<trigger id='trigger-{i}'>{raw_tokens[p]}"
+        raw_tokens[p+pl-1] += f"</trigger>"
         for arg in t['role_text_map']:
             if arg['token'] is not None:
                 q = arg['token']['offset']
-                raw_tokens[q] = f"<role id='role-{i}-{arg['role']}' trigno='{i}'>{raw_tokens[q]}</role>"
+                ql = arg['token']['length']
+                raw_tokens[q] = f"<role id='role-{i}-{arg['role']}' trigno='{i}'>{raw_tokens[q]}"
+                raw_tokens[q+ql-1] += f"</role>"
 
 if __name__ == '__main__':
     main()
