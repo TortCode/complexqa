@@ -33,7 +33,7 @@ def get_args() -> argparse.Namespace:
     parser.add_argument('file', type=argparse.FileType("r"), 
                         help='template file to fill')
     parser.add_argument('-o', '--output', type=Path, 
-                        default='./output_templates', help='output dir')
+                        help='output dir')
     parser.parse_args(namespace=configs)
 
 def csv_opener(mode: str):

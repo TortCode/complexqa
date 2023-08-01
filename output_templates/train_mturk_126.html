@@ -20,8 +20,12 @@
       Opposition decries election of new constituent assembly made up of Socialist party and allies after claims eight million people voted were proved wrong This article is more than 3 years old This article is more than 3 years old Venezuela’s opposition has announced plans to block the <trigger id='trigger-0'>inauguration</trigger> of a contentious constituent assembly whose election was further clouded on Wednesday by fresh allegations of ballot fraud. The opposition coalition called for mass protests “against the installation of the constituent fraud” to prevent the new assembly–made up entirely by the ruling Socialist party and its political allies–from beginning its sessions on Thursday. Venezuela poll turnout figures ‘ manipulated by at least 1m votes’Read more As many as 40 countries have said they would not recognize the new assembly, which critics say is a thinly veiled attempt by Nicolás Maduro to consolidate power. The body will have the ability to dissolve state institutions and rewrite the constitution. Maduro has said his aim is to bring peace to the sharply split country caught up in political crisis and economic meltdown. But the president and his closest allies have also vowed to use the assembly to jail key opposition leaders, remove the country’s outspoken chief prosecutor from her post and strip opposition legislators of their constitutional immunity. “The constituent assembly is the change so that this country can regain order. Anarchy is over, here,” said Cilia Flores, Maduro’s wife on receiving her accreditation as a member of the assembly. “Justice will come starting tomorrow,” she said. New doubts were cast on the official turnout for the assembly vote, after the company that provides the technological platform for Venezuela’s voting system said on Wednesday that the government’s claim that more than 8 million people voted on Sunday were wrong. “We know, without any doubt, that the turnout of the recent election for a national constituent assembly was manipulated,” Antonio Mugica, the chief executive of Smartmatic, said in London. Mugica said Smartmatic detected the overstated turnout because of Venezuela’s automated election system. “We estimate the difference between the actual participation and the one announced by authorities is at least 1m votes,” he said. The electoral council president, Tibisay Lucena, put the turnout at 41. 53%, or 8, 089, 320 people. The opposition put the number at between 2 million and 3 million. Only 3. 7 million people had voted by 5. 30pm in the constituent assembly election, according to internal electoral council data reviewed by Reuters, casting doubt on the 8. 1 million people authorities said had voted that day. Voting lasted until 7pm. Lucena dismissed Mugica’s allegations, calling it an “opinion” of a company that played only a secondary role in the election and had no access to complete data. “A company located outside the country does not guarantee the transparency and credibility of the Venezuelan electoral system,” she said. Andrés Izarra, a former information minister under Maduro’s predecessor, Hugo Chávez, tweeted: “Company which supports Venezuelan electoral system confirms that election was manipulated by at least a million votes.” Andrés Izarra (@ IzarraDeVerdad) Empresa que soporta sistema electoral vzlano confirma que elección fue manipulada en al menos un millón de votos https: / / t. co / 6Vn96SJi97 His tweet–a rare display of criticism from a veteran Chavista–quickly went viral. In a follow-up tweet, Izarra said he recognized there are “doubts that must be cleared up about the results of Sunday’s election” but warned the opposition that he had not become one of them. “Squallid ones, don’t count on me EVER,” he tweeted. Julio Borges, the leader of the opposition-held parliament, said voter fraud was “the most serious crime that can be committed against democracy” . Meanwhile international pressure mounted on Maduro as his country and government became increasingly isolated, after two top political opponents under house arrest were dragged from their homes in midnight raids. The EU defied calls for sanctions against Venezuela’s president after Spanish prime minister Mariano Rajoy proposed the member countries block travel by anyone linked to Maduro’s government. However, the bloc warned that it was ready to action if there was any further dilution of the country’s democratic institutions. Federica Mogherini, the EU’s high representative for foreign affairs, said in a statement that the union would not recognise the new constituent assembly due to “concerns over its effective representativeness and legitimacy” . She failed, however, to act on calls from the European parliament’s president, Antonio Tajani, for targeted sanctions against Maduro. Venezuela: Maduro condemned after opposition duo arrested in midnight raids Read more “The effective installation of the constituent assembly should be suspended and the attributions of all institutions foreseen by the constitution should be explicitly recognised,” she said. Mogherini added a call for all parties to “negotiate a way forward” . She said: “The European Union and its member states are ready to gradually step up their response in case democratic principles are further undermined and the Venezuelan constitution is not respected.” On Tuesday, the UK foreign office said all dependents of British embassy staff had been withdrawn from Venezuela and recommended British citizens leave the warning that transport in and out of the country could be disrupted. On Wednesday, Aerolineas Argentina said it was cancelling its weekly flight to Caracas following suspension of service to Venezuela by Delta and Avianca. Chile confirmed that three recently appointed judges of an alternative supreme court named by the opposition parliament, have taken took refuge in Chile’s embassy in Caracas in the past two days and may be granted political asylum. “Logistics are tight but our commitment stand strong,” Heraldo Muñoz, Chile’s foreign minister said on Twitter. 
     </div>
 
-    <div id='raw-data' hidden>
+    <div id='events-data' hidden>
       [{"event_id": "scenario_en_29-E1", "text": "inauguration", "offset": 49, "length": 1, "template": "[Employee] started working in [Position] position at [PlaceOfEmployment] organization in [Place] place", "role_text_map": [{"role": "Employee", "token": null}, {"role": "PlaceOfEmployment", "token": null}, {"role": "Position", "token": null}, {"role": "Place", "token": null}]}]
+    </div>
+
+    <div id='relations-data' hidden>
+      []
     </div>
 
     <p>
@@ -38,9 +42,7 @@
     <section>
       <div style="margin-top:10px;">
         <em>
-          These are bootstrap question answer pairs generated by GPT. Not all QA
-          pairs are correct or relevant, but feel free to copy/paste the samples that are accurate
-          enough, and make edits on top.
+          These are bootstrap question answer pairs generated by GPT. 
         </em>
         <div id='bootstrap-area' class='ann well well-sm'>
         </div>
@@ -48,9 +50,15 @@
 
       <div style="margin-top:10px;">
         <em>
-          These are KAIROS event arguments for the trigger. You can use them to help you write QA pairs.
-          The underlying meaning of such pairs should be "Q: What is arg X of the event? A: arg X is Y".
-          But the formatting of the QA pairs must be as in the instructions.
+          These are relations between events.
+        </em>
+        <div id='relations-area' class='ann well well-sm'>
+        </div>
+      </div>
+
+      <div style="margin-top:10px;">
+        <em>
+          KAIROS event arguments for triggers
         </em>
         <div id='template-area' class='ann well well-sm'>
         </div>
@@ -90,6 +98,10 @@
     .mg-15 {
       margin-left: 15px;
       margin-right: 15px;
+    }
+
+    .mg-5 {
+      margin: 5px;
     }
 
     .container-fluid {
@@ -203,7 +215,8 @@
     var submit = $('#submitButton');
 
     // list of text/offset objects 
-    var triggers_list = JSON.parse($('#raw-data').text().trim());
+    let events_data = JSON.parse($('#events-data').text().trim());
+    let relations_data = JSON.parse($('#relations-data').text().trim());
 
     const empty_template_map = function () {
       return $('<div class="template-map">');
@@ -211,7 +224,7 @@
 
     let save_record = [];
     let template_record = [];
-    triggers_list.forEach(function (_, idx) {
+    events_data.forEach(function (_, idx) {
       template_record[idx] = empty_template_map();
     });
 
@@ -233,11 +246,11 @@
     // ---------------------------------------------------------
 
     var makeDom = function () {
-      make_trigger();
+      highlightEvent();
       recoverUserInput();
     };
 
-    var make_trigger = function () {
+    var highlightEvent = function () {
       /* highlight trigger within document */
 
       // remove previous highlights
@@ -255,16 +268,92 @@
 
     }
 
+    const relationTypes = [
+      "BEFORE",
+      "AFTER",
+      "OVERLAPS",
+      "RIGHT-AFTER",
+      "RIGHT-BEFORE",
+      "EQUAL",
+      "CONTAINS",
+      "CAUSALITY",
+    ]
+
     // restore input from other trigger
     var recoverUserInput = function () {
+      // insert template mapping
       const templateArea = $('#template-area');
-      // simply swap out the input area DOM element!
       templateArea.empty()
-      
       page_num_set.forEach(trigger_num => {
         templateArea.append(template_record[trigger_num]);
       });
+
+      // relations
+      const relationsArea = $('#relations-area');
+      relationsArea.empty();
+
+      const pagenos = Array.from(page_num_set);
+      pagenos.forEach(i => {
+        pagenos.forEach(j => {
+          if (i == j) return;
+
+          const event1 = events_data[i];
+          const event2 = events_data[j];
+          const select = makeRelationSelect(event1, event2);
+          relationsArea.append(select);
+        })
+      })
     };
+
+    function makeRelationSelect(event1, event2) {
+      const id1 = event1.event_id;
+      const id2 = event2.event_id;
+      const relation = relations_data.find(r => 
+        r.event1_id == id1 && 
+        r.event2_id == id2
+      );
+
+      const selectInput =
+        $(`<select class="relation-select mg-5">`);
+      
+      relationTypes.forEach(type => {
+        const option = $(`<option value="${type}">${type.toLowerCase()}</option>`);
+        selectInput.append(option);
+      });
+      selectInput.append($(`<option value="NONE">none</option>`));
+
+      selectInput.val(relation?.type ?? "NONE");
+      selectInput.on('change', function () {
+        const type = $(this).val();
+        const event1_id = id1;
+        const event2_id = id2;
+        const relation = relations_data.find(r => 
+          r.event1_id == event1_id && 
+          r.event2_id == event2_id
+        );
+        if (relation) {
+          relation.type = type;
+        } else {
+          relations_data.push({
+            event1_id,
+            event2_id,
+            type,
+          });
+        }
+      });
+
+      function describeEvent(event) {
+        console.log(event)
+        return `${event.text} @ ${event.offset}`;
+      }
+
+      const div = $('<div>')
+        .append($('<label>').text(describeEvent(event1)))
+        .append(selectInput)
+        .append($('<label>').text(describeEvent(event2)))
+
+      return div;
+    }
 
     // ensure something is in the input box
     var canSubmit = function () {
@@ -403,9 +492,9 @@
     };
 
     // dynamically create buttons for each SRL arg
-    triggers_list.forEach(function (trigger, i) {
+    events_data.forEach(function (trigger, i) {
       if (trigger.text.trim()) {
-        console.log(trigger);
+        //console.log(trigger);
         var button = document.createElement("button");
         button.setAttribute("type", "button");
         button.setAttribute("id", "button-page-" + i);
@@ -466,41 +555,16 @@
 
     var save_all = function () {
       save_record.qapairs = [];
-      save_record.triggers = [];
-      // save all input
-      triggers_list.forEach(function (trigger, idx) {
-        // initialize record
-        save_record.triggers[idx] = {
-          event_id: trigger.event_id,
-          trigger: {
-            text: trigger.text,
-            offset: trigger.offset
-          },
-          template: trigger.template,
-          role_map: {},
-        };
+      save_record.relations = relations_data.filter(r => r.type !== "NONE");
 
-        // get input elements
-        const template_input_area = template_record[idx];
-        const template_inputs = template_input_area.children();
-
-        // traverse over elements to get role mappings
-        template_inputs.each(function (_, input) {
-          const role = $(input).children('.role-field').attr('role');
-          const text = $(input).children('.role-field').val();
-
-          save_record.triggers[idx].role_map[role] = text;
-        });
-      });
-
-      const trigger_input_area = $('#input-area');
-      const trigger_inputs = trigger_input_area.children();
+      const inputAreas = $('#input-area').children();
 
       // traverse over elements to get QA pairs
-      trigger_inputs.each(function (_, input) {
+      inputAreas.each(function (_, input) {
+        const $input = $(input);
         // save qa pairs
-        const question = $(input).children('.question-input').val();
-        const answer = $(input).children('.answer-input').val();
+        const question = $input.children('.question-input').val();
+        const answer = $input.children('.answer-input').val();
         save_record.qapairs.push({
           'question': question,
           'answer': answer

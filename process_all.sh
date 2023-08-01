@@ -1,5 +1,7 @@
 for k in train test dev; do
     python process_data.py \
-        -d -o ./outputs/${k}_mturk.csv \
+        -d \
+        --kairos ./event_role_formatted.json \
+        --output ./processed_data/${k}_mturk.csv \
         ./datasets/${k}.jsonl
 done

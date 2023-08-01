@@ -1,0 +1,52 @@
+Each line is
+Document
+
+Document = {
+    doc_id: str (unique id for the document),
+    tokens: [str] (list of tokens),
+    text: str (text of the document),
+    sentences: [Sentence],
+    entity_mentions: [EntityMention],
+    event_mentions: [Event],
+}
+
+Sentence = (
+    [MetaToken] (list of tokens in the sentence),
+    str (text of the sentence),
+)
+
+EntityMention = {
+    id: str,
+    sent_idx: int (sentence index),
+    start: int (start token inclusive),
+    end: int (end token exclusive),
+    text: str (text of the mention),
+    entity_type: str,
+    mention_type: str,
+}
+
+EventMention = {
+    id: str,
+    event_type: str,
+    trigger: Trigger,
+    arguments: [EventArgument],
+}
+
+MetaToken = (
+    str: token text,
+    int: start character offset(inclusive),
+    int: end character offset(exclusive),
+)
+
+Trigger = {
+    start: int (start token inclusive),
+    end: int (end token exclusive),
+    text: str,
+    sent_idx: sentence index,
+}
+
+EventArgument = {
+    entity_id: str (id of entity mention of text),
+    role: str,
+    text: str,
+}

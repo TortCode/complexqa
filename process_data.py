@@ -17,7 +17,7 @@ def main():
     with configs.output as outfile:
         # write header
         writer = csv.writer(outfile)
-        field = ['docid', 'text', 'data']
+        field = ['docid', 'text', 'events', 'relations']
         writer.writerow(field)
 
         # load kairos roles
@@ -44,7 +44,8 @@ def main():
             add_indices(tokens, metatriggers)
             indexed_text = detokenize_and_collapsews(tokens)
 
-            writer.writerow([docid, indexed_text, json.dumps(metatriggers)])
+            relations = []
+            writer.writerow([docid, indexed_text, json.dumps(metatriggers), json.dumps(relations)])
 
 def event_to_metatrigger(event, entity_map) -> dict:
     """Converts an event to a metatrigger (trigger with additional info to aid QA gen) """
@@ -60,12 +61,15 @@ def event_to_metatrigger(event, entity_map) -> dict:
 
 def get_template_and_role_mapping(event, entity_map) -> Tuple[str, List[dict]]:
     """Returns the template and role mapping for the given event"""
-    role_mapping_dict = {
-        arg['role']:{
-            'text':arg['text'],
-            **entity_map[arg['entity_id']]
+    def process_arg(arg):
+        id = arg['entity_id']
+        return {
+            'text': arg['text'],
+            'entity_id': id,
+            **entity_map[id],
         }
-        for arg in event['arguments']}
+
+    role_mapping_dict = {arg['role']: process_arg(arg) for arg in event['arguments']}
     
     event_type = event['event_type']
     event_role = kairos_roles.get(event_type)
@@ -104,9 +108,9 @@ def get_args() -> argparse.Namespace:
     parser.add_argument('file', type=argparse.FileType("r"), 
                         help='jsonl file to parse', metavar='src')
     parser.add_argument('-k', '--kairos', type=argparse.FileType("r"),
-                        default='./event_role_formatted.json', help='kairos roles file')
+                        help='kairos roles file')
     parser.add_argument('-o', '--output', type=csv_opener("w"), 
-                        default='./datasets/mturk_data.csv', help='output file')
+                        help='output file')
     parser.add_argument('-s', '--start', type=int, default=0, 
                         help='start index (inclusive) of range to parse in file; default: beginning of file')
     parser.add_argument('-e', '--end', type=int, default=-1, 

@@ -20,8 +20,12 @@
       VERY FEW of those who were around in Belfast on Bloody Friday even after a lapse of 30 years, can forget the scenes they witnessed then-and fewer still can want to remember. This was terror in the raw unleashed on a still unhardened population. As the <role id='role-0-Instrument'trigno='0'>bombs</role> <trigger id='trigger-0'>went off</trigger> in sequence, now in one part of the city, now in another, rumour took over, naked fear and anxiety. Warnings were given, perhaps deliberately erroneous, maybe not, maybe hoax calls, perhaps not but the effect was the same. Groups of office and shop workers ordered to evacuate threatened premises, gathered at street corners only to run in shrieking droves as a bomb went off nearer the place in which they had sought refuge. The smell of fear exceeded only by the whiff of powder, enveloping smoke, the jangle of ambulances and fire engines and screaming police cars, and office alarms crying heedlessly to the air, the smell of smoke and dust, sound of shattering glass, the cries of fear and horror, the stench of burning timber, burning rubber, burning metal, burning flesh. And most of all the horror of Oxford Street Bus Station where commuter deaths brought the savagery of the city to surrounding towns and villages as people waited for those who had gone to work or to shop to return. Nine did not and many others returned home broken and injured and not only physically. The final horror of the television news reels of body parts being shovelled into polythene bags by those whose insufficiently recognised task it was to clear up the carnage. If it has taken the Provisional IRA 30 years to face up to the enormity of what they did on that day and on many other days, and to apologise for the hurt caused, it has not come a day too soon. Or indeed too late either, in what we are now seeing the beginning of a real effort to promote the process of healing, to bind up the wounds and to enable the community to face the future together. Acceptance of responsibility is always a good starting point. Regrets for hurts done is the next stage. Forgiveness for wounds received perhaps the next, and acceptance that no side has a monoply of victimhood, or virtue or validity is perhaps the closure. The IRA statement starts as an apology for the hurts inflicted on innocent victims on a particular occasion. These will not be additionally reassured by being classified as non-competence, but it goes much further than that. Bloody Friday is as good a symbol as any of the universality of suffering at the futility of violence. There are those who will carp at the exclusion of those implicitly typified as combatants-presumably policemen, soldiers and prison officers and others unfortunate enough to be designated as legitimate targets. Many of these too, even allowing the doubtful premise of legitimacy were shot down in ambush, in cold blood in the domestic situation, but so, republicans will argue were many of their victims too. The statement does go on to recognise the hurt of all victims, combatant and non-combatant, and it would be ungenerous not to recognise the impulse for reconciliation which lies behind these words-or the effort that has been required to bring it about. Thirty years ago even innocent victims were dismissed as the unfortunate casualties of war, in the wrong place at the wrong time. Things have moved a long way when all can be seen as victims, when the hurts of all can be recognised. When the IRA first announce a ceasefire, they were castigated for not including some phrase of regret, some words of apology. This was further highlighted when some weeks later Gusty Spence announced the loyalist ceasefire in terms which included an apology for hurts inflicted which was quite moving at the time. Subsequent loyalist activity has not eradicated the value of that statement in that context. Neither should current disturbances or uncertainties be used to denigrate the IRA statement. Some elements of unionism will remain implacable no matter what republicans say or do. Others will demand additional deeds rather than words. Others still will argue a lack of moral equivalency, that illegality can never be legitimised or terrorism condoned. The important thing now is how that statement and the sentiments behind it, which should be recognised as genuine and not merely a rhetorical or political ploy are accepted by those who have been on the receiving end by the relatives of victims and survivors, many of whom have been horribly mutilated. In general, such people have proved to be much more willing to forgive than those who have suffered by proxy. Those who experienced Bloody Friday in Belfast may welcome the statement more than those who viewed it from afar. In any case, to recall the events shows how far society has moved on towards peace since then. For the long suffering populace of Northern Ireland, like the mothers in O'Casey's play"on either side of a scales of sorrow, weighed down by the bodies of our suffering sons", this is a significant and a very welcome statement. 
     </div>
 
-    <div id='raw-data' hidden>
-      [{"event_id": "wiki_ied_bombings_1_news_9-E1", "text": "went off", "offset": 52, "length": 2, "template": "[Attacker] detonated or exploded [ExplosiveDevice] explosive device using [Instrument] to attack [Target] target at [Place] place", "role_text_map": [{"role": "Attacker", "token": null}, {"role": "Target", "token": null}, {"role": "Instrument", "token": {"text": "bombs", "offset": 51, "length": 1}}, {"role": "ExplosiveDevice", "token": null}, {"role": "Place", "token": null}]}]
+    <div id='events-data' hidden>
+      [{"event_id": "wiki_ied_bombings_1_news_9-E1", "text": "went off", "offset": 52, "length": 2, "template": "[Attacker] detonated or exploded [ExplosiveDevice] explosive device using [Instrument] to attack [Target] target at [Place] place", "role_text_map": [{"role": "Attacker", "token": null}, {"role": "Target", "token": null}, {"role": "Instrument", "token": {"text": "bombs", "entity_id": "wiki_ied_bombings_1_news_9-T7", "offset": 51, "length": 1}}, {"role": "ExplosiveDevice", "token": null}, {"role": "Place", "token": null}]}]
+    </div>
+
+    <div id='relations-data' hidden>
+      []
     </div>
 
     <p>
@@ -38,9 +42,7 @@
     <section>
       <div style="margin-top:10px;">
         <em>
-          These are bootstrap question answer pairs generated by GPT. Not all QA
-          pairs are correct or relevant, but feel free to copy/paste the samples that are accurate
-          enough, and make edits on top.
+          These are bootstrap question answer pairs generated by GPT. 
         </em>
         <div id='bootstrap-area' class='ann well well-sm'>
         </div>
@@ -48,9 +50,15 @@
 
       <div style="margin-top:10px;">
         <em>
-          These are KAIROS event arguments for the trigger. You can use them to help you write QA pairs.
-          The underlying meaning of such pairs should be "Q: What is arg X of the event? A: arg X is Y".
-          But the formatting of the QA pairs must be as in the instructions.
+          These are relations between events.
+        </em>
+        <div id='relations-area' class='ann well well-sm'>
+        </div>
+      </div>
+
+      <div style="margin-top:10px;">
+        <em>
+          KAIROS event arguments for triggers
         </em>
         <div id='template-area' class='ann well well-sm'>
         </div>
@@ -90,6 +98,10 @@
     .mg-15 {
       margin-left: 15px;
       margin-right: 15px;
+    }
+
+    .mg-5 {
+      margin: 5px;
     }
 
     .container-fluid {
@@ -203,7 +215,8 @@
     var submit = $('#submitButton');
 
     // list of text/offset objects 
-    var triggers_list = JSON.parse($('#raw-data').text().trim());
+    let events_data = JSON.parse($('#events-data').text().trim());
+    let relations_data = JSON.parse($('#relations-data').text().trim());
 
     const empty_template_map = function () {
       return $('<div class="template-map">');
@@ -211,7 +224,7 @@
 
     let save_record = [];
     let template_record = [];
-    triggers_list.forEach(function (_, idx) {
+    events_data.forEach(function (_, idx) {
       template_record[idx] = empty_template_map();
     });
 
@@ -233,11 +246,11 @@
     // ---------------------------------------------------------
 
     var makeDom = function () {
-      make_trigger();
+      highlightEvent();
       recoverUserInput();
     };
 
-    var make_trigger = function () {
+    var highlightEvent = function () {
       /* highlight trigger within document */
 
       // remove previous highlights
@@ -255,16 +268,92 @@
 
     }
 
+    const relationTypes = [
+      "BEFORE",
+      "AFTER",
+      "OVERLAPS",
+      "RIGHT-AFTER",
+      "RIGHT-BEFORE",
+      "EQUAL",
+      "CONTAINS",
+      "CAUSALITY",
+    ]
+
     // restore input from other trigger
     var recoverUserInput = function () {
+      // insert template mapping
       const templateArea = $('#template-area');
-      // simply swap out the input area DOM element!
       templateArea.empty()
-      
       page_num_set.forEach(trigger_num => {
         templateArea.append(template_record[trigger_num]);
       });
+
+      // relations
+      const relationsArea = $('#relations-area');
+      relationsArea.empty();
+
+      const pagenos = Array.from(page_num_set);
+      pagenos.forEach(i => {
+        pagenos.forEach(j => {
+          if (i == j) return;
+
+          const event1 = events_data[i];
+          const event2 = events_data[j];
+          const select = makeRelationSelect(event1, event2);
+          relationsArea.append(select);
+        })
+      })
     };
+
+    function makeRelationSelect(event1, event2) {
+      const id1 = event1.event_id;
+      const id2 = event2.event_id;
+      const relation = relations_data.find(r => 
+        r.event1_id == id1 && 
+        r.event2_id == id2
+      );
+
+      const selectInput =
+        $(`<select class="relation-select mg-5">`);
+      
+      relationTypes.forEach(type => {
+        const option = $(`<option value="${type}">${type.toLowerCase()}</option>`);
+        selectInput.append(option);
+      });
+      selectInput.append($(`<option value="NONE">none</option>`));
+
+      selectInput.val(relation?.type ?? "NONE");
+      selectInput.on('change', function () {
+        const type = $(this).val();
+        const event1_id = id1;
+        const event2_id = id2;
+        const relation = relations_data.find(r => 
+          r.event1_id == event1_id && 
+          r.event2_id == event2_id
+        );
+        if (relation) {
+          relation.type = type;
+        } else {
+          relations_data.push({
+            event1_id,
+            event2_id,
+            type,
+          });
+        }
+      });
+
+      function describeEvent(event) {
+        console.log(event)
+        return `${event.text} @ ${event.offset}`;
+      }
+
+      const div = $('<div>')
+        .append($('<label>').text(describeEvent(event1)))
+        .append(selectInput)
+        .append($('<label>').text(describeEvent(event2)))
+
+      return div;
+    }
 
     // ensure something is in the input box
     var canSubmit = function () {
@@ -403,9 +492,9 @@
     };
 
     // dynamically create buttons for each SRL arg
-    triggers_list.forEach(function (trigger, i) {
+    events_data.forEach(function (trigger, i) {
       if (trigger.text.trim()) {
-        console.log(trigger);
+        //console.log(trigger);
         var button = document.createElement("button");
         button.setAttribute("type", "button");
         button.setAttribute("id", "button-page-" + i);
@@ -466,41 +555,16 @@
 
     var save_all = function () {
       save_record.qapairs = [];
-      save_record.triggers = [];
-      // save all input
-      triggers_list.forEach(function (trigger, idx) {
-        // initialize record
-        save_record.triggers[idx] = {
-          event_id: trigger.event_id,
-          trigger: {
-            text: trigger.text,
-            offset: trigger.offset
-          },
-          template: trigger.template,
-          role_map: {},
-        };
+      save_record.relations = relations_data.filter(r => r.type !== "NONE");
 
-        // get input elements
-        const template_input_area = template_record[idx];
-        const template_inputs = template_input_area.children();
-
-        // traverse over elements to get role mappings
-        template_inputs.each(function (_, input) {
-          const role = $(input).children('.role-field').attr('role');
-          const text = $(input).children('.role-field').val();
-
-          save_record.triggers[idx].role_map[role] = text;
-        });
-      });
-
-      const trigger_input_area = $('#input-area');
-      const trigger_inputs = trigger_input_area.children();
+      const inputAreas = $('#input-area').children();
 
       // traverse over elements to get QA pairs
-      trigger_inputs.each(function (_, input) {
+      inputAreas.each(function (_, input) {
+        const $input = $(input);
         // save qa pairs
-        const question = $(input).children('.question-input').val();
-        const answer = $(input).children('.answer-input').val();
+        const question = $input.children('.question-input').val();
+        const answer = $input.children('.answer-input').val();
         save_record.qapairs.push({
           'question': question,
           'answer': answer
