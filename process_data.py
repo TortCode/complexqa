@@ -77,7 +77,8 @@ def get_template_and_role_mapping(event, entity_map) -> Tuple[str, List[dict]]:
             return None, [] # just give up
 
     template = event_role['template']
-    role_text_map = [{'role':role, 'token':role_mapping_dict.get(role)} for role in event_role['roles']]
+    role_text_map = [{'role':role, 'token':role_mapping_dict.get(role)}
+                     for role in event_role['roles']]
     return template, role_text_map
 
 def detokenize_and_collapsews(tokens: List[str]) -> str:
@@ -126,12 +127,12 @@ def csv_opener(mode: str):
 
 def add_indices(raw_tokens: List[str], triggers: List[dict]):
     """Marks each trigger with an HTML tag"""
-    for i, t in enumerate(triggers):
-        p = t['offset']
-        pl = t['length']
+    for i, trigger in enumerate(triggers):
+        p = trigger['offset']
+        pl = trigger['length']
         raw_tokens[p] = f"<trigger id='trigger-{i}'>{raw_tokens[p]}"
         raw_tokens[p+pl-1] += f"</trigger>"
-        for arg in t['role_text_map']:
+        for arg in trigger['role_text_map']:
             if arg['token'] is not None:
                 q = arg['token']['offset']
                 ql = arg['token']['length']

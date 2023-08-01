@@ -127,7 +127,13 @@
     }
 
     #template-area {
-      background-color: #75c3e7;
+      background-color: #eee;
+      display: flex;
+    }
+
+    .template-map {
+      border: 1px solid gray;
+      padding: 5px;
     }
 
     .btn-container>button {
@@ -190,7 +196,7 @@
     // Global
     // ---------------------------------------------------------
 
-    var page_num = 0;
+    var page_num_set = new Set();
 
     // ---------------------------------------------------------
     // Create jQuery elements
@@ -201,14 +207,14 @@
     // list of text/offset objects 
     var triggers_list = JSON.parse($('#raw-data').text().trim());
 
-    const empty_template_area = function () {
-      return $('<div id="template-area">');
+    const empty_template_map = function () {
+      return $('<div class="template-map">');
     }
 
     let save_record = [];
     let template_record = [];
     triggers_list.forEach(function (_, idx) {
-      template_record[idx] = empty_template_area();
+      template_record[idx] = empty_template_map();
     });
 
     // implementation of string formatting
@@ -228,31 +234,38 @@
     // Create elements
     // ---------------------------------------------------------
 
-    var makeDom = function (page_count) {
-      make_trigger(page_count);
-      recoverUserInput(page_count);
+    var makeDom = function () {
+      make_trigger();
+      recoverUserInput();
     };
 
-    var make_trigger = function (question_num) {
+    var make_trigger = function () {
       /* highlight trigger within document */
 
-      const trigger = triggers_list[question_num];
       // remove previous highlights
       $('trigger').removeClass('highlight-trigger');
       $('role').removeClass('highlight-role');
-      // highlight trigger
-      $('#trigger-' + question_num).addClass('highlight-trigger');
-      $('role[trigno=' + question_num + ']').addClass('highlight-role');
+
+      page_num_set.forEach(trigger_num => {
+        // highlight trigger
+        $('#trigger-' + trigger_num).addClass('highlight-trigger');
+        $('role[trigno=' + trigger_num + ']').addClass('highlight-role');
+      })
 
       /* update bootstrap questions */
-      $('#bootstrap-area').html(trigger.bootstrap ?? 'no bootstrap available');
+      //$('#bootstrap-area').html(trigger.bootstrap ?? 'no bootstrap available');
 
     }
 
     // restore input from other trigger
-    var recoverUserInput = function (claim_num) {
+    var recoverUserInput = function () {
+      const templateArea = $('#template-area');
       // simply swap out the input area DOM element!
-      $('#template-area').replaceWith(template_record[claim_num]);
+      templateArea.empty()
+      
+      page_num_set.forEach(trigger_num => {
+        templateArea.append(template_record[trigger_num]);
+      });
     };
 
     // ensure something is in the input box
@@ -376,7 +389,7 @@
 
     var show = function () {
       for (button of document.getElementById('button-bar').getElementsByTagName('*')) {
-        if (page_num == button.getAttribute('page-no'))
+        if (page_num_set.has(parseInt(button.getAttribute('page-no'))))
           select_button($(button));
         else
           deselect_button($(button));
@@ -402,8 +415,13 @@
         button.setAttribute("class", "btn btn-default");
         button.innerHTML = trigger.text + " @ token " + trigger.offset;
         button.onclick = function () {
-          page_num = parseInt(this.getAttribute("page-no"));
-          makeDom(page_num);
+          const pageno = parseInt(this.getAttribute("page-no"));
+          // toggle button
+          if (button.classList.contains('btn-default'))
+            page_num_set.add(pageno);
+          else
+            page_num_set.delete(pageno);
+          makeDom();
           let instruction = $('#instructionBody');
           if (instruction.is(':visible')) {
             instruction.toggle();
@@ -430,6 +448,17 @@
         });
       }
     })
+
+    var clear_button = document.createElement("button");
+    clear_button.setAttribute("type", "button");
+    clear_button.setAttribute("class", "btn btn-default");
+    clear_button.innerHTML = "Clear Triggers";
+    clear_button.onclick = function () {
+      page_num_set.clear();
+      makeDom();
+      show();
+    }
+    document.getElementById('button-bar').appendChild(clear_button);
 
     // ---------------------------------------------------------
     // Initialize
