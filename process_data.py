@@ -4,6 +4,7 @@ import argparse
 from time import sleep
 from nltk.tokenize.treebank import TreebankWordDetokenizer
 from typing import List, Tuple
+from collections import defaultdict
 import re
 
 configs=argparse.Namespace()
@@ -27,7 +28,7 @@ def main():
 
         # parse each line of jsonl file
         start_idx = configs.start
-        end_idx = configs.end if configs.end != -1 else len(train_json) 
+        end_idx = configs.end if configs.end != -1 else (len(train_json) - 1)
 
         for line in train_json[start_idx:(end_idx+1)]:
             example = json.loads(line.encode('utf-8'))
@@ -39,6 +40,7 @@ def main():
             for entity in example['entity_mentions']}
             # convert events to metatriggers
             metatriggers = [event_to_metatrigger(event, entity_map) for event in example['event_mentions']]
+            metatriggers.sort(key=lambda x: x['offset'])
 
             # add markup about triggers and their indices to tokens
             add_indices(tokens, metatriggers)
@@ -68,8 +70,10 @@ def get_template_and_role_mapping(event, entity_map) -> Tuple[str, List[dict]]:
             'entity_id': id,
             **entity_map[id],
         }
-
-    role_mapping_dict = {arg['role']: process_arg(arg) for arg in event['arguments']}
+    
+    role_mapping_dict = defaultdict(list)
+    for arg in event['arguments']:
+        role_mapping_dict[arg['role']].append(process_arg(arg))
     
     event_type = event['event_type']
     event_role = kairos_roles.get(event_type)
@@ -81,8 +85,9 @@ def get_template_and_role_mapping(event, entity_map) -> Tuple[str, List[dict]]:
             return None, [] # just give up
 
     template = event_role['template']
-    role_text_map = [{'role':role, 'token':role_mapping_dict.get(role)}
-                     for role in event_role['roles']]
+    role_text_map = [
+        {'role':role, 'tokens':role_mapping_dict[role]}
+        for role in event_role['roles']]
     return template, role_text_map
 
 def detokenize_and_collapsews(tokens: List[str]) -> str:
@@ -109,7 +114,7 @@ def get_args() -> argparse.Namespace:
                         help='jsonl file to parse', metavar='src')
     parser.add_argument('-k', '--kairos', type=argparse.FileType("r"),
                         help='kairos roles file')
-    parser.add_argument('-o', '--output', type=csv_opener("w"), 
+    parser.add_argument('-o', '--output', type=csv_filetype("w"), 
                         help='output file')
     parser.add_argument('-s', '--start', type=int, default=0, 
                         help='start index (inclusive) of range to parse in file; default: beginning of file')
@@ -119,7 +124,7 @@ def get_args() -> argparse.Namespace:
                         help='set debugging on')
     parser.parse_args(namespace=configs)
 
-def csv_opener(mode: str):
+def csv_filetype(mode: str):
     """Returns a function that opens a csv file in the specified mode """
     def opencsv(path: str) :
         """Opens a csv file in the specified mode"""
@@ -137,10 +142,11 @@ def add_indices(raw_tokens: List[str], triggers: List[dict]):
         raw_tokens[p] = f"<trigger id='trigger-{i}'>{raw_tokens[p]}"
         raw_tokens[p+pl-1] += f"</trigger>"
         for arg in trigger['role_text_map']:
-            if arg['token'] is not None:
-                q = arg['token']['offset']
-                ql = arg['token']['length']
-                raw_tokens[q] = f"<role id='role-{i}-{arg['role']}' trigno='{i}'>{raw_tokens[q]}"
+            for j, tok in enumerate(arg['tokens']):
+                q = tok['offset']
+                ql = tok['length']
+                raw_tokens[q] = \
+                    f"<role id='role-{i}-{arg['role']}-{j}' trigno='{i}'>{raw_tokens[q]}"
                 raw_tokens[q+ql-1] += f"</role>"
 
 if __name__ == '__main__':

@@ -21,7 +21,7 @@
     </div>
 
     <div id='events-data' hidden>
-      [{"event_id": "scenario_en_29-E1", "text": "inauguration", "offset": 49, "length": 1, "template": "[Employee] started working in [Position] position at [PlaceOfEmployment] organization in [Place] place", "role_text_map": [{"role": "Employee", "token": null}, {"role": "PlaceOfEmployment", "token": null}, {"role": "Position", "token": null}, {"role": "Place", "token": null}]}]
+      [{"event_id": "scenario_en_29-E1", "text": "inauguration", "offset": 49, "length": 1, "template": "[Employee] started working in [Position] position at [PlaceOfEmployment] organization in [Place] place", "role_text_map": [{"role": "Employee", "tokens": []}, {"role": "PlaceOfEmployment", "tokens": []}, {"role": "Position", "tokens": []}, {"role": "Place", "tokens": []}]}]
     </div>
 
     <div id='relations-data' hidden>
@@ -314,13 +314,13 @@
       );
 
       const selectInput =
-        $(`<select class="relation-select mg-5">`);
+        $('<select class="relation-select mg-5">');
       
       relationTypes.forEach(type => {
         const option = $(`<option value="${type}">${type.toLowerCase()}</option>`);
         selectInput.append(option);
       });
-      selectInput.append($(`<option value="NONE">none</option>`));
+      selectInput.append($('<option value="NONE">none</option>'));
 
       selectInput.val(relation?.type ?? "NONE");
       selectInput.on('change', function () {
@@ -531,7 +531,7 @@
         const template = $('<p>').text(trigger.template);
         template_area.append(template);
         trigger.role_text_map.forEach(function (pairing) {
-          template_area.append(make_role_mapping_element(pairing.role, pairing.token?.text));
+          template_area.append(make_role_mapping_element(pairing.role, pairing.tokens.map(tk => tk.text).join('/')));
         });
       }
     })

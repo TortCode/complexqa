@@ -21,7 +21,7 @@
     </div>
 
     <div id='events-data' hidden>
-      [{"event_id": "scenario_en_kairos_67-E1", "text": "bombings", "offset": 147, "length": 1, "template": "[Perpetrator] committed a crime against [Victim] at [Place] place", "role_text_map": [{"role": "Perpetrator", "token": null}, {"role": "Victim", "token": null}, {"role": "Place", "token": null}]}, {"event_id": "scenario_en_kairos_67-E2", "text": "Carjacking", "offset": 622, "length": 1, "template": "[Perpetrator] committed a crime against [Victim] at [Place] place", "role_text_map": [{"role": "Perpetrator", "token": null}, {"role": "Victim", "token": null}, {"role": "Place", "token": null}]}, {"event_id": "scenario_en_kairos_67-E3", "text": "Kidnapping", "offset": 624, "length": 1, "template": "[Perpetrator] committed a crime against [Victim] at [Place] place", "role_text_map": [{"role": "Perpetrator", "token": null}, {"role": "Victim", "token": null}, {"role": "Place", "token": null}]}, {"event_id": "scenario_en_kairos_67-E4", "text": "killed", "offset": 629, "length": 1, "template": "[Victim] died at [Place] place from [MedicalIssue] medical issue, killed by [Killer] killer", "role_text_map": [{"role": "Victim", "token": null}, {"role": "Place", "token": null}, {"role": "Killer", "token": null}, {"role": "MedicalIssue", "token": null}]}]
+      [{"event_id": "scenario_en_kairos_67-E1", "text": "bombings", "offset": 147, "length": 1, "template": "[Perpetrator] committed a crime against [Victim] at [Place] place", "role_text_map": [{"role": "Perpetrator", "tokens": []}, {"role": "Victim", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "scenario_en_kairos_67-E2", "text": "Carjacking", "offset": 622, "length": 1, "template": "[Perpetrator] committed a crime against [Victim] at [Place] place", "role_text_map": [{"role": "Perpetrator", "tokens": []}, {"role": "Victim", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "scenario_en_kairos_67-E3", "text": "Kidnapping", "offset": 624, "length": 1, "template": "[Perpetrator] committed a crime against [Victim] at [Place] place", "role_text_map": [{"role": "Perpetrator", "tokens": []}, {"role": "Victim", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "scenario_en_kairos_67-E4", "text": "killed", "offset": 629, "length": 1, "template": "[Victim] died at [Place] place from [MedicalIssue] medical issue, killed by [Killer] killer", "role_text_map": [{"role": "Victim", "tokens": []}, {"role": "Place", "tokens": []}, {"role": "Killer", "tokens": []}, {"role": "MedicalIssue", "tokens": []}]}]
     </div>
 
     <div id='relations-data' hidden>
@@ -314,13 +314,13 @@
       );
 
       const selectInput =
-        $(`<select class="relation-select mg-5">`);
+        $('<select class="relation-select mg-5">');
       
       relationTypes.forEach(type => {
         const option = $(`<option value="${type}">${type.toLowerCase()}</option>`);
         selectInput.append(option);
       });
-      selectInput.append($(`<option value="NONE">none</option>`));
+      selectInput.append($('<option value="NONE">none</option>'));
 
       selectInput.val(relation?.type ?? "NONE");
       selectInput.on('change', function () {
@@ -531,7 +531,7 @@
         const template = $('<p>').text(trigger.template);
         template_area.append(template);
         trigger.role_text_map.forEach(function (pairing) {
-          template_area.append(make_role_mapping_element(pairing.role, pairing.token?.text));
+          template_area.append(make_role_mapping_element(pairing.role, pairing.tokens.map(tk => tk.text).join('/')));
         });
       }
     })

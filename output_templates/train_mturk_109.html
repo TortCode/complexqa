@@ -17,11 +17,11 @@
 
     <h3>Document</h3>
     <div id="document-text" class="ann well well-sm">
-      A suicide car <role id='role-0-ExplosiveDevice'trigno='0'>bombing</role> <trigger id='trigger-0'>occurred</trigger> in <role id='role-0-Place'trigno='0'>Ghazni</role>, Afghanistan on 7 July 2019. It <trigger id='trigger-1'>killed</trigger> 14 <role id='role-1-Victim'trigno='1'>people</role> and <trigger id='trigger-2'>injured</trigger> another <role id='role-2-Victim'trigno='2'>180</role>. The <role id='role-3-Communicator'trigno='3'>Taliban</role> has <trigger id='trigger-3'>claimed</trigger> responsibility for the attack. == See also == * July 2019 Kabul attack (disambiguation) == References ==
+      A suicide car <role id='role-0-ExplosiveDevice-0'trigno='0'>bombing</role> <trigger id='trigger-0'>occurred</trigger> in <role id='role-0-Place-0'trigno='0'>Ghazni</role>, Afghanistan on 7 July 2019. It <trigger id='trigger-1'>killed</trigger> 14 <role id='role-1-Victim-0'trigno='1'>people</role> and <trigger id='trigger-2'>injured</trigger> another <role id='role-2-Victim-0'trigno='2'>180</role>. The <role id='role-3-Communicator-0'trigno='3'>Taliban</role> has <trigger id='trigger-3'>claimed</trigger> responsibility for the attack. == See also == * July 2019 Kabul attack (disambiguation) == References ==
     </div>
 
     <div id='events-data' hidden>
-      [{"event_id": "suicide_ied_111-E1", "text": "occurred", "offset": 4, "length": 1, "template": "[Attacker] detonated or exploded [ExplosiveDevice] explosive device using [Instrument] to attack [Target] target at [Place] place", "role_text_map": [{"role": "Attacker", "token": null}, {"role": "Target", "token": null}, {"role": "Instrument", "token": null}, {"role": "ExplosiveDevice", "token": {"text": "bombing", "entity_id": "suicide_ied_111-T9", "offset": 3, "length": 1}}, {"role": "Place", "token": {"text": "Ghazni", "entity_id": "suicide_ied_111-T2", "offset": 6, "length": 1}}]}, {"event_id": "suicide_ied_111-E2", "text": "killed", "offset": 15, "length": 1, "template": "[Victim] died at [Place] place from [MedicalIssue] medical issue, killed by [Killer] killer", "role_text_map": [{"role": "Victim", "token": {"text": "people", "entity_id": "suicide_ied_111-T4", "offset": 17, "length": 1}}, {"role": "Place", "token": null}, {"role": "Killer", "token": null}, {"role": "MedicalIssue", "token": null}]}, {"event_id": "suicide_ied_111-E3", "text": "injured", "offset": 19, "length": 1, "template": "[Victim] was injured by [Injurer] using [Instrument] in [BodyPart] body part with [MedicalCondition] medical issue at [Place] place", "role_text_map": [{"role": "Victim", "token": {"text": "180", "entity_id": "suicide_ied_111-T5", "offset": 21, "length": 1}}, {"role": "Injurer", "token": null}, {"role": "Instrument", "token": null}, {"role": "BodyPart", "token": null}, {"role": "MedicalCondition", "token": null}, {"role": "Place", "token": null}]}, {"event_id": "suicide_ied_111-E4", "text": "claimed", "offset": 26, "length": 1, "template": "[Communicator] communicated to [Recipient] about [Topic] topic using [Instrument] at [Place] place (one-way communication)", "role_text_map": [{"role": "Communicator", "token": {"text": "Taliban", "entity_id": "suicide_ied_111-T6", "offset": 24, "length": 1}}, {"role": "Recipient", "token": null}, {"role": "Instrument", "token": null}, {"role": "Topic", "token": null}, {"role": "Place", "token": null}]}]
+      [{"event_id": "suicide_ied_111-E1", "text": "occurred", "offset": 4, "length": 1, "template": "[Attacker] detonated or exploded [ExplosiveDevice] explosive device using [Instrument] to attack [Target] target at [Place] place", "role_text_map": [{"role": "Attacker", "tokens": []}, {"role": "Target", "tokens": []}, {"role": "Instrument", "tokens": []}, {"role": "ExplosiveDevice", "tokens": [{"text": "bombing", "entity_id": "suicide_ied_111-T9", "offset": 3, "length": 1}]}, {"role": "Place", "tokens": [{"text": "Ghazni", "entity_id": "suicide_ied_111-T2", "offset": 6, "length": 1}]}]}, {"event_id": "suicide_ied_111-E2", "text": "killed", "offset": 15, "length": 1, "template": "[Victim] died at [Place] place from [MedicalIssue] medical issue, killed by [Killer] killer", "role_text_map": [{"role": "Victim", "tokens": [{"text": "people", "entity_id": "suicide_ied_111-T4", "offset": 17, "length": 1}]}, {"role": "Place", "tokens": []}, {"role": "Killer", "tokens": []}, {"role": "MedicalIssue", "tokens": []}]}, {"event_id": "suicide_ied_111-E3", "text": "injured", "offset": 19, "length": 1, "template": "[Victim] was injured by [Injurer] using [Instrument] in [BodyPart] body part with [MedicalCondition] medical issue at [Place] place", "role_text_map": [{"role": "Victim", "tokens": [{"text": "180", "entity_id": "suicide_ied_111-T5", "offset": 21, "length": 1}]}, {"role": "Injurer", "tokens": []}, {"role": "Instrument", "tokens": []}, {"role": "BodyPart", "tokens": []}, {"role": "MedicalCondition", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "suicide_ied_111-E4", "text": "claimed", "offset": 26, "length": 1, "template": "[Communicator] communicated to [Recipient] about [Topic] topic using [Instrument] at [Place] place (one-way communication)", "role_text_map": [{"role": "Communicator", "tokens": [{"text": "Taliban", "entity_id": "suicide_ied_111-T6", "offset": 24, "length": 1}]}, {"role": "Recipient", "tokens": []}, {"role": "Instrument", "tokens": []}, {"role": "Topic", "tokens": []}, {"role": "Place", "tokens": []}]}]
     </div>
 
     <div id='relations-data' hidden>
@@ -314,13 +314,13 @@
       );
 
       const selectInput =
-        $(`<select class="relation-select mg-5">`);
+        $('<select class="relation-select mg-5">');
       
       relationTypes.forEach(type => {
         const option = $(`<option value="${type}">${type.toLowerCase()}</option>`);
         selectInput.append(option);
       });
-      selectInput.append($(`<option value="NONE">none</option>`));
+      selectInput.append($('<option value="NONE">none</option>'));
 
       selectInput.val(relation?.type ?? "NONE");
       selectInput.on('change', function () {
@@ -531,7 +531,7 @@
         const template = $('<p>').text(trigger.template);
         template_area.append(template);
         trigger.role_text_map.forEach(function (pairing) {
-          template_area.append(make_role_mapping_element(pairing.role, pairing.token?.text));
+          template_area.append(make_role_mapping_element(pairing.role, pairing.tokens.map(tk => tk.text).join('/')));
         });
       }
     })

@@ -314,13 +314,13 @@
       );
 
       const selectInput =
-        $(`<select class="relation-select mg-5">`);
+        $('<select class="relation-select mg-5">');
       
       relationTypes.forEach(type => {
         const option = $(`<option value="${type}">${type.toLowerCase()}</option>`);
         selectInput.append(option);
       });
-      selectInput.append($(`<option value="NONE">none</option>`));
+      selectInput.append($('<option value="NONE">none</option>'));
 
       selectInput.val(relation?.type ?? "NONE");
       selectInput.on('change', function () {
@@ -531,7 +531,7 @@
         const template = $('<p>').text(trigger.template);
         template_area.append(template);
         trigger.role_text_map.forEach(function (pairing) {
-          template_area.append(make_role_mapping_element(pairing.role, pairing.token?.text));
+          template_area.append(make_role_mapping_element(pairing.role, pairing.tokens.map(tk => tk.text).join('/')));
         });
       }
     })

@@ -19,7 +19,7 @@ Event = {
 
 RoleTextMap = {
     role: str (role name),
-    token: Token | null,
+    tokens: [Token],
 }
 
 Token = {
