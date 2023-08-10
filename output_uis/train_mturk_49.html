@@ -1,0 +1,793 @@
+<crowd-form answer-format="flatten-objects">
+  <section class="container-fluid" id="Relevancy">
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <div class="panel panel-primary">
+          <a class="panel-heading" href="javascript:void(0);" id="collapseTrigger">
+            <strong>Annotation Instructions</strong>
+            <span class="collapse-text">(Click to expand)</span>
+          </a>
+          <div class="panel-body" id="instructionBody">
+            {{INSTRUCTIONS}}
+            {{LINK}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    Enable developer mode:
+    <input type="checkbox" id="developer-mode">
+
+    <h3>Document</h3>
+    <div id="document-text" class="ann well well-sm">
+      Roadside bomb <trigger id='trigger-0'>kills</trigger> 15 <role id='role-0-Victim-0'trigno='0'>civilians</role> in northern <role id='role-0-Place-0'trigno='0'>Afghanistan</role> <role id='role-1-Participant-0'trigno='1'><role id='role-1-Participant-0'trigno='1'>Officials</role></role> <trigger id='trigger-1'>say</trigger> families were on their way to a wedding party when their vehicle <trigger id='trigger-2'>hit</trigger> an improvised <role id='role-2-ExplosiveDevice-0'trigno='2'>explosive device</role>. At least 15 Afghan <role id='role-3-Victim-0'trigno='3'>civilians</role>, including six <role id='role-3-Victim-1'trigno='3'>women</role> and eight <role id='role-3-Victim-2'trigno='3'>children</role>, were <trigger id='trigger-3'>killed</trigger> when their vehicle hit a roadside bomb in Afghanistan ‘ s northern <role id='role-3-Place-0'trigno='3'>Kunduz province</role>. <role id='role-4-Participant-0'trigno='4'><role id='role-4-Participant-0'trigno='4'>Mahbubullah Sayedi</role></role>, district chief of Imam Sahib, which was the scene of heavy fighting between government forces and Taliban fighters in recent months, <trigger id='trigger-4'>said</trigger> the incident occurred on a main road. “The families were on their way to a wedding ceremony when, unfortunately, their vehicle <trigger id='trigger-5'>hit</trigger> a roadside <role id='role-5-ExplosiveDevice-0'trigno='5'>bomb</role> that <trigger id='trigger-6'>killed</trigger> <role id='role-6-Victim-0'trigno='6'>them</role>,” Sayedi said. The provincial governor, <role id='role-7-Participant-0'trigno='7'><role id='role-7-Participant-0'trigno='7'>Abdul Jabar Naeemi</role></role>, <trigger id='trigger-7'>said</trigger> the area where the incident happened is controlled by the Taliban, whom he blamed for the tragedy. Elsewhere in the country, local media reported at least 13 <role id='role-8-Victim-0'trigno='8'>civilians</role> were <trigger id='trigger-8'>wounded</trigger> in a car <role id='role-8-Instrument-0'trigno='8'>bomb</role> explosion in Sar-e-Pul province. Quoting <role id='role-9-Participant-0'trigno='9'><role id='role-9-Participant-0'trigno='9'>Noor Agha Faizi</role></role>, spokesman for the Sar-e-Pul police, TOLO News <trigger id='trigger-9'>said</trigger> the explosion took place as the “Taliban were trying to move a car full of explosives to the centre of the province.” As the conflict between the foreign-backed Afghan government forces and Taliban fighters has dragged on for more than 18 years, civilians continue to bear the brunt of war with record numbers of casualties. At least 3, 812 <role id='role-11-Victim-0'trigno='11'><role id='role-10-Victim-0'trigno='10'>civilians</role></role> were <trigger id='trigger-10'>killed</trigger> and <trigger id='trigger-11'>wounded</trigger> in the first half of this year in violent incidents across the <role id='role-10-Place-0'trigno='10'>country</role>. In the same period, 144 <role id='role-12-Victim-1'trigno='12'>women</role> and 327 <role id='role-12-Victim-0'trigno='12'>children</role> were <trigger id='trigger-12'>killed</trigger> and more than <role id='role-13-Victim-0'trigno='13'>1, 000 more</role> <trigger id='trigger-13'>wounded</trigger>, the <role id='role-14-Participant-0'trigno='14'><role id='role-14-Participant-0'trigno='14'>UN</role></role> <trigger id='trigger-14'>said</trigger>. Pro-government <role id='role-16-Injurer-0'trigno='16'><role id='role-15-Killer-0'trigno='15'>forces</role></role> <trigger id='trigger-15'>killed</trigger> 717 <role id='role-15-Victim-0'trigno='15'>Afghans</role> and <trigger id='trigger-16'>wounded</trigger> <role id='role-16-Victim-0'trigno='16'>680</role> in the six months to June 30–a 31 percent increase from 2018. 
+    </div>
+
+    <div id='events-data' hidden>
+      [{"event_id": "road_ied_4-E1", "text": "kills", "offset": 2, "length": 1, "template": "[Victim] died at [Place] place from [MedicalIssue] medical issue, killed by [Killer] killer", "role_text_map": [{"role": "Victim", "tokens": [{"text": "civilians", "entity_id": "road_ied_4-T2", "offset": 4, "length": 1}]}, {"role": "Place", "tokens": [{"text": "Afghanistan", "entity_id": "road_ied_4-T3", "offset": 7, "length": 1}]}, {"role": "Killer", "tokens": []}, {"role": "MedicalIssue", "tokens": []}]}, {"event_id": "road_ied_4-E13", "text": "say", "offset": 9, "length": 1, "template": "[Participant] communicated with [Participant] about [Topic] topic at [Place] place (document does not specify in person or not, or one-way or not)", "role_text_map": [{"role": "Participant", "tokens": [{"text": "Officials", "entity_id": "road_ied_4-T4", "offset": 8, "length": 1}]}, {"role": "Participant", "tokens": [{"text": "Officials", "entity_id": "road_ied_4-T4", "offset": 8, "length": 1}]}, {"role": "Topic", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "road_ied_4-E2", "text": "hit", "offset": 22, "length": 1, "template": "[Attacker] detonated or exploded [ExplosiveDevice] explosive device using [Instrument] to attack [Target] target at [Place] place", "role_text_map": [{"role": "Attacker", "tokens": []}, {"role": "Target", "tokens": []}, {"role": "Instrument", "tokens": []}, {"role": "ExplosiveDevice", "tokens": [{"text": "explosive device", "entity_id": "road_ied_4-T9", "offset": 25, "length": 2}]}, {"role": "Place", "tokens": []}]}, {"event_id": "road_ied_4-E3", "text": "killed", "offset": 42, "length": 1, "template": "[Victim] died at [Place] place from [MedicalIssue] medical issue, killed by [Killer] killer", "role_text_map": [{"role": "Victim", "tokens": [{"text": "civilians", "entity_id": "road_ied_4-T12", "offset": 32, "length": 1}, {"text": "women", "entity_id": "road_ied_4-T13", "offset": 36, "length": 1}, {"text": "children", "entity_id": "road_ied_4-T14", "offset": 39, "length": 1}]}, {"role": "Place", "tokens": [{"text": "Kunduz province", "entity_id": "road_ied_4-T20", "offset": 55, "length": 2}]}, {"role": "Killer", "tokens": []}, {"role": "MedicalIssue", "tokens": []}]}, {"event_id": "road_ied_4-E14", "text": "said", "offset": 84, "length": 1, "template": "[Participant] communicated with [Participant] about [Topic] topic at [Place] place (document does not specify in person or not, or one-way or not)", "role_text_map": [{"role": "Participant", "tokens": [{"text": "Mahbubullah Sayedi", "entity_id": "road_ied_4-T21", "offset": 58, "length": 2}]}, {"role": "Participant", "tokens": [{"text": "Mahbubullah Sayedi", "entity_id": "road_ied_4-T21", "offset": 58, "length": 2}]}, {"role": "Topic", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "road_ied_4-E4", "text": "hit", "offset": 110, "length": 1, "template": "[Attacker] detonated or exploded [ExplosiveDevice] explosive device using [Instrument] to attack [Target] target at [Place] place", "role_text_map": [{"role": "Attacker", "tokens": []}, {"role": "Target", "tokens": []}, {"role": "Instrument", "tokens": []}, {"role": "ExplosiveDevice", "tokens": [{"text": "bomb", "entity_id": "road_ied_4-T36", "offset": 113, "length": 1}]}, {"role": "Place", "tokens": []}]}, {"event_id": "road_ied_4-E5", "text": "killed", "offset": 115, "length": 1, "template": "[Victim] died at [Place] place from [MedicalIssue] medical issue, killed by [Killer] killer", "role_text_map": [{"role": "Victim", "tokens": [{"text": "them", "entity_id": "road_ied_4-T37", "offset": 116, "length": 1}]}, {"role": "Place", "tokens": []}, {"role": "Killer", "tokens": []}, {"role": "MedicalIssue", "tokens": []}]}, {"event_id": "road_ied_4-E15", "text": "said", "offset": 130, "length": 1, "template": "[Participant] communicated with [Participant] about [Topic] topic at [Place] place (document does not specify in person or not, or one-way or not)", "role_text_map": [{"role": "Participant", "tokens": [{"text": "Abdul Jabar Naeemi", "entity_id": "road_ied_4-T40", "offset": 126, "length": 3}]}, {"role": "Participant", "tokens": [{"text": "Abdul Jabar Naeemi", "entity_id": "road_ied_4-T40", "offset": 126, "length": 3}]}, {"role": "Topic", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "road_ied_4-E6", "text": "wounded", "offset": 163, "length": 1, "template": "[Victim] was injured by [Injurer] using [Instrument] in [BodyPart] body part with [MedicalCondition] medical issue at [Place] place", "role_text_map": [{"role": "Victim", "tokens": [{"text": "civilians", "entity_id": "road_ied_4-T48", "offset": 161, "length": 1}]}, {"role": "Injurer", "tokens": []}, {"role": "Instrument", "tokens": [{"text": "bomb", "entity_id": "road_ied_4-T50", "offset": 167, "length": 1}]}, {"role": "BodyPart", "tokens": []}, {"role": "MedicalCondition", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "road_ied_4-E16", "text": "said", "offset": 194, "length": 1, "template": "[Participant] communicated with [Participant] about [Topic] topic at [Place] place (document does not specify in person or not, or one-way or not)", "role_text_map": [{"role": "Participant", "tokens": [{"text": "Noor Agha Faizi", "entity_id": "road_ied_4-T52", "offset": 178, "length": 3}]}, {"role": "Participant", "tokens": [{"text": "Noor Agha Faizi", "entity_id": "road_ied_4-T52", "offset": 178, "length": 3}]}, {"role": "Topic", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "road_ied_4-E7", "text": "killed", "offset": 264, "length": 1, "template": "[Victim] died at [Place] place from [MedicalIssue] medical issue, killed by [Killer] killer", "role_text_map": [{"role": "Victim", "tokens": [{"text": "civilians", "entity_id": "road_ied_4-T67", "offset": 262, "length": 1}]}, {"role": "Place", "tokens": [{"text": "country", "entity_id": "road_ied_4-T68", "offset": 279, "length": 1}]}, {"role": "Killer", "tokens": []}, {"role": "MedicalIssue", "tokens": []}]}, {"event_id": "road_ied_4-E8", "text": "wounded", "offset": 266, "length": 1, "template": "[Victim] was injured by [Injurer] using [Instrument] in [BodyPart] body part with [MedicalCondition] medical issue at [Place] place", "role_text_map": [{"role": "Victim", "tokens": [{"text": "civilians", "entity_id": "road_ied_4-T67", "offset": 262, "length": 1}]}, {"role": "Injurer", "tokens": []}, {"role": "Instrument", "tokens": []}, {"role": "BodyPart", "tokens": []}, {"role": "MedicalCondition", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "road_ied_4-E9", "text": "killed", "offset": 292, "length": 1, "template": "[Victim] died at [Place] place from [MedicalIssue] medical issue, killed by [Killer] killer", "role_text_map": [{"role": "Victim", "tokens": [{"text": "children", "entity_id": "road_ied_4-T70", "offset": 290, "length": 1}, {"text": "women", "entity_id": "road_ied_4-T69", "offset": 287, "length": 1}]}, {"role": "Place", "tokens": []}, {"role": "Killer", "tokens": []}, {"role": "MedicalIssue", "tokens": []}]}, {"event_id": "road_ied_4-E10", "text": "wounded", "offset": 300, "length": 1, "template": "[Victim] was injured by [Injurer] using [Instrument] in [BodyPart] body part with [MedicalCondition] medical issue at [Place] place", "role_text_map": [{"role": "Victim", "tokens": [{"text": "1,000 more", "entity_id": "road_ied_4-T71", "offset": 296, "length": 4}]}, {"role": "Injurer", "tokens": []}, {"role": "Instrument", "tokens": []}, {"role": "BodyPart", "tokens": []}, {"role": "MedicalCondition", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "road_ied_4-E17", "text": "said", "offset": 304, "length": 1, "template": "[Participant] communicated with [Participant] about [Topic] topic at [Place] place (document does not specify in person or not, or one-way or not)", "role_text_map": [{"role": "Participant", "tokens": [{"text": "UN", "entity_id": "road_ied_4-T73", "offset": 303, "length": 1}]}, {"role": "Participant", "tokens": [{"text": "UN", "entity_id": "road_ied_4-T73", "offset": 303, "length": 1}]}, {"role": "Topic", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "road_ied_4-E11", "text": "killed", "offset": 310, "length": 1, "template": "[Victim] died at [Place] place from [MedicalIssue] medical issue, killed by [Killer] killer", "role_text_map": [{"role": "Victim", "tokens": [{"text": "Afghans", "entity_id": "road_ied_4-T76", "offset": 312, "length": 1}]}, {"role": "Place", "tokens": []}, {"role": "Killer", "tokens": [{"text": "forces", "entity_id": "road_ied_4-T75", "offset": 309, "length": 1}]}, {"role": "MedicalIssue", "tokens": []}]}, {"event_id": "road_ied_4-E12", "text": "wounded", "offset": 314, "length": 1, "template": "[Victim] was injured by [Injurer] using [Instrument] in [BodyPart] body part with [MedicalCondition] medical issue at [Place] place", "role_text_map": [{"role": "Victim", "tokens": [{"text": "680", "entity_id": "road_ied_4-T77", "offset": 315, "length": 1}]}, {"role": "Injurer", "tokens": [{"text": "forces", "entity_id": "road_ied_4-T75", "offset": 309, "length": 1}]}, {"role": "Instrument", "tokens": []}, {"role": "BodyPart", "tokens": []}, {"role": "MedicalCondition", "tokens": []}, {"role": "Place", "tokens": []}]}]
+    </div>
+
+    <div id='relations-data' hidden>
+      []
+    </div>
+
+    <div id="strategyB-tuples" hidden>
+      ${strategyB-tuples}
+    </div>
+
+    <p>
+      You can navigate all of the events by clicking the following buttons. <br>
+      You have to finish all the events before submitting. (Remember that you can't refresh the page otherwise
+      the progress will be gone, <br>
+      to prevent this from happening, we suggest that you write the QA pairs in the google doc and copy paste them
+      here)
+    </p>
+    <!-- Tabs for each trigger -->
+    <div class="btn-toolbar" id="button-bar">
+    </div>
+
+    <div class="strategies">
+      <span id="strategy-btns">
+        <button id="selectA" class="btn btn-default" type="button">
+          Strategy A</button>
+        <button id="selectB" class="btn btn-default" type="button">
+          Strategy B</button>
+      </span>
+      <select id="tuple-select">
+      </select>
+      <div class="ann-component">
+        <em>
+          KAIROS event arguments for triggers
+        </em>
+        <div id='template-area' class='ann well well-sm'>
+        </div>
+      </div>
+      <div class="strategy" id="strategyA">
+        <div class="ann-component">
+          <em>
+            These are relations between events.
+          </em>
+          <div id='relations-area' class='ann well well-sm'>
+          </div>
+        </div>
+      </div>
+      <div class="strategy" id="strategyB">
+      </div>
+    </div>
+    <div id="input-area">
+    </div>
+    <div title="Fill all fields before submitting">
+      <button id="save" class="btn btn-default" type="button">Save</button>
+      <button id="submitButton" class="btn btn-default" type="button">Submit</button>
+    </div>
+  </section>
+
+
+  <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" rel="stylesheet" />
+  <style>.mg-15 {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.mg-5 {
+    margin: 5px;
+}
+
+.container-fluid {
+    max-width: 1800px;
+    margin: 30px;
+}
+
+.btn-container {
+    display: inline-block;
+    margin: 10px;
+}
+
+.strategies {
+    margin: 15px;
+}
+
+.ann-component {
+    margin: 5px;
+}
+
+
+#collapseTrigger {
+    color: #fff;
+    display: block;
+    text-decoration: none;
+}
+
+#submitButton {
+    white-space: normal;
+}
+
+#input-area {
+    display: block;
+    margin: 10px;
+}
+
+.input-fields {
+    margin: 10px;
+    padding: 10px;
+    background-color: #ffe3e3;
+    border-radius: 15px;
+}
+
+#template-area {
+    background-color: #eee;
+    display: flex;
+}
+
+#relations-area {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+.template-map {
+    border: 1px solid gray;
+    padding: 5px;
+}
+
+.btn-container>button {
+    min-width: 3em;
+}
+
+trigger {
+    display: inline;
+}
+
+role {
+    display: inline;
+}
+
+.highlight-trigger {
+    background-color: lightgoldenrodyellow;
+}
+
+.highlight-role {
+    background-color: lightblue;
+}
+
+.highlight-role1 {
+    background-color: rgba(255, 255, 0, 0.5);
+}
+
+.highlight-role2 {
+    background-color: rgba(0, 255, 255, 0.5);
+}
+
+.highlight-role3 {
+    background-color: rgba(255, 0, 255, 0.5);
+}
+
+.btn-group {
+    vertical-align: middle;
+}
+
+.content {
+    margin-bottom: 15px;
+}
+
+.ann {
+    font-size: 16px;
+}
+
+.disp {
+    font-size: 20px;
+}
+
+.ann>span.token {
+    cursor: pointer;
+}
+
+.ann>span.token:hover {
+    text-decoration: underline;
+}
+
+.ann>strong.annotation:hover {
+    text-decoration: line-through;
+}
+
+input[disabled] {
+    color: #000
+}
+
+.question-input, .answer-input {
+    vertical-align: middle;
+}</style>
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js"
+    integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+  <script>// ---------------------------------------------------------
+// Global
+// ---------------------------------------------------------
+
+var page_num_set = new Set();
+let strategy = '';
+let developer_mode = false;
+
+// ---------------------------------------------------------
+// Create jQuery elements
+// ---------------------------------------------------------
+
+var submit = $('#submitButton');
+
+// list of text/offset objects 
+const events_data = JSON.parse($('#events-data').text().trim());
+const relations_data = JSON.parse($('#relations-data').text().trim());
+const strategyB_tuples = [["road_ied_8-E1", "road_ied_8-E2", "road_ied_8-E3"]];//JSON.parse($('#strategyB-tuples').text().trim());
+
+const empty_template_map = function () {
+    return $('<div class="template-map">');
+}
+
+const save_record = {
+    A: {
+        relations: relations_data,
+        qapairs: [],
+    },
+    B: {
+        qapairs: [],
+    },
+};
+
+const strategyA_template = function (tno, event1, event2) {
+    return {
+        question: '',
+        answer: '',
+    }
+}
+
+const template_record = [];
+events_data.forEach(function (ei, i) {
+    template_record[i] = empty_template_map();
+    events_data.forEach(function (ej, j) {
+        if (i >= j) return;
+
+        for (let tno = 1; tno <= 4; tno++){
+            {
+                const { question, answer } = strategyA_template(tno, ei, ej);
+                save_record.A.qapairs.push({
+                    event1_id: ei.event_id,
+                    event2_id: ej.event_id,
+                    templateno: tno,
+                    question,
+                    answer,
+                });
+            }
+            {
+                const { question, answer } = strategyA_template(tno, ej, ei);
+                save_record.A.qapairs.push({
+                    event1_id: ej.event_id,
+                    event2_id: ei.event_id,
+                    templateno: tno,
+                    question,
+                    answer,
+                });
+            }
+        }
+    });
+});
+
+function strategyB_template(event1_id, event2_id, event3_id) {
+    const question = 'What is the participant in the event that interviews the transporter that flew the place that gone off the explosive device. ';
+    const answer = '';
+    return {
+        question, answer
+    };
+}
+
+strategyB_tuples.forEach(function (tuple, i) {
+    const { question, answer } = strategyB_template(tuple[0], tuple[1], tuple[2]);
+    save_record.B.qapairs.push({
+        event1_id: tuple[0],
+        event2_id: tuple[1],
+        event3_id: tuple[2],
+        question,
+        answer,
+    });
+});
+
+// implementation of string formatting
+if (!String.prototype.format) {
+    String.prototype.format = function () {
+        var args = arguments;
+        return this.replace(/{(\d+)}/g, function (match, number) {
+            return typeof args[number] != 'undefined'
+                ? args[number]
+                : match
+                ;
+        });
+    };
+}
+
+// ---------------------------------------------------------
+// Create elements
+// ---------------------------------------------------------
+
+var makeDom = function () {
+    recoverUserInput();
+    console.log(page_num_set);
+    highlightEvent();
+};
+
+var highlightEvent = function () {
+    /* highlight trigger within document */
+    const pagenos = Array.from(page_num_set);
+    pagenos.sort((a, b) => events_data[a].offset - events_data[b].offset);
+
+    // remove previous highlights
+    $('trigger').removeClass('highlight-trigger');
+    $('role').removeClass('highlight-role1 highlight-role2 highlight-role3');
+
+    pagenos.forEach(trigger_num => {
+        // highlight trigger
+        $('#trigger-' + trigger_num).addClass('highlight-trigger');
+        $('role[trigno=' + trigger_num + ']').addClass('highlight-role'+(trigger_num+1));
+    })
+}
+
+const relationTypes = [
+    "BEFORE",
+    "AFTER",
+    "OVERLAPS",
+    "EQUAL",
+    "CONTAINS",
+    "CONTAINED BY",
+    "CAUSES",
+    "CAUSED BY",
+]
+
+// restore input from other trigger
+var recoverUserInput = function () {
+    const inputArea = $('#input-area');
+    inputArea.empty();
+    page_num_set.clear();
+
+    let pagenos = [];
+    if (strategy === 'A') {
+        // questions
+        const event_pair = $('#tuple-select').val().split(',').map(x => parseInt(x));
+        page_num_set.add(event_pair[0]);
+        page_num_set.add(event_pair[1]);
+
+        pagenos = event_pair;
+        pagenos.sort((a, b) => events_data[a].offset - events_data[b].offset);
+
+        // relations
+        const relationsArea = $('#relations-area');
+        relationsArea.empty();
+        pagenos.forEach(i => {
+            pagenos.forEach(j => {
+                if (i >= j) return;
+
+                const event1 = events_data[i];
+                const event2 = events_data[j];
+                relationsArea.append(makeRelationSelect(event1, event2));
+                relationsArea.append(makeRelationSelect(event2, event1));
+            })
+        })
+
+        const matching_pairs = save_record.A.qapairs.filter(qa => {
+            return (
+                (qa.event1_id === events_data[event_pair[0]].event_id &&
+                qa.event2_id === events_data[event_pair[1]].event_id) ||
+                (qa.event1_id === events_data[event_pair[1]].event_id &&
+                qa.event2_id === events_data[event_pair[0]].event_id)
+            );
+        });
+        matching_pairs.forEach((qa, i) => {
+            add_qa_input(qa.question, qa.answer, qa);
+            if (i % 2 === 1 && i < matching_pairs.length - 1)
+                inputArea.add($('<hr>'));
+        });
+    } else if (strategy === 'B') {
+        const tuple = save_record.B.qapairs[$('#tuple-select').val()];
+        console.log("TUPLE", tuple)
+        page_num_set.add(events_data.findIndex(e => e.event_id === tuple.event1_id));
+        page_num_set.add(events_data.findIndex(e => e.event_id === tuple.event2_id));
+        page_num_set.add(events_data.findIndex(e => e.event_id === tuple.event3_id));
+        pagenos = Array.from(page_num_set);
+        pagenos.sort((a, b) => events_data[a].offset - events_data[b].offset);
+        add_qa_input(tuple.question, tuple.answer, null, false);
+        add_qa_input('', '', tuple, true);
+    }
+    // templates
+    const templateArea = $('#template-area');
+    templateArea.empty()
+    pagenos.forEach(trigger_num => {
+        const div = $('<div>')
+            .append($('<p>').text(describeEvent(events_data[trigger_num])))
+            .append(template_record[trigger_num]);
+        templateArea.append(div);
+    });
+};
+
+function describeEvent(event) {
+    return (developer_mode ? `ID: ${event.event_id} | ` : "") + `${event.text} @ ${event.offset}`;
+}
+
+function makeRelationSelect(event1, event2) {
+    const id1 = event1.event_id;
+    const id2 = event2.event_id;
+    const relation = relations_data.find(r =>
+        r.event1_id == id1 &&
+        r.event2_id == id2
+    );
+
+    const selectInput =
+        $('<select class="relation-select mg-5">');
+    relationTypes.forEach(type => {
+        const option = $(`<option value="${type}">${type.toLowerCase()}</option>`);
+        selectInput.append(option);
+    });
+    selectInput.append($('<option value="NONE">none</option>'));
+    selectInput.val(relation?.type ?? "NONE");
+    selectInput.on('change', function () {
+        const type = $(this).val();
+        const event1_id = id1;
+        const event2_id = id2;
+        const relation = relations_data.find(r =>
+            r.event1_id == event1_id &&
+            r.event2_id == event2_id
+        );
+        if (relation) {
+            relation.type = type;
+        } else {
+            relations_data.push({
+                event1_id,
+                event2_id,
+                type,
+            });
+        }
+    });
+
+    const div = $('<div>')
+        .append($('<label>').text(describeEvent(event1)))
+        .append(selectInput)
+        .append($('<label>').text(describeEvent(event2)))
+
+    return div;
+}
+
+// ensure something is in the input box
+var canSubmit = function () {
+    return true;
+};
+
+// template role fields
+const make_role_mapping_element = function (role, text) {
+    const role_text = $('<label>').html('<b>' + role + '</b>:');
+    const role_field = $('<span>')
+        .addClass('role-field')
+        .attr({
+            role: role,
+            rows: 1,
+        })
+        .text(text)
+
+    const role_div = $('<div>')
+        .addClass('role-container')
+        .append(role_text)
+        .append(role_field);
+
+    return role_div;
+}
+
+
+const add_qa_input = function (question = '', answer = '', ref = null, editable = true) {
+    let question_text = $('<label>').text('question:');
+    let question_input = $('<textarea>')
+        .addClass('question-input')
+        .addClass('mg-15')
+        .attr({
+            placeholder: 'write down your question',
+            rows: 2,
+            cols: 80,
+        })
+        .text(question);
+    question_input.on("input", function () {
+        console.log('q', ref)
+        if (ref != null)
+            ref.question = $(this).val();
+        show();
+    });
+    let answer_text = $('<label>').text('answer:');
+    let answer_input = $('<textarea>')
+        .addClass('answer-input')
+        .addClass('mg-15')
+        .attr({
+            placeholder: 'write down your answer',
+            rows: 2,
+            cols: 80,
+        })
+        .text(answer);
+    answer_input.on("input", function () {
+        console.log('a', ref)
+        if (ref != null)
+            ref.answer = $(this).val();
+        show();
+    });
+
+    if (!editable) {
+        question_input.attr('disabled', 'disabled');
+        answer_input.attr('disabled', 'disabled');
+    }
+
+    const input_fields = $('<div>')
+        .addClass('input-fields')
+        .append(question_text)
+        .append(question_input)
+        .append(answer_text)
+        .append(answer_input)
+
+    $('#input-area').append(input_fields);
+
+    show();
+};
+
+var enable_button = function (button) {
+    button.removeAttr("disabled");
+    button.removeClass("btn-default");
+    button.addClass("btn-success");
+};
+
+var disable_button = function (button) {
+    button.attr("disabled", "disabled");
+    button.removeClass("btn-success");
+    button.addClass("btn-default");
+};
+
+var select_button = function (button) {
+    button.removeClass("btn-default");
+    button.addClass("btn-primary");
+};
+
+var deselect_button = function (button) {
+    button.removeClass("btn-primary");
+    button.addClass("btn-default");
+};
+
+var is_wh_question = function (question) {
+    let tokens = question.split(' ');
+    if (tokens.length <= 1) {
+        return false;
+    }
+
+    // let wh_pattern = /^Wh\|wh\|How\|how/;
+    let wh_pattern = /^wh|Wh|how|How/;
+    // console.log(question.match(wh_pattern));
+    return !!question.match(wh_pattern);
+};
+
+
+var show = function () {
+    for (button of document.getElementById('button-bar').getElementsByTagName('*')) {
+        if (page_num_set.has(parseInt(button.getAttribute('page-no'))))
+            select_button($(button));
+        else
+            deselect_button($(button));
+    }
+
+};
+
+// dynamically create buttons for each SRL arg
+events_data.forEach(function (event, i) {
+    if (event.text.trim()) {
+        var button = document.createElement("button");
+        button.setAttribute("type", "button");
+        button.setAttribute("id", "button-page-" + i);
+        button.setAttribute("page-no", i);
+        button.setAttribute("class", "btn btn-default");
+        button.innerHTML = describeEvent(event);
+        button.onclick = function () {
+            // const pageno = parseInt(this.getAttribute("page-no"));
+            // // toggle button
+            // if (button.classList.contains('btn-default'))
+            //     page_num_set.add(pageno);
+            // else
+            //     page_num_set.delete(pageno);
+            // makeDom();
+            // let instruction = $('#instructionBody');
+            // if (instruction.is(':visible')) {
+            //     instruction.toggle();
+            // }
+            // //window.scrollTo(0, 0); // scroll to top
+            // show();
+        }
+        document.getElementById('button-bar').appendChild(button);
+    }
+
+    // format template area with role mappings
+    // if template not null or undefined
+    if (event.template !== null) {
+        const template_area = template_record[i];
+        const template = $('<p>').text(event.template);
+        template_area.append(template);
+        event.role_text_map.forEach(function (pairing) {
+            template_area.append(make_role_mapping_element(pairing.role, pairing.tokens.map(tk => tk.text).join('/')));
+        });
+    }
+})
+
+// ---------------------------------------------------------
+// Initialize
+// ---------------------------------------------------------
+
+var submit_form = function (event) {
+    event.preventDefault();
+    if (!window.confirm("Are you sure you want to submit?")) return;
+    save_all();
+
+    const urlParams = new URLSearchParams(window.location.search)
+
+    // create the form element and point it to the correct endpoint
+    const form = document.createElement('form')
+    form.action = (new URL('mturk/externalSubmit', urlParams.get('turkSubmitTo'))).href
+    form.method = 'post'
+
+    // attach the assignmentId
+    const inputAssignmentId = document.createElement('input')
+    inputAssignmentId.name = 'assignmentId'
+    inputAssignmentId.value = urlParams.get('assignmentId')
+    inputAssignmentId.hidden = true
+    form.appendChild(inputAssignmentId)
+
+    // attach data I want to send back
+    const inputResults = document.createElement('input')
+    inputResults.name = 'results'
+    inputResults.value = JSON.stringify(save_record)
+    inputResults.hidden = true
+    form.appendChild(inputResults)
+
+    // attach the form to the HTML document and trigger submission
+    document.body.appendChild(form)
+    form.submit()
+}
+
+//$('#save').on('click', save_all);
+submit.on('click', submit_form);
+
+var popup_alert = function (alert_box, text) {
+    alert_box.html(text);
+    alert_box.css({
+        'background-color': 'fec5bb',
+        'padding': '5px',
+        'border': '1px solid lightgray',
+        'border-radius': '10px',
+        'margin-top': '10px',
+        'margin-bottom': '10px'
+    });
+    displaying = true;
+    setTimeout(function () {
+        alert_box.html('');
+        alert_box.css({
+            'padding': '0px',
+            'border': '0px'
+        });
+        displaying = false;
+    }, 7000);
+};
+
+const selectA = $('#selectA');
+const selectB = $('#selectB');
+
+const tupleSelect = $('#tuple-select');
+
+
+function makeSelectionOptions() {
+    if (strategy === 'A') {
+        tupleSelect.empty();
+        events_data.forEach(function (ei, i) {
+            events_data.forEach(function (ej, j) {
+                if (i >= j) return;
+                const opt = $('<option>')
+                    .attr({
+                        value: `${i},${j}`,
+                    })
+                    .text(`${describeEvent(ei)} & ${describeEvent(ej)}`);
+                tupleSelect.append(opt);
+            });
+        });
+        tupleSelect.children()[0].selected = true;
+    } else {
+        tupleSelect.empty();
+        function describeEventById(id) {
+            const event = events_data.find(e => e.event_id === id);
+            return describeEvent(event);
+        }
+        strategyB_tuples.forEach(function (tuple, i) {
+            const opt = $('<option>')
+                .attr({
+                    value: i,
+                })
+                .text(`${describeEventById(tuple[0])}, ${describeEventById(tuple[1])}, ${describeEventById(tuple[2])}`);
+            tupleSelect.append(opt);
+        });
+        tupleSelect.children()[0].selected = true;
+    }
+}
+
+selectA.on('click', function () {
+    if (strategy === 'A') return;
+    strategy = 'A';
+    $('#strategyA').show();
+    select_button(selectA);
+    $('#strategyB').hide();
+    deselect_button(selectB);
+    makeSelectionOptions();
+    makeDom();
+    show();
+});
+
+selectB.on('click', function () {
+    if (strategy === 'B') return;
+    strategy = 'B';
+    $('#strategyA').hide();
+    deselect_button(selectA);
+    $('#strategyB').show();
+    select_button(selectB);
+    makeSelectionOptions();
+    makeDom();
+    show();
+});
+
+selectA.click();
+
+tupleSelect.on('change', function () {
+    makeDom();
+    show();
+});
+
+$('#developer-mode').on('change', function () {
+    developer_mode = this.checked;
+    makeSelectionOptions();
+    makeDom();
+    show();
+});
+
+// Instructions expand/collapse
+var content = $('#instructionBody');
+var instructions_trigger = $('#collapseTrigger');
+// content.hide();
+$('.collapse-text').text('(Click to collapse)');
+instructions_trigger.click(function () {
+    content.toggle();
+    var isVisible = content.is(':visible');
+    if (isVisible) {
+        $('.collapse-text').text('(Click to collapse)');
+    } else {
+        $('.collapse-text').text('(Click to expand)');
+    }
+});
+
+console.log(save_record)
+show();
+</script>
+</crowd-form>

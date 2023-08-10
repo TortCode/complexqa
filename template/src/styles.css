@@ -1,0 +1,133 @@
+.mg-15 {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.mg-5 {
+    margin: 5px;
+}
+
+.container-fluid {
+    max-width: 1800px;
+    margin: 30px;
+}
+
+.btn-container {
+    display: inline-block;
+    margin: 10px;
+}
+
+.strategies {
+    margin: 15px;
+}
+
+.ann-component {
+    margin: 5px;
+}
+
+
+#collapseTrigger {
+    color: #fff;
+    display: block;
+    text-decoration: none;
+}
+
+#submitButton {
+    white-space: normal;
+}
+
+#input-area {
+    display: block;
+    margin: 10px;
+}
+
+.input-fields {
+    margin: 10px;
+    padding: 10px;
+    background-color: #ffe3e3;
+    border-radius: 15px;
+}
+
+#template-area {
+    background-color: #eee;
+    display: flex;
+}
+
+#relations-area {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+.template-map {
+    border: 1px solid gray;
+    padding: 5px;
+}
+
+.btn-container>button {
+    min-width: 3em;
+}
+
+trigger {
+    display: inline;
+}
+
+role {
+    display: inline;
+}
+
+.highlight-trigger {
+    background-color: lightgoldenrodyellow;
+}
+
+.highlight-role {
+    background-color: lightblue;
+}
+
+.highlight-role1 {
+    background-color: rgba(255, 255, 0, 0.5);
+}
+
+.highlight-role2 {
+    background-color: rgba(0, 255, 255, 0.5);
+}
+
+.highlight-role3 {
+    background-color: rgba(255, 0, 255, 0.5);
+}
+
+.btn-group {
+    vertical-align: middle;
+}
+
+.content {
+    margin-bottom: 15px;
+}
+
+.ann {
+    font-size: 16px;
+}
+
+.disp {
+    font-size: 20px;
+}
+
+.ann>span.token {
+    cursor: pointer;
+}
+
+.ann>span.token:hover {
+    text-decoration: underline;
+}
+
+.ann>strong.annotation:hover {
+    text-decoration: line-through;
+}
+
+input[disabled] {
+    color: #000
+}
+
+.question-input, .answer-input {
+    vertical-align: middle;
+}

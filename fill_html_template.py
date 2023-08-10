@@ -8,6 +8,7 @@ configs=argparse.Namespace()
 
 def main():
     get_args() 
+    print(f"Merging template {configs.file.name} with data {configs.data.name} to {configs.output}.")
 
     with configs.file as f:
         template = f.read() 

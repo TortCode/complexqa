@@ -1,0 +1,793 @@
+<crowd-form answer-format="flatten-objects">
+  <section class="container-fluid" id="Relevancy">
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <div class="panel panel-primary">
+          <a class="panel-heading" href="javascript:void(0);" id="collapseTrigger">
+            <strong>Annotation Instructions</strong>
+            <span class="collapse-text">(Click to expand)</span>
+          </a>
+          <div class="panel-body" id="instructionBody">
+            {{INSTRUCTIONS}}
+            {{LINK}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    Enable developer mode:
+    <input type="checkbox" id="developer-mode">
+
+    <h3>Document</h3>
+    <div id="document-text" class="ann well well-sm">
+      In <role id='role-0-Place-0'trigno='0'>Boston</role> Marathon <trigger id='trigger-0'>Bombing</trigger> <trigger id='trigger-1'>Trial</trigger>, a Search for Justice and Closure CAMBRIDGE, MASSACHUSETTS — Three short paragraphs-hand-written, in Russian, on lined, notebook paper-sat atop a stack of old newspapers next to the television in the newly vacant third floor apartment at 410 Norfolk Street. Federal Bureau of Investigation agents had done the first of two searches of the East Cambridge apartment, rented for more than a decade by an ethnic Chechen family, the Tsarnaevs. FILE-This April 15, 2013, photo shows medical workers aiding <trigger id='trigger-2'>injured</trigger> <role id='role-2-Injurer-0'trigno='2'>people</role> at the finish line of the 2013 <role id='role-3-Place-0'trigno='3'>Boston</role> Marathon following an <trigger id='trigger-3'>explosion</trigger>. Days earlier, on April 15, 2013, two pressure cookers, packed with nails and ball bearings, <trigger id='trigger-4'>exploded</trigger> near the Boston Marathon finish <role id='role-4-Place-0'trigno='4'>line</role>, <trigger id='trigger-5'>killing</trigger> <role id='role-5-Victim-0'trigno='5'>three</role>, <trigger id='trigger-6'>maiming</trigger> <role id='role-6-Injurer-0'trigno='6'>scores</role> and shattering the celebration of the world’s oldest annual marathon. The Tsarnaevs’two sons had been implicated: <role id='role-8-Target-0'trigno='8'><role id='role-7-Victim-0'trigno='7'>Tamerlan</role></role>, 26, had been <trigger id='trigger-7'>killed</trigger> during a <role id='role-8-Attacker-0'trigno='8'><role id='role-7-Killer-0'trigno='7'>police</role></role> <trigger id='trigger-8'>shoot-out</trigger>. <role id='role-9-Detainee-0'trigno='9'>Dzhokhar</role>, 19, was in police <trigger id='trigger-9'>custody</trigger>. A friend, who had known the Tsarnaev family for years and was very close to all of them, discovered the paper in the apartment and recognized the handwriting as Tamerlan’s:"They said: how many small <role id='role-10-Victor-0'trigno='10'>armies</role> had <trigger id='trigger-10'>defeated</trigger> larger <role id='role-10-Defeated-0'trigno='10'>armies</role> by the will of Allah. The Prophet called to Allah with the words: give me the perseverance in all my undertakings and the resoluteness to follow the correct path. If Allah will give you support, then no <role id='role-11-Victor-0'trigno='11'>one</role> will <trigger id='trigger-11'>defeat</trigger> <role id='role-11-Defeated-0'trigno='11'>you</role>. If he removes this support, then who will help you in place of nothing? Let the devout rely on Allah."A scrap of paper, featuring Quranic musings, written in Russian and shared with VOA, was found in the Cambridge apartment by a close family friend and <trigger id='trigger-12'>identified</trigger> by the <role id='role-12-Identifier-0'trigno='12'>friend</role> as Tamerlan's handwriting. The writing, shared exclusively with VOA, is a glimpse into the mind of the man considered to be the mastermind of the <role id='role-13-Place-0'trigno='13'>Boston</role> terrorist <trigger id='trigger-13'>attack</trigger>. Nearly 21 months later, the scars of the <trigger id='trigger-14'>bombing</trigger>-psychological and physical-are deep and raw in the Boston area as survivors, witnesses, Americans and Chechens, from Boston and Grozny, have groped to understand the motivations of the Tsarnaev brothers. VOA has retraced some of the key steps leading up to the <trigger id='trigger-15'>bombing</trigger>, interviewing members of the Chechen émigré community and others who had close dealings with the Tsarnaev family. The story that emerges is one of a troubled family buffeted by the challenges of adapting to American culture and by the undercurrents of war and radicalism wracking their ethnic homeland. Dzhokhar Tsarnaev is seen in this law enforcement bulletin, distributed in the days after the April 15, 2013, <trigger id='trigger-16'>bombing</trigger>. The best hope, however, for understanding what led to April 15, 2013, lies with Dzhokhar Tsarnaev, <role id='role-17-Defendant-0'trigno='17'>whose</role> <trigger id='trigger-17'>trial</trigger> on 30 terrorism and related charges opens Monday in Boston’s federal <role id='role-17-Place-0'trigno='17'>court</role> just a few miles from the marathon’s finish line. “They took the innocence from us, that they did take,” said Jason Rosenberg, a Boston-area lawyer who represents a man once cared for by the Tsarnaev family. “You think you’re immune from [terrorism], it only happens elsewhere.” “We think: ‘ they can’t be these beasts, but we all know that a human being … can be caring and loving to someone else and then be a horrendous person,” he said. “You can be, and are, one and the same, the same person.” ‘ Why did you do it, Tamerlan, why?’A caring and loving person is what Tamerlan seemed like less than four weeks before the bombs sent panic through runners and spectators lining the few hundred yards along Boston’s Boylston Street leading up to the finish line. Around March 20, <role id='role-18-PassengerArtifact-0'trigno='18'>Tamerlan</role>, along with his American wife, Katherine, <trigger id='trigger-18'>traveled</trigger> to the <role id='role-18-Destination-0'trigno='18'>outskirts</role> of Manchester, New Hampshire, to visit another Chechen family <role id='role-19-PassengerArtifact-0'trigno='19'>who</role> had <trigger id='trigger-19'>fled</trigger> the <role id='role-19-Origin-0'trigno='19'>region</role> in the early 2000s: Musa Khadzhimuradov, his wife Madina, and their two children. Among the two dozen or so Chechen families living in Boston and southern New Hampshire, it was common to mark holidays together, to attend one another’s barbecues, to carry on traditions from back in Chechnya. Tamerlan had come, Khadzhimuradov said, to say goodbye to Khadzhimuradov’s mother-in-law, who was returning to Chechnya. Khadzhimuradov, who formerly worked as a bodyguard to Chechen separatist leader Akhmed Zakayev, said he had been in touch with Tamerlan since 2006, when they met at a Chechen holiday celebration in Boston. At 755 Boylston St. , just a few steps from the finish line of the <role id='role-20-Place-0'trigno='20'>Boston</role> Marathon, there is little indication of the carnage of the 2013 <trigger id='trigger-20'>bombing</trigger>, except for a small makeshift memorial tied to a narrow tree. During the March visit, both Khadzhimuradov and his wife Madina recalled, Tamerlan played happily with his young daughter Zahara, and chatted with the Khadzhimuradovs’own daughter. “We didn’t talk about war or religion, nothing,” Musa Khadzhimuradov told VOA. “He was happy. Maybe he had a double life or something, but he was playing with his child.” “The way [Katherine] looked at him, she couldn't take her eyes of him,” Madina said. “Tamerlan was chatting, playing with his daughter.” “I see him almost every night in my dreams,” she said. “He looks just as always: very handsome and calm. I cry and I ask him: ‘ Why did you do it, Tamerlan, why?’And he answers: ‘ I didn't want to do it here.’” But according to FBI affidavits, the grand jury indictment and other details made public in media reports, Tamerlan was plotting something destructive. On at least two occasions in the months prior to April 15, Tamerlan had visited a Manchester firing range just a few miles from the Khadzhimuradov apartment to practice shooting. On March 20, Dzhokhar, who was a student at the University of Massachusetts Dartmouth, joined Tamerlan at the range. Carey McLoud, an owner and manager of the Manchester Firing Range Line, refused to answer VOA’s questions about the Tsarnaev brothers. <role id='role-21-PassengerArtifact-0'trigno='21'>Tamerlan</role> had also <trigger id='trigger-21'>traveled</trigger> to the <role id='role-21-Destination-0'trigno='21'>New Hampshire</role> coastal town of Seabrook to buy fireworks, and gather gunpowder to fuel the pressure cooker bombs. On February 6, at around 7: 40 p. m. , <role id='role-22-Recipient-0'trigno='22'>Tamerlan</role> stopped at Phantom Fireworks and <trigger id='trigger-22'>paid</trigger> $199 <role id='role-22-PaymentBarter-0'trigno='22'>cash</role> for a <role id='role-22-AcquiredEntity-0'trigno='22'>package</role> called “Lock and Load,” and took advantage of a “buy-one-get-one-free deal.” He left with 48 mortars and the equivalent of eight pounds of low explosive powder, according to prosecutors. On Feb. 6, 2013, <role id='role-24-Recipient-0'trigno='24'><role id='role-23-PassengerArtifact-0'trigno='23'>Tamerlan Tsarnaev</role></role> <trigger id='trigger-23'>traveled</trigger> to <role id='role-23-Destination-0'trigno='23'>New Hampshire</role>, to <trigger id='trigger-24'>buy</trigger> <role id='role-24-AcquiredEntity-0'trigno='24'>fireworks</role>, as part of preparations to build pressure cooker bombs. “He asked ‘ what was the loudest, most powerful firework we had?” store manager April Walton told VOA. “It’s what 80 percent of our customers ask for.” Sometime around April 5, just 10 days before the <trigger id='trigger-25'>bombings</trigger>, <role id='role-26-Recipient-0'trigno='26'>Tamerlan</role> went online and <trigger id='trigger-26'>ordered</trigger> electronic <role id='role-26-AcquiredEntity-0'trigno='26'>components</role> that could be used in making bombs, according to the grand <role id='role-27-JudgeCourt-0'trigno='27'>jury</role> <trigger id='trigger-27'>indictment</trigger>. Those <role id='role-28-PassengerArtifact-0'trigno='28'>components</role> were <trigger id='trigger-28'>delivered</trigger> by mail to the Norfolk Street <role id='role-28-Destination-0'trigno='28'>apartment</role>. In recent years, some members of the Tsarnaev family, including the boys’mother Zubeidat, had begun openly expressing their Muslim faith. They dressed in traditional conservative clothing and attended prayer services, mainly at the Islamic Society of Boston’s Cambridge mosque four blocks from 410 Norfolk Street. Once a fashionable and flashy dresser, Zubeidat had taken to wearing headscarves, long skirts and long-sleeved dresses and shirts. She reportedly started wearing gloves constantly so as to avoid touching the hands of unrelated males, such as shop clerks or tollbooth workers. The Tsarnaev boys’sisters, Bella and Ailina, also began wearing headscarves. Outburst at the mosque Prior to November 2012, the Tsarnaevs didn’t stand out among the hundreds who attended prayers regularly, said the Cambridge mosque’s acting imam, Ismail Fenni. That month, a guest speaker gave a sermon about the importance of Muslims accepting public holidays like Thanksgiving. Tamerlan stood up and angrily interrupted the speaker, calling him wrong. Fenni said he and other elders spoke to Tamerlan and reminded him of the mosque rules of behavior and decorum. Tamerlan nodded and said he understood, Fenni recalled. Elders at the Cambridge mosque of the Islamic Society of Boston said the November 2012 outburst by Tamerlan Tsarnaev was the first time anyone really took note of him. Then in January 2013, at the prayer service before the Martin Luther King Jr. holiday, Tamerlan again stood up and interrupted the sermon, as the guest speaker discussed how Muslims should accept the civil rights leader. “There was nothing really for us to be worried about with him before his explosive outbursts,” Fenni said. “Before then, he was just a face in the crowd.” That first outburst had occurred four months after Tamerlan returned from a trip to Russia’s North Caucasus, where Chechnya is located. Between January and July 2012, Tamerlan spent some of his time in Makhachkala, the capital of the Dagestan region, working with his father Anzor, who had arrived in the region in April. Anzor was newly divorced from Zubeidat, according to the family friend, <role id='role-29-IdentifiedObject-0'trigno='29'>who</role> asked not to be <trigger id='trigger-29'>identified</trigger> publicly while discussing the Tsarnaev’s family dynamics. Like much of Russia's North Caucasus, Dagestan, shown here in red, has struggled with violence spilling over from neighboring Chechnya. The stated reason for Tamerlan’s trip in January 2012, according to the Russian newspaper Novaya Gazeta, was obtain a Russian passport: Tamerlan held a Kyrgyz passport, the result of his early childhood in Kyrgyzstan, <role id='role-30-Destination-0'trigno='30'>where</role> many Chechens lived after being <trigger id='trigger-30'>expelled</trigger> from their <role id='role-30-Origin-0'trigno='30'>homeland</role> by Stalin in the 1940s. But last year, Irina Gordienko, an investigative reporter for Novaya Gazeta, reported that Tamerlan didn’t actually apply for a passport until the end of June, more than six months after arriving. Gordienko also reported Tamerlan had been in contact with two militants wanted by Russian security agencies. One, a Russian-Canadian named <role id='role-31-Victim-0'trigno='31'>William Plotnikov</role>, was <trigger id='trigger-31'>killed</trigger> by <role id='role-31-Killer-0'trigno='31'>police</role> on July 14, 2012. Within two days, <role id='role-32-PassengerArtifact-0'trigno='32'>Tamerlan</role> left the <role id='role-32-Origin-0'trigno='32'>region</role> to <trigger id='trigger-32'>fly</trigger> back to the <role id='role-32-Destination-0'trigno='32'>United States</role>. “People in Dagestan told me he dressed strangely, his behavior was unusual,” Gordienko said. “He wasn’t very knowledgeable about Islam.” Where Tamerlan (L) saw some success as a boxer, Dzhokhar (R) captained his high school wrestling team. In the United States, Tamerlan had been a show-off from a young age, always seeking attention, the family friend told VOA. He loved to sing, to play violin and to dance. He was smart academically, but he never seemed focused, the friend said: he talked about being an accountant, but he took only a handful of classes at Bunker Hill Community College. Tamerlan was athletic, as well: he trained at a boxing club in Somerville, next door to Cambridge. His boxing career, nurtured by his father Anzor, hit a high point in February 2010 with a regional trophy. Then it petered out. “He didn’t seem to know where he was going,” the friend said. Over the years, Tamerlan pulled income from short-term jobs. In 2009, he worked as a driver for a Watertown-based elder care facility that catered to Russian immigrants. He also helped his mother with her work as a home health aide in the Newton home of Donald and Rosemary Larking. Donald Larking was an older man who became so close to Tamerlan that he attended prayer services at the Cambridge mosque, according to Rosenberg, Larking’s lawyer. Larking also had constant discussions with Tamerlan about politics and espoused dark conspiracy theories about the <trigger id='trigger-33'>attacks</trigger> of September 11, 2001. Through Rosenberg, Donald Larking refused to be interviewed for this article. Pictured is Tamerlan (C) Tsarnaev, accompanied by his father Anzor (L), mother Zubeidat and uncle Muhamad Suleimanov (R), in this photo courtesy of the Suleimanova family. Tamerlan was interviewed by the FBI in 2011, at the request of the lead Russian security agency, the FSB, which had been monitoring Tamerlan’s alleged interactions with radical groups. Chechnya had by then suffered through the second of two wars since 1994, and the turmoil had spawned a terrorist insurgency, influenced by Islamic extremists, that had affected the entire North Caucasus. According to an FBI statement, the Russians reported that Tamerlan “was a follower of radical Islam” and “had changed drastically since 2010 as <role id='role-34-PassengerArtifact-0'trigno='34'>he</role> prepared to leave the <role id='role-34-Origin-0'trigno='34'>United States</role> for <trigger id='trigger-34'>travel</trigger> to the country’s <role id='role-34-Destination-0'trigno='34'>region</role> to join unspecified underground groups.” The youngest Tsarnaev Dzhokhar, by contrast, was considered smart but quiet, always in his older siblings’shadow, according to friends and acquaintances. When the <role id='role-35-PassengerArtifact-0'trigno='35'>family</role> <trigger id='trigger-35'>moved</trigger> to the Boston <role id='role-35-Destination-0'trigno='35'>area</role>, Dzhokhar, then 8, spent second grade at an elementary school in Needham, a Boston suburb. He lived with the family of a prominent Chechen doctor, Khassan Baiev. Baiev’s daughter Maryam remembers Dzhokhar, who later called himself Jahar, as a happy boy who was good at math, who liked to rollerblade and bicycle around the neighborhood playground. As they grew older, however, she said she had few interactions with him, only occasionally by Facebook. “I remember when I saw him on TV … I ran straight to my brother, and said, “Did you see who was on TV?’He said “Yeah, I saw it,’” Baieva, 21, said. “I was more upset. I felt bad for [Dzhokhar] and I felt bad for his parents, everything he put them through. Friends say Dzhokhar Tsarnaev was smart and quiet, always in the shadow of his older siblings. “I felt heartbroken, betrayed at the time. It was scary, because I didn’t know how people were going to look at me after, what people were going to think of me afterward,” she said. Unlike with Tamerlan-the trip to Russia, the mosque outburst, the initial <role id='role-36-Investigator-0'trigno='36'>FBI</role> <trigger id='trigger-36'>investigation</trigger>-Dzhokhar’s involvement in the <trigger id='trigger-37'>attack</trigger> was even more baffling. According to friends and acquaintances, he never elicited attention or worry prior to April 15, 2013: not from neighbors or friends, not from school, not from law enforcement. At Cambridge’s Rindge and Latin high school, Dzhokhar was known as low-key, laid-back and friendly. He was captain of the public school’s wrestling team, an honor student and the recipient of a small scholarship from the city of Cambridge. At the Dartmouth campus of the University of Massachusetts, Dzhokhar was known as a middling student and, according to The Boston Globe, an active dealer of marijuana. “Dzhokhar kept to himself, he was smart. He made his own choices,” the family friend said. “He wasn’t the center of attention; he was always off to the side.” “I never worried about Dzhokhar,” the friend said. In the months immediately before the <trigger id='trigger-38'>bombing</trigger>, the Norfolk Street apartment was occupied only by Tamerlan, his wife and their daughter. Katherine worked as a home health aide. His parents were both living in Russia. His sisters had moved out. On the Dartmouth campus, according to prosecutors, there were indications that Dzhokhar was exploring violent acts. Sometime in the spring of 2013, Dzhokhar downloaded to his computer several books and pamphlets espousing radical Islamist ideas. One was a book that contained a passage by a well-known al-Qaida propagandist, Anwar al-Awlaki. Another was a copy of the summer 2010 issue of Inspire magazine, an English-language publication by al-Qaida’s affiliate on the Arabian Peninsula. The issue contained detailed instructions about making a pressure cooker bomb using common materials in an article titled: “How to Make a Bomb in the Kitchen of Your Mom.” Fireworks found inside a backpack belonging to Dzhokhar Tsarnaev are seen in a handout photo released by the FBI, May 2, 2013. After <role id='role-39-Detainee-0'trigno='39'>his</role> <trigger id='trigger-39'>arrest</trigger>, investigators later found Dzhokhar’s college dormitory room, his computer and a backpack containing fireworks that had been emptied of gunpowder. The night of April 15, Dzhokhar sent a friend — the son of a prominent Boston-area Chechen émigré — a text message asking him if he was at the marathon and was OK. On April 18, as police widened their search for the alleged bombers, the <role id='role-41-Killer-0'trigno='41'><role id='role-40-Attacker-0'trigno='40'>brothers</role></role> <trigger id='trigger-40'>shot</trigger> and <trigger id='trigger-41'>killed</trigger> a police <role id='role-41-Victim-0'trigno='41'><role id='role-40-Target-0'trigno='40'>officer</role></role> at the Massachusetts Institute of Technology in Cambridge, according to the grand jury indictment. Hours later, as the manhunt began closing in, Dzhokhar sent another text message to a college classmate saying: “If you want u can go to my room and take what you want.” In the early hours of April 19, with <role id='role-42-Victim-0'trigno='42'>Tamerlan</role> <trigger id='trigger-42'>dead</trigger> and the suburban town of Watertown resembling a war zone, <role id='role-43-Victim-0'trigno='43'>Dzhokhar</role>, bleeding from multiple gunshot <trigger id='trigger-43'>wounds</trigger>, huddled in a boat parked in a backyard driveway. Inside the hull and on an overhead beam, he scrawled several messages that give some insight into his motivations, according to the <trigger id='trigger-44'>indictment</trigger>: “The U. S. Government is killing our innocent civilians; I can't stand to see such evil go unpunished; We Muslims are one body, you hurt one you hurt us all; Now I don't like <trigger id='trigger-45'>killing</trigger> innocent <role id='role-45-Victim-0'trigno='45'>people</role> it is forbidden in Islam. . . . stop <trigger id='trigger-46'>killing</trigger> our innocent <role id='role-46-Victim-0'trigno='46'>people</role> and we will stop.” Trial as closure For victims, for friends of the Tsarnaev family, for Chechen immigrants, for marathon runners, for arguably just about everyone in Massachusetts, the trial scheduled for Monday is likely to be a riveting spectacle. FILE-Demonstrators asserting that evidence in the <role id='role-47-Place-0'trigno='47'>Boston</role> Marathon <trigger id='trigger-47'>bombing</trigger> was fabricated stand outside the federal courthouse ahead of a pre-trial conference for suspect Dzhokhar Tsarnaev in Boston, Dec. 18, 2014. For some, it will be a chance at vengeance and punishment for a young man whose seeming potential crashed to a halt on April 15, 2013. For others, it will be a chance at learning something more about why a laid-back, average, 19-year-old college <role id='role-48-Attacker-0'trigno='48'>student</role> decided to participate in a horrific <trigger id='trigger-48'>attack</trigger> on <role id='role-48-Target-0'trigno='48'>bystanders</role> celebrating a beloved sporting event. “I want to know why he did it. I want to know why he would go out of his way, what did he need when he already has everything,” said Baieva, the childhood friend. On December 18, Dzhokhar appeared at the John Joseph Moakley United States Courthouse, on Boston’s waterfront, his last appearance before the formal beginning of his trial. It was <role id='role-49-Victim-0'trigno='49'>his</role> first public appearance since July 2013, when, still visibly <trigger id='trigger-49'>wounded</trigger> from the manhunt, he told the court he entered a plea of not guilty. A courtroom sketch depicts Dzhokhar Tsarnaev in federal court in Boston, Massachusetts, December 18, 2014. During the 30-minute appearance on December 18, Dzhokhar–sporting a shock of bushy hair and a thin beard–played nervously with his hands and smiled occasionally when talking with his lawyers. He stood when the judge addressed him directly, and he responded respectfully, saying “yes, sir,” and “no, sir.” Federal prosecutors have indicated they will seek the death penalty if <role id='role-50-Defendant-0'trigno='50'>Dzhokhar</role> is <trigger id='trigger-50'>convicted</trigger>. His defense lawyers are expected to seek leniency from the jury, arguing that Dzhokhar was an accomplice, but decidedly under the sway of his older brother. Defense lawyers have also made a flurry of last-minute court filings, seeking to either delay the <trigger id='trigger-51'>trial</trigger> or move it out of state. A filing last Monday by Tsarnaev’s lead lawyer, Judy Clarke, suggested that the <role id='role-52-Defendant-0'trigno='52'>defense</role> was trying reach a deal with the prosecution: possibly a guilty plea in exchange for a life prison <trigger id='trigger-52'>sentence</trigger>. “If the government remains unwilling to relent in seeking death, and the case therefore must be tried, the <role id='role-53-Defendant-0'trigno='53'>defense</role> is asking for nothing more than a <trigger id='trigger-53'>trial</trigger> that is fair,” she wrote. A couple embraces at a memorial on Boylston Street to the <trigger id='trigger-54'>bombing</trigger> victims, April 21, 2013. The <trigger id='trigger-55'>trial</trigger> portends renewed grief not only for the <role id='role-56-Target-0'trigno='56'>victims</role> of the <trigger id='trigger-56'>bombing</trigger>. For the refugees of the Chechen wars and oppression, who came to the New England over the past two decades, settling in the United States was a chance for them to rebuild a semblance of peace and prosperity. The <role id='role-57-Place-0'trigno='57'>Boston</role> Marathon <trigger id='trigger-57'>bombings</trigger> shattered that dream. Upon reaching the United States, “for the first time in my life I felt that I, my kids, my family–that we are safe and happy here. I prayed for America every evening,” said Madina Khadzhimuradova, the Tsarnaev family friend. “Now it is all gone. I am living in fear again, just like in the old times in Chechnya. <role id='role-58-PassengerArtifact-0'trigno='58'>We</role> spoke about <trigger id='trigger-58'>moving</trigger> <role id='role-58-Destination-0'trigno='58'>somewhere</role> else, but where can we go? There is no place for Chechens on this Earth.” 
+    </div>
+
+    <div id='events-data' hidden>
+      [{"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E1", "text": "Bombing", "offset": 3, "length": 1, "template": "[Attacker] detonated or exploded [ExplosiveDevice] explosive device using [Instrument] to attack [Target] target at [Place] place", "role_text_map": [{"role": "Attacker", "tokens": []}, {"role": "Target", "tokens": []}, {"role": "Instrument", "tokens": []}, {"role": "ExplosiveDevice", "tokens": []}, {"role": "Place", "tokens": [{"text": "Boston", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T345", "offset": 1, "length": 1}]}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E2", "text": "Trial", "offset": 4, "length": 1, "template": "[Prosecutor] tried [Defendant] before [JudgeCourt] court or judge for [Crime] crime in [Place] place", "role_text_map": [{"role": "Prosecutor", "tokens": []}, {"role": "Defendant", "tokens": []}, {"role": "JudgeCourt", "tokens": []}, {"role": "Crime", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E4", "text": "injured", "offset": 102, "length": 1, "template": "[Victim] was injured by [Injurer] using [Instrument] in [BodyPart] body part with [MedicalCondition] medical issue at [Place] place", "role_text_map": [{"role": "Victim", "tokens": []}, {"role": "Injurer", "tokens": [{"text": "people", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T463", "offset": 103, "length": 1}]}, {"role": "Instrument", "tokens": []}, {"role": "BodyPart", "tokens": []}, {"role": "MedicalCondition", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E3", "text": "explosion", "offset": 115, "length": 1, "template": "[Attacker] detonated or exploded [ExplosiveDevice] explosive device using [Instrument] to attack [Target] target at [Place] place", "role_text_map": [{"role": "Attacker", "tokens": []}, {"role": "Target", "tokens": []}, {"role": "Instrument", "tokens": []}, {"role": "ExplosiveDevice", "tokens": []}, {"role": "Place", "tokens": [{"text": "Boston", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T73", "offset": 111, "length": 1}]}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E5", "text": "exploded", "offset": 137, "length": 1, "template": "[Attacker] detonated or exploded [ExplosiveDevice] explosive device using [Instrument] to attack [Target] target at [Place] place", "role_text_map": [{"role": "Attacker", "tokens": []}, {"role": "Target", "tokens": []}, {"role": "Instrument", "tokens": []}, {"role": "ExplosiveDevice", "tokens": []}, {"role": "Place", "tokens": [{"text": "line", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T458", "offset": 143, "length": 1}]}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E6", "text": "killing", "offset": 145, "length": 1, "template": "[Victim] died at [Place] place from [MedicalIssue] medical issue, killed by [Killer] killer", "role_text_map": [{"role": "Victim", "tokens": [{"text": "three", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T461", "offset": 146, "length": 1}]}, {"role": "Place", "tokens": []}, {"role": "Killer", "tokens": []}, {"role": "MedicalIssue", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E7", "text": "maiming", "offset": 148, "length": 1, "template": "[Victim] was injured by [Injurer] using [Instrument] in [BodyPart] body part with [MedicalCondition] medical issue at [Place] place", "role_text_map": [{"role": "Victim", "tokens": []}, {"role": "Injurer", "tokens": [{"text": "scores", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T460", "offset": 149, "length": 1}]}, {"role": "Instrument", "tokens": []}, {"role": "BodyPart", "tokens": []}, {"role": "MedicalCondition", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E8", "text": "killed", "offset": 178, "length": 1, "template": "[Victim] died at [Place] place from [MedicalIssue] medical issue, killed by [Killer] killer", "role_text_map": [{"role": "Victim", "tokens": [{"text": "Tamerlan", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T323", "offset": 172, "length": 1}]}, {"role": "Place", "tokens": []}, {"role": "Killer", "tokens": [{"text": "police", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T181", "offset": 181, "length": 1}]}, {"role": "MedicalIssue", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E9", "text": "shoot-out", "offset": 182, "length": 3, "template": "[Attacker] attacked [Target] using [Instrument] at [Place] place", "role_text_map": [{"role": "Attacker", "tokens": [{"text": "police", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T181", "offset": 181, "length": 1}]}, {"role": "Target", "tokens": [{"text": "Tamerlan", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T323", "offset": 172, "length": 1}]}, {"role": "Instrument", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E10", "text": "custody", "offset": 193, "length": 1, "template": "[Jailer] arrested or jailed [Detainee] for [Crime] crime at [Place] place", "role_text_map": [{"role": "Jailer", "tokens": []}, {"role": "Detainee", "tokens": [{"text": "Dzhokhar", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T322", "offset": 186, "length": 1}]}, {"role": "Crime", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E11", "text": "defeated", "offset": 239, "length": 1, "template": "[Victor] defeated [Defeated] in [ConflictOrElection] conflict at [Place] place", "role_text_map": [{"role": "Victor", "tokens": [{"text": "armies", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T372", "offset": 237, "length": 1}]}, {"role": "Defeated", "tokens": [{"text": "armies", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T576", "offset": 241, "length": 1}]}, {"role": "ConflictOrElection", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E12", "text": "defeat", "offset": 285, "length": 1, "template": "[Victor] defeated [Defeated] in [ConflictOrElection] conflict at [Place] place", "role_text_map": [{"role": "Victor", "tokens": [{"text": "one", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T661", "offset": 283, "length": 1}]}, {"role": "Defeated", "tokens": [{"text": "you", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T515", "offset": 286, "length": 1}]}, {"role": "ConflictOrElection", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E13", "text": "identified", "offset": 341, "length": 1, "template": "[Identifier] identified [IdentifiedObject] as [IdentifiedRole] at [Place] place", "role_text_map": [{"role": "Identifier", "tokens": [{"text": "friend", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T694", "offset": 344, "length": 1}]}, {"role": "IdentifiedObject", "tokens": []}, {"role": "IdentifiedRole", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E14", "text": "attack", "offset": 377, "length": 1, "template": "[Attacker] attacked [Target] using [Instrument] at [Place] place", "role_text_map": [{"role": "Attacker", "tokens": []}, {"role": "Target", "tokens": []}, {"role": "Instrument", "tokens": []}, {"role": "Place", "tokens": [{"text": "Boston", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T764", "offset": 375, "length": 1}]}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E15", "text": "bombing", "offset": 388, "length": 1, "template": "[Attacker] detonated or exploded [ExplosiveDevice] explosive device using [Instrument] to attack [Target] target at [Place] place", "role_text_map": [{"role": "Attacker", "tokens": []}, {"role": "Target", "tokens": []}, {"role": "Instrument", "tokens": []}, {"role": "ExplosiveDevice", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E16", "text": "bombing", "offset": 439, "length": 1, "template": "[Attacker] detonated or exploded [ExplosiveDevice] explosive device using [Instrument] to attack [Target] target at [Place] place", "role_text_map": [{"role": "Attacker", "tokens": []}, {"role": "Target", "tokens": []}, {"role": "Instrument", "tokens": []}, {"role": "ExplosiveDevice", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E17", "text": "bombing", "offset": 512, "length": 1, "template": "[Attacker] detonated or exploded [ExplosiveDevice] explosive device using [Instrument] to attack [Target] target at [Place] place", "role_text_map": [{"role": "Attacker", "tokens": []}, {"role": "Target", "tokens": []}, {"role": "Instrument", "tokens": []}, {"role": "ExplosiveDevice", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E18", "text": "trial", "offset": 536, "length": 1, "template": "[Prosecutor] tried [Defendant] before [JudgeCourt] court or judge for [Crime] crime in [Place] place", "role_text_map": [{"role": "Prosecutor", "tokens": []}, {"role": "Defendant", "tokens": [{"text": "whose", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T380", "offset": 535, "length": 1}]}, {"role": "JudgeCourt", "tokens": []}, {"role": "Crime", "tokens": []}, {"role": "Place", "tokens": [{"text": "court", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T48", "offset": 550, "length": 1}]}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E20", "text": "traveled", "offset": 742, "length": 1, "template": "[Transporter] transported [PassengerArtifact] in [Vehicle] from [Origin] place to [Destination] place", "role_text_map": [{"role": "Transporter", "tokens": []}, {"role": "PassengerArtifact", "tokens": [{"text": "Tamerlan", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T67", "offset": 732, "length": 1}]}, {"role": "Vehicle", "tokens": []}, {"role": "Origin", "tokens": []}, {"role": "Destination", "tokens": [{"text": "outskirts", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T493", "offset": 745, "length": 1}]}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E19", "text": "fled", "offset": 759, "length": 1, "template": "[Transporter] transported [PassengerArtifact] in [Vehicle] from [Origin] place to [Destination] place", "role_text_map": [{"role": "Transporter", "tokens": []}, {"role": "PassengerArtifact", "tokens": [{"text": "who", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T176", "offset": 757, "length": 1}]}, {"role": "Vehicle", "tokens": []}, {"role": "Origin", "tokens": [{"text": "region", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T735", "offset": 761, "length": 1}]}, {"role": "Destination", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E21", "text": "bombing", "offset": 912, "length": 1, "template": "[Attacker] detonated or exploded [ExplosiveDevice] explosive device using [Instrument] to attack [Target] target at [Place] place", "role_text_map": [{"role": "Attacker", "tokens": []}, {"role": "Target", "tokens": []}, {"role": "Instrument", "tokens": []}, {"role": "ExplosiveDevice", "tokens": []}, {"role": "Place", "tokens": [{"text": "Boston", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T124", "offset": 899, "length": 1}]}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E22", "text": "traveled", "offset": 1205, "length": 1, "template": "[Transporter] transported [PassengerArtifact] in [Vehicle] from [Origin] place to [Destination] place", "role_text_map": [{"role": "Transporter", "tokens": []}, {"role": "PassengerArtifact", "tokens": [{"text": "Tamerlan", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T238", "offset": 1202, "length": 1}]}, {"role": "Vehicle", "tokens": []}, {"role": "Origin", "tokens": []}, {"role": "Destination", "tokens": [{"text": "New Hampshire", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T237", "offset": 1208, "length": 2}]}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E23", "text": "paid", "offset": 1248, "length": 1, "template": "[Giver] bought, sold, or traded [AcquiredEntity] to [Recipient] in exchange for [PaymentBarter] for the benefit of [Beneficiary] at [Place] place", "role_text_map": [{"role": "Giver", "tokens": []}, {"role": "Recipient", "tokens": [{"text": "Tamerlan", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T713", "offset": 1242, "length": 1}]}, {"role": "AcquiredEntity", "tokens": [{"text": "package", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T813", "offset": 1254, "length": 1}]}, {"role": "PaymentBarter", "tokens": [{"text": "cash", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T814", "offset": 1251, "length": 1}]}, {"role": "Beneficiary", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E24", "text": "traveled", "offset": 1309, "length": 1, "template": "[Transporter] transported [PassengerArtifact] in [Vehicle] from [Origin] place to [Destination] place", "role_text_map": [{"role": "Transporter", "tokens": []}, {"role": "PassengerArtifact", "tokens": [{"text": "Tamerlan Tsarnaev", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T731", "offset": 1307, "length": 2}]}, {"role": "Vehicle", "tokens": []}, {"role": "Origin", "tokens": []}, {"role": "Destination", "tokens": [{"text": "New Hampshire", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T656", "offset": 1311, "length": 2}]}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E25", "text": "buy", "offset": 1315, "length": 1, "template": "[Giver] bought, sold, or traded [AcquiredEntity] to [Recipient] in exchange for [PaymentBarter] for the benefit of [Beneficiary] at [Place] place", "role_text_map": [{"role": "Giver", "tokens": []}, {"role": "Recipient", "tokens": [{"text": "Tamerlan Tsarnaev", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T731", "offset": 1307, "length": 2}]}, {"role": "AcquiredEntity", "tokens": [{"text": "fireworks", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T265", "offset": 1316, "length": 1}]}, {"role": "PaymentBarter", "tokens": []}, {"role": "Beneficiary", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E26", "text": "bombings", "offset": 1375, "length": 1, "template": "[Attacker] detonated or exploded [ExplosiveDevice] explosive device using [Instrument] to attack [Target] target at [Place] place", "role_text_map": [{"role": "Attacker", "tokens": []}, {"role": "Target", "tokens": []}, {"role": "Instrument", "tokens": []}, {"role": "ExplosiveDevice", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E29", "text": "ordered", "offset": 1381, "length": 1, "template": "[Giver] bought, sold, or traded [AcquiredEntity] to [Recipient] in exchange for [PaymentBarter] for the benefit of [Beneficiary] at [Place] place", "role_text_map": [{"role": "Giver", "tokens": []}, {"role": "Recipient", "tokens": [{"text": "Tamerlan", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T330", "offset": 1377, "length": 1}]}, {"role": "AcquiredEntity", "tokens": [{"text": "components", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T820", "offset": 1383, "length": 1}]}, {"role": "PaymentBarter", "tokens": []}, {"role": "Beneficiary", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E27", "text": "indictment", "offset": 1397, "length": 1, "template": "[Prosecutor] charged or indicted [Defendant] before [JudgeCourt] court or judge for [Crime] crime in [Place] place", "role_text_map": [{"role": "Prosecutor", "tokens": []}, {"role": "Defendant", "tokens": []}, {"role": "JudgeCourt", "tokens": [{"text": "jury", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T699", "offset": 1396, "length": 1}]}, {"role": "Crime", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E28", "text": "delivered", "offset": 1402, "length": 1, "template": "[Transporter] transported [PassengerArtifact] in [Vehicle] from [Origin] place to [Destination] place", "role_text_map": [{"role": "Transporter", "tokens": []}, {"role": "PassengerArtifact", "tokens": [{"text": "components", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T822", "offset": 1400, "length": 1}]}, {"role": "Vehicle", "tokens": []}, {"role": "Origin", "tokens": []}, {"role": "Destination", "tokens": [{"text": "apartment", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T631", "offset": 1409, "length": 1}]}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E30", "text": "identified", "offset": 1817, "length": 1, "template": "[Identifier] identified [IdentifiedObject] as [IdentifiedRole] at [Place] place", "role_text_map": [{"role": "Identifier", "tokens": []}, {"role": "IdentifiedObject", "tokens": [{"text": "who", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T217", "offset": 1812, "length": 1}]}, {"role": "IdentifiedRole", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E31", "text": "expelled", "offset": 1901, "length": 1, "template": "[Transporter] transported [PassengerArtifact] in [Vehicle] from [Origin] place to [Destination] place", "role_text_map": [{"role": "Transporter", "tokens": []}, {"role": "PassengerArtifact", "tokens": []}, {"role": "Vehicle", "tokens": []}, {"role": "Origin", "tokens": [{"text": "homeland", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T309", "offset": 1904, "length": 1}]}, {"role": "Destination", "tokens": [{"text": "where", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T691", "offset": 1895, "length": 1}]}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E32", "text": "killed", "offset": 1977, "length": 1, "template": "[Victim] died at [Place] place from [MedicalIssue] medical issue, killed by [Killer] killer", "role_text_map": [{"role": "Victim", "tokens": [{"text": "William Plotnikov", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T826", "offset": 1973, "length": 2}]}, {"role": "Place", "tokens": []}, {"role": "Killer", "tokens": [{"text": "police", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T761", "offset": 1979, "length": 1}]}, {"role": "MedicalIssue", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E33", "text": "fly", "offset": 1995, "length": 1, "template": "[Transporter] transported [PassengerArtifact] in [Vehicle] from [Origin] place to [Destination] place", "role_text_map": [{"role": "Transporter", "tokens": []}, {"role": "PassengerArtifact", "tokens": [{"text": "Tamerlan", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T760", "offset": 1990, "length": 1}]}, {"role": "Vehicle", "tokens": []}, {"role": "Origin", "tokens": [{"text": "region", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T586", "offset": 1993, "length": 1}]}, {"role": "Destination", "tokens": [{"text": "United States", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T585", "offset": 1999, "length": 2}]}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E34", "text": "attacks", "offset": 2301, "length": 1, "template": "[Attacker] attacked [Target] using [Instrument] at [Place] place", "role_text_map": [{"role": "Attacker", "tokens": []}, {"role": "Target", "tokens": []}, {"role": "Instrument", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E35", "text": "travel", "offset": 2463, "length": 1, "template": "[Transporter] transported [PassengerArtifact] in [Vehicle] from [Origin] place to [Destination] place", "role_text_map": [{"role": "Transporter", "tokens": []}, {"role": "PassengerArtifact", "tokens": [{"text": "he", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T168", "offset": 2455, "length": 1}]}, {"role": "Vehicle", "tokens": []}, {"role": "Origin", "tokens": [{"text": "United States", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T304", "offset": 2460, "length": 2}]}, {"role": "Destination", "tokens": [{"text": "region", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T170", "offset": 2469, "length": 1}]}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E36", "text": "moved", "offset": 2508, "length": 1, "template": "[Transporter] transported [PassengerArtifact] in [Vehicle] from [Origin] place to [Destination] place", "role_text_map": [{"role": "Transporter", "tokens": []}, {"role": "PassengerArtifact", "tokens": [{"text": "family", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T403", "offset": 2507, "length": 1}]}, {"role": "Vehicle", "tokens": []}, {"role": "Origin", "tokens": []}, {"role": "Destination", "tokens": [{"text": "area", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T400", "offset": 2512, "length": 1}]}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E37", "text": "investigation", "offset": 2754, "length": 1, "template": "[Investigator] investigated [Defendant] for [Crime] crime in [Place] place", "role_text_map": [{"role": "Investigator", "tokens": [{"text": "FBI", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T267", "offset": 2753, "length": 1}]}, {"role": "Defendant", "tokens": []}, {"role": "Crime", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E38", "text": "attack", "offset": 2762, "length": 1, "template": "[Attacker] attacked [Target] using [Instrument] at [Place] place", "role_text_map": [{"role": "Attacker", "tokens": []}, {"role": "Target", "tokens": []}, {"role": "Instrument", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E39", "text": "bombing", "offset": 2944, "length": 1, "template": "[Attacker] detonated or exploded [ExplosiveDevice] explosive device using [Instrument] to attack [Target] target at [Place] place", "role_text_map": [{"role": "Attacker", "tokens": []}, {"role": "Target", "tokens": []}, {"role": "Instrument", "tokens": []}, {"role": "ExplosiveDevice", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E40", "text": "arrest", "offset": 3137, "length": 1, "template": "[Jailer] arrested or jailed [Detainee] for [Crime] crime at [Place] place", "role_text_map": [{"role": "Jailer", "tokens": []}, {"role": "Detainee", "tokens": [{"text": "his", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T523", "offset": 3136, "length": 1}]}, {"role": "Crime", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E41", "text": "shot", "offset": 3216, "length": 1, "template": "[Attacker] attacked [Target] using [Instrument] at [Place] place", "role_text_map": [{"role": "Attacker", "tokens": [{"text": "brothers", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T229", "offset": 3215, "length": 1}]}, {"role": "Target", "tokens": [{"text": "officer", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T226", "offset": 3221, "length": 1}]}, {"role": "Instrument", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E42", "text": "killed", "offset": 3218, "length": 1, "template": "[Victim] died at [Place] place from [MedicalIssue] medical issue, killed by [Killer] killer", "role_text_map": [{"role": "Victim", "tokens": [{"text": "officer", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T226", "offset": 3221, "length": 1}]}, {"role": "Place", "tokens": []}, {"role": "Killer", "tokens": [{"text": "brothers", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T229", "offset": 3215, "length": 1}]}, {"role": "MedicalIssue", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E43", "text": "dead", "offset": 3286, "length": 1, "template": "[Victim] died at [Place] place from [MedicalIssue] medical issue, killed by [Killer] killer", "role_text_map": [{"role": "Victim", "tokens": [{"text": "Tamerlan", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T475", "offset": 3285, "length": 1}]}, {"role": "Place", "tokens": []}, {"role": "Killer", "tokens": []}, {"role": "MedicalIssue", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E44", "text": "wounds", "offset": 3304, "length": 1, "template": "[Victim] was injured by [Injurer] using [Instrument] in [BodyPart] body part with [MedicalCondition] medical issue at [Place] place", "role_text_map": [{"role": "Victim", "tokens": [{"text": "Dzhokhar", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T38", "offset": 3298, "length": 1}]}, {"role": "Injurer", "tokens": []}, {"role": "Instrument", "tokens": []}, {"role": "BodyPart", "tokens": []}, {"role": "MedicalCondition", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E45", "text": "indictment", "offset": 3340, "length": 1, "template": "[Prosecutor] charged or indicted [Defendant] before [JudgeCourt] court or judge for [Crime] crime in [Place] place", "role_text_map": [{"role": "Prosecutor", "tokens": []}, {"role": "Defendant", "tokens": []}, {"role": "JudgeCourt", "tokens": []}, {"role": "Crime", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E48", "text": "killing", "offset": 3387, "length": 1, "template": "[Victim] died at [Place] place from [MedicalIssue] medical issue, killed by [Killer] killer", "role_text_map": [{"role": "Victim", "tokens": [{"text": "people", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T312", "offset": 3389, "length": 1}]}, {"role": "Place", "tokens": []}, {"role": "Killer", "tokens": []}, {"role": "MedicalIssue", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E47", "text": "killing", "offset": 3400, "length": 1, "template": "[Victim] died at [Place] place from [MedicalIssue] medical issue, killed by [Killer] killer", "role_text_map": [{"role": "Victim", "tokens": [{"text": "people", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T703", "offset": 3403, "length": 1}]}, {"role": "Place", "tokens": []}, {"role": "Killer", "tokens": []}, {"role": "MedicalIssue", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E49", "text": "bombing", "offset": 3462, "length": 1, "template": "[Attacker] detonated or exploded [ExplosiveDevice] explosive device using [Instrument] to attack [Target] target at [Place] place", "role_text_map": [{"role": "Attacker", "tokens": []}, {"role": "Target", "tokens": []}, {"role": "Instrument", "tokens": []}, {"role": "ExplosiveDevice", "tokens": []}, {"role": "Place", "tokens": [{"text": "Boston", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T728", "offset": 3460, "length": 1}]}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E61", "text": "attack", "offset": 3553, "length": 1, "template": "[Attacker] attacked [Target] using [Instrument] at [Place] place", "role_text_map": [{"role": "Attacker", "tokens": [{"text": "student", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T677", "offset": 3546, "length": 1}]}, {"role": "Target", "tokens": [{"text": "bystanders", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T600", "offset": 3555, "length": 1}]}, {"role": "Instrument", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E60", "text": "wounded", "offset": 3649, "length": 1, "template": "[Victim] was injured by [Injurer] using [Instrument] in [BodyPart] body part with [MedicalCondition] medical issue at [Place] place", "role_text_map": [{"role": "Victim", "tokens": [{"text": "his", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T471", "offset": 3637, "length": 1}]}, {"role": "Injurer", "tokens": []}, {"role": "Instrument", "tokens": []}, {"role": "BodyPart", "tokens": []}, {"role": "MedicalCondition", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E59", "text": "convicted", "offset": 3763, "length": 1, "template": "[JudgeCourt] court or judge convicted [Defendant] of [Crime] crime in [Place] place", "role_text_map": [{"role": "JudgeCourt", "tokens": []}, {"role": "Defendant", "tokens": [{"text": "Dzhokhar", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T74", "offset": 3761, "length": 1}]}, {"role": "Crime", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E58", "text": "trial", "offset": 3813, "length": 1, "template": "[Prosecutor] tried [Defendant] before [JudgeCourt] court or judge for [Crime] crime in [Place] place", "role_text_map": [{"role": "Prosecutor", "tokens": []}, {"role": "Defendant", "tokens": []}, {"role": "JudgeCourt", "tokens": []}, {"role": "Crime", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E57", "text": "sentence", "offset": 3858, "length": 1, "template": "[JudgeCourt] court or judge sentenced [Defendant] for [Crime] crime to [Sentence] sentence in [Place] place", "role_text_map": [{"role": "JudgeCourt", "tokens": []}, {"role": "Defendant", "tokens": [{"text": "defense", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T191", "offset": 3838, "length": 1}]}, {"role": "Crime", "tokens": []}, {"role": "Sentence", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E56", "text": "trial", "offset": 3889, "length": 1, "template": "[Prosecutor] tried [Defendant] before [JudgeCourt] court or judge for [Crime] crime in [Place] place", "role_text_map": [{"role": "Prosecutor", "tokens": []}, {"role": "Defendant", "tokens": [{"text": "defense", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T194", "offset": 3881, "length": 1}]}, {"role": "JudgeCourt", "tokens": []}, {"role": "Crime", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E55", "text": "bombing", "offset": 3909, "length": 1, "template": "[Attacker] detonated or exploded [ExplosiveDevice] explosive device using [Instrument] to attack [Target] target at [Place] place", "role_text_map": [{"role": "Attacker", "tokens": []}, {"role": "Target", "tokens": []}, {"role": "Instrument", "tokens": []}, {"role": "ExplosiveDevice", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E54", "text": "trial", "offset": 3918, "length": 1, "template": "[Prosecutor] tried [Defendant] before [JudgeCourt] court or judge for [Crime] crime in [Place] place", "role_text_map": [{"role": "Prosecutor", "tokens": []}, {"role": "Defendant", "tokens": []}, {"role": "JudgeCourt", "tokens": []}, {"role": "Crime", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E53", "text": "bombing", "offset": 3929, "length": 1, "template": "[Attacker] detonated or exploded [ExplosiveDevice] explosive device using [Instrument] to attack [Target] target at [Place] place", "role_text_map": [{"role": "Attacker", "tokens": []}, {"role": "Target", "tokens": [{"text": "victims", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T32", "offset": 3926, "length": 1}]}, {"role": "Instrument", "tokens": []}, {"role": "ExplosiveDevice", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E52", "text": "bombings", "offset": 3975, "length": 1, "template": "[Attacker] detonated or exploded [ExplosiveDevice] explosive device using [Instrument] to attack [Target] target at [Place] place", "role_text_map": [{"role": "Attacker", "tokens": []}, {"role": "Target", "tokens": []}, {"role": "Instrument", "tokens": []}, {"role": "ExplosiveDevice", "tokens": []}, {"role": "Place", "tokens": [{"text": "Boston", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T4", "offset": 3973, "length": 1}]}]}, {"event_id": "2_VOA_EN_NW_2015.01.04.2583337-E51", "text": "moving", "offset": 4056, "length": 1, "template": "[Transporter] transported [PassengerArtifact] in [Vehicle] from [Origin] place to [Destination] place", "role_text_map": [{"role": "Transporter", "tokens": []}, {"role": "PassengerArtifact", "tokens": [{"text": "We", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T47", "offset": 4053, "length": 1}]}, {"role": "Vehicle", "tokens": []}, {"role": "Origin", "tokens": []}, {"role": "Destination", "tokens": [{"text": "somewhere", "entity_id": "2_VOA_EN_NW_2015.01.04.2583337-T846", "offset": 4057, "length": 1}]}]}]
+    </div>
+
+    <div id='relations-data' hidden>
+      []
+    </div>
+
+    <div id="strategyB-tuples" hidden>
+      ${strategyB-tuples}
+    </div>
+
+    <p>
+      You can navigate all of the events by clicking the following buttons. <br>
+      You have to finish all the events before submitting. (Remember that you can't refresh the page otherwise
+      the progress will be gone, <br>
+      to prevent this from happening, we suggest that you write the QA pairs in the google doc and copy paste them
+      here)
+    </p>
+    <!-- Tabs for each trigger -->
+    <div class="btn-toolbar" id="button-bar">
+    </div>
+
+    <div class="strategies">
+      <span id="strategy-btns">
+        <button id="selectA" class="btn btn-default" type="button">
+          Strategy A</button>
+        <button id="selectB" class="btn btn-default" type="button">
+          Strategy B</button>
+      </span>
+      <select id="tuple-select">
+      </select>
+      <div class="ann-component">
+        <em>
+          KAIROS event arguments for triggers
+        </em>
+        <div id='template-area' class='ann well well-sm'>
+        </div>
+      </div>
+      <div class="strategy" id="strategyA">
+        <div class="ann-component">
+          <em>
+            These are relations between events.
+          </em>
+          <div id='relations-area' class='ann well well-sm'>
+          </div>
+        </div>
+      </div>
+      <div class="strategy" id="strategyB">
+      </div>
+    </div>
+    <div id="input-area">
+    </div>
+    <div title="Fill all fields before submitting">
+      <button id="save" class="btn btn-default" type="button">Save</button>
+      <button id="submitButton" class="btn btn-default" type="button">Submit</button>
+    </div>
+  </section>
+
+
+  <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" rel="stylesheet" />
+  <style>.mg-15 {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.mg-5 {
+    margin: 5px;
+}
+
+.container-fluid {
+    max-width: 1800px;
+    margin: 30px;
+}
+
+.btn-container {
+    display: inline-block;
+    margin: 10px;
+}
+
+.strategies {
+    margin: 15px;
+}
+
+.ann-component {
+    margin: 5px;
+}
+
+
+#collapseTrigger {
+    color: #fff;
+    display: block;
+    text-decoration: none;
+}
+
+#submitButton {
+    white-space: normal;
+}
+
+#input-area {
+    display: block;
+    margin: 10px;
+}
+
+.input-fields {
+    margin: 10px;
+    padding: 10px;
+    background-color: #ffe3e3;
+    border-radius: 15px;
+}
+
+#template-area {
+    background-color: #eee;
+    display: flex;
+}
+
+#relations-area {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+.template-map {
+    border: 1px solid gray;
+    padding: 5px;
+}
+
+.btn-container>button {
+    min-width: 3em;
+}
+
+trigger {
+    display: inline;
+}
+
+role {
+    display: inline;
+}
+
+.highlight-trigger {
+    background-color: lightgoldenrodyellow;
+}
+
+.highlight-role {
+    background-color: lightblue;
+}
+
+.highlight-role1 {
+    background-color: rgba(255, 255, 0, 0.5);
+}
+
+.highlight-role2 {
+    background-color: rgba(0, 255, 255, 0.5);
+}
+
+.highlight-role3 {
+    background-color: rgba(255, 0, 255, 0.5);
+}
+
+.btn-group {
+    vertical-align: middle;
+}
+
+.content {
+    margin-bottom: 15px;
+}
+
+.ann {
+    font-size: 16px;
+}
+
+.disp {
+    font-size: 20px;
+}
+
+.ann>span.token {
+    cursor: pointer;
+}
+
+.ann>span.token:hover {
+    text-decoration: underline;
+}
+
+.ann>strong.annotation:hover {
+    text-decoration: line-through;
+}
+
+input[disabled] {
+    color: #000
+}
+
+.question-input, .answer-input {
+    vertical-align: middle;
+}</style>
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js"
+    integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+  <script>// ---------------------------------------------------------
+// Global
+// ---------------------------------------------------------
+
+var page_num_set = new Set();
+let strategy = '';
+let developer_mode = false;
+
+// ---------------------------------------------------------
+// Create jQuery elements
+// ---------------------------------------------------------
+
+var submit = $('#submitButton');
+
+// list of text/offset objects 
+const events_data = JSON.parse($('#events-data').text().trim());
+const relations_data = JSON.parse($('#relations-data').text().trim());
+const strategyB_tuples = [["road_ied_8-E1", "road_ied_8-E2", "road_ied_8-E3"]];//JSON.parse($('#strategyB-tuples').text().trim());
+
+const empty_template_map = function () {
+    return $('<div class="template-map">');
+}
+
+const save_record = {
+    A: {
+        relations: relations_data,
+        qapairs: [],
+    },
+    B: {
+        qapairs: [],
+    },
+};
+
+const strategyA_template = function (tno, event1, event2) {
+    return {
+        question: '',
+        answer: '',
+    }
+}
+
+const template_record = [];
+events_data.forEach(function (ei, i) {
+    template_record[i] = empty_template_map();
+    events_data.forEach(function (ej, j) {
+        if (i >= j) return;
+
+        for (let tno = 1; tno <= 4; tno++){
+            {
+                const { question, answer } = strategyA_template(tno, ei, ej);
+                save_record.A.qapairs.push({
+                    event1_id: ei.event_id,
+                    event2_id: ej.event_id,
+                    templateno: tno,
+                    question,
+                    answer,
+                });
+            }
+            {
+                const { question, answer } = strategyA_template(tno, ej, ei);
+                save_record.A.qapairs.push({
+                    event1_id: ej.event_id,
+                    event2_id: ei.event_id,
+                    templateno: tno,
+                    question,
+                    answer,
+                });
+            }
+        }
+    });
+});
+
+function strategyB_template(event1_id, event2_id, event3_id) {
+    const question = 'What is the participant in the event that interviews the transporter that flew the place that gone off the explosive device. ';
+    const answer = '';
+    return {
+        question, answer
+    };
+}
+
+strategyB_tuples.forEach(function (tuple, i) {
+    const { question, answer } = strategyB_template(tuple[0], tuple[1], tuple[2]);
+    save_record.B.qapairs.push({
+        event1_id: tuple[0],
+        event2_id: tuple[1],
+        event3_id: tuple[2],
+        question,
+        answer,
+    });
+});
+
+// implementation of string formatting
+if (!String.prototype.format) {
+    String.prototype.format = function () {
+        var args = arguments;
+        return this.replace(/{(\d+)}/g, function (match, number) {
+            return typeof args[number] != 'undefined'
+                ? args[number]
+                : match
+                ;
+        });
+    };
+}
+
+// ---------------------------------------------------------
+// Create elements
+// ---------------------------------------------------------
+
+var makeDom = function () {
+    recoverUserInput();
+    console.log(page_num_set);
+    highlightEvent();
+};
+
+var highlightEvent = function () {
+    /* highlight trigger within document */
+    const pagenos = Array.from(page_num_set);
+    pagenos.sort((a, b) => events_data[a].offset - events_data[b].offset);
+
+    // remove previous highlights
+    $('trigger').removeClass('highlight-trigger');
+    $('role').removeClass('highlight-role1 highlight-role2 highlight-role3');
+
+    pagenos.forEach(trigger_num => {
+        // highlight trigger
+        $('#trigger-' + trigger_num).addClass('highlight-trigger');
+        $('role[trigno=' + trigger_num + ']').addClass('highlight-role'+(trigger_num+1));
+    })
+}
+
+const relationTypes = [
+    "BEFORE",
+    "AFTER",
+    "OVERLAPS",
+    "EQUAL",
+    "CONTAINS",
+    "CONTAINED BY",
+    "CAUSES",
+    "CAUSED BY",
+]
+
+// restore input from other trigger
+var recoverUserInput = function () {
+    const inputArea = $('#input-area');
+    inputArea.empty();
+    page_num_set.clear();
+
+    let pagenos = [];
+    if (strategy === 'A') {
+        // questions
+        const event_pair = $('#tuple-select').val().split(',').map(x => parseInt(x));
+        page_num_set.add(event_pair[0]);
+        page_num_set.add(event_pair[1]);
+
+        pagenos = event_pair;
+        pagenos.sort((a, b) => events_data[a].offset - events_data[b].offset);
+
+        // relations
+        const relationsArea = $('#relations-area');
+        relationsArea.empty();
+        pagenos.forEach(i => {
+            pagenos.forEach(j => {
+                if (i >= j) return;
+
+                const event1 = events_data[i];
+                const event2 = events_data[j];
+                relationsArea.append(makeRelationSelect(event1, event2));
+                relationsArea.append(makeRelationSelect(event2, event1));
+            })
+        })
+
+        const matching_pairs = save_record.A.qapairs.filter(qa => {
+            return (
+                (qa.event1_id === events_data[event_pair[0]].event_id &&
+                qa.event2_id === events_data[event_pair[1]].event_id) ||
+                (qa.event1_id === events_data[event_pair[1]].event_id &&
+                qa.event2_id === events_data[event_pair[0]].event_id)
+            );
+        });
+        matching_pairs.forEach((qa, i) => {
+            add_qa_input(qa.question, qa.answer, qa);
+            if (i % 2 === 1 && i < matching_pairs.length - 1)
+                inputArea.add($('<hr>'));
+        });
+    } else if (strategy === 'B') {
+        const tuple = save_record.B.qapairs[$('#tuple-select').val()];
+        console.log("TUPLE", tuple)
+        page_num_set.add(events_data.findIndex(e => e.event_id === tuple.event1_id));
+        page_num_set.add(events_data.findIndex(e => e.event_id === tuple.event2_id));
+        page_num_set.add(events_data.findIndex(e => e.event_id === tuple.event3_id));
+        pagenos = Array.from(page_num_set);
+        pagenos.sort((a, b) => events_data[a].offset - events_data[b].offset);
+        add_qa_input(tuple.question, tuple.answer, null, false);
+        add_qa_input('', '', tuple, true);
+    }
+    // templates
+    const templateArea = $('#template-area');
+    templateArea.empty()
+    pagenos.forEach(trigger_num => {
+        const div = $('<div>')
+            .append($('<p>').text(describeEvent(events_data[trigger_num])))
+            .append(template_record[trigger_num]);
+        templateArea.append(div);
+    });
+};
+
+function describeEvent(event) {
+    return (developer_mode ? `ID: ${event.event_id} | ` : "") + `${event.text} @ ${event.offset}`;
+}
+
+function makeRelationSelect(event1, event2) {
+    const id1 = event1.event_id;
+    const id2 = event2.event_id;
+    const relation = relations_data.find(r =>
+        r.event1_id == id1 &&
+        r.event2_id == id2
+    );
+
+    const selectInput =
+        $('<select class="relation-select mg-5">');
+    relationTypes.forEach(type => {
+        const option = $(`<option value="${type}">${type.toLowerCase()}</option>`);
+        selectInput.append(option);
+    });
+    selectInput.append($('<option value="NONE">none</option>'));
+    selectInput.val(relation?.type ?? "NONE");
+    selectInput.on('change', function () {
+        const type = $(this).val();
+        const event1_id = id1;
+        const event2_id = id2;
+        const relation = relations_data.find(r =>
+            r.event1_id == event1_id &&
+            r.event2_id == event2_id
+        );
+        if (relation) {
+            relation.type = type;
+        } else {
+            relations_data.push({
+                event1_id,
+                event2_id,
+                type,
+            });
+        }
+    });
+
+    const div = $('<div>')
+        .append($('<label>').text(describeEvent(event1)))
+        .append(selectInput)
+        .append($('<label>').text(describeEvent(event2)))
+
+    return div;
+}
+
+// ensure something is in the input box
+var canSubmit = function () {
+    return true;
+};
+
+// template role fields
+const make_role_mapping_element = function (role, text) {
+    const role_text = $('<label>').html('<b>' + role + '</b>:');
+    const role_field = $('<span>')
+        .addClass('role-field')
+        .attr({
+            role: role,
+            rows: 1,
+        })
+        .text(text)
+
+    const role_div = $('<div>')
+        .addClass('role-container')
+        .append(role_text)
+        .append(role_field);
+
+    return role_div;
+}
+
+
+const add_qa_input = function (question = '', answer = '', ref = null, editable = true) {
+    let question_text = $('<label>').text('question:');
+    let question_input = $('<textarea>')
+        .addClass('question-input')
+        .addClass('mg-15')
+        .attr({
+            placeholder: 'write down your question',
+            rows: 2,
+            cols: 80,
+        })
+        .text(question);
+    question_input.on("input", function () {
+        console.log('q', ref)
+        if (ref != null)
+            ref.question = $(this).val();
+        show();
+    });
+    let answer_text = $('<label>').text('answer:');
+    let answer_input = $('<textarea>')
+        .addClass('answer-input')
+        .addClass('mg-15')
+        .attr({
+            placeholder: 'write down your answer',
+            rows: 2,
+            cols: 80,
+        })
+        .text(answer);
+    answer_input.on("input", function () {
+        console.log('a', ref)
+        if (ref != null)
+            ref.answer = $(this).val();
+        show();
+    });
+
+    if (!editable) {
+        question_input.attr('disabled', 'disabled');
+        answer_input.attr('disabled', 'disabled');
+    }
+
+    const input_fields = $('<div>')
+        .addClass('input-fields')
+        .append(question_text)
+        .append(question_input)
+        .append(answer_text)
+        .append(answer_input)
+
+    $('#input-area').append(input_fields);
+
+    show();
+};
+
+var enable_button = function (button) {
+    button.removeAttr("disabled");
+    button.removeClass("btn-default");
+    button.addClass("btn-success");
+};
+
+var disable_button = function (button) {
+    button.attr("disabled", "disabled");
+    button.removeClass("btn-success");
+    button.addClass("btn-default");
+};
+
+var select_button = function (button) {
+    button.removeClass("btn-default");
+    button.addClass("btn-primary");
+};
+
+var deselect_button = function (button) {
+    button.removeClass("btn-primary");
+    button.addClass("btn-default");
+};
+
+var is_wh_question = function (question) {
+    let tokens = question.split(' ');
+    if (tokens.length <= 1) {
+        return false;
+    }
+
+    // let wh_pattern = /^Wh\|wh\|How\|how/;
+    let wh_pattern = /^wh|Wh|how|How/;
+    // console.log(question.match(wh_pattern));
+    return !!question.match(wh_pattern);
+};
+
+
+var show = function () {
+    for (button of document.getElementById('button-bar').getElementsByTagName('*')) {
+        if (page_num_set.has(parseInt(button.getAttribute('page-no'))))
+            select_button($(button));
+        else
+            deselect_button($(button));
+    }
+
+};
+
+// dynamically create buttons for each SRL arg
+events_data.forEach(function (event, i) {
+    if (event.text.trim()) {
+        var button = document.createElement("button");
+        button.setAttribute("type", "button");
+        button.setAttribute("id", "button-page-" + i);
+        button.setAttribute("page-no", i);
+        button.setAttribute("class", "btn btn-default");
+        button.innerHTML = describeEvent(event);
+        button.onclick = function () {
+            // const pageno = parseInt(this.getAttribute("page-no"));
+            // // toggle button
+            // if (button.classList.contains('btn-default'))
+            //     page_num_set.add(pageno);
+            // else
+            //     page_num_set.delete(pageno);
+            // makeDom();
+            // let instruction = $('#instructionBody');
+            // if (instruction.is(':visible')) {
+            //     instruction.toggle();
+            // }
+            // //window.scrollTo(0, 0); // scroll to top
+            // show();
+        }
+        document.getElementById('button-bar').appendChild(button);
+    }
+
+    // format template area with role mappings
+    // if template not null or undefined
+    if (event.template !== null) {
+        const template_area = template_record[i];
+        const template = $('<p>').text(event.template);
+        template_area.append(template);
+        event.role_text_map.forEach(function (pairing) {
+            template_area.append(make_role_mapping_element(pairing.role, pairing.tokens.map(tk => tk.text).join('/')));
+        });
+    }
+})
+
+// ---------------------------------------------------------
+// Initialize
+// ---------------------------------------------------------
+
+var submit_form = function (event) {
+    event.preventDefault();
+    if (!window.confirm("Are you sure you want to submit?")) return;
+    save_all();
+
+    const urlParams = new URLSearchParams(window.location.search)
+
+    // create the form element and point it to the correct endpoint
+    const form = document.createElement('form')
+    form.action = (new URL('mturk/externalSubmit', urlParams.get('turkSubmitTo'))).href
+    form.method = 'post'
+
+    // attach the assignmentId
+    const inputAssignmentId = document.createElement('input')
+    inputAssignmentId.name = 'assignmentId'
+    inputAssignmentId.value = urlParams.get('assignmentId')
+    inputAssignmentId.hidden = true
+    form.appendChild(inputAssignmentId)
+
+    // attach data I want to send back
+    const inputResults = document.createElement('input')
+    inputResults.name = 'results'
+    inputResults.value = JSON.stringify(save_record)
+    inputResults.hidden = true
+    form.appendChild(inputResults)
+
+    // attach the form to the HTML document and trigger submission
+    document.body.appendChild(form)
+    form.submit()
+}
+
+//$('#save').on('click', save_all);
+submit.on('click', submit_form);
+
+var popup_alert = function (alert_box, text) {
+    alert_box.html(text);
+    alert_box.css({
+        'background-color': 'fec5bb',
+        'padding': '5px',
+        'border': '1px solid lightgray',
+        'border-radius': '10px',
+        'margin-top': '10px',
+        'margin-bottom': '10px'
+    });
+    displaying = true;
+    setTimeout(function () {
+        alert_box.html('');
+        alert_box.css({
+            'padding': '0px',
+            'border': '0px'
+        });
+        displaying = false;
+    }, 7000);
+};
+
+const selectA = $('#selectA');
+const selectB = $('#selectB');
+
+const tupleSelect = $('#tuple-select');
+
+
+function makeSelectionOptions() {
+    if (strategy === 'A') {
+        tupleSelect.empty();
+        events_data.forEach(function (ei, i) {
+            events_data.forEach(function (ej, j) {
+                if (i >= j) return;
+                const opt = $('<option>')
+                    .attr({
+                        value: `${i},${j}`,
+                    })
+                    .text(`${describeEvent(ei)} & ${describeEvent(ej)}`);
+                tupleSelect.append(opt);
+            });
+        });
+        tupleSelect.children()[0].selected = true;
+    } else {
+        tupleSelect.empty();
+        function describeEventById(id) {
+            const event = events_data.find(e => e.event_id === id);
+            return describeEvent(event);
+        }
+        strategyB_tuples.forEach(function (tuple, i) {
+            const opt = $('<option>')
+                .attr({
+                    value: i,
+                })
+                .text(`${describeEventById(tuple[0])}, ${describeEventById(tuple[1])}, ${describeEventById(tuple[2])}`);
+            tupleSelect.append(opt);
+        });
+        tupleSelect.children()[0].selected = true;
+    }
+}
+
+selectA.on('click', function () {
+    if (strategy === 'A') return;
+    strategy = 'A';
+    $('#strategyA').show();
+    select_button(selectA);
+    $('#strategyB').hide();
+    deselect_button(selectB);
+    makeSelectionOptions();
+    makeDom();
+    show();
+});
+
+selectB.on('click', function () {
+    if (strategy === 'B') return;
+    strategy = 'B';
+    $('#strategyA').hide();
+    deselect_button(selectA);
+    $('#strategyB').show();
+    select_button(selectB);
+    makeSelectionOptions();
+    makeDom();
+    show();
+});
+
+selectA.click();
+
+tupleSelect.on('change', function () {
+    makeDom();
+    show();
+});
+
+$('#developer-mode').on('change', function () {
+    developer_mode = this.checked;
+    makeSelectionOptions();
+    makeDom();
+    show();
+});
+
+// Instructions expand/collapse
+var content = $('#instructionBody');
+var instructions_trigger = $('#collapseTrigger');
+// content.hide();
+$('.collapse-text').text('(Click to collapse)');
+instructions_trigger.click(function () {
+    content.toggle();
+    var isVisible = content.is(':visible');
+    if (isVisible) {
+        $('.collapse-text').text('(Click to collapse)');
+    } else {
+        $('.collapse-text').text('(Click to expand)');
+    }
+});
+
+console.log(save_record)
+show();
+</script>
+</crowd-form>

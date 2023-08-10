@@ -1,0 +1,793 @@
+<crowd-form answer-format="flatten-objects">
+  <section class="container-fluid" id="Relevancy">
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <div class="panel panel-primary">
+          <a class="panel-heading" href="javascript:void(0);" id="collapseTrigger">
+            <strong>Annotation Instructions</strong>
+            <span class="collapse-text">(Click to expand)</span>
+          </a>
+          <div class="panel-body" id="instructionBody">
+            {{INSTRUCTIONS}}
+            {{LINK}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    Enable developer mode:
+    <input type="checkbox" id="developer-mode">
+
+    <h3>Document</h3>
+    <div id="document-text" class="ann well well-sm">
+      Birmingham pub bombings: Lawyer renews call for inquests Published duration 14 November 2014 image copyright Getty Images image caption The two bombs went off 10 minutes apart in pubs a few yards from each other A lawyer for the family of one of the 21 people killed in the Birmingham pub bombings is calling for inquests to be held for the victims. There have been no inquests since two <role id='role-0-ExplosiveDevice-0'trigno='0'>bombs</role> <trigger id='trigger-0'>exploded</trigger> at the <role id='role-0-Target-0'trigno='0'>Mulberry Bush</role> and the <role id='role-0-Target-2'trigno='0'>Tavern</role> in the Town in November 1974, which also injured 182 <role id='role-0-Target-1'trigno='0'>people</role>. Human rights lawyer Kevin Winters said he will be writing to West Midlands Police and the relevant coroner. Inquests would allow access to certain material never before disclosed. <role id='role-1-Detainee-1'trigno='1'>Six men</role>, later dubbed the <role id='role-1-Detainee-0'trigno='1'>Birmingham Six, </role> were <trigger id='trigger-1'>jailed</trigger> in 1975 but their convictions were quashed in 1991. Families of the victims have criticised police, accusing them of withholding information over the years and say 40 years on from the bombings they still do not have the answers they need. Calls for a fresh <trigger id='trigger-2'>investigation</trigger> into what happened were denied by <role id='role-2-Investigator-0'trigno='2'>West Midlands Police</role> in April. Speaking exclusively to BBC Radio WM ahead of the 40th anniversary next week, Mr Winters, who has represented families of victims of the Troubles in Northern Ireland, said inquests would have been put off because of legal proceedings against the Six but"uniquely we now know the wrong people were put behind bars."image caption Twenty-one people were killed when bombs exploded at the Mulberry Bush and Tavern in the Town on 21 November 1974 Brother and sister Julie and Brian Hambleton, who lost their sister <role id='role-3-Victim-0'trigno='3'>Maxine</role> in the <trigger id='trigger-3'>bombings</trigger>, have been leading a campaign to try to find out more about what happened. Ms Hambleton, who met Mr Winters this week to ask him to represent them, said she does not understand why inquests have never been held, even after 1991."Why hasn't anyone stepped up before now and said anything? ,"Ms Hambleton said. image copyright (C) British Broadcasting Corporation image caption <role id='role-4-Defendant-0'trigno='4'>Julie Hambleton</role> said she feels she has not been given the answers she needs about her sister's death As well as establishing inquest <trigger id='trigger-4'>hearings</trigger>, Mr <role id='role-4-Prosecutor-0'trigno='4'>Winters</role> said he would be pursuing several others avenues of action. This may include action against authorities under European Human Rights legislation, looking at"serious issues"about the previous flawed West Midlands Police investigation and within that"the deliberate peddling of the view that they had caught the perpetrators". image caption Human rights lawyer Kevin Winters has been asked to represent the Hambletons"There's an on-going duty on behalf of the authorities, and especially West Midlands Police, to actually get to the bottom of what happened,"Mr Winters said."These families have received a very poor service in terms of justice and truth and closure-they've got nothing near it at all."He said the families also had no recourse to remedies available to those affected by the Troubles in Ireland. Inquests would provide families with access to certain"disclosure materials"that he said had been kept from them."In my view, and our view, there is a basis for an inquest and we're now going to be writing to West Midlands Police and the relevant coronial services in England through our agencies in London to invite a new inquest."In response, Chief Constable Chris Sims said:"Nothing would give me more satisfaction than to bring those responsible for this atrocity to justice."However, we have found no new evidence that would assist us in bringing anyone to justice for the pub bombings."It is always possible that brand new and significant information could become available to us."Let me be clear-this case is not closed."
+    </div>
+
+    <div id='events-data' hidden>
+      [{"event_id": "wiki_ied_bombings_5_news_11-E1", "text": "exploded", "offset": 72, "length": 1, "template": "[Attacker] detonated or exploded [ExplosiveDevice] explosive device using [Instrument] to attack [Target] target at [Place] place", "role_text_map": [{"role": "Attacker", "tokens": []}, {"role": "Target", "tokens": [{"text": "Mulberry Bush", "entity_id": "wiki_ied_bombings_5_news_11-T16", "offset": 75, "length": 2}, {"text": "people", "entity_id": "wiki_ied_bombings_5_news_11-T19", "offset": 91, "length": 1}, {"text": "Tavern", "entity_id": "wiki_ied_bombings_5_news_11-T17", "offset": 79, "length": 1}]}, {"role": "Instrument", "tokens": []}, {"role": "ExplosiveDevice", "tokens": [{"text": "bombs", "entity_id": "wiki_ied_bombings_5_news_11-T15", "offset": 71, "length": 1}]}, {"role": "Place", "tokens": []}]}, {"event_id": "wiki_ied_bombings_5_news_11-E2", "text": "jailed", "offset": 133, "length": 1, "template": "[Jailer] arrested or jailed [Detainee] for [Crime] crime at [Place] place", "role_text_map": [{"role": "Jailer", "tokens": []}, {"role": "Detainee", "tokens": [{"text": "Birmingham Six,", "entity_id": "wiki_ied_bombings_5_news_11-T28", "offset": 129, "length": 3}, {"text": "Six men", "entity_id": "wiki_ied_bombings_5_news_11-T117", "offset": 123, "length": 2}]}, {"role": "Crime", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "wiki_ied_bombings_5_news_11-E3", "text": "investigation", "offset": 182, "length": 1, "template": "[Investigator] investigated [Defendant] for [Crime] crime in [Place] place", "role_text_map": [{"role": "Investigator", "tokens": [{"text": "West Midlands Police", "entity_id": "wiki_ied_bombings_5_news_11-T36", "offset": 189, "length": 3}]}, {"role": "Defendant", "tokens": []}, {"role": "Crime", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "wiki_ied_bombings_5_news_11-E4", "text": "bombings", "offset": 293, "length": 1, "template": "[Victim] died at [Place] place from [MedicalIssue] medical issue, killed by [Killer] killer", "role_text_map": [{"role": "Victim", "tokens": [{"text": "Maxine", "entity_id": "wiki_ied_bombings_5_news_11-T57", "offset": 290, "length": 1}]}, {"role": "Place", "tokens": []}, {"role": "Killer", "tokens": []}, {"role": "MedicalIssue", "tokens": []}]}, {"event_id": "wiki_ied_bombings_5_news_11-E5", "text": "hearings", "offset": 397, "length": 1, "template": "[Prosecutor] tried [Defendant] before [JudgeCourt] court or judge for [Crime] crime in [Place] place", "role_text_map": [{"role": "Prosecutor", "tokens": [{"text": "Winters", "entity_id": "wiki_ied_bombings_5_news_11-T73", "offset": 400, "length": 1}]}, {"role": "Defendant", "tokens": [{"text": "Julie Hambleton", "entity_id": "wiki_ied_bombings_5_news_11-T67", "offset": 372, "length": 2}]}, {"role": "JudgeCourt", "tokens": []}, {"role": "Crime", "tokens": []}, {"role": "Place", "tokens": []}]}]
+    </div>
+
+    <div id='relations-data' hidden>
+      []
+    </div>
+
+    <div id="strategyB-tuples" hidden>
+      ${strategyB-tuples}
+    </div>
+
+    <p>
+      You can navigate all of the events by clicking the following buttons. <br>
+      You have to finish all the events before submitting. (Remember that you can't refresh the page otherwise
+      the progress will be gone, <br>
+      to prevent this from happening, we suggest that you write the QA pairs in the google doc and copy paste them
+      here)
+    </p>
+    <!-- Tabs for each trigger -->
+    <div class="btn-toolbar" id="button-bar">
+    </div>
+
+    <div class="strategies">
+      <span id="strategy-btns">
+        <button id="selectA" class="btn btn-default" type="button">
+          Strategy A</button>
+        <button id="selectB" class="btn btn-default" type="button">
+          Strategy B</button>
+      </span>
+      <select id="tuple-select">
+      </select>
+      <div class="ann-component">
+        <em>
+          KAIROS event arguments for triggers
+        </em>
+        <div id='template-area' class='ann well well-sm'>
+        </div>
+      </div>
+      <div class="strategy" id="strategyA">
+        <div class="ann-component">
+          <em>
+            These are relations between events.
+          </em>
+          <div id='relations-area' class='ann well well-sm'>
+          </div>
+        </div>
+      </div>
+      <div class="strategy" id="strategyB">
+      </div>
+    </div>
+    <div id="input-area">
+    </div>
+    <div title="Fill all fields before submitting">
+      <button id="save" class="btn btn-default" type="button">Save</button>
+      <button id="submitButton" class="btn btn-default" type="button">Submit</button>
+    </div>
+  </section>
+
+
+  <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" rel="stylesheet" />
+  <style>.mg-15 {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.mg-5 {
+    margin: 5px;
+}
+
+.container-fluid {
+    max-width: 1800px;
+    margin: 30px;
+}
+
+.btn-container {
+    display: inline-block;
+    margin: 10px;
+}
+
+.strategies {
+    margin: 15px;
+}
+
+.ann-component {
+    margin: 5px;
+}
+
+
+#collapseTrigger {
+    color: #fff;
+    display: block;
+    text-decoration: none;
+}
+
+#submitButton {
+    white-space: normal;
+}
+
+#input-area {
+    display: block;
+    margin: 10px;
+}
+
+.input-fields {
+    margin: 10px;
+    padding: 10px;
+    background-color: #ffe3e3;
+    border-radius: 15px;
+}
+
+#template-area {
+    background-color: #eee;
+    display: flex;
+}
+
+#relations-area {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+.template-map {
+    border: 1px solid gray;
+    padding: 5px;
+}
+
+.btn-container>button {
+    min-width: 3em;
+}
+
+trigger {
+    display: inline;
+}
+
+role {
+    display: inline;
+}
+
+.highlight-trigger {
+    background-color: lightgoldenrodyellow;
+}
+
+.highlight-role {
+    background-color: lightblue;
+}
+
+.highlight-role1 {
+    background-color: rgba(255, 255, 0, 0.5);
+}
+
+.highlight-role2 {
+    background-color: rgba(0, 255, 255, 0.5);
+}
+
+.highlight-role3 {
+    background-color: rgba(255, 0, 255, 0.5);
+}
+
+.btn-group {
+    vertical-align: middle;
+}
+
+.content {
+    margin-bottom: 15px;
+}
+
+.ann {
+    font-size: 16px;
+}
+
+.disp {
+    font-size: 20px;
+}
+
+.ann>span.token {
+    cursor: pointer;
+}
+
+.ann>span.token:hover {
+    text-decoration: underline;
+}
+
+.ann>strong.annotation:hover {
+    text-decoration: line-through;
+}
+
+input[disabled] {
+    color: #000
+}
+
+.question-input, .answer-input {
+    vertical-align: middle;
+}</style>
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js"
+    integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+  <script>// ---------------------------------------------------------
+// Global
+// ---------------------------------------------------------
+
+var page_num_set = new Set();
+let strategy = '';
+let developer_mode = false;
+
+// ---------------------------------------------------------
+// Create jQuery elements
+// ---------------------------------------------------------
+
+var submit = $('#submitButton');
+
+// list of text/offset objects 
+const events_data = JSON.parse($('#events-data').text().trim());
+const relations_data = JSON.parse($('#relations-data').text().trim());
+const strategyB_tuples = [["road_ied_8-E1", "road_ied_8-E2", "road_ied_8-E3"]];//JSON.parse($('#strategyB-tuples').text().trim());
+
+const empty_template_map = function () {
+    return $('<div class="template-map">');
+}
+
+const save_record = {
+    A: {
+        relations: relations_data,
+        qapairs: [],
+    },
+    B: {
+        qapairs: [],
+    },
+};
+
+const strategyA_template = function (tno, event1, event2) {
+    return {
+        question: '',
+        answer: '',
+    }
+}
+
+const template_record = [];
+events_data.forEach(function (ei, i) {
+    template_record[i] = empty_template_map();
+    events_data.forEach(function (ej, j) {
+        if (i >= j) return;
+
+        for (let tno = 1; tno <= 4; tno++){
+            {
+                const { question, answer } = strategyA_template(tno, ei, ej);
+                save_record.A.qapairs.push({
+                    event1_id: ei.event_id,
+                    event2_id: ej.event_id,
+                    templateno: tno,
+                    question,
+                    answer,
+                });
+            }
+            {
+                const { question, answer } = strategyA_template(tno, ej, ei);
+                save_record.A.qapairs.push({
+                    event1_id: ej.event_id,
+                    event2_id: ei.event_id,
+                    templateno: tno,
+                    question,
+                    answer,
+                });
+            }
+        }
+    });
+});
+
+function strategyB_template(event1_id, event2_id, event3_id) {
+    const question = 'What is the participant in the event that interviews the transporter that flew the place that gone off the explosive device. ';
+    const answer = '';
+    return {
+        question, answer
+    };
+}
+
+strategyB_tuples.forEach(function (tuple, i) {
+    const { question, answer } = strategyB_template(tuple[0], tuple[1], tuple[2]);
+    save_record.B.qapairs.push({
+        event1_id: tuple[0],
+        event2_id: tuple[1],
+        event3_id: tuple[2],
+        question,
+        answer,
+    });
+});
+
+// implementation of string formatting
+if (!String.prototype.format) {
+    String.prototype.format = function () {
+        var args = arguments;
+        return this.replace(/{(\d+)}/g, function (match, number) {
+            return typeof args[number] != 'undefined'
+                ? args[number]
+                : match
+                ;
+        });
+    };
+}
+
+// ---------------------------------------------------------
+// Create elements
+// ---------------------------------------------------------
+
+var makeDom = function () {
+    recoverUserInput();
+    console.log(page_num_set);
+    highlightEvent();
+};
+
+var highlightEvent = function () {
+    /* highlight trigger within document */
+    const pagenos = Array.from(page_num_set);
+    pagenos.sort((a, b) => events_data[a].offset - events_data[b].offset);
+
+    // remove previous highlights
+    $('trigger').removeClass('highlight-trigger');
+    $('role').removeClass('highlight-role1 highlight-role2 highlight-role3');
+
+    pagenos.forEach(trigger_num => {
+        // highlight trigger
+        $('#trigger-' + trigger_num).addClass('highlight-trigger');
+        $('role[trigno=' + trigger_num + ']').addClass('highlight-role'+(trigger_num+1));
+    })
+}
+
+const relationTypes = [
+    "BEFORE",
+    "AFTER",
+    "OVERLAPS",
+    "EQUAL",
+    "CONTAINS",
+    "CONTAINED BY",
+    "CAUSES",
+    "CAUSED BY",
+]
+
+// restore input from other trigger
+var recoverUserInput = function () {
+    const inputArea = $('#input-area');
+    inputArea.empty();
+    page_num_set.clear();
+
+    let pagenos = [];
+    if (strategy === 'A') {
+        // questions
+        const event_pair = $('#tuple-select').val().split(',').map(x => parseInt(x));
+        page_num_set.add(event_pair[0]);
+        page_num_set.add(event_pair[1]);
+
+        pagenos = event_pair;
+        pagenos.sort((a, b) => events_data[a].offset - events_data[b].offset);
+
+        // relations
+        const relationsArea = $('#relations-area');
+        relationsArea.empty();
+        pagenos.forEach(i => {
+            pagenos.forEach(j => {
+                if (i >= j) return;
+
+                const event1 = events_data[i];
+                const event2 = events_data[j];
+                relationsArea.append(makeRelationSelect(event1, event2));
+                relationsArea.append(makeRelationSelect(event2, event1));
+            })
+        })
+
+        const matching_pairs = save_record.A.qapairs.filter(qa => {
+            return (
+                (qa.event1_id === events_data[event_pair[0]].event_id &&
+                qa.event2_id === events_data[event_pair[1]].event_id) ||
+                (qa.event1_id === events_data[event_pair[1]].event_id &&
+                qa.event2_id === events_data[event_pair[0]].event_id)
+            );
+        });
+        matching_pairs.forEach((qa, i) => {
+            add_qa_input(qa.question, qa.answer, qa);
+            if (i % 2 === 1 && i < matching_pairs.length - 1)
+                inputArea.add($('<hr>'));
+        });
+    } else if (strategy === 'B') {
+        const tuple = save_record.B.qapairs[$('#tuple-select').val()];
+        console.log("TUPLE", tuple)
+        page_num_set.add(events_data.findIndex(e => e.event_id === tuple.event1_id));
+        page_num_set.add(events_data.findIndex(e => e.event_id === tuple.event2_id));
+        page_num_set.add(events_data.findIndex(e => e.event_id === tuple.event3_id));
+        pagenos = Array.from(page_num_set);
+        pagenos.sort((a, b) => events_data[a].offset - events_data[b].offset);
+        add_qa_input(tuple.question, tuple.answer, null, false);
+        add_qa_input('', '', tuple, true);
+    }
+    // templates
+    const templateArea = $('#template-area');
+    templateArea.empty()
+    pagenos.forEach(trigger_num => {
+        const div = $('<div>')
+            .append($('<p>').text(describeEvent(events_data[trigger_num])))
+            .append(template_record[trigger_num]);
+        templateArea.append(div);
+    });
+};
+
+function describeEvent(event) {
+    return (developer_mode ? `ID: ${event.event_id} | ` : "") + `${event.text} @ ${event.offset}`;
+}
+
+function makeRelationSelect(event1, event2) {
+    const id1 = event1.event_id;
+    const id2 = event2.event_id;
+    const relation = relations_data.find(r =>
+        r.event1_id == id1 &&
+        r.event2_id == id2
+    );
+
+    const selectInput =
+        $('<select class="relation-select mg-5">');
+    relationTypes.forEach(type => {
+        const option = $(`<option value="${type}">${type.toLowerCase()}</option>`);
+        selectInput.append(option);
+    });
+    selectInput.append($('<option value="NONE">none</option>'));
+    selectInput.val(relation?.type ?? "NONE");
+    selectInput.on('change', function () {
+        const type = $(this).val();
+        const event1_id = id1;
+        const event2_id = id2;
+        const relation = relations_data.find(r =>
+            r.event1_id == event1_id &&
+            r.event2_id == event2_id
+        );
+        if (relation) {
+            relation.type = type;
+        } else {
+            relations_data.push({
+                event1_id,
+                event2_id,
+                type,
+            });
+        }
+    });
+
+    const div = $('<div>')
+        .append($('<label>').text(describeEvent(event1)))
+        .append(selectInput)
+        .append($('<label>').text(describeEvent(event2)))
+
+    return div;
+}
+
+// ensure something is in the input box
+var canSubmit = function () {
+    return true;
+};
+
+// template role fields
+const make_role_mapping_element = function (role, text) {
+    const role_text = $('<label>').html('<b>' + role + '</b>:');
+    const role_field = $('<span>')
+        .addClass('role-field')
+        .attr({
+            role: role,
+            rows: 1,
+        })
+        .text(text)
+
+    const role_div = $('<div>')
+        .addClass('role-container')
+        .append(role_text)
+        .append(role_field);
+
+    return role_div;
+}
+
+
+const add_qa_input = function (question = '', answer = '', ref = null, editable = true) {
+    let question_text = $('<label>').text('question:');
+    let question_input = $('<textarea>')
+        .addClass('question-input')
+        .addClass('mg-15')
+        .attr({
+            placeholder: 'write down your question',
+            rows: 2,
+            cols: 80,
+        })
+        .text(question);
+    question_input.on("input", function () {
+        console.log('q', ref)
+        if (ref != null)
+            ref.question = $(this).val();
+        show();
+    });
+    let answer_text = $('<label>').text('answer:');
+    let answer_input = $('<textarea>')
+        .addClass('answer-input')
+        .addClass('mg-15')
+        .attr({
+            placeholder: 'write down your answer',
+            rows: 2,
+            cols: 80,
+        })
+        .text(answer);
+    answer_input.on("input", function () {
+        console.log('a', ref)
+        if (ref != null)
+            ref.answer = $(this).val();
+        show();
+    });
+
+    if (!editable) {
+        question_input.attr('disabled', 'disabled');
+        answer_input.attr('disabled', 'disabled');
+    }
+
+    const input_fields = $('<div>')
+        .addClass('input-fields')
+        .append(question_text)
+        .append(question_input)
+        .append(answer_text)
+        .append(answer_input)
+
+    $('#input-area').append(input_fields);
+
+    show();
+};
+
+var enable_button = function (button) {
+    button.removeAttr("disabled");
+    button.removeClass("btn-default");
+    button.addClass("btn-success");
+};
+
+var disable_button = function (button) {
+    button.attr("disabled", "disabled");
+    button.removeClass("btn-success");
+    button.addClass("btn-default");
+};
+
+var select_button = function (button) {
+    button.removeClass("btn-default");
+    button.addClass("btn-primary");
+};
+
+var deselect_button = function (button) {
+    button.removeClass("btn-primary");
+    button.addClass("btn-default");
+};
+
+var is_wh_question = function (question) {
+    let tokens = question.split(' ');
+    if (tokens.length <= 1) {
+        return false;
+    }
+
+    // let wh_pattern = /^Wh\|wh\|How\|how/;
+    let wh_pattern = /^wh|Wh|how|How/;
+    // console.log(question.match(wh_pattern));
+    return !!question.match(wh_pattern);
+};
+
+
+var show = function () {
+    for (button of document.getElementById('button-bar').getElementsByTagName('*')) {
+        if (page_num_set.has(parseInt(button.getAttribute('page-no'))))
+            select_button($(button));
+        else
+            deselect_button($(button));
+    }
+
+};
+
+// dynamically create buttons for each SRL arg
+events_data.forEach(function (event, i) {
+    if (event.text.trim()) {
+        var button = document.createElement("button");
+        button.setAttribute("type", "button");
+        button.setAttribute("id", "button-page-" + i);
+        button.setAttribute("page-no", i);
+        button.setAttribute("class", "btn btn-default");
+        button.innerHTML = describeEvent(event);
+        button.onclick = function () {
+            // const pageno = parseInt(this.getAttribute("page-no"));
+            // // toggle button
+            // if (button.classList.contains('btn-default'))
+            //     page_num_set.add(pageno);
+            // else
+            //     page_num_set.delete(pageno);
+            // makeDom();
+            // let instruction = $('#instructionBody');
+            // if (instruction.is(':visible')) {
+            //     instruction.toggle();
+            // }
+            // //window.scrollTo(0, 0); // scroll to top
+            // show();
+        }
+        document.getElementById('button-bar').appendChild(button);
+    }
+
+    // format template area with role mappings
+    // if template not null or undefined
+    if (event.template !== null) {
+        const template_area = template_record[i];
+        const template = $('<p>').text(event.template);
+        template_area.append(template);
+        event.role_text_map.forEach(function (pairing) {
+            template_area.append(make_role_mapping_element(pairing.role, pairing.tokens.map(tk => tk.text).join('/')));
+        });
+    }
+})
+
+// ---------------------------------------------------------
+// Initialize
+// ---------------------------------------------------------
+
+var submit_form = function (event) {
+    event.preventDefault();
+    if (!window.confirm("Are you sure you want to submit?")) return;
+    save_all();
+
+    const urlParams = new URLSearchParams(window.location.search)
+
+    // create the form element and point it to the correct endpoint
+    const form = document.createElement('form')
+    form.action = (new URL('mturk/externalSubmit', urlParams.get('turkSubmitTo'))).href
+    form.method = 'post'
+
+    // attach the assignmentId
+    const inputAssignmentId = document.createElement('input')
+    inputAssignmentId.name = 'assignmentId'
+    inputAssignmentId.value = urlParams.get('assignmentId')
+    inputAssignmentId.hidden = true
+    form.appendChild(inputAssignmentId)
+
+    // attach data I want to send back
+    const inputResults = document.createElement('input')
+    inputResults.name = 'results'
+    inputResults.value = JSON.stringify(save_record)
+    inputResults.hidden = true
+    form.appendChild(inputResults)
+
+    // attach the form to the HTML document and trigger submission
+    document.body.appendChild(form)
+    form.submit()
+}
+
+//$('#save').on('click', save_all);
+submit.on('click', submit_form);
+
+var popup_alert = function (alert_box, text) {
+    alert_box.html(text);
+    alert_box.css({
+        'background-color': 'fec5bb',
+        'padding': '5px',
+        'border': '1px solid lightgray',
+        'border-radius': '10px',
+        'margin-top': '10px',
+        'margin-bottom': '10px'
+    });
+    displaying = true;
+    setTimeout(function () {
+        alert_box.html('');
+        alert_box.css({
+            'padding': '0px',
+            'border': '0px'
+        });
+        displaying = false;
+    }, 7000);
+};
+
+const selectA = $('#selectA');
+const selectB = $('#selectB');
+
+const tupleSelect = $('#tuple-select');
+
+
+function makeSelectionOptions() {
+    if (strategy === 'A') {
+        tupleSelect.empty();
+        events_data.forEach(function (ei, i) {
+            events_data.forEach(function (ej, j) {
+                if (i >= j) return;
+                const opt = $('<option>')
+                    .attr({
+                        value: `${i},${j}`,
+                    })
+                    .text(`${describeEvent(ei)} & ${describeEvent(ej)}`);
+                tupleSelect.append(opt);
+            });
+        });
+        tupleSelect.children()[0].selected = true;
+    } else {
+        tupleSelect.empty();
+        function describeEventById(id) {
+            const event = events_data.find(e => e.event_id === id);
+            return describeEvent(event);
+        }
+        strategyB_tuples.forEach(function (tuple, i) {
+            const opt = $('<option>')
+                .attr({
+                    value: i,
+                })
+                .text(`${describeEventById(tuple[0])}, ${describeEventById(tuple[1])}, ${describeEventById(tuple[2])}`);
+            tupleSelect.append(opt);
+        });
+        tupleSelect.children()[0].selected = true;
+    }
+}
+
+selectA.on('click', function () {
+    if (strategy === 'A') return;
+    strategy = 'A';
+    $('#strategyA').show();
+    select_button(selectA);
+    $('#strategyB').hide();
+    deselect_button(selectB);
+    makeSelectionOptions();
+    makeDom();
+    show();
+});
+
+selectB.on('click', function () {
+    if (strategy === 'B') return;
+    strategy = 'B';
+    $('#strategyA').hide();
+    deselect_button(selectA);
+    $('#strategyB').show();
+    select_button(selectB);
+    makeSelectionOptions();
+    makeDom();
+    show();
+});
+
+selectA.click();
+
+tupleSelect.on('change', function () {
+    makeDom();
+    show();
+});
+
+$('#developer-mode').on('change', function () {
+    developer_mode = this.checked;
+    makeSelectionOptions();
+    makeDom();
+    show();
+});
+
+// Instructions expand/collapse
+var content = $('#instructionBody');
+var instructions_trigger = $('#collapseTrigger');
+// content.hide();
+$('.collapse-text').text('(Click to collapse)');
+instructions_trigger.click(function () {
+    content.toggle();
+    var isVisible = content.is(':visible');
+    if (isVisible) {
+        $('.collapse-text').text('(Click to collapse)');
+    } else {
+        $('.collapse-text').text('(Click to expand)');
+    }
+});
+
+console.log(save_record)
+show();
+</script>
+</crowd-form>

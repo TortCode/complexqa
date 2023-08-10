@@ -1,0 +1,96 @@
+<crowd-form answer-format="flatten-objects">
+  <section class="container-fluid" id="Relevancy">
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <div class="panel panel-primary">
+          <a class="panel-heading" href="javascript:void(0);" id="collapseTrigger">
+            <strong>Annotation Instructions</strong>
+            <span class="collapse-text">(Click to expand)</span>
+          </a>
+          <div class="panel-body" id="instructionBody">
+            {{INSTRUCTIONS}}
+            {{LINK}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    Enable developer mode:
+    <input type="checkbox" id="developer-mode">
+
+    <h3>Document</h3>
+    <div id="document-text" class="ann well well-sm">
+      ${text}
+    </div>
+
+    <div id='events-data' hidden>
+      ${events}
+    </div>
+
+    <div id='relations-data' hidden>
+      ${relations}
+    </div>
+
+    <div id="strategyB-tuples" hidden>
+      ${strategyB-tuples}
+    </div>
+
+    <p>
+      You can navigate all of the events by clicking the following buttons. <br>
+      You have to finish all the events before submitting. (Remember that you can't refresh the page otherwise
+      the progress will be gone, <br>
+      to prevent this from happening, we suggest that you write the QA pairs in the google doc and copy paste them
+      here)
+    </p>
+    <!-- Tabs for each trigger -->
+    <div class="btn-toolbar" id="button-bar">
+    </div>
+
+    <div class="strategies">
+      <span id="strategy-btns">
+        <button id="selectA" class="btn btn-default" type="button">
+          Strategy A</button>
+        <button id="selectB" class="btn btn-default" type="button">
+          Strategy B</button>
+      </span>
+      <select id="tuple-select">
+      </select>
+      <div class="ann-component">
+        <em>
+          KAIROS event arguments for triggers
+        </em>
+        <div id='template-area' class='ann well well-sm'>
+        </div>
+      </div>
+      <div class="strategy" id="strategyA">
+        <div class="ann-component">
+          <em>
+            These are relations between events.
+          </em>
+          <div id='relations-area' class='ann well well-sm'>
+          </div>
+        </div>
+      </div>
+      <div class="strategy" id="strategyB">
+      </div>
+    </div>
+    <div id="input-area">
+    </div>
+    <div title="Fill all fields before submitting">
+      <button id="save" class="btn btn-default" type="button">Save</button>
+      <button id="submitButton" class="btn btn-default" type="button">Submit</button>
+    </div>
+  </section>
+
+
+  <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" rel="stylesheet" />
+  <link href="styles.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js"
+    integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+  <script src="script.js"></script>
+</crowd-form>

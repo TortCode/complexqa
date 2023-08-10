@@ -1,0 +1,793 @@
+<crowd-form answer-format="flatten-objects">
+  <section class="container-fluid" id="Relevancy">
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <div class="panel panel-primary">
+          <a class="panel-heading" href="javascript:void(0);" id="collapseTrigger">
+            <strong>Annotation Instructions</strong>
+            <span class="collapse-text">(Click to expand)</span>
+          </a>
+          <div class="panel-body" id="instructionBody">
+            {{INSTRUCTIONS}}
+            {{LINK}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    Enable developer mode:
+    <input type="checkbox" id="developer-mode">
+
+    <h3>Document</h3>
+    <div id="document-text" class="ann well well-sm">
+      July 29, 2011 --When Army Pfc. <role id='role-0-Attacker-0'trigno='0'>Naser Jason Abdo</role>, accused of plotting planning a deadly <trigger id='trigger-0'>bombing</trigger> and shooting attack on <role id='role-0-Target-0'trigno='0'>soldiers</role> at <role id='role-0-Place-0'trigno='0'>Fort Hood</role>, made his first appearance in court in Waco, Texas, today, he yelled the name of accused Fort Hood shooter Major Nidal Hasan. Hasan is facing the death penalty for allegedly killing 13 people and wounding more than 30 in an assault on Fort Hood in November 2009. Like Hasan, Abdo may have taken some of his inspiration from Anwar al-Awlaki, a radical American-born Islamic cleric who is among the leaders of the Yemen-based al Qaeda in the Arabian Peninsula (AQAP). One senior U. S. <role id='role-1-Participant-0'trigno='1'><role id='role-1-Participant-0'trigno='1'>official</role></role> <trigger id='trigger-1'>told</trigger> <role id='role-1-Participant-1'trigno='1'><role id='role-1-Participant-1'trigno='1'>ABC News</role></role> that after <role id='role-2-Detainee-0'trigno='2'>Abdo</role> was <trigger id='trigger-2'>arrested</trigger> at a Killeen, Texas <role id='role-2-Place-0'trigno='2'>hotel</role> Wednesday, Abdo mentioned the name of al-Awlaki. <role id='role-3-Participant-1'trigno='3'><role id='role-3-Participant-1'trigno='3'>Nidal Hasan</role></role> had exchanged <trigger id='trigger-3'>emails</trigger> with <role id='role-3-Participant-0'trigno='3'><role id='role-3-Participant-0'trigno='3'>Awlaki</role></role>, according to U. S. authorities. Al-Awlaki is believed to have inspired several other terror plots in the U. S. as well, including the bungled Christmas Day <role id='role-4-Instrument-0'trigno='4'>underwear</role> <trigger id='trigger-4'>bombing</trigger> of Northwest <role id='role-4-Target-0'trigno='4'>flight 253</role>. According to senior law enforcement officials, when <role id='role-5-Observer-0'trigno='5'>police</role> <trigger id='trigger-5'>searched</trigger> <role id='role-5-ObservedEntity-0'trigno='5'>Abdo</role>'s hotel <role id='role-5-Place-0'trigno='5'>room</role>, in addition to firearms, ammunition and bomb-making materials, they also found an article from a jihadi magazine produced by al-Awlaki's organization, al Qaeda in the Arabian Peninsula. The officials told ABC News Abdo had apparently stashed in the room an article from the first issue of al Qaeda's"Inspire"magazine called"How to Build a Bomb in the Kitchen of Your Mom."AQAP, a media-savvy affiliate of al Qaeda, has produced six issues of"Inspire"so far, each featuring praise for martyrs and instructional sections on firearms and explosives for the prospective terrorist. <role id='role-6-Defendant-0'trigno='6'>Abdo</role> was <trigger id='trigger-6'>charged</trigger> Friday with the federal crime of <trigger id='trigger-7'>possession</trigger> of a non-registered firearm in addition to previous charges of possession of <role id='role-8-Victim-0'trigno='8'>child</role> <trigger id='trigger-8'>pornography</trigger> and <trigger id='trigger-9'>going</trigger> <trigger id='trigger-10'>AWOL</trigger> from <role id='role-10-Perpetrator-0'trigno='10'>his</role> unit. As <role id='role-11-PassengerArtifact-0'trigno='11'>he</role> was being <trigger id='trigger-11'>led</trigger> from the <role id='role-11-Origin-0'trigno='11'>courtroom</role>, <role id='role-12-Communicator-0'trigno='12'>he</role> <trigger id='trigger-12'>yelled out</trigger>,"<role id='role-12-Topic-0'trigno='12'>Nidal Hasan</role>!","<role id='role-12-Topic-1'trigno='12'>Fort Hood</role>!", and"<role id='role-12-Topic-2'trigno='12'>2009</role>!". READ: <role id='role-13-Detainee-0'trigno='13'>Soldier</role> <trigger id='trigger-13'>Arrested</trigger> in Alleged <role id='role-13-Place-0'trigno='13'>Fort Hood</role> Plot <role id='role-15-Perpetrator-0'trigno='15'><role id='role-14-PassengerArtifact-0'trigno='14'>Abdo</role></role> <trigger id='trigger-14'>Went</trigger> <trigger id='trigger-15'>AWOL</trigger> July 4 <role id='role-16-Demonstrator-0'trigno='16'>Abdo</role>, a Muslim soldier who was in the 101st Airborne Division at Fort Campbell more than 800 miles away in Kentucky, attempted to leave the military in 2010 after <trigger id='trigger-16'>protesting</trigger> the <role id='role-16-Target-0'trigno='16'>U. S</role>.'s involvement in <role id='role-16-Topic-0'trigno='16'>Iraq</role> and <role id='role-16-Topic-1'trigno='16'>Afghanistan</role>. In August 2010 he told ABC News he should not have to participate in what he called an"unjust <trigger id='trigger-17'>war</trigger>"."Any Muslim who knows his religion or maybe takes into account what his religion says can find out very clearly why he should not participate in the U. S. military,"Abdo said then. READ: Devout <role id='role-18-PassengerArtifact-0'trigno='18'>Muslim</role> Hopes to Avoid <trigger id='trigger-18'>Deployment</trigger> to <role id='role-18-Destination-0'trigno='18'>Afghanistan</role> The <role id='role-19-PlaceOfEmployment-0'trigno='19'>Army</role> approved <role id='role-19-Employee-0'trigno='19'>Abdo</role>'s request to be <trigger id='trigger-19'>discharged</trigger> as a conscientious objector, but just days later the <trigger id='trigger-20'>discharge</trigger> was put on hold and <role id='role-21-Defendant-0'trigno='21'>he</role> was <trigger id='trigger-21'>charged</trigger> with having <role id='role-22-Perpetrator-0'trigno='22'>child</role> <trigger id='trigger-22'>pornography</trigger> on <role id='role-22-Perpetrator-1'trigno='22'>his</role> government-issued computer. Military <role id='role-23-Observer-0'trigno='23'>investigators</role> had been <trigger id='trigger-23'>looking</trigger> at <role id='role-23-ObservedEntity-0'trigno='23'>Abdo</role>'s computer files after he made"radical statements,"law enforcement sources told ABC News. After he was told <role id='role-24-Defendant-0'trigno='24'>he</role> would <trigger id='trigger-24'>face</trigger> a <role id='role-24-JudgeCourt-0'trigno='24'>court</role> martial, <role id='role-26-Perpetrator-0'trigno='26'><role id='role-25-Transporter-0'trigno='25'>Abdo</role></role> <trigger id='trigger-25'>went</trigger> <trigger id='trigger-26'>AWOL</trigger> from <role id='role-25-Origin-0'trigno='25'>Fort Campbell</role> on July 4. Though vocal in <role id='role-27-Communicator-0'trigno='27'>his</role> <trigger id='trigger-27'>protestations</trigger> against the mission in the Middle East, <role id='role-28-Communicator-0'trigno='28'>Abdo</role> did not make any public <trigger id='trigger-28'>threats</trigger> against the <role id='role-28-Recipient-0'trigno='28'>military</role>. But when he was discovered Wednesday, <role id='role-29-Attacker-0'trigno='29'>Abdo</role> was apparently in the final planning stages of a deadly <trigger id='trigger-29'>attack</trigger>. He was caught in part because a wary local gun store <role id='role-30-Participant-1'trigno='30'><role id='role-30-Participant-1'trigno='30'>owner</role></role> <trigger id='trigger-30'>called</trigger> <role id='role-30-Participant-0'trigno='30'><role id='role-30-Participant-0'trigno='30'>police</role></role> after <role id='role-31-Giver-0'trigno='31'>Abdo</role> visited the store to <trigger id='trigger-31'>buy</trigger> <role id='role-31-AcquiredEntity-0'trigno='31'>ammunition</role> and <role id='role-31-AcquiredEntity-1'trigno='31'>gunpowder</role>. <role id='role-32-Topic-0'trigno='32'>He</role> was acting"suspicious,"Guns Galore owner <role id='role-32-Participant-1'trigno='32'><role id='role-32-Participant-1'trigno='32'>Greg Ebert</role></role> <trigger id='trigger-32'>told</trigger> <role id='role-32-Participant-0'trigno='32'><role id='role-32-Participant-0'trigno='32'>ABC News</role></role>."There was clearly something wrong with him,"Ebert said."<role id='role-33-Participant-1'trigno='33'><role id='role-33-Participant-1'trigno='33'>We</role></role> made a decision to <trigger id='trigger-33'>call</trigger> the <role id='role-33-Participant-0'trigno='33'><role id='role-33-Participant-0'trigno='33'>police</role></role> and fortunately it worked out."After <role id='role-34-Detainee-0'trigno='34'>his</role> <trigger id='trigger-34'>arrest</trigger>, Abdo admitted <role id='role-36-Attacker-0'trigno='36'><role id='role-35-Attacker-0'trigno='35'>he</role></role> planned to <trigger id='trigger-35'>plant</trigger> two <role id='role-35-ExplosiveDevice-0'trigno='35'>bombs</role> at a local <role id='role-35-Place-0'trigno='35'>restaurant</role> frequented by Fort Hood <role id='role-35-Target-0'trigno='35'>soldiers</role> and hoped to <trigger id='trigger-36'>gun down</trigger> any <role id='role-36-Target-0'trigno='36'>survivors</role> of the dual <trigger id='trigger-37'>blast</trigger>, according to law enforcement documents obtained by ABC News. According to the documents, military officials believe the incident"was likely isolated to the Fort Hood area and the <role id='role-38-Detainee-0'trigno='38'>suspect</role> in <trigger id='trigger-38'>custody</trigger>, and that <trigger id='trigger-39'>arrest</trigger> of the <role id='role-39-Detainee-0'trigno='39'>suspect</role> has mitigated any further threats related to this incident."Abdo's former lawyer, <role id='role-40-Participant-0'trigno='40'><role id='role-40-Participant-0'trigno='40'>James M. Branum</role></role>, declined to comment for an <role id='role-40-Participant-1'trigno='40'><role id='role-40-Participant-1'trigno='40'>ABC News</role></role> report except to <trigger id='trigger-40'>say</trigger> Thursday <role id='role-41-Participant-0'trigno='41'><role id='role-41-Participant-0'trigno='41'>he</role></role> hasn't <trigger id='trigger-41'>spoken</trigger> with his <role id='role-41-Participant-1'trigno='41'><role id='role-41-Participant-1'trigno='41'>client</role></role>"in a long time."ABC News'Sarah Netter, Luis Martinez and Lee Ferran contributed to this report. Click Here for the Blotter Homepage. 
+    </div>
+
+    <div id='events-data' hidden>
+      [{"event_id": "scenario_en_kairos_85-E1", "text": "bombing", "offset": 20, "length": 1, "template": "[Attacker] detonated or exploded [ExplosiveDevice] explosive device using [Instrument] to attack [Target] target at [Place] place", "role_text_map": [{"role": "Attacker", "tokens": [{"text": "Naser Jason Abdo", "entity_id": "scenario_en_kairos_85-T3", "offset": 10, "length": 3}]}, {"role": "Target", "tokens": [{"text": "soldiers", "entity_id": "scenario_en_kairos_85-T4", "offset": 25, "length": 1}]}, {"role": "Instrument", "tokens": []}, {"role": "ExplosiveDevice", "tokens": []}, {"role": "Place", "tokens": [{"text": "Fort Hood", "entity_id": "scenario_en_kairos_85-T5", "offset": 27, "length": 2}]}]}, {"event_id": "scenario_en_kairos_85-E25", "text": "told", "offset": 133, "length": 1, "template": "[Participant] communicated with [Participant] about [Topic] topic at [Place] place (document does not specify in person or not, or one-way or not)", "role_text_map": [{"role": "Participant", "tokens": [{"text": "official", "entity_id": "scenario_en_kairos_85-T31", "offset": 132, "length": 1}, {"text": "ABC News", "entity_id": "scenario_en_kairos_85-T32", "offset": 134, "length": 2}]}, {"role": "Participant", "tokens": [{"text": "official", "entity_id": "scenario_en_kairos_85-T31", "offset": 132, "length": 1}, {"text": "ABC News", "entity_id": "scenario_en_kairos_85-T32", "offset": 134, "length": 2}]}, {"role": "Topic", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "scenario_en_kairos_85-E24", "text": "arrested", "offset": 140, "length": 1, "template": "[Jailer] arrested or jailed [Detainee] for [Crime] crime at [Place] place", "role_text_map": [{"role": "Jailer", "tokens": []}, {"role": "Detainee", "tokens": [{"text": "Abdo", "entity_id": "scenario_en_kairos_85-T33", "offset": 138, "length": 1}]}, {"role": "Crime", "tokens": []}, {"role": "Place", "tokens": [{"text": "hotel", "entity_id": "scenario_en_kairos_85-T36", "offset": 146, "length": 1}]}]}, {"event_id": "scenario_en_kairos_85-E2", "text": "emails", "offset": 162, "length": 1, "template": "[Participant] communicated remotely with [Participant] about [Topic] topic using [Instrument] at [Place] place", "role_text_map": [{"role": "Participant", "tokens": [{"text": "Awlaki", "entity_id": "scenario_en_kairos_85-T40", "offset": 164, "length": 1}, {"text": "Nidal Hasan", "entity_id": "scenario_en_kairos_85-T39", "offset": 158, "length": 2}]}, {"role": "Participant", "tokens": [{"text": "Awlaki", "entity_id": "scenario_en_kairos_85-T40", "offset": 164, "length": 1}, {"text": "Nidal Hasan", "entity_id": "scenario_en_kairos_85-T39", "offset": 158, "length": 2}]}, {"role": "Instrument", "tokens": []}, {"role": "Topic", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "scenario_en_kairos_85-E26", "text": "bombing", "offset": 201, "length": 1, "template": "[Attacker] detonated or exploded [ExplosiveDevice] explosive device using [Instrument] to attack [Target] target at [Place] place", "role_text_map": [{"role": "Attacker", "tokens": []}, {"role": "Target", "tokens": [{"text": "flight 253", "entity_id": "scenario_en_kairos_85-T46", "offset": 204, "length": 2}]}, {"role": "Instrument", "tokens": [{"text": "underwear", "entity_id": "scenario_en_kairos_85-T214", "offset": 200, "length": 1}]}, {"role": "ExplosiveDevice", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "scenario_en_kairos_85-E3", "text": "searched", "offset": 216, "length": 1, "template": "[Observer] observed [ObservedEntity] using [Instrument] in [Place] place", "role_text_map": [{"role": "Observer", "tokens": [{"text": "police", "entity_id": "scenario_en_kairos_85-T49", "offset": 215, "length": 1}]}, {"role": "ObservedEntity", "tokens": [{"text": "Abdo", "entity_id": "scenario_en_kairos_85-T50", "offset": 217, "length": 1}]}, {"role": "Instrument", "tokens": []}, {"role": "Place", "tokens": [{"text": "room", "entity_id": "scenario_en_kairos_85-T52", "offset": 221, "length": 1}]}]}, {"event_id": "scenario_en_kairos_85-E4", "text": "charged", "offset": 343, "length": 1, "template": "[Prosecutor] charged or indicted [Defendant] before [JudgeCourt] court or judge for [Crime] crime in [Place] place", "role_text_map": [{"role": "Prosecutor", "tokens": []}, {"role": "Defendant", "tokens": [{"text": "Abdo", "entity_id": "scenario_en_kairos_85-T79", "offset": 341, "length": 1}]}, {"role": "JudgeCourt", "tokens": []}, {"role": "Crime", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "scenario_en_kairos_85-E27", "text": "possession", "offset": 350, "length": 1, "template": "[Perpetrator] committed a crime against [Victim] at [Place] place", "role_text_map": [{"role": "Perpetrator", "tokens": []}, {"role": "Victim", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "scenario_en_kairos_85-E28", "text": "pornography", "offset": 366, "length": 1, "template": "[Perpetrator] committed a crime against [Victim] at [Place] place", "role_text_map": [{"role": "Perpetrator", "tokens": []}, {"role": "Victim", "tokens": [{"text": "child", "entity_id": "scenario_en_kairos_85-T81", "offset": 365, "length": 1}]}, {"role": "Place", "tokens": []}]}, {"event_id": "scenario_en_kairos_85-E30", "text": "going", "offset": 368, "length": 1, "template": "[Transporter] transported [PassengerArtifact] in [Vehicle] from [Origin] place to [Destination] place", "role_text_map": [{"role": "Transporter", "tokens": []}, {"role": "PassengerArtifact", "tokens": []}, {"role": "Vehicle", "tokens": []}, {"role": "Origin", "tokens": []}, {"role": "Destination", "tokens": []}]}, {"event_id": "scenario_en_kairos_85-E29", "text": "AWOL", "offset": 369, "length": 1, "template": "[Perpetrator] committed a crime against [Victim] at [Place] place", "role_text_map": [{"role": "Perpetrator", "tokens": [{"text": "his", "entity_id": "scenario_en_kairos_85-T82", "offset": 371, "length": 1}]}, {"role": "Victim", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "scenario_en_kairos_85-E5", "text": "led", "offset": 378, "length": 1, "template": "[Transporter] transported [PassengerArtifact] in [Vehicle] from [Origin] place to [Destination] place", "role_text_map": [{"role": "Transporter", "tokens": []}, {"role": "PassengerArtifact", "tokens": [{"text": "he", "entity_id": "scenario_en_kairos_85-T84", "offset": 375, "length": 1}]}, {"role": "Vehicle", "tokens": []}, {"role": "Origin", "tokens": [{"text": "courtroom", "entity_id": "scenario_en_kairos_85-T85", "offset": 381, "length": 1}]}, {"role": "Destination", "tokens": []}]}, {"event_id": "scenario_en_kairos_85-E31", "text": "yelled out", "offset": 384, "length": 2, "template": "[Communicator] communicated to [Recipient] about [Topic] topic using [Instrument] at [Place] place (one-way communication)", "role_text_map": [{"role": "Communicator", "tokens": [{"text": "he", "entity_id": "scenario_en_kairos_85-T86", "offset": 383, "length": 1}]}, {"role": "Recipient", "tokens": []}, {"role": "Instrument", "tokens": []}, {"role": "Topic", "tokens": [{"text": "Nidal Hasan", "entity_id": "scenario_en_kairos_85-T87", "offset": 388, "length": 2}, {"text": "Fort Hood", "entity_id": "scenario_en_kairos_85-T88", "offset": 394, "length": 2}, {"text": "2009", "entity_id": "scenario_en_kairos_85-T225", "offset": 401, "length": 1}]}, {"role": "Place", "tokens": []}]}, {"event_id": "scenario_en_kairos_85-E6", "text": "Arrested", "offset": 408, "length": 1, "template": "[Jailer] arrested or jailed [Detainee] for [Crime] crime at [Place] place", "role_text_map": [{"role": "Jailer", "tokens": []}, {"role": "Detainee", "tokens": [{"text": "Soldier", "entity_id": "scenario_en_kairos_85-T89", "offset": 407, "length": 1}]}, {"role": "Crime", "tokens": []}, {"role": "Place", "tokens": [{"text": "Fort Hood", "entity_id": "scenario_en_kairos_85-T90", "offset": 411, "length": 2}]}]}, {"event_id": "scenario_en_kairos_85-E7", "text": "Went", "offset": 415, "length": 1, "template": "[Transporter] transported [PassengerArtifact] in [Vehicle] from [Origin] place to [Destination] place", "role_text_map": [{"role": "Transporter", "tokens": []}, {"role": "PassengerArtifact", "tokens": [{"text": "Abdo", "entity_id": "scenario_en_kairos_85-T91", "offset": 414, "length": 1}]}, {"role": "Vehicle", "tokens": []}, {"role": "Origin", "tokens": []}, {"role": "Destination", "tokens": []}]}, {"event_id": "scenario_en_kairos_85-E32", "text": "AWOL", "offset": 416, "length": 1, "template": "[Perpetrator] committed a crime against [Victim] at [Place] place", "role_text_map": [{"role": "Perpetrator", "tokens": [{"text": "Abdo", "entity_id": "scenario_en_kairos_85-T91", "offset": 414, "length": 1}]}, {"role": "Victim", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "scenario_en_kairos_85-E33", "text": "protesting", "offset": 450, "length": 1, "template": "[Demonstrator] was in a demonstration for [Topic] topic with [VisualDisplay] visual display against [Target] at [Place] place, with potential involvement of [Regulator] police or military", "role_text_map": [{"role": "Demonstrator", "tokens": [{"text": "Abdo", "entity_id": "scenario_en_kairos_85-T92", "offset": 419, "length": 1}]}, {"role": "Regulator", "tokens": []}, {"role": "VisualDisplay", "tokens": []}, {"role": "Topic", "tokens": [{"text": "Iraq", "entity_id": "scenario_en_kairos_85-T101", "offset": 460, "length": 1}, {"text": "Afghanistan", "entity_id": "scenario_en_kairos_85-T102", "offset": 462, "length": 1}]}, {"role": "Target", "tokens": [{"text": "U.S", "entity_id": "scenario_en_kairos_85-T100", "offset": 452, "length": 3}]}, {"role": "Place", "tokens": []}]}, {"event_id": "scenario_en_kairos_85-E34", "text": "war", "offset": 484, "length": 1, "template": "[Attacker] attacked [Target] using [Instrument] at [Place] place", "role_text_map": [{"role": "Attacker", "tokens": []}, {"role": "Target", "tokens": []}, {"role": "Instrument", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "scenario_en_kairos_85-E8", "text": "Deployment", "offset": 533, "length": 1, "template": "[Transporter] transported [PassengerArtifact] in [Vehicle] from [Origin] place to [Destination] place", "role_text_map": [{"role": "Transporter", "tokens": []}, {"role": "PassengerArtifact", "tokens": [{"text": "Muslim", "entity_id": "scenario_en_kairos_85-T115", "offset": 529, "length": 1}]}, {"role": "Vehicle", "tokens": []}, {"role": "Origin", "tokens": []}, {"role": "Destination", "tokens": [{"text": "Afghanistan", "entity_id": "scenario_en_kairos_85-T116", "offset": 535, "length": 1}]}]}, {"event_id": "scenario_en_kairos_85-E9", "text": "discharged", "offset": 545, "length": 1, "template": "[Employee] stopped working in [Position] position at [PlaceOfEmployment] organization in [Place] place", "role_text_map": [{"role": "Employee", "tokens": [{"text": "Abdo", "entity_id": "scenario_en_kairos_85-T118", "offset": 539, "length": 1}]}, {"role": "PlaceOfEmployment", "tokens": [{"text": "Army", "entity_id": "scenario_en_kairos_85-T117", "offset": 537, "length": 1}]}, {"role": "Position", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "scenario_en_kairos_85-E35", "text": "discharge", "offset": 556, "length": 1, "template": "[Employee] stopped working in [Position] position at [PlaceOfEmployment] organization in [Place] place", "role_text_map": [{"role": "Employee", "tokens": []}, {"role": "PlaceOfEmployment", "tokens": []}, {"role": "Position", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "scenario_en_kairos_85-E10", "text": "charged", "offset": 564, "length": 1, "template": "[Prosecutor] charged or indicted [Defendant] before [JudgeCourt] court or judge for [Crime] crime in [Place] place", "role_text_map": [{"role": "Prosecutor", "tokens": []}, {"role": "Defendant", "tokens": [{"text": "he", "entity_id": "scenario_en_kairos_85-T120", "offset": 562, "length": 1}]}, {"role": "JudgeCourt", "tokens": []}, {"role": "Crime", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "scenario_en_kairos_85-E36", "text": "pornography", "offset": 568, "length": 1, "template": "[Perpetrator] committed a crime against [Victim] at [Place] place", "role_text_map": [{"role": "Perpetrator", "tokens": [{"text": "child", "entity_id": "scenario_en_kairos_85-T121", "offset": 567, "length": 1}, {"text": "his", "entity_id": "scenario_en_kairos_85-T122", "offset": 570, "length": 1}]}, {"role": "Victim", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "scenario_en_kairos_85-E11", "text": "looking", "offset": 580, "length": 1, "template": "[Observer] observed [ObservedEntity] using [Instrument] in [Place] place", "role_text_map": [{"role": "Observer", "tokens": [{"text": "investigators", "entity_id": "scenario_en_kairos_85-T125", "offset": 577, "length": 1}]}, {"role": "ObservedEntity", "tokens": [{"text": "Abdo", "entity_id": "scenario_en_kairos_85-T126", "offset": 582, "length": 1}]}, {"role": "Instrument", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "scenario_en_kairos_85-E12", "text": "face", "offset": 608, "length": 1, "template": "[Prosecutor] charged or indicted [Defendant] before [JudgeCourt] court or judge for [Crime] crime in [Place] place", "role_text_map": [{"role": "Prosecutor", "tokens": []}, {"role": "Defendant", "tokens": [{"text": "he", "entity_id": "scenario_en_kairos_85-T131", "offset": 606, "length": 1}]}, {"role": "JudgeCourt", "tokens": [{"text": "court", "entity_id": "scenario_en_kairos_85-T132", "offset": 610, "length": 1}]}, {"role": "Crime", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "scenario_en_kairos_85-E13", "text": "went", "offset": 614, "length": 1, "template": "[Transporter] transported [PassengerArtifact] in [Vehicle] from [Origin] place to [Destination] place", "role_text_map": [{"role": "Transporter", "tokens": [{"text": "Abdo", "entity_id": "scenario_en_kairos_85-T133", "offset": 613, "length": 1}]}, {"role": "PassengerArtifact", "tokens": []}, {"role": "Vehicle", "tokens": []}, {"role": "Origin", "tokens": [{"text": "Fort Campbell", "entity_id": "scenario_en_kairos_85-T134", "offset": 617, "length": 2}]}, {"role": "Destination", "tokens": []}]}, {"event_id": "scenario_en_kairos_85-E37", "text": "AWOL", "offset": 615, "length": 1, "template": "[Perpetrator] committed a crime against [Victim] at [Place] place", "role_text_map": [{"role": "Perpetrator", "tokens": [{"text": "Abdo", "entity_id": "scenario_en_kairos_85-T133", "offset": 613, "length": 1}]}, {"role": "Victim", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "scenario_en_kairos_85-E14", "text": "protestations", "offset": 627, "length": 1, "template": "[Communicator] communicated to [Recipient] about [Topic] topic using [Instrument] at [Place] place (one-way communication)", "role_text_map": [{"role": "Communicator", "tokens": [{"text": "his", "entity_id": "scenario_en_kairos_85-T135", "offset": 626, "length": 1}]}, {"role": "Recipient", "tokens": []}, {"role": "Instrument", "tokens": []}, {"role": "Topic", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "scenario_en_kairos_85-E15", "text": "threats", "offset": 642, "length": 1, "template": "[Communicator] communicated with [Recipient] about [Topic] topic at [Place] place (document does not specify in person or not, or one-way or not)", "role_text_map": [{"role": "Communicator", "tokens": [{"text": "Abdo", "entity_id": "scenario_en_kairos_85-T137", "offset": 636, "length": 1}]}, {"role": "Recipient", "tokens": [{"text": "military", "entity_id": "scenario_en_kairos_85-T138", "offset": 645, "length": 1}]}, {"role": "Topic", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "scenario_en_kairos_85-E38", "text": "attack", "offset": 665, "length": 1, "template": "[Attacker] attacked [Target] using [Instrument] at [Place] place", "role_text_map": [{"role": "Attacker", "tokens": [{"text": "Abdo", "entity_id": "scenario_en_kairos_85-T140", "offset": 654, "length": 1}]}, {"role": "Target", "tokens": []}, {"role": "Instrument", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "scenario_en_kairos_85-E17", "text": "called", "offset": 679, "length": 1, "template": "[Participant] communicated remotely with [Participant] about [Topic] topic using [Instrument] at [Place] place", "role_text_map": [{"role": "Participant", "tokens": [{"text": "police", "entity_id": "scenario_en_kairos_85-T145", "offset": 680, "length": 1}, {"text": "owner", "entity_id": "scenario_en_kairos_85-T144", "offset": 678, "length": 1}]}, {"role": "Participant", "tokens": [{"text": "police", "entity_id": "scenario_en_kairos_85-T145", "offset": 680, "length": 1}, {"text": "owner", "entity_id": "scenario_en_kairos_85-T144", "offset": 678, "length": 1}]}, {"role": "Instrument", "tokens": []}, {"role": "Topic", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "scenario_en_kairos_85-E16", "text": "buy", "offset": 687, "length": 1, "template": "[Giver] bought, sold, or traded [AcquiredEntity] to [Recipient] in exchange for [PaymentBarter] for the benefit of [Beneficiary] at [Place] place", "role_text_map": [{"role": "Giver", "tokens": [{"text": "Abdo", "entity_id": "scenario_en_kairos_85-T146", "offset": 682, "length": 1}]}, {"role": "Recipient", "tokens": []}, {"role": "AcquiredEntity", "tokens": [{"text": "ammunition", "entity_id": "scenario_en_kairos_85-T148", "offset": 688, "length": 1}, {"text": "gunpowder", "entity_id": "scenario_en_kairos_85-T149", "offset": 690, "length": 1}]}, {"role": "PaymentBarter", "tokens": []}, {"role": "Beneficiary", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "scenario_en_kairos_85-E18", "text": "told", "offset": 704, "length": 1, "template": "[Participant] communicated with [Participant] about [Topic] topic at [Place] place (document does not specify in person or not, or one-way or not)", "role_text_map": [{"role": "Participant", "tokens": [{"text": "ABC News", "entity_id": "scenario_en_kairos_85-T154", "offset": 705, "length": 2}, {"text": "Greg Ebert", "entity_id": "scenario_en_kairos_85-T153", "offset": 702, "length": 2}]}, {"role": "Participant", "tokens": [{"text": "ABC News", "entity_id": "scenario_en_kairos_85-T154", "offset": 705, "length": 2}, {"text": "Greg Ebert", "entity_id": "scenario_en_kairos_85-T153", "offset": 702, "length": 2}]}, {"role": "Topic", "tokens": [{"text": "He", "entity_id": "scenario_en_kairos_85-T150", "offset": 692, "length": 1}]}, {"role": "Place", "tokens": []}]}, {"event_id": "scenario_en_kairos_85-E19", "text": "call", "offset": 727, "length": 1, "template": "[Participant] communicated remotely with [Participant] about [Topic] topic using [Instrument] at [Place] place", "role_text_map": [{"role": "Participant", "tokens": [{"text": "police", "entity_id": "scenario_en_kairos_85-T158", "offset": 729, "length": 1}, {"text": "We", "entity_id": "scenario_en_kairos_85-T157", "offset": 722, "length": 1}]}, {"role": "Participant", "tokens": [{"text": "police", "entity_id": "scenario_en_kairos_85-T158", "offset": 729, "length": 1}, {"text": "We", "entity_id": "scenario_en_kairos_85-T157", "offset": 722, "length": 1}]}, {"role": "Instrument", "tokens": []}, {"role": "Topic", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "scenario_en_kairos_85-E20", "text": "arrest", "offset": 739, "length": 1, "template": "[Jailer] arrested or jailed [Detainee] for [Crime] crime at [Place] place", "role_text_map": [{"role": "Jailer", "tokens": []}, {"role": "Detainee", "tokens": [{"text": "his", "entity_id": "scenario_en_kairos_85-T159", "offset": 738, "length": 1}]}, {"role": "Crime", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "scenario_en_kairos_85-E40", "text": "plant", "offset": 746, "length": 1, "template": "[Attacker] detonated or exploded [ExplosiveDevice] explosive device using [Instrument] to attack [Target] target at [Place] place", "role_text_map": [{"role": "Attacker", "tokens": [{"text": "he", "entity_id": "scenario_en_kairos_85-T161", "offset": 743, "length": 1}]}, {"role": "Target", "tokens": [{"text": "soldiers", "entity_id": "scenario_en_kairos_85-T165", "offset": 757, "length": 1}]}, {"role": "Instrument", "tokens": []}, {"role": "ExplosiveDevice", "tokens": [{"text": "bombs", "entity_id": "scenario_en_kairos_85-T162", "offset": 748, "length": 1}]}, {"role": "Place", "tokens": [{"text": "restaurant", "entity_id": "scenario_en_kairos_85-T163", "offset": 752, "length": 1}]}]}, {"event_id": "scenario_en_kairos_85-E39", "text": "gun down", "offset": 761, "length": 2, "template": "[Attacker] attacked [Target] using [Instrument] at [Place] place", "role_text_map": [{"role": "Attacker", "tokens": [{"text": "he", "entity_id": "scenario_en_kairos_85-T161", "offset": 743, "length": 1}]}, {"role": "Target", "tokens": [{"text": "survivors", "entity_id": "scenario_en_kairos_85-T166", "offset": 764, "length": 1}]}, {"role": "Instrument", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "scenario_en_kairos_85-E41", "text": "blast", "offset": 768, "length": 1, "template": "[Attacker] detonated or exploded [ExplosiveDevice] explosive device using [Instrument] to attack [Target] target at [Place] place", "role_text_map": [{"role": "Attacker", "tokens": []}, {"role": "Target", "tokens": []}, {"role": "Instrument", "tokens": []}, {"role": "ExplosiveDevice", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "scenario_en_kairos_85-E42", "text": "custody", "offset": 803, "length": 1, "template": "[Jailer] arrested or jailed [Detainee] for [Crime] crime at [Place] place", "role_text_map": [{"role": "Jailer", "tokens": []}, {"role": "Detainee", "tokens": [{"text": "suspect", "entity_id": "scenario_en_kairos_85-T173", "offset": 801, "length": 1}]}, {"role": "Crime", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "scenario_en_kairos_85-E21", "text": "arrest", "offset": 807, "length": 1, "template": "[Jailer] arrested or jailed [Detainee] for [Crime] crime at [Place] place", "role_text_map": [{"role": "Jailer", "tokens": []}, {"role": "Detainee", "tokens": [{"text": "suspect", "entity_id": "scenario_en_kairos_85-T174", "offset": 810, "length": 1}]}, {"role": "Crime", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "scenario_en_kairos_85-E22", "text": "say", "offset": 843, "length": 1, "template": "[Participant] communicated with [Participant] about [Topic] topic at [Place] place (document does not specify in person or not, or one-way or not)", "role_text_map": [{"role": "Participant", "tokens": [{"text": "James M. Branum", "entity_id": "scenario_en_kairos_85-T177", "offset": 828, "length": 4}, {"text": "ABC News", "entity_id": "scenario_en_kairos_85-T178", "offset": 838, "length": 2}]}, {"role": "Participant", "tokens": [{"text": "James M. Branum", "entity_id": "scenario_en_kairos_85-T177", "offset": 828, "length": 4}, {"text": "ABC News", "entity_id": "scenario_en_kairos_85-T178", "offset": 838, "length": 2}]}, {"role": "Topic", "tokens": []}, {"role": "Place", "tokens": []}]}, {"event_id": "scenario_en_kairos_85-E23", "text": "spoken", "offset": 849, "length": 1, "template": "[Participant] communicated with [Participant] about [Topic] topic at [Place] place (document does not specify in person or not, or one-way or not)", "role_text_map": [{"role": "Participant", "tokens": [{"text": "he", "entity_id": "scenario_en_kairos_85-T179", "offset": 845, "length": 1}, {"text": "client", "entity_id": "scenario_en_kairos_85-T181", "offset": 852, "length": 1}]}, {"role": "Participant", "tokens": [{"text": "he", "entity_id": "scenario_en_kairos_85-T179", "offset": 845, "length": 1}, {"text": "client", "entity_id": "scenario_en_kairos_85-T181", "offset": 852, "length": 1}]}, {"role": "Topic", "tokens": []}, {"role": "Place", "tokens": []}]}]
+    </div>
+
+    <div id='relations-data' hidden>
+      []
+    </div>
+
+    <div id="strategyB-tuples" hidden>
+      ${strategyB-tuples}
+    </div>
+
+    <p>
+      You can navigate all of the events by clicking the following buttons. <br>
+      You have to finish all the events before submitting. (Remember that you can't refresh the page otherwise
+      the progress will be gone, <br>
+      to prevent this from happening, we suggest that you write the QA pairs in the google doc and copy paste them
+      here)
+    </p>
+    <!-- Tabs for each trigger -->
+    <div class="btn-toolbar" id="button-bar">
+    </div>
+
+    <div class="strategies">
+      <span id="strategy-btns">
+        <button id="selectA" class="btn btn-default" type="button">
+          Strategy A</button>
+        <button id="selectB" class="btn btn-default" type="button">
+          Strategy B</button>
+      </span>
+      <select id="tuple-select">
+      </select>
+      <div class="ann-component">
+        <em>
+          KAIROS event arguments for triggers
+        </em>
+        <div id='template-area' class='ann well well-sm'>
+        </div>
+      </div>
+      <div class="strategy" id="strategyA">
+        <div class="ann-component">
+          <em>
+            These are relations between events.
+          </em>
+          <div id='relations-area' class='ann well well-sm'>
+          </div>
+        </div>
+      </div>
+      <div class="strategy" id="strategyB">
+      </div>
+    </div>
+    <div id="input-area">
+    </div>
+    <div title="Fill all fields before submitting">
+      <button id="save" class="btn btn-default" type="button">Save</button>
+      <button id="submitButton" class="btn btn-default" type="button">Submit</button>
+    </div>
+  </section>
+
+
+  <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" rel="stylesheet" />
+  <style>.mg-15 {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.mg-5 {
+    margin: 5px;
+}
+
+.container-fluid {
+    max-width: 1800px;
+    margin: 30px;
+}
+
+.btn-container {
+    display: inline-block;
+    margin: 10px;
+}
+
+.strategies {
+    margin: 15px;
+}
+
+.ann-component {
+    margin: 5px;
+}
+
+
+#collapseTrigger {
+    color: #fff;
+    display: block;
+    text-decoration: none;
+}
+
+#submitButton {
+    white-space: normal;
+}
+
+#input-area {
+    display: block;
+    margin: 10px;
+}
+
+.input-fields {
+    margin: 10px;
+    padding: 10px;
+    background-color: #ffe3e3;
+    border-radius: 15px;
+}
+
+#template-area {
+    background-color: #eee;
+    display: flex;
+}
+
+#relations-area {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+.template-map {
+    border: 1px solid gray;
+    padding: 5px;
+}
+
+.btn-container>button {
+    min-width: 3em;
+}
+
+trigger {
+    display: inline;
+}
+
+role {
+    display: inline;
+}
+
+.highlight-trigger {
+    background-color: lightgoldenrodyellow;
+}
+
+.highlight-role {
+    background-color: lightblue;
+}
+
+.highlight-role1 {
+    background-color: rgba(255, 255, 0, 0.5);
+}
+
+.highlight-role2 {
+    background-color: rgba(0, 255, 255, 0.5);
+}
+
+.highlight-role3 {
+    background-color: rgba(255, 0, 255, 0.5);
+}
+
+.btn-group {
+    vertical-align: middle;
+}
+
+.content {
+    margin-bottom: 15px;
+}
+
+.ann {
+    font-size: 16px;
+}
+
+.disp {
+    font-size: 20px;
+}
+
+.ann>span.token {
+    cursor: pointer;
+}
+
+.ann>span.token:hover {
+    text-decoration: underline;
+}
+
+.ann>strong.annotation:hover {
+    text-decoration: line-through;
+}
+
+input[disabled] {
+    color: #000
+}
+
+.question-input, .answer-input {
+    vertical-align: middle;
+}</style>
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js"
+    integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+  <script>// ---------------------------------------------------------
+// Global
+// ---------------------------------------------------------
+
+var page_num_set = new Set();
+let strategy = '';
+let developer_mode = false;
+
+// ---------------------------------------------------------
+// Create jQuery elements
+// ---------------------------------------------------------
+
+var submit = $('#submitButton');
+
+// list of text/offset objects 
+const events_data = JSON.parse($('#events-data').text().trim());
+const relations_data = JSON.parse($('#relations-data').text().trim());
+const strategyB_tuples = [["road_ied_8-E1", "road_ied_8-E2", "road_ied_8-E3"]];//JSON.parse($('#strategyB-tuples').text().trim());
+
+const empty_template_map = function () {
+    return $('<div class="template-map">');
+}
+
+const save_record = {
+    A: {
+        relations: relations_data,
+        qapairs: [],
+    },
+    B: {
+        qapairs: [],
+    },
+};
+
+const strategyA_template = function (tno, event1, event2) {
+    return {
+        question: '',
+        answer: '',
+    }
+}
+
+const template_record = [];
+events_data.forEach(function (ei, i) {
+    template_record[i] = empty_template_map();
+    events_data.forEach(function (ej, j) {
+        if (i >= j) return;
+
+        for (let tno = 1; tno <= 4; tno++){
+            {
+                const { question, answer } = strategyA_template(tno, ei, ej);
+                save_record.A.qapairs.push({
+                    event1_id: ei.event_id,
+                    event2_id: ej.event_id,
+                    templateno: tno,
+                    question,
+                    answer,
+                });
+            }
+            {
+                const { question, answer } = strategyA_template(tno, ej, ei);
+                save_record.A.qapairs.push({
+                    event1_id: ej.event_id,
+                    event2_id: ei.event_id,
+                    templateno: tno,
+                    question,
+                    answer,
+                });
+            }
+        }
+    });
+});
+
+function strategyB_template(event1_id, event2_id, event3_id) {
+    const question = 'What is the participant in the event that interviews the transporter that flew the place that gone off the explosive device. ';
+    const answer = '';
+    return {
+        question, answer
+    };
+}
+
+strategyB_tuples.forEach(function (tuple, i) {
+    const { question, answer } = strategyB_template(tuple[0], tuple[1], tuple[2]);
+    save_record.B.qapairs.push({
+        event1_id: tuple[0],
+        event2_id: tuple[1],
+        event3_id: tuple[2],
+        question,
+        answer,
+    });
+});
+
+// implementation of string formatting
+if (!String.prototype.format) {
+    String.prototype.format = function () {
+        var args = arguments;
+        return this.replace(/{(\d+)}/g, function (match, number) {
+            return typeof args[number] != 'undefined'
+                ? args[number]
+                : match
+                ;
+        });
+    };
+}
+
+// ---------------------------------------------------------
+// Create elements
+// ---------------------------------------------------------
+
+var makeDom = function () {
+    recoverUserInput();
+    console.log(page_num_set);
+    highlightEvent();
+};
+
+var highlightEvent = function () {
+    /* highlight trigger within document */
+    const pagenos = Array.from(page_num_set);
+    pagenos.sort((a, b) => events_data[a].offset - events_data[b].offset);
+
+    // remove previous highlights
+    $('trigger').removeClass('highlight-trigger');
+    $('role').removeClass('highlight-role1 highlight-role2 highlight-role3');
+
+    pagenos.forEach(trigger_num => {
+        // highlight trigger
+        $('#trigger-' + trigger_num).addClass('highlight-trigger');
+        $('role[trigno=' + trigger_num + ']').addClass('highlight-role'+(trigger_num+1));
+    })
+}
+
+const relationTypes = [
+    "BEFORE",
+    "AFTER",
+    "OVERLAPS",
+    "EQUAL",
+    "CONTAINS",
+    "CONTAINED BY",
+    "CAUSES",
+    "CAUSED BY",
+]
+
+// restore input from other trigger
+var recoverUserInput = function () {
+    const inputArea = $('#input-area');
+    inputArea.empty();
+    page_num_set.clear();
+
+    let pagenos = [];
+    if (strategy === 'A') {
+        // questions
+        const event_pair = $('#tuple-select').val().split(',').map(x => parseInt(x));
+        page_num_set.add(event_pair[0]);
+        page_num_set.add(event_pair[1]);
+
+        pagenos = event_pair;
+        pagenos.sort((a, b) => events_data[a].offset - events_data[b].offset);
+
+        // relations
+        const relationsArea = $('#relations-area');
+        relationsArea.empty();
+        pagenos.forEach(i => {
+            pagenos.forEach(j => {
+                if (i >= j) return;
+
+                const event1 = events_data[i];
+                const event2 = events_data[j];
+                relationsArea.append(makeRelationSelect(event1, event2));
+                relationsArea.append(makeRelationSelect(event2, event1));
+            })
+        })
+
+        const matching_pairs = save_record.A.qapairs.filter(qa => {
+            return (
+                (qa.event1_id === events_data[event_pair[0]].event_id &&
+                qa.event2_id === events_data[event_pair[1]].event_id) ||
+                (qa.event1_id === events_data[event_pair[1]].event_id &&
+                qa.event2_id === events_data[event_pair[0]].event_id)
+            );
+        });
+        matching_pairs.forEach((qa, i) => {
+            add_qa_input(qa.question, qa.answer, qa);
+            if (i % 2 === 1 && i < matching_pairs.length - 1)
+                inputArea.add($('<hr>'));
+        });
+    } else if (strategy === 'B') {
+        const tuple = save_record.B.qapairs[$('#tuple-select').val()];
+        console.log("TUPLE", tuple)
+        page_num_set.add(events_data.findIndex(e => e.event_id === tuple.event1_id));
+        page_num_set.add(events_data.findIndex(e => e.event_id === tuple.event2_id));
+        page_num_set.add(events_data.findIndex(e => e.event_id === tuple.event3_id));
+        pagenos = Array.from(page_num_set);
+        pagenos.sort((a, b) => events_data[a].offset - events_data[b].offset);
+        add_qa_input(tuple.question, tuple.answer, null, false);
+        add_qa_input('', '', tuple, true);
+    }
+    // templates
+    const templateArea = $('#template-area');
+    templateArea.empty()
+    pagenos.forEach(trigger_num => {
+        const div = $('<div>')
+            .append($('<p>').text(describeEvent(events_data[trigger_num])))
+            .append(template_record[trigger_num]);
+        templateArea.append(div);
+    });
+};
+
+function describeEvent(event) {
+    return (developer_mode ? `ID: ${event.event_id} | ` : "") + `${event.text} @ ${event.offset}`;
+}
+
+function makeRelationSelect(event1, event2) {
+    const id1 = event1.event_id;
+    const id2 = event2.event_id;
+    const relation = relations_data.find(r =>
+        r.event1_id == id1 &&
+        r.event2_id == id2
+    );
+
+    const selectInput =
+        $('<select class="relation-select mg-5">');
+    relationTypes.forEach(type => {
+        const option = $(`<option value="${type}">${type.toLowerCase()}</option>`);
+        selectInput.append(option);
+    });
+    selectInput.append($('<option value="NONE">none</option>'));
+    selectInput.val(relation?.type ?? "NONE");
+    selectInput.on('change', function () {
+        const type = $(this).val();
+        const event1_id = id1;
+        const event2_id = id2;
+        const relation = relations_data.find(r =>
+            r.event1_id == event1_id &&
+            r.event2_id == event2_id
+        );
+        if (relation) {
+            relation.type = type;
+        } else {
+            relations_data.push({
+                event1_id,
+                event2_id,
+                type,
+            });
+        }
+    });
+
+    const div = $('<div>')
+        .append($('<label>').text(describeEvent(event1)))
+        .append(selectInput)
+        .append($('<label>').text(describeEvent(event2)))
+
+    return div;
+}
+
+// ensure something is in the input box
+var canSubmit = function () {
+    return true;
+};
+
+// template role fields
+const make_role_mapping_element = function (role, text) {
+    const role_text = $('<label>').html('<b>' + role + '</b>:');
+    const role_field = $('<span>')
+        .addClass('role-field')
+        .attr({
+            role: role,
+            rows: 1,
+        })
+        .text(text)
+
+    const role_div = $('<div>')
+        .addClass('role-container')
+        .append(role_text)
+        .append(role_field);
+
+    return role_div;
+}
+
+
+const add_qa_input = function (question = '', answer = '', ref = null, editable = true) {
+    let question_text = $('<label>').text('question:');
+    let question_input = $('<textarea>')
+        .addClass('question-input')
+        .addClass('mg-15')
+        .attr({
+            placeholder: 'write down your question',
+            rows: 2,
+            cols: 80,
+        })
+        .text(question);
+    question_input.on("input", function () {
+        console.log('q', ref)
+        if (ref != null)
+            ref.question = $(this).val();
+        show();
+    });
+    let answer_text = $('<label>').text('answer:');
+    let answer_input = $('<textarea>')
+        .addClass('answer-input')
+        .addClass('mg-15')
+        .attr({
+            placeholder: 'write down your answer',
+            rows: 2,
+            cols: 80,
+        })
+        .text(answer);
+    answer_input.on("input", function () {
+        console.log('a', ref)
+        if (ref != null)
+            ref.answer = $(this).val();
+        show();
+    });
+
+    if (!editable) {
+        question_input.attr('disabled', 'disabled');
+        answer_input.attr('disabled', 'disabled');
+    }
+
+    const input_fields = $('<div>')
+        .addClass('input-fields')
+        .append(question_text)
+        .append(question_input)
+        .append(answer_text)
+        .append(answer_input)
+
+    $('#input-area').append(input_fields);
+
+    show();
+};
+
+var enable_button = function (button) {
+    button.removeAttr("disabled");
+    button.removeClass("btn-default");
+    button.addClass("btn-success");
+};
+
+var disable_button = function (button) {
+    button.attr("disabled", "disabled");
+    button.removeClass("btn-success");
+    button.addClass("btn-default");
+};
+
+var select_button = function (button) {
+    button.removeClass("btn-default");
+    button.addClass("btn-primary");
+};
+
+var deselect_button = function (button) {
+    button.removeClass("btn-primary");
+    button.addClass("btn-default");
+};
+
+var is_wh_question = function (question) {
+    let tokens = question.split(' ');
+    if (tokens.length <= 1) {
+        return false;
+    }
+
+    // let wh_pattern = /^Wh\|wh\|How\|how/;
+    let wh_pattern = /^wh|Wh|how|How/;
+    // console.log(question.match(wh_pattern));
+    return !!question.match(wh_pattern);
+};
+
+
+var show = function () {
+    for (button of document.getElementById('button-bar').getElementsByTagName('*')) {
+        if (page_num_set.has(parseInt(button.getAttribute('page-no'))))
+            select_button($(button));
+        else
+            deselect_button($(button));
+    }
+
+};
+
+// dynamically create buttons for each SRL arg
+events_data.forEach(function (event, i) {
+    if (event.text.trim()) {
+        var button = document.createElement("button");
+        button.setAttribute("type", "button");
+        button.setAttribute("id", "button-page-" + i);
+        button.setAttribute("page-no", i);
+        button.setAttribute("class", "btn btn-default");
+        button.innerHTML = describeEvent(event);
+        button.onclick = function () {
+            // const pageno = parseInt(this.getAttribute("page-no"));
+            // // toggle button
+            // if (button.classList.contains('btn-default'))
+            //     page_num_set.add(pageno);
+            // else
+            //     page_num_set.delete(pageno);
+            // makeDom();
+            // let instruction = $('#instructionBody');
+            // if (instruction.is(':visible')) {
+            //     instruction.toggle();
+            // }
+            // //window.scrollTo(0, 0); // scroll to top
+            // show();
+        }
+        document.getElementById('button-bar').appendChild(button);
+    }
+
+    // format template area with role mappings
+    // if template not null or undefined
+    if (event.template !== null) {
+        const template_area = template_record[i];
+        const template = $('<p>').text(event.template);
+        template_area.append(template);
+        event.role_text_map.forEach(function (pairing) {
+            template_area.append(make_role_mapping_element(pairing.role, pairing.tokens.map(tk => tk.text).join('/')));
+        });
+    }
+})
+
+// ---------------------------------------------------------
+// Initialize
+// ---------------------------------------------------------
+
+var submit_form = function (event) {
+    event.preventDefault();
+    if (!window.confirm("Are you sure you want to submit?")) return;
+    save_all();
+
+    const urlParams = new URLSearchParams(window.location.search)
+
+    // create the form element and point it to the correct endpoint
+    const form = document.createElement('form')
+    form.action = (new URL('mturk/externalSubmit', urlParams.get('turkSubmitTo'))).href
+    form.method = 'post'
+
+    // attach the assignmentId
+    const inputAssignmentId = document.createElement('input')
+    inputAssignmentId.name = 'assignmentId'
+    inputAssignmentId.value = urlParams.get('assignmentId')
+    inputAssignmentId.hidden = true
+    form.appendChild(inputAssignmentId)
+
+    // attach data I want to send back
+    const inputResults = document.createElement('input')
+    inputResults.name = 'results'
+    inputResults.value = JSON.stringify(save_record)
+    inputResults.hidden = true
+    form.appendChild(inputResults)
+
+    // attach the form to the HTML document and trigger submission
+    document.body.appendChild(form)
+    form.submit()
+}
+
+//$('#save').on('click', save_all);
+submit.on('click', submit_form);
+
+var popup_alert = function (alert_box, text) {
+    alert_box.html(text);
+    alert_box.css({
+        'background-color': 'fec5bb',
+        'padding': '5px',
+        'border': '1px solid lightgray',
+        'border-radius': '10px',
+        'margin-top': '10px',
+        'margin-bottom': '10px'
+    });
+    displaying = true;
+    setTimeout(function () {
+        alert_box.html('');
+        alert_box.css({
+            'padding': '0px',
+            'border': '0px'
+        });
+        displaying = false;
+    }, 7000);
+};
+
+const selectA = $('#selectA');
+const selectB = $('#selectB');
+
+const tupleSelect = $('#tuple-select');
+
+
+function makeSelectionOptions() {
+    if (strategy === 'A') {
+        tupleSelect.empty();
+        events_data.forEach(function (ei, i) {
+            events_data.forEach(function (ej, j) {
+                if (i >= j) return;
+                const opt = $('<option>')
+                    .attr({
+                        value: `${i},${j}`,
+                    })
+                    .text(`${describeEvent(ei)} & ${describeEvent(ej)}`);
+                tupleSelect.append(opt);
+            });
+        });
+        tupleSelect.children()[0].selected = true;
+    } else {
+        tupleSelect.empty();
+        function describeEventById(id) {
+            const event = events_data.find(e => e.event_id === id);
+            return describeEvent(event);
+        }
+        strategyB_tuples.forEach(function (tuple, i) {
+            const opt = $('<option>')
+                .attr({
+                    value: i,
+                })
+                .text(`${describeEventById(tuple[0])}, ${describeEventById(tuple[1])}, ${describeEventById(tuple[2])}`);
+            tupleSelect.append(opt);
+        });
+        tupleSelect.children()[0].selected = true;
+    }
+}
+
+selectA.on('click', function () {
+    if (strategy === 'A') return;
+    strategy = 'A';
+    $('#strategyA').show();
+    select_button(selectA);
+    $('#strategyB').hide();
+    deselect_button(selectB);
+    makeSelectionOptions();
+    makeDom();
+    show();
+});
+
+selectB.on('click', function () {
+    if (strategy === 'B') return;
+    strategy = 'B';
+    $('#strategyA').hide();
+    deselect_button(selectA);
+    $('#strategyB').show();
+    select_button(selectB);
+    makeSelectionOptions();
+    makeDom();
+    show();
+});
+
+selectA.click();
+
+tupleSelect.on('change', function () {
+    makeDom();
+    show();
+});
+
+$('#developer-mode').on('change', function () {
+    developer_mode = this.checked;
+    makeSelectionOptions();
+    makeDom();
+    show();
+});
+
+// Instructions expand/collapse
+var content = $('#instructionBody');
+var instructions_trigger = $('#collapseTrigger');
+// content.hide();
+$('.collapse-text').text('(Click to collapse)');
+instructions_trigger.click(function () {
+    content.toggle();
+    var isVisible = content.is(':visible');
+    if (isVisible) {
+        $('.collapse-text').text('(Click to collapse)');
+    } else {
+        $('.collapse-text').text('(Click to expand)');
+    }
+});
+
+console.log(save_record)
+show();
+</script>
+</crowd-form>
