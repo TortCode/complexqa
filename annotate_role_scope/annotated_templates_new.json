@@ -1,0 +1,2568 @@
+{
+  "ArtifactExistence.DamageDestroyDisableDismantle.Damage": {
+    "template": [
+      "[Damager]",
+      "damaged",
+      "[Artifact]",
+      "using",
+      "[Instrument]",
+      "instrument",
+      "in",
+      "[Place]",
+      "place"
+    ],
+    "scopes": [
+      {
+        "role": "Damager",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[Damager]"
+      },
+      {
+        "role": "Artifact",
+        "index": 2,
+        "start": 2,
+        "end": 2,
+        "text": "[Artifact]"
+      },
+      {
+        "role": "Instrument",
+        "index": 4,
+        "start": 3,
+        "end": 5,
+        "text": "using [Instrument] instrument"
+      },
+      {
+        "role": "Place",
+        "index": 7,
+        "start": 6,
+        "end": 8,
+        "text": "in [Place] place"
+      }
+    ]
+  },
+  "ArtifactExistence.DamageDestroyDisableDismantle.Destroy": {
+    "template": [
+      "[Destroyer]",
+      "destroyed",
+      "[Artifact]",
+      "using",
+      "[Instrument]",
+      "instrument",
+      "in",
+      "[Place]",
+      "place"
+    ],
+    "scopes": [
+      {
+        "role": "Destroyer",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[Destroyer]"
+      },
+      {
+        "role": "Artifact",
+        "index": 2,
+        "start": 2,
+        "end": 2,
+        "text": "[Artifact]"
+      },
+      {
+        "role": "Instrument",
+        "index": 4,
+        "start": 3,
+        "end": 5,
+        "text": "using [Instrument] instrument"
+      },
+      {
+        "role": "Place",
+        "index": 7,
+        "start": 6,
+        "end": 8,
+        "text": "in [Place] place"
+      }
+    ]
+  },
+  "ArtifactExistence.DamageDestroyDisableDismantle.DisableDefuse": {
+    "template": [
+      "[Disabler]",
+      "disabled",
+      "or",
+      "defused",
+      "[Artifact]",
+      "using",
+      "[Instrument]",
+      "instrument",
+      "in",
+      "[Place]",
+      "place"
+    ],
+    "scopes": [
+      {
+        "role": "Disabler",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[Disabler]"
+      },
+      {
+        "role": "Artifact",
+        "index": 4,
+        "start": 4,
+        "end": 4,
+        "text": "[Artifact]"
+      },
+      {
+        "role": "Instrument",
+        "index": 6,
+        "start": 5,
+        "end": 7,
+        "text": "using [Instrument] instrument"
+      },
+      {
+        "role": "Place",
+        "index": 9,
+        "start": 8,
+        "end": 10,
+        "text": "in [Place] place"
+      }
+    ]
+  },
+  "ArtifactExistence.DamageDestroyDisableDismantle.Dismantle": {
+    "template": [
+      "[Dismantler]",
+      "dismantled",
+      "[Artifact]",
+      "using",
+      "[Instrument]",
+      "instrument",
+      "in",
+      "[Components]",
+      "place"
+    ],
+    "scopes": [
+      {
+        "role": "Dismantler",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[Dismantler]"
+      },
+      {
+        "role": "Artifact",
+        "index": 2,
+        "start": 2,
+        "end": 2,
+        "text": "[Artifact]"
+      },
+      {
+        "role": "Instrument",
+        "index": 4,
+        "start": 3,
+        "end": 5,
+        "text": "using [Instrument] instrument"
+      },
+      {
+        "role": "Components",
+        "index": 7,
+        "start": 6,
+        "end": 8,
+        "text": "in [Components] place"
+      }
+    ]
+  },
+  "ArtifactExistence.DamageDestroyDisableDismantle.Unspecified": {
+    "template": [
+      "[DamagerDestroyer]",
+      "damaged",
+      "or",
+      "destroyed",
+      "[Artifact]",
+      "using",
+      "[Instrument]",
+      "instrument",
+      "in",
+      "[Place]",
+      "place"
+    ],
+    "scopes": [
+      {
+        "role": "DamagerDestroyer",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[DamagerDestroyer]"
+      },
+      {
+        "role": "Artifact",
+        "index": 4,
+        "start": 4,
+        "end": 4,
+        "text": "[Artifact]"
+      },
+      {
+        "role": "Instrument",
+        "index": 6,
+        "start": 5,
+        "end": 7,
+        "text": "using [Instrument] instrument"
+      },
+      {
+        "role": "Place",
+        "index": 9,
+        "start": 8,
+        "end": 10,
+        "text": "in [Place] place"
+      }
+    ]
+  },
+  "ArtifactExistence.ManufactureAssemble.Unspecified": {
+    "template": [
+      "[ManufacturerAssembler]",
+      "manufactured",
+      "or",
+      "assembled",
+      "or",
+      "produced",
+      "[Artifact]",
+      "from",
+      "[Components]",
+      "components",
+      "using",
+      "[Instrument]",
+      "at",
+      "[Place]",
+      "place"
+    ],
+    "scopes": [
+      {
+        "role": "ManufacturerAssembler",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[ManufacturerAssembler]"
+      },
+      {
+        "role": "Artifact",
+        "index": 6,
+        "start": 6,
+        "end": 6,
+        "text": "[Artifact]"
+      },
+      {
+        "role": "Components",
+        "index": 8,
+        "start": 7,
+        "end": 9,
+        "text": "from [Components] components"
+      },
+      {
+        "role": "Instrument",
+        "index": 11,
+        "start": 10,
+        "end": 11,
+        "text": "using [Instrument]"
+      },
+      {
+        "role": "Place",
+        "index": 13,
+        "start": 12,
+        "end": 14,
+        "text": "at [Place] place"
+      }
+    ]
+  },
+  "Cognitive.IdentifyCategorize.Unspecified": {
+    "template": [
+      "[Identifier]",
+      "identified",
+      "[IdentifiedObject]",
+      "as",
+      "[IdentifiedRole]",
+      "at",
+      "[Place]",
+      "place"
+    ],
+    "scopes": [
+      {
+        "role": "Identifier",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[Identifier]"
+      },
+      {
+        "role": "IdentifiedObject",
+        "index": 2,
+        "start": 2,
+        "end": 2,
+        "text": "[IdentifiedObject]"
+      },
+      {
+        "role": "IdentifiedRole",
+        "index": 4,
+        "start": 3,
+        "end": 4,
+        "text": "as [IdentifiedRole]"
+      },
+      {
+        "role": "Place",
+        "index": 6,
+        "start": 5,
+        "end": 7,
+        "text": "at [Place] place"
+      }
+    ]
+  },
+  "Cognitive.Inspection.SensoryObserve": {
+    "template": [
+      "[Observer]",
+      "observed",
+      "[ObservedEntity]",
+      "using",
+      "[Instrument]",
+      "in",
+      "[Place]",
+      "place"
+    ],
+    "scopes": [
+      {
+        "role": "Observer",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[Observer]"
+      },
+      {
+        "role": "ObservedEntity",
+        "index": 2,
+        "start": 2,
+        "end": 2,
+        "text": "[ObservedEntity]"
+      },
+      {
+        "role": "Instrument",
+        "index": 4,
+        "start": 3,
+        "end": 4,
+        "text": "using [Instrument]"
+      },
+      {
+        "role": "Place",
+        "index": 6,
+        "start": 5,
+        "end": 7,
+        "text": "in [Place] place"
+      }
+    ]
+  },
+  "Cognitive.Research.Unspecified": {
+    "template": [
+      "[Researcher]",
+      "researched",
+      "[Subject]",
+      "subject",
+      "using",
+      "[Means]",
+      "at",
+      "[Place]",
+      "place"
+    ],
+    "scopes": [
+      {
+        "role": "Researcher",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[Researcher]"
+      },
+      {
+        "role": "Subject",
+        "index": 2,
+        "start": 2,
+        "end": 3,
+        "text": "[Subject] subject"
+      },
+      {
+        "role": "Means",
+        "index": 5,
+        "start": 4,
+        "end": 5,
+        "text": "using [Means]"
+      },
+      {
+        "role": "Place",
+        "index": 7,
+        "start": 6,
+        "end": 8,
+        "text": "at [Place] place"
+      }
+    ]
+  },
+  "Cognitive.TeachingTrainingLearning.Unspecified": {
+    "template": [
+      "[TeacherTrainer]",
+      "taught",
+      "[FieldOfKnowledge]",
+      "field",
+      "of",
+      "knowledge",
+      "to",
+      "[Learner]",
+      "using",
+      "[Means]",
+      "at",
+      "[Institution]",
+      "institution",
+      "in",
+      "[Place]",
+      "place"
+    ],
+    "scopes": [
+      {
+        "role": "TeacherTrainer",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[TeacherTrainer]"
+      },
+      {
+        "role": "FieldOfKnowledge",
+        "index": 2,
+        "start": 2,
+        "end": 5,
+        "text": "[FieldOfKnowledge] field of knowledge"
+      },
+      {
+        "role": "Learner",
+        "index": 7,
+        "start": 6,
+        "end": 7,
+        "text": "to [Learner]"
+      },
+      {
+        "role": "Means",
+        "index": 9,
+        "start": 8,
+        "end": 9,
+        "text": "using [Means]"
+      },
+      {
+        "role": "Institution",
+        "index": 11,
+        "start": 10,
+        "end": 12,
+        "text": "at [Institution] institution"
+      },
+      {
+        "role": "Place",
+        "index": 14,
+        "start": 13,
+        "end": 15,
+        "text": "in [Place] place"
+      }
+    ]
+  },
+  "Conflict.Attack.DetonateExplode": {
+    "template": [
+      "[Attacker]",
+      "detonated",
+      "or",
+      "exploded",
+      "[ExplosiveDevice]",
+      "explosive",
+      "device",
+      "using",
+      "[Instrument]",
+      "to",
+      "attack",
+      "[Target]",
+      "target",
+      "at",
+      "[Place]",
+      "place"
+    ],
+    "scopes": [
+      {
+        "role": "Attacker",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[Attacker]"
+      },
+      {
+        "role": "ExplosiveDevice",
+        "index": 4,
+        "start": 4,
+        "end": 6,
+        "text": "[ExplosiveDevice] explosive device"
+      },
+      {
+        "role": "Instrument",
+        "index": 8,
+        "start": 7,
+        "end": 8,
+        "text": "using [Instrument]"
+      },
+      {
+        "role": "Target",
+        "index": 11,
+        "start": 9,
+        "end": 12,
+        "text": "to attack [Target] target"
+      },
+      {
+        "role": "Place",
+        "index": 14,
+        "start": 13,
+        "end": 15,
+        "text": "at [Place] place"
+      }
+    ]
+  },
+  "Conflict.Attack.Unspecified": {
+    "template": [
+      "[Attacker]",
+      "attacked",
+      "[Target]",
+      "using",
+      "[Instrument]",
+      "at",
+      "[Place]",
+      "place"
+    ],
+    "scopes": [
+      {
+        "role": "Attacker",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[Attacker]"
+      },
+      {
+        "role": "Target",
+        "index": 2,
+        "start": 2,
+        "end": 2,
+        "text": "[Target]"
+      },
+      {
+        "role": "Instrument",
+        "index": 4,
+        "start": 3,
+        "end": 4,
+        "text": "using [Instrument]"
+      },
+      {
+        "role": "Place",
+        "index": 6,
+        "start": 5,
+        "end": 7,
+        "text": "at [Place] place"
+      }
+    ]
+  },
+  "Conflict.Defeat.Unspecified": {
+    "template": [
+      "[Victor]",
+      "defeated",
+      "[Defeated]",
+      "in",
+      "[ConflictOrElection]",
+      "conflict",
+      "at",
+      "[Place]",
+      "place"
+    ],
+    "scopes": [
+      {
+        "role": "Victor",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[Victor]"
+      },
+      {
+        "role": "Defeated",
+        "index": 2,
+        "start": 2,
+        "end": 2,
+        "text": "[Defeated]"
+      },
+      {
+        "role": "ConflictOrElection",
+        "index": 4,
+        "start": 3,
+        "end": 5,
+        "text": "in [ConflictOrElection] conflict"
+      },
+      {
+        "role": "Place",
+        "index": 7,
+        "start": 6,
+        "end": 8,
+        "text": "at [Place] place"
+      }
+    ]
+  },
+  "Conflict.Demonstrate.DemonstrateWithViolence": {
+    "template": [
+      "[Demonstrator]",
+      "was",
+      "in",
+      "a",
+      "demonstration",
+      "involving",
+      "violence",
+      "for",
+      "[Topic]",
+      "topic",
+      "with",
+      "[VisualDisplay]",
+      "visual",
+      "display",
+      "against",
+      "[Target]",
+      "at",
+      "[Place]",
+      "place,",
+      "with",
+      "potential",
+      "involvement",
+      "of",
+      "[Regulator]",
+      "police",
+      "or",
+      "military"
+    ],
+    "scopes": [
+      {
+        "role": "Demonstrator",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[Demonstrator]"
+      },
+      {
+        "role": "Topic",
+        "index": 8,
+        "start": 7,
+        "end": 9,
+        "text": "for [Topic] topic"
+      },
+      {
+        "role": "VisualDisplay",
+        "index": 11,
+        "start": 10,
+        "end": 13,
+        "text": "with [VisualDisplay] visual display"
+      },
+      {
+        "role": "Target",
+        "index": 15,
+        "start": 14,
+        "end": 15,
+        "text": "against [Target]"
+      },
+      {
+        "role": "Place",
+        "index": 17,
+        "start": 16,
+        "end": 18,
+        "text": "at [Place] place,"
+      },
+      {
+        "role": "Regulator",
+        "index": 23,
+        "start": 19,
+        "end": 26,
+        "text": "with potential involvement of [Regulator] police or military"
+      }
+    ]
+  },
+  "Conflict.Demonstrate.Unspecified": {
+    "template": [
+      "[Demonstrator]",
+      "was",
+      "in",
+      "a",
+      "demonstration",
+      "for",
+      "[Topic]",
+      "topic",
+      "with",
+      "[VisualDisplay]",
+      "visual",
+      "display",
+      "against",
+      "[Target]",
+      "at",
+      "[Place]",
+      "place,",
+      "with",
+      "potential",
+      "involvement",
+      "of",
+      "[Regulator]",
+      "police",
+      "or",
+      "military"
+    ],
+    "scopes": [
+      {
+        "role": "Demonstrator",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[Demonstrator]"
+      },
+      {
+        "role": "Topic",
+        "index": 6,
+        "start": 5,
+        "end": 7,
+        "text": "for [Topic] topic"
+      },
+      {
+        "role": "VisualDisplay",
+        "index": 9,
+        "start": 8,
+        "end": 11,
+        "text": "with [VisualDisplay] visual display"
+      },
+      {
+        "role": "Target",
+        "index": 13,
+        "start": 12,
+        "end": 13,
+        "text": "against [Target]"
+      },
+      {
+        "role": "Place",
+        "index": 15,
+        "start": 14,
+        "end": 16,
+        "text": "at [Place] place,"
+      },
+      {
+        "role": "Regulator",
+        "index": 21,
+        "start": 17,
+        "end": 24,
+        "text": "with potential involvement of [Regulator] police or military"
+      }
+    ]
+  },
+  "Contact.Contact.Broadcast": {
+    "template": [
+      "[Communicator]",
+      "communicated",
+      "to",
+      "[Recipient]",
+      "about",
+      "[Topic]",
+      "topic",
+      "using",
+      "[Instrument]",
+      "at",
+      "[Place]",
+      "place",
+      "(one-way",
+      "communication)"
+    ],
+    "scopes": [
+      {
+        "role": "Communicator",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[Communicator]"
+      },
+      {
+        "role": "Recipient",
+        "index": 3,
+        "start": 2,
+        "end": 3,
+        "text": "to [Recipient]"
+      },
+      {
+        "role": "Topic",
+        "index": 5,
+        "start": 4,
+        "end": 6,
+        "text": "about [Topic] topic"
+      },
+      {
+        "role": "Instrument",
+        "index": 8,
+        "start": 7,
+        "end": 8,
+        "text": "using [Instrument]"
+      },
+      {
+        "role": "Place",
+        "index": 10,
+        "start": 9,
+        "end": 11,
+        "text": "at [Place] place"
+      }
+    ]
+  },
+  "Contact.Contact.Correspondence": {
+    "template": [
+      "[Participant]",
+      "communicated",
+      "remotely",
+      "with",
+      "[Participant]",
+      "about",
+      "[Topic]",
+      "topic",
+      "using",
+      "[Instrument]",
+      "at",
+      "[Place]",
+      "place"
+    ],
+    "scopes": [
+      {
+        "role": "Participant",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[Participant]"
+      },
+      {
+        "role": "Participant",
+        "index": 4,
+        "start": 3,
+        "end": 4,
+        "text": "with [Participant]"
+      },
+      {
+        "role": "Topic",
+        "index": 6,
+        "start": 5,
+        "end": 7,
+        "text": "about [Topic] topic"
+      },
+      {
+        "role": "Instrument",
+        "index": 9,
+        "start": 8,
+        "end": 9,
+        "text": "using [Instrument]"
+      },
+      {
+        "role": "Place",
+        "index": 11,
+        "start": 10,
+        "end": 12,
+        "text": "at [Place] place"
+      }
+    ]
+  },
+  "Contact.Contact.Meet": {
+    "template": [
+      "[Participant]",
+      "met",
+      "face-to-face",
+      "with",
+      "[Participant]",
+      "about",
+      "[Topic]",
+      "topic",
+      "at",
+      "[Place]",
+      "place"
+    ],
+    "scopes": [
+      {
+        "role": "Participant",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[Participant]"
+      },
+      {
+        "role": "Participant",
+        "index": 4,
+        "start": 3,
+        "end": 4,
+        "text": "with [Participant]"
+      },
+      {
+        "role": "Topic",
+        "index": 6,
+        "start": 5,
+        "end": 7,
+        "text": "about [Topic] topic"
+      },
+      {
+        "role": "Place",
+        "index": 9,
+        "start": 8,
+        "end": 10,
+        "text": "at [Place] place"
+      }
+    ]
+  },
+  "Contact.Contact.Unspecified": {
+    "template": [
+      "[Participant]",
+      "communicated",
+      "with",
+      "[Participant]",
+      "about",
+      "[Topic]",
+      "topic",
+      "at",
+      "[Place]",
+      "place",
+      "(document",
+      "does",
+      "not",
+      "specify",
+      "in",
+      "person",
+      "or",
+      "not,",
+      "or",
+      "one-way",
+      "or",
+      "not)"
+    ],
+    "scopes": [
+      {
+        "role": "Participant",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[Participant]"
+      },
+      {
+        "role": "Participant",
+        "index": 3,
+        "start": 2,
+        "end": 3,
+        "text": "with [Participant]"
+      },
+      {
+        "role": "Topic",
+        "index": 5,
+        "start": 4,
+        "end": 6,
+        "text": "about [Topic] topic"
+      },
+      {
+        "role": "Place",
+        "index": 8,
+        "start": 7,
+        "end": 9,
+        "text": "at [Place] place"
+      }
+    ]
+  },
+  "Contact.Prevarication.Unspecified": {
+    "template": [
+      "[Communicator]",
+      "communicated",
+      "with",
+      "[Recipient]",
+      "about",
+      "[Topic]",
+      "topic",
+      "at",
+      "[Place]",
+      "place",
+      "(document",
+      "does",
+      "not",
+      "specify",
+      "in",
+      "person",
+      "or",
+      "not,",
+      "or",
+      "one-way",
+      "or",
+      "not)"
+    ],
+    "scopes": [
+      {
+        "role": "Communicator",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[Communicator]"
+      },
+      {
+        "role": "Recipient",
+        "index": 3,
+        "start": 2,
+        "end": 3,
+        "text": "with [Recipient]"
+      },
+      {
+        "role": "Topic",
+        "index": 5,
+        "start": 4,
+        "end": 6,
+        "text": "about [Topic] topic"
+      },
+      {
+        "role": "Place",
+        "index": 8,
+        "start": 7,
+        "end": 9,
+        "text": "at [Place] place"
+      }
+    ]
+  },
+  "Contact.RequestCommand.Unspecified": {
+    "template": [
+      "[Communicator]",
+      "communicated",
+      "with",
+      "[Recipient]",
+      "about",
+      "[Topic]",
+      "topic",
+      "at",
+      "[Place]",
+      "place",
+      "(document",
+      "does",
+      "not",
+      "specify",
+      "in",
+      "person",
+      "or",
+      "not,",
+      "or",
+      "one-way",
+      "or",
+      "not)"
+    ],
+    "scopes": [
+      {
+        "role": "Communicator",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[Communicator]"
+      },
+      {
+        "role": "Recipient",
+        "index": 3,
+        "start": 2,
+        "end": 3,
+        "text": "with [Recipient]"
+      },
+      {
+        "role": "Topic",
+        "index": 5,
+        "start": 4,
+        "end": 6,
+        "text": "about [Topic] topic"
+      },
+      {
+        "role": "Place",
+        "index": 8,
+        "start": 7,
+        "end": 9,
+        "text": "at [Place] place"
+      }
+    ]
+  },
+  "Contact.ThreatenCoerce.Unspecified": {
+    "template": [
+      "[Communicator]",
+      "communicated",
+      "with",
+      "[Recipient]",
+      "about",
+      "[Topic]",
+      "topic",
+      "at",
+      "[Place]",
+      "place",
+      "(document",
+      "does",
+      "not",
+      "specify",
+      "in",
+      "person",
+      "or",
+      "not,",
+      "or",
+      "one-way",
+      "or",
+      "not)"
+    ],
+    "scopes": [
+      {
+        "role": "Communicator",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[Communicator]"
+      },
+      {
+        "role": "Recipient",
+        "index": 3,
+        "start": 2,
+        "end": 3,
+        "text": "with [Recipient]"
+      },
+      {
+        "role": "Topic",
+        "index": 5,
+        "start": 4,
+        "end": 6,
+        "text": "about [Topic] topic"
+      },
+      {
+        "role": "Place",
+        "index": 8,
+        "start": 7,
+        "end": 9,
+        "text": "at [Place] place"
+      }
+    ]
+  },
+  "Control.ImpedeInterfereWith.Unspecified": {
+    "template": [
+      "[Impeder]",
+      "impeded",
+      "or",
+      "interfered",
+      "with",
+      "[ImpededEvent]",
+      "event",
+      "at",
+      "[Place]",
+      "place"
+    ],
+    "scopes": [
+      {
+        "role": "Impeder",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[Impeder]"
+      },
+      {
+        "role": "ImpededEvent",
+        "index": 5,
+        "start": 4,
+        "end": 6,
+        "text": "with [ImpededEvent] event"
+      },
+      {
+        "role": "Place",
+        "index": 8,
+        "start": 7,
+        "end": 9,
+        "text": "at [Place] place"
+      }
+    ]
+  },
+  "Disaster.Crash.Unspecified": {
+    "template": [
+      "[DriverPassenger]",
+      "person",
+      "in",
+      "[Vehicle]",
+      "vehicle",
+      "crashed",
+      "into",
+      "[CrashObject]",
+      "at",
+      "[Place]",
+      "place"
+    ],
+    "scopes": [
+      {
+        "role": "DriverPassenger",
+        "index": 0,
+        "start": 0,
+        "end": 1,
+        "text": "[DriverPassenger] person"
+      },
+      {
+        "role": "Vehicle",
+        "index": 3,
+        "start": 2,
+        "end": 4,
+        "text": "in [Vehicle] vehicle"
+      },
+      {
+        "role": "CrashObject",
+        "index": 7,
+        "start": 6,
+        "end": 7,
+        "text": "into [CrashObject]"
+      },
+      {
+        "role": "Place",
+        "index": 9,
+        "start": 8,
+        "end": 10,
+        "text": "at [Place] place"
+      }
+    ]
+  },
+  "Disaster.DiseaseOutbreak.Unspecified": {
+    "template": [
+      "[Disease]",
+      "disease",
+      "broke",
+      "out",
+      "among",
+      "[Victim]",
+      "victims",
+      "or",
+      "population",
+      "at",
+      "[Place]",
+      "place"
+    ],
+    "scopes": [
+      {
+        "role": "Disease",
+        "index": 0,
+        "start": 0,
+        "end": 1,
+        "text": "[Disease] disease"
+      },
+      {
+        "role": "Victim",
+        "index": 5,
+        "start": 4,
+        "end": 8,
+        "text": "among [Victim] victims or population"
+      },
+      {
+        "role": "Place",
+        "index": 10,
+        "start": 9,
+        "end": 11,
+        "text": "at [Place] place"
+      }
+    ]
+  },
+  "Disaster.FireExplosion.Unspecified": {
+    "template": [
+      "[FireExplosionObject]",
+      "caught",
+      "fire",
+      "or",
+      "exploded",
+      "from",
+      "[Instrument]",
+      "instrument",
+      "at",
+      "[Place]",
+      "place"
+    ],
+    "scopes": [
+      {
+        "role": "FireExplosionObject",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[FireExplosionObject]"
+      },
+      {
+        "role": "Instrument",
+        "index": 6,
+        "start": 5,
+        "end": 7,
+        "text": "from [Instrument] instrument"
+      },
+      {
+        "role": "Place",
+        "index": 9,
+        "start": 8,
+        "end": 10,
+        "text": "at [Place] place"
+      }
+    ]
+  },
+  "GenericCrime.GenericCrime.GenericCrime": {
+    "template": [
+      "[Perpetrator]",
+      "committed",
+      "a",
+      "crime",
+      "against",
+      "[Victim]",
+      "at",
+      "[Place]",
+      "place"
+    ],
+    "scopes": [
+      {
+        "role": "Perpetrator",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[Perpetrator]"
+      },
+      {
+        "role": "Victim",
+        "index": 5,
+        "start": 4,
+        "end": 5,
+        "text": "against [Victim]"
+      },
+      {
+        "role": "Place",
+        "index": 7,
+        "start": 6,
+        "end": 8,
+        "text": "at [Place] place"
+      }
+    ]
+  },
+  "Justice.Acquit.Unspecified": {
+    "template": [
+      "[JudgeCourt]",
+      "court",
+      "or",
+      "judge",
+      "acquitted",
+      "[Defendant]",
+      "of",
+      "[Crime]",
+      "crime",
+      "in",
+      "[Place]",
+      "place"
+    ],
+    "scopes": [
+      {
+        "role": "JudgeCourt",
+        "index": 0,
+        "start": 0,
+        "end": 3,
+        "text": "[JudgeCourt] court or judge"
+      },
+      {
+        "role": "Defendant",
+        "index": 5,
+        "start": 5,
+        "end": 5,
+        "text": "[Defendant]"
+      },
+      {
+        "role": "Crime",
+        "index": 7,
+        "start": 6,
+        "end": 8,
+        "text": "of [Crime] crime"
+      },
+      {
+        "role": "Place",
+        "index": 10,
+        "start": 9,
+        "end": 11,
+        "text": "in [Place] place"
+      }
+    ]
+  },
+  "Justice.ArrestJailDetain.Unspecified": {
+    "template": [
+      "[Jailer]",
+      "arrested",
+      "or",
+      "jailed",
+      "[Detainee]",
+      "for",
+      "[Crime]",
+      "crime",
+      "at",
+      "[Place]",
+      "place"
+    ],
+    "scopes": [
+      {
+        "role": "Jailer",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[Jailer]"
+      },
+      {
+        "role": "Detainee",
+        "index": 4,
+        "start": 4,
+        "end": 4,
+        "text": "[Detainee]"
+      },
+      {
+        "role": "Crime",
+        "index": 6,
+        "start": 5,
+        "end": 7,
+        "text": "for [Crime] crime"
+      },
+      {
+        "role": "Place",
+        "index": 9,
+        "start": 8,
+        "end": 10,
+        "text": "at [Place] place"
+      }
+    ]
+  },
+  "Justice.ChargeIndict.Unspecified": {
+    "template": [
+      "[Prosecutor]",
+      "charged",
+      "or",
+      "indicted",
+      "[Defendant]",
+      "before",
+      "[JudgeCourt]",
+      "court",
+      "or",
+      "judge",
+      "for",
+      "[Crime]",
+      "crime",
+      "in",
+      "[Place]",
+      "place"
+    ],
+    "scopes": [
+      {
+        "role": "Prosecutor",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[Prosecutor]"
+      },
+      {
+        "role": "Defendant",
+        "index": 4,
+        "start": 4,
+        "end": 4,
+        "text": "[Defendant]"
+      },
+      {
+        "role": "JudgeCourt",
+        "index": 6,
+        "start": 5,
+        "end": 9,
+        "text": "before [JudgeCourt] court or judge"
+      },
+      {
+        "role": "Crime",
+        "index": 11,
+        "start": 10,
+        "end": 12,
+        "text": "for [Crime] crime"
+      },
+      {
+        "role": "Place",
+        "index": 14,
+        "start": 13,
+        "end": 15,
+        "text": "in [Place] place"
+      }
+    ]
+  },
+  "Justice.Convict.Unspecified": {
+    "template": [
+      "[JudgeCourt]",
+      "court",
+      "or",
+      "judge",
+      "convicted",
+      "[Defendant]",
+      "of",
+      "[Crime]",
+      "crime",
+      "in",
+      "[Place]",
+      "place"
+    ],
+    "scopes": [
+      {
+        "role": "JudgeCourt",
+        "index": 0,
+        "start": 0,
+        "end": 3,
+        "text": "[JudgeCourt] court or judge"
+      },
+      {
+        "role": "Defendant",
+        "index": 5,
+        "start": 5,
+        "end": 5,
+        "text": "[Defendant]"
+      },
+      {
+        "role": "Crime",
+        "index": 7,
+        "start": 6,
+        "end": 8,
+        "text": "of [Crime] crime"
+      },
+      {
+        "role": "Place",
+        "index": 10,
+        "start": 9,
+        "end": 11,
+        "text": "in [Place] place"
+      }
+    ]
+  },
+  "Justice.InvestigateCrime.Unspecified": {
+    "template": [
+      "[Investigator]",
+      "investigated",
+      "[Defendant]",
+      "for",
+      "[Crime]",
+      "crime",
+      "in",
+      "[Place]",
+      "place"
+    ],
+    "scopes": [
+      {
+        "role": "Investigator",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[Investigator]"
+      },
+      {
+        "role": "Defendant",
+        "index": 2,
+        "start": 2,
+        "end": 2,
+        "text": "[Defendant]"
+      },
+      {
+        "role": "Crime",
+        "index": 4,
+        "start": 3,
+        "end": 5,
+        "text": "for [Crime] crime"
+      },
+      {
+        "role": "Place",
+        "index": 7,
+        "start": 6,
+        "end": 8,
+        "text": "in [Place] place"
+      }
+    ]
+  },
+  "Justice.ReleaseParole.Unspecified": {
+    "template": [
+      "[JudgeCourt]",
+      "court",
+      "or",
+      "judge",
+      "released",
+      "or",
+      "paroled",
+      "[Defendant]",
+      "from",
+      "[Crime]",
+      "crime",
+      "in",
+      "[Place]",
+      "place"
+    ],
+    "scopes": [
+      {
+        "role": "JudgeCourt",
+        "index": 0,
+        "start": 0,
+        "end": 3,
+        "text": "[JudgeCourt] court or judge"
+      },
+      {
+        "role": "Defendant",
+        "index": 7,
+        "start": 7,
+        "end": 7,
+        "text": "[Defendant]"
+      },
+      {
+        "role": "Crime",
+        "index": 9,
+        "start": 8,
+        "end": 10,
+        "text": "from [Crime] crime"
+      },
+      {
+        "role": "Place",
+        "index": 12,
+        "start": 11,
+        "end": 13,
+        "text": "in [Place] place"
+      }
+    ]
+  },
+  "Justice.Sentence.Unspecified": {
+    "template": [
+      "[JudgeCourt]",
+      "court",
+      "or",
+      "judge",
+      "sentenced",
+      "[Defendant]",
+      "for",
+      "[Crime]",
+      "crime",
+      "to",
+      "[Sentence]",
+      "sentence",
+      "in",
+      "[Place]",
+      "place"
+    ],
+    "scopes": [
+      {
+        "role": "JudgeCourt",
+        "index": 0,
+        "start": 0,
+        "end": 3,
+        "text": "[JudgeCourt] court or judge"
+      },
+      {
+        "role": "Defendant",
+        "index": 5,
+        "start": 5,
+        "end": 5,
+        "text": "[Defendant]"
+      },
+      {
+        "role": "Crime",
+        "index": 7,
+        "start": 6,
+        "end": 8,
+        "text": "for [Crime] crime"
+      },
+      {
+        "role": "Sentence",
+        "index": 10,
+        "start": 9,
+        "end": 11,
+        "text": "to [Sentence] sentence"
+      },
+      {
+        "role": "Place",
+        "index": 13,
+        "start": 12,
+        "end": 14,
+        "text": "in [Place] place"
+      }
+    ]
+  },
+  "Justice.TrialHearing.Unspecified": {
+    "template": [
+      "[Prosecutor]",
+      "tried",
+      "[Defendant]",
+      "before",
+      "[JudgeCourt]",
+      "court",
+      "or",
+      "judge",
+      "for",
+      "[Crime]",
+      "crime",
+      "in",
+      "[Place]",
+      "place"
+    ],
+    "scopes": [
+      {
+        "role": "Prosecutor",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[Prosecutor]"
+      },
+      {
+        "role": "Defendant",
+        "index": 2,
+        "start": 2,
+        "end": 2,
+        "text": "[Defendant]"
+      },
+      {
+        "role": "JudgeCourt",
+        "index": 4,
+        "start": 3,
+        "end": 7,
+        "text": "before [JudgeCourt] court or judge"
+      },
+      {
+        "role": "Crime",
+        "index": 9,
+        "start": 8,
+        "end": 10,
+        "text": "for [Crime] crime"
+      },
+      {
+        "role": "Place",
+        "index": 12,
+        "start": 11,
+        "end": 13,
+        "text": "in [Place] place"
+      }
+    ]
+  },
+  "Life.Consume.Unspecified": {
+    "template": [
+      "[ConsumingEntity]",
+      "consumed",
+      "[ConsumedThing]",
+      "at",
+      "[Place]",
+      "place"
+    ],
+    "scopes": [
+      {
+        "role": "ConsumingEntity",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[ConsumingEntity]"
+      },
+      {
+        "role": "ConsumedThing",
+        "index": 2,
+        "start": 2,
+        "end": 2,
+        "text": "[ConsumedThing]"
+      },
+      {
+        "role": "Place",
+        "index": 4,
+        "start": 3,
+        "end": 5,
+        "text": "at [Place] place"
+      }
+    ]
+  },
+  "Life.Die.Unspecified": {
+    "template": [
+      "[Victim]",
+      "died",
+      "at",
+      "[Place]",
+      "place",
+      "from",
+      "[MedicalIssue]",
+      "medical",
+      "issue,",
+      "killed",
+      "by",
+      "[Killer]",
+      "killer"
+    ],
+    "scopes": [
+      {
+        "role": "Victim",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[Victim]"
+      },
+      {
+        "role": "Place",
+        "index": 3,
+        "start": 2,
+        "end": 4,
+        "text": "at [Place] place"
+      },
+      {
+        "role": "MedicalIssue",
+        "index": 6,
+        "start": 5,
+        "end": 8,
+        "text": "from [MedicalIssue] medical issue,"
+      },
+      {
+        "role": "Killer",
+        "index": 11,
+        "start": 9,
+        "end": 12,
+        "text": "killed by [Killer] killer"
+      }
+    ]
+  },
+  "Life.Illness.Unspecified": {
+    "template": [
+      "[Victim]",
+      "has",
+      "[Disease]",
+      "sickness",
+      "or",
+      "illness",
+      "at",
+      "[Place]",
+      "place,",
+      "deliberately",
+      "infected",
+      "by",
+      "[DeliberateInjurer]"
+    ],
+    "scopes": [
+      {
+        "role": "Victim",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[Victim]"
+      },
+      {
+        "role": "Disease",
+        "index": 2,
+        "start": 2,
+        "end": 5,
+        "text": "[Disease] sickness or illness"
+      },
+      {
+        "role": "Place",
+        "index": 7,
+        "start": 6,
+        "end": 8,
+        "text": "at [Place] place,"
+      },
+      {
+        "role": "DeliberateInjurer",
+        "index": 12,
+        "start": 9,
+        "end": 12,
+        "text": "deliberately infected by [DeliberateInjurer]"
+      }
+    ]
+  },
+  "Life.Infect.Unspecified": {
+    "template": [
+      "[Victim]",
+      "was",
+      "infected",
+      "with",
+      "[InfectingAgent]",
+      "from",
+      "[Source]",
+      "at",
+      "[Place]",
+      "place"
+    ],
+    "scopes": [
+      {
+        "role": "Victim",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[Victim]"
+      },
+      {
+        "role": "InfectingAgent",
+        "index": 4,
+        "start": 3,
+        "end": 4,
+        "text": "with [InfectingAgent]"
+      },
+      {
+        "role": "Source",
+        "index": 6,
+        "start": 5,
+        "end": 6,
+        "text": "from [Source]"
+      },
+      {
+        "role": "Place",
+        "index": 8,
+        "start": 7,
+        "end": 9,
+        "text": "at [Place] place"
+      }
+    ]
+  },
+  "Life.Injure.Unspecified": {
+    "template": [
+      "[Victim]",
+      "was",
+      "injured",
+      "by",
+      "[Injurer]",
+      "using",
+      "[Instrument]",
+      "in",
+      "[BodyPart]",
+      "body",
+      "part",
+      "with",
+      "[MedicalCondition]",
+      "medical",
+      "issue",
+      "at",
+      "[Place]",
+      "place"
+    ],
+    "scopes": [
+      {
+        "role": "Victim",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[Victim]"
+      },
+      {
+        "role": "Injurer",
+        "index": 4,
+        "start": 3,
+        "end": 4,
+        "text": "by [Injurer]"
+      },
+      {
+        "role": "Instrument",
+        "index": 6,
+        "start": 5,
+        "end": 6,
+        "text": "using [Instrument]"
+      },
+      {
+        "role": "BodyPart",
+        "index": 8,
+        "start": 7,
+        "end": 10,
+        "text": "in [BodyPart] body part"
+      },
+      {
+        "role": "MedicalCondition",
+        "index": 12,
+        "start": 11,
+        "end": 14,
+        "text": "with [MedicalCondition] medical issue"
+      },
+      {
+        "role": "Place",
+        "index": 16,
+        "start": 15,
+        "end": 17,
+        "text": "at [Place] place"
+      }
+    ]
+  },
+  "Medical.Diagnosis.Unspecified": {
+    "template": [
+      "[Treater]",
+      "treater",
+      "diagnosed",
+      "[Patient]",
+      "patient",
+      "with",
+      "[SymptomSign]",
+      "symptom",
+      "for",
+      "[MedicalCondition]",
+      "medical",
+      "issue",
+      "at",
+      "[Place]",
+      "place"
+    ],
+    "scopes": [
+      {
+        "role": "Treater",
+        "index": 0,
+        "start": 0,
+        "end": 1,
+        "text": "[Treater] treater"
+      },
+      {
+        "role": "Patient",
+        "index": 3,
+        "start": 3,
+        "end": 4,
+        "text": "[Patient] patient"
+      },
+      {
+        "role": "SymptomSign",
+        "index": 6,
+        "start": 5,
+        "end": 7,
+        "text": "with [SymptomSign] symptom"
+      },
+      {
+        "role": "MedicalCondition",
+        "index": 9,
+        "start": 8,
+        "end": 11,
+        "text": "for [MedicalCondition] medical issue"
+      },
+      {
+        "role": "Place",
+        "index": 13,
+        "start": 12,
+        "end": 14,
+        "text": "at [Place] place"
+      }
+    ]
+  },
+  "Medical.Intervention.Unspecified": {
+    "template": [
+      "[Treater]",
+      "treater",
+      "treated",
+      "[Patient]",
+      "patient",
+      "for",
+      "[MedicalIssue]",
+      "medical",
+      "issue",
+      "with",
+      "[Instrument]",
+      "means",
+      "at",
+      "[Place]",
+      "place"
+    ],
+    "scopes": [
+      {
+        "role": "Treater",
+        "index": 0,
+        "start": 0,
+        "end": 1,
+        "text": "[Treater] treater"
+      },
+      {
+        "role": "Patient",
+        "index": 3,
+        "start": 3,
+        "end": 4,
+        "text": "[Patient] patient"
+      },
+      {
+        "role": "MedicalIssue",
+        "index": 6,
+        "start": 5,
+        "end": 8,
+        "text": "for [MedicalIssue] medical issue"
+      },
+      {
+        "role": "Instrument",
+        "index": 10,
+        "start": 9,
+        "end": 11,
+        "text": "with [Instrument] means"
+      },
+      {
+        "role": "Place",
+        "index": 13,
+        "start": 12,
+        "end": 14,
+        "text": "at [Place] place"
+      }
+    ]
+  },
+  "Medical.Vaccinate.Unspecified": {
+    "template": [
+      "[Treater]",
+      "treater",
+      "vaccinated",
+      "[Patient]",
+      "patient",
+      "via",
+      "[VaccineMethod]",
+      "vaccination",
+      "method",
+      "for",
+      "[VaccineTarget]",
+      "medical",
+      "issue",
+      "at",
+      "[Place]",
+      "place"
+    ],
+    "scopes": [
+      {
+        "role": "Treater",
+        "index": 0,
+        "start": 0,
+        "end": 1,
+        "text": "[Treater] treater"
+      },
+      {
+        "role": "Patient",
+        "index": 3,
+        "start": 3,
+        "end": 4,
+        "text": "[Patient] patient"
+      },
+      {
+        "role": "VaccineMethod",
+        "index": 6,
+        "start": 5,
+        "end": 8,
+        "text": "via [VaccineMethod] vaccination method"
+      },
+      {
+        "role": "VaccineTarget",
+        "index": 10,
+        "start": 9,
+        "end": 12,
+        "text": "for [VaccineTarget] medical issue"
+      },
+      {
+        "role": "Place",
+        "index": 14,
+        "start": 13,
+        "end": 15,
+        "text": "at [Place] place"
+      }
+    ]
+  },
+  "Movement.Transportation.Evacuation": {
+    "template": [
+      "[Transporter]",
+      "transported",
+      "[PassengerArtifact]",
+      "in",
+      "[Vehicle]",
+      "from",
+      "[Origin]",
+      "place",
+      "to",
+      "[Destination]",
+      "place"
+    ],
+    "scopes": [
+      {
+        "role": "Transporter",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[Transporter]"
+      },
+      {
+        "role": "PassengerArtifact",
+        "index": 2,
+        "start": 2,
+        "end": 2,
+        "text": "[PassengerArtifact]"
+      },
+      {
+        "role": "Vehicle",
+        "index": 4,
+        "start": 3,
+        "end": 4,
+        "text": "in [Vehicle]"
+      },
+      {
+        "role": "Origin",
+        "index": 6,
+        "start": 5,
+        "end": 7,
+        "text": "from [Origin] place"
+      },
+      {
+        "role": "Destination",
+        "index": 9,
+        "start": 8,
+        "end": 10,
+        "text": "to [Destination] place"
+      }
+    ]
+  },
+  "Movement.Transportation.IllegalTransportation": {
+    "template": [
+      "[Transporter]",
+      "illegally",
+      "transported",
+      "[PassengerArtifact]",
+      "in",
+      "[Vehicle]",
+      "from",
+      "[Origin]",
+      "place",
+      "to",
+      "[Destination]",
+      "place"
+    ],
+    "scopes": [
+      {
+        "role": "Transporter",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[Transporter]"
+      },
+      {
+        "role": "PassengerArtifact",
+        "index": 3,
+        "start": 3,
+        "end": 3,
+        "text": "[PassengerArtifact]"
+      },
+      {
+        "role": "Vehicle",
+        "index": 5,
+        "start": 4,
+        "end": 5,
+        "text": "in [Vehicle]"
+      },
+      {
+        "role": "Origin",
+        "index": 7,
+        "start": 6,
+        "end": 8,
+        "text": "from [Origin] place"
+      },
+      {
+        "role": "Destination",
+        "index": 10,
+        "start": 9,
+        "end": 11,
+        "text": "to [Destination] place"
+      }
+    ]
+  },
+  "Movement.Transportation.PreventPassage": {
+    "template": [
+      "[Preventer]",
+      "prevents",
+      "[Transporter]",
+      "from",
+      "entering",
+      "[Destination]",
+      "place",
+      "from",
+      "[Origin]",
+      "place",
+      "to",
+      "transport",
+      "[PassengerArtifact]",
+      "using",
+      "[Vehicle]",
+      "vehicle"
+    ],
+    "scopes": [
+      {
+        "role": "Preventer",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[Preventer]"
+      },
+      {
+        "role": "Transporter",
+        "index": 2,
+        "start": 2,
+        "end": 2,
+        "text": "[Transporter]"
+      },
+      {
+        "role": "Destination",
+        "index": 5,
+        "start": 3,
+        "end": 6,
+        "text": "from entering [Destination] place"
+      },
+      {
+        "role": "Origin",
+        "index": 8,
+        "start": 7,
+        "end": 9,
+        "text": "from [Origin] place"
+      },
+      {
+        "role": "PassengerArtifact",
+        "index": 12,
+        "start": 10,
+        "end": 12,
+        "text": "to transport [PassengerArtifact]"
+      },
+      {
+        "role": "Vehicle",
+        "index": 14,
+        "start": 13,
+        "end": 15,
+        "text": "using [Vehicle] vehicle"
+      }
+    ]
+  },
+  "Movement.Transportation.Unspecified": {
+    "template": [
+      "[Transporter]",
+      "transported",
+      "[PassengerArtifact]",
+      "in",
+      "[Vehicle]",
+      "from",
+      "[Origin]",
+      "place",
+      "to",
+      "[Destination]",
+      "place"
+    ],
+    "scopes": [
+      {
+        "role": "Transporter",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[Transporter]"
+      },
+      {
+        "role": "PassengerArtifact",
+        "index": 2,
+        "start": 2,
+        "end": 2,
+        "text": "[PassengerArtifact]"
+      },
+      {
+        "role": "Vehicle",
+        "index": 4,
+        "start": 3,
+        "end": 4,
+        "text": "in [Vehicle]"
+      },
+      {
+        "role": "Origin",
+        "index": 6,
+        "start": 5,
+        "end": 7,
+        "text": "from [Origin] place"
+      },
+      {
+        "role": "Destination",
+        "index": 9,
+        "start": 8,
+        "end": 10,
+        "text": "to [Destination] place"
+      }
+    ]
+  },
+  "Personnel.EndPosition.Unspecified": {
+    "template": [
+      "[Employee]",
+      "stopped",
+      "working",
+      "in",
+      "[Position]",
+      "position",
+      "at",
+      "[PlaceOfEmployment]",
+      "organization",
+      "in",
+      "[Place]",
+      "place"
+    ],
+    "scopes": [
+      {
+        "role": "Employee",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[Employee]"
+      },
+      {
+        "role": "Position",
+        "index": 4,
+        "start": 3,
+        "end": 5,
+        "text": "in [Position] position"
+      },
+      {
+        "role": "PlaceOfEmployment",
+        "index": 7,
+        "start": 6,
+        "end": 8,
+        "text": "at [PlaceOfEmployment] organization"
+      },
+      {
+        "role": "Place",
+        "index": 10,
+        "start": 9,
+        "end": 11,
+        "text": "in [Place] place"
+      }
+    ]
+  },
+  "Personnel.StartPosition.Unspecified": {
+    "template": [
+      "[Employee]",
+      "started",
+      "working",
+      "in",
+      "[Position]",
+      "position",
+      "at",
+      "[PlaceOfEmployment]",
+      "organization",
+      "in",
+      "[Place]",
+      "place"
+    ],
+    "scopes": [
+      {
+        "role": "Employee",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[Employee]"
+      },
+      {
+        "role": "Position",
+        "index": 4,
+        "start": 3,
+        "end": 5,
+        "text": "in [Position] position"
+      },
+      {
+        "role": "PlaceOfEmployment",
+        "index": 7,
+        "start": 6,
+        "end": 8,
+        "text": "at [PlaceOfEmployment] organization"
+      },
+      {
+        "role": "Place",
+        "index": 10,
+        "start": 9,
+        "end": 11,
+        "text": "in [Place] place"
+      }
+    ]
+  },
+  "Transaction.Donation.Unspecified": {
+    "template": [
+      "[Giver]",
+      "gave",
+      "[ArtifactMoney]",
+      "to",
+      "[Recipient]",
+      "for",
+      "the",
+      "benefit",
+      "of",
+      "[Beneficiary]",
+      "at",
+      "[Place]",
+      "place"
+    ],
+    "scopes": [
+      {
+        "role": "Giver",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[Giver]"
+      },
+      {
+        "role": "ArtifactMoney",
+        "index": 2,
+        "start": 2,
+        "end": 2,
+        "text": "[ArtifactMoney]"
+      },
+      {
+        "role": "Recipient",
+        "index": 4,
+        "start": 3,
+        "end": 4,
+        "text": "to [Recipient]"
+      },
+      {
+        "role": "Beneficiary",
+        "index": 9,
+        "start": 5,
+        "end": 9,
+        "text": "for the benefit of [Beneficiary]"
+      },
+      {
+        "role": "Place",
+        "index": 11,
+        "start": 10,
+        "end": 12,
+        "text": "at [Place] place"
+      }
+    ]
+  },
+  "Transaction.ExchangeBuySell.Unspecified": {
+    "template": [
+      "[Giver]",
+      "bought,",
+      "sold,",
+      "or",
+      "traded",
+      "[AcquiredEntity]",
+      "to",
+      "[Recipient]",
+      "in",
+      "exchange",
+      "for",
+      "[PaymentBarter]",
+      "for",
+      "the",
+      "benefit",
+      "of",
+      "[Beneficiary]",
+      "at",
+      "[Place]",
+      "place"
+    ],
+    "scopes": [
+      {
+        "role": "Giver",
+        "index": 0,
+        "start": 0,
+        "end": 0,
+        "text": "[Giver]"
+      },
+      {
+        "role": "AcquiredEntity",
+        "index": 5,
+        "start": 5,
+        "end": 5,
+        "text": "[AcquiredEntity]"
+      },
+      {
+        "role": "Recipient",
+        "index": 7,
+        "start": 6,
+        "end": 7,
+        "text": "to [Recipient]"
+      },
+      {
+        "role": "PaymentBarter",
+        "index": 11,
+        "start": 8,
+        "end": 11,
+        "text": "in exchange for [PaymentBarter]"
+      },
+      {
+        "role": "Beneficiary",
+        "index": 16,
+        "start": 12,
+        "end": 16,
+        "text": "for the benefit of [Beneficiary]"
+      },
+      {
+        "role": "Place",
+        "index": 18,
+        "start": 17,
+        "end": 19,
+        "text": "at [Place] place"
+      }
+    ]
+  }
+}
