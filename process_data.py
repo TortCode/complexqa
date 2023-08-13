@@ -53,13 +53,19 @@ def event_to_metatrigger(event, entity_map) -> dict:
     """Converts an event to a metatrigger (trigger with additional info to aid QA gen) """
     template, role_text_map = get_template_and_role_mapping(event, entity_map)
     event_id = event['id']
+    event_type = event['event_type']
     trigger = event['trigger']
     text = trigger['text']
     offset = trigger['start']
     length = trigger['end'] - offset
     # if debug:
     #     print(f"text:{text} offset:{offset} template:{template} role_text_map:{role_text_map}")
-    return {'event_id': event_id, 'text':text, 'offset':offset, 'length':length, 'template':template, 'role_text_map':role_text_map}
+    return {
+        'event_id': event_id,
+        'event_type': event_type,
+        'text':text, 'offset':offset, 'length':length, 'template':template,
+        'role_text_map': role_text_map
+    }
 
 def get_template_and_role_mapping(event, entity_map) -> Tuple[str, List[dict]]:
     """Returns the template and role mapping for the given event"""
@@ -87,7 +93,7 @@ def get_template_and_role_mapping(event, entity_map) -> Tuple[str, List[dict]]:
     template = event_role['template']
     role_text_map = [
         {'role':role, 'tokens':role_mapping_dict[role]}
-        for role in event_role['roles']]
+        for role in set(event_role['roles'])]
     return template, role_text_map
 
 def detokenize_and_collapsews(tokens: List[str]) -> str:

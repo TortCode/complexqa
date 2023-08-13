@@ -15,7 +15,7 @@ var submit = $('#submitButton');
 // list of text/offset objects 
 const events_data = JSON.parse($('#events-data').text().trim());
 const relations_data = JSON.parse($('#relations-data').text().trim());
-const strategyB_tuples = [["road_ied_8-E1", "road_ied_8-E2", "road_ied_8-E3"]];//JSON.parse($('#strategyB-tuples').text().trim());
+const strategyB_tuples = [[events_data[0].event_id, events_data[1].event_id, events_data[2].event_id]];//JSON.parse($('#strategyB-tuples').text().trim());
 
 const empty_template_map = function () {
     return $('<div class="template-map">');
@@ -120,10 +120,11 @@ var highlightEvent = function () {
     $('trigger').removeClass('highlight-trigger');
     $('role').removeClass('highlight-role1 highlight-role2 highlight-role3');
 
-    pagenos.forEach(trigger_num => {
+    pagenos.forEach((trigger_num, i) => {
+        console.log("highlight trigger", trigger_num)
         // highlight trigger
         $('#trigger-' + trigger_num).addClass('highlight-trigger');
-        $('role[trigno=' + trigger_num + ']').addClass('highlight-role'+(trigger_num+1));
+        $('role[trigno=' + trigger_num + ']').addClass('highlight-role'+(i+1));
     })
 }
 
@@ -216,7 +217,7 @@ function makeRelationSelect(event1, event2) {
     );
 
     const selectInput =
-        $('<select class="relation-select mg-5">');
+        $('<select class="relation-select">');
     relationTypes.forEach(type => {
         const option = $(`<option value="${type}">${type.toLowerCase()}</option>`);
         selectInput.append(option);
@@ -279,7 +280,6 @@ const add_qa_input = function (question = '', answer = '', ref = null, editable 
     let question_text = $('<label>').text('question:');
     let question_input = $('<textarea>')
         .addClass('question-input')
-        .addClass('mg-15')
         .attr({
             placeholder: 'write down your question',
             rows: 2,
@@ -295,7 +295,6 @@ const add_qa_input = function (question = '', answer = '', ref = null, editable 
     let answer_text = $('<label>').text('answer:');
     let answer_input = $('<textarea>')
         .addClass('answer-input')
-        .addClass('mg-15')
         .attr({
             placeholder: 'write down your answer',
             rows: 2,
@@ -371,33 +370,25 @@ var show = function () {
 
 };
 
-// dynamically create buttons for each SRL arg
-events_data.forEach(function (event, i) {
-    if (event.text.trim()) {
-        var button = document.createElement("button");
-        button.setAttribute("type", "button");
-        button.setAttribute("id", "button-page-" + i);
-        button.setAttribute("page-no", i);
-        button.setAttribute("class", "btn btn-default");
-        button.innerHTML = describeEvent(event);
-        button.onclick = function () {
-            // const pageno = parseInt(this.getAttribute("page-no"));
-            // // toggle button
-            // if (button.classList.contains('btn-default'))
-            //     page_num_set.add(pageno);
-            // else
-            //     page_num_set.delete(pageno);
-            // makeDom();
-            // let instruction = $('#instructionBody');
-            // if (instruction.is(':visible')) {
-            //     instruction.toggle();
-            // }
-            // //window.scrollTo(0, 0); // scroll to top
-            // show();
+function make_event_buttons() {
+    $('#button-bar').empty();
+    // dynamically create buttons for each SRL arg
+    events_data.forEach(function (event, i) {
+        if (event.text.trim()) {
+            var button = document.createElement("button");
+            button.setAttribute("type", "button");
+            button.setAttribute("id", "button-page-" + i);
+            button.setAttribute("page-no", i);
+            button.setAttribute("class", "btn btn-default");
+            button.innerHTML = describeEvent(event);
+            document.getElementById('button-bar').appendChild(button);
         }
-        document.getElementById('button-bar').appendChild(button);
-    }
+    })
+}
 
+make_event_buttons();
+
+events_data.forEach(function (event, i) {
     // format template area with role mappings
     // if template not null or undefined
     if (event.template !== null) {
@@ -405,7 +396,9 @@ events_data.forEach(function (event, i) {
         const template = $('<p>').text(event.template);
         template_area.append(template);
         event.role_text_map.forEach(function (pairing) {
-            template_area.append(make_role_mapping_element(pairing.role, pairing.tokens.map(tk => tk.text).join('/')));
+            pairing.tokens.forEach(function (tk) {
+                template_area.append(make_role_mapping_element(pairing.role, tk.text));
+            });
         });
     }
 })
@@ -543,6 +536,7 @@ $('#developer-mode').on('change', function () {
     developer_mode = this.checked;
     makeSelectionOptions();
     makeDom();
+    make_event_buttons();
     show();
 });
 

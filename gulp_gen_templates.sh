@@ -1,0 +1,1 @@
+(cd template/ && npx gulp) && ./gen_templates.sh
