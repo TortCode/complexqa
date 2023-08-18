@@ -17,7 +17,7 @@ const submit = $('#submitButton');
 const events_data = JSON.parse($('#events-data').text().trim());
 const strategy_data = JSON.parse($('#strategy-data').text().trim());
 
-const empty_template_map = function () {
+function empty_template_map() {
     return $('<div class="template-map">');
 }
 
@@ -30,22 +30,27 @@ const relations_data = strategy_data.strategy_1.map(query => {
 });
 
 const template_record = [];
-// make template areas
-events_data.forEach(function (event, i) {
-    template_record[i] = empty_template_map();
-    // format template area with role mappings
-    // if template not null or undefined
-    if (event.template !== null) {
-        const template_area = template_record[i];
-        template_area.append($('<p>').text(event.event_type));
-        template_area.append($('<p>').text(event.template));
-        event.role_text_map.forEach(function (pairing) {
-            pairing.tokens.forEach(function (tk) {
-                template_area.append(make_role_mapping_element(pairing.role, tk.text));
+
+function make_template_area() {
+    // make template areas
+    events_data.forEach(function (event, i) {
+        template_record[i] = empty_template_map();
+        // format template area with role mappings
+        // if template not null or undefined
+        if (event.template !== null) {
+            const template_area = template_record[i];
+            template_area.append($('<p>').text(event.event_type));
+            template_area.append($('<p>').text(event.template));
+            event.role_text_map.forEach(function (pairing) {
+                pairing.tokens.forEach(function (tk) {
+                    template_area.append(make_role_mapping_element(pairing.role, tk.text));
+                });
             });
-        });
-    }
-})
+        }
+    })
+}
+
+make_template_area();
 
 const save_record = {
     A: {
@@ -127,13 +132,13 @@ if (!String.prototype.format) {
 // Create elements
 // ---------------------------------------------------------
 
-const makeDom = function () {
-    recoverUserInput();
-    console.log(page_num_set);
-    highlightEvent();
+function make_dom() {
+    recover_user_input();
+    if (developer_mode) console.log(page_num_set);
+    highlight_event();
 };
 
-const highlightEvent = function () {
+function highlight_event() {
     /* highlight trigger within document */
     const pagenos = Array.from(page_num_set);
     pagenos.sort((a, b) => events_data[a].offset - events_data[b].offset);
@@ -143,29 +148,28 @@ const highlightEvent = function () {
     $('role').removeClass('highlight-role1 highlight-role2 highlight-role3');
 
     pagenos.forEach((trigger_num, i) => {
-        console.log("highlight trigger", trigger_num)
+        if (developer_mode) console.log("highlight trigger", trigger_num)
         // highlight trigger
         $('#trigger-' + trigger_num).addClass('highlight-trigger');
         $('role[trigno=' + trigger_num + ']').addClass('highlight-role'+(i+1));
     })
 }
 
-const relationTypes = ['before', 'after', 'overlap', 'equal', 'contains'];
+const relation_types = ['before', 'after', 'overlap', 'equal', 'contains'];
 
 // restore input from other trigger
-const recoverUserInput = function () {
+function recover_user_input() {
     const inputArea = $('#input-area');
     inputArea.empty();
     page_num_set.clear();
 
-    let pagenos = [];
     if (strategy === 'A') {
         // questions
         const event_pair = $('#tuple-select').val().split(',').map(x => parseInt(x));
         page_num_set.add(event_pair[0]);
         page_num_set.add(event_pair[1]);
 
-        pagenos = event_pair;
+        let pagenos = event_pair;
         pagenos.sort((a, b) => events_data[a].offset - events_data[b].offset);
 
         // relations
@@ -173,8 +177,8 @@ const recoverUserInput = function () {
         relationsArea.empty();
         const event1 = events_data[pagenos[0]];
         const event2 = events_data[pagenos[1]];
-        relationsArea.append(makeRelationSelect(event1, event2));
-        relationsArea.append(makeRelationSelect(event2, event1));
+        relationsArea.append(make_relation_select(event1, event2));
+        relationsArea.append(make_relation_select(event2, event1));
 
         save_record.A.qapairs
         .filter(qa => {
@@ -187,15 +191,13 @@ const recoverUserInput = function () {
         })
         .forEach(qa => {
             add_qa_input(qa.question, qa.answer, qa);
-            inputArea.add($('<hr>'));
         });
     } else if (strategy === 'B') {
         const tuple = save_record.B.qapairs[$('#tuple-select').val()];
-        console.log("TUPLE", tuple)
         page_num_set.add(events_data.findIndex(e => e.event_id === tuple.event1_id));
         page_num_set.add(events_data.findIndex(e => e.event_id === tuple.event2_id));
         page_num_set.add(events_data.findIndex(e => e.event_id === tuple.event3_id));
-        pagenos = Array.from(page_num_set);
+        let pagenos = Array.from(page_num_set);
         pagenos.sort((a, b) => events_data[a].offset - events_data[b].offset);
         add_qa_input(tuple.question, tuple.answer, null, false);
         add_qa_input('', '', tuple, true);
@@ -207,13 +209,12 @@ const recoverUserInput = function () {
         save_record.C.qapairs
         .filter(qa => {
             return (
-                qa.event_id === tuple.event.event_id &&
+                qa.event_id === tuple.event.id &&
                 qa.relation === tuple.relation
             )
         })
         .forEach(qa => {
             add_qa_input(qa.question, qa.answer, qa);
-            inputArea.append($('<hr>'));
         })
     } else if (strategy === 'D') {
         const event_type = $('#tuple-select').val();
@@ -228,25 +229,27 @@ const recoverUserInput = function () {
 
         current_strategyD_window.forEach(qa => {
             add_qa_input(qa.question, qa.answer, qa);
-            inputArea.append($('<hr>'));
         });
     }
+    
+    const pagenos = Array.from(page_num_set);
+    pagenos.sort((a, b) => events_data[a].offset - events_data[b].offset);
     // templates
     const templateArea = $('#template-area');
     templateArea.empty()
     pagenos.forEach(trigger_num => {
         const div = $('<div>')
-            .append($('<p>').text(describeEvent(events_data[trigger_num])))
+            .append($('<p>').text(describe_event(events_data[trigger_num])))
             .append(template_record[trigger_num]);
         templateArea.append(div);
     });
 };
 
-function describeEvent(event) {
+function describe_event(event) {
     return (developer_mode ? `ID: ${event.event_id} | ` : "") + `${event.text} @ ${event.offset}`;
 }
 
-function makeRelationSelect(event1, event2) {
+function make_relation_select(event1, event2) {
     const id1 = event1.event_id;
     const id2 = event2.event_id;
     const relation = relations_data.find(r =>
@@ -256,7 +259,7 @@ function makeRelationSelect(event1, event2) {
 
     const selectInput =
         $('<select class="relation-select">');
-    relationTypes.forEach(type => {
+    relation_types.forEach(type => {
         const option = $(`<option value="${type}">${type.toLowerCase()}</option>`);
         selectInput.append(option);
     });
@@ -282,20 +285,20 @@ function makeRelationSelect(event1, event2) {
     });
 
     const div = $('<div>')
-        .append($('<label>').text(describeEvent(event1)))
+        .append($('<label>').text(describe_event(event1)))
         .append(selectInput)
-        .append($('<label>').text(describeEvent(event2)))
+        .append($('<label>').text(describe_event(event2)))
 
     return div;
 }
 
 // ensure something is in the input box
-const canSubmit = function () {
+function can_submit() {
     return true;
 };
 
 // template role fields
-const make_role_mapping_element = function (role, text) {
+function make_role_mapping_element(role, text) {
     const role_text = $('<label>').html('<b>' + role + '</b>:');
     const role_field = $('<span>')
         .addClass('role-field')
@@ -313,7 +316,7 @@ const make_role_mapping_element = function (role, text) {
     return role_div;
 }
 
-const add_qa_input = function (question = '', answer = '', ref = null, editable = true) {
+function add_qa_input(question = '', answer = '', ref = null, editable = true) {
     let question_text = $('<label>').text('question:');
     let question_input = $('<textarea>')
         .addClass('question-input')
@@ -362,29 +365,29 @@ const add_qa_input = function (question = '', answer = '', ref = null, editable 
     show();
 };
 
-const enable_button = function (button) {
+function enable_button(button) {
     button.removeAttr("disabled");
     button.removeClass("btn-default");
     button.addClass("btn-success");
 };
 
-const disable_button = function (button) {
+function disable_button(button) {
     button.attr("disabled", "disabled");
     button.removeClass("btn-success");
     button.addClass("btn-default");
 };
 
-const select_button = function (button) {
+function select_button(button) {
     button.removeClass("btn-default");
     button.addClass("btn-primary");
 };
 
-const deselect_button = function (button) {
+function deselect_button(button) {
     button.removeClass("btn-primary");
     button.addClass("btn-default");
 };
 
-const is_wh_question = function (question) {
+function is_wh_question(question) {
     let tokens = question.split(' ');
     if (tokens.length <= 1) {
         return false;
@@ -397,7 +400,7 @@ const is_wh_question = function (question) {
 };
 
 
-const show = function () {
+function show() {
     for (button of document.getElementById('button-bar').getElementsByTagName('*')) {
         if (page_num_set.has(parseInt(button.getAttribute('page-no'))))
             select_button($(button));
@@ -417,7 +420,7 @@ function make_event_buttons() {
             button.setAttribute("id", "button-page-" + i);
             button.setAttribute("page-no", i);
             button.setAttribute("class", "btn btn-default");
-            button.innerHTML = describeEvent(event);
+            button.innerHTML = describe_event(event);
             document.getElementById('button-bar').appendChild(button);
         }
     })
@@ -430,7 +433,7 @@ make_event_buttons();
 // Initialize
 // ---------------------------------------------------------
 
-const submit_form = function (event) {
+function submit_form(event) {
     event.preventDefault();
     if (!window.confirm("Are you sure you want to submit?")) return;
     save_all();
@@ -464,7 +467,7 @@ const submit_form = function (event) {
 //$('#save').on('click', save_all);
 submit.on('click', submit_form);
 
-const popup_alert = function (alert_box, text) {
+function popup_alert(alert_box, text) {
     alert_box.html(text);
     alert_box.css({
         'background-color': 'fec5bb',
@@ -485,16 +488,16 @@ const popup_alert = function (alert_box, text) {
     }, 7000);
 };
 
-const tupleSelect = $('#tuple-select');
+const tuple_select = $('#tuple-select');
 
 
-function makeSelectionOptions() {
+function make_selection_options() {
     function describeEventById(id) {
         const event = events_data.find(e => e.event_id === id);
-        return describeEvent(event);
+        return describe_event(event);
     }
 
-    tupleSelect.empty();
+    tuple_select.empty();
     if (strategy === 'A') {
         events_data.forEach(function (ei, i) {
             events_data.forEach(function (ej, j) {
@@ -503,8 +506,8 @@ function makeSelectionOptions() {
                     .attr({
                         value: `${i},${j}`,
                     })
-                    .text(`${describeEvent(ei)} & ${describeEvent(ej)}`);
-                tupleSelect.append(opt);
+                    .text(`${describe_event(ei)} & ${describe_event(ej)}`);
+                tuple_select.append(opt);
             });
         });
     } else if (strategy === 'B') {
@@ -514,7 +517,7 @@ function makeSelectionOptions() {
                     value: i,
                 })
                 .text(`${describeEventById(tuple.events[0])}, ${describeEventById(tuple.events[1])}, ${describeEventById(tuple.events[2])}`);
-            tupleSelect.append(opt);
+            tuple_select.append(opt);
         });
     } else if (strategy === 'C') {
         strategy_data.strategy_3.forEach(function (tuple, i) {
@@ -523,7 +526,7 @@ function makeSelectionOptions() {
                     value: i,
                 })
                 .text(`${tuple.relation} ${describeEventById(tuple.event.id)}`);
-            tupleSelect.append(opt);
+            tuple_select.append(opt);
         });
     } else if (strategy === 'D') {
         Object.keys(strategy_data.strategy_4).forEach(function (event_type) {
@@ -532,16 +535,16 @@ function makeSelectionOptions() {
                     value: event_type,
                 })
                 .text(`${event_type}`);
-            tupleSelect.append(opt);
+            tuple_select.append(opt);
         }); 
     }
-    const children = tupleSelect.children();
+    const children = tuple_select.children();
     if (children.length > 0) {
         children[0].selected = true;
     }
 }
 
-function setStrategy(newStrategy) {
+function set_strategy(newStrategy) {
     if (strategy === newStrategy) return;
     strategy = newStrategy;
     // show correct elements
@@ -551,26 +554,26 @@ function setStrategy(newStrategy) {
     deselect_button($('#strategy-btns button'));
     select_button($('#select'+strategy));
     // update others
-    makeSelectionOptions();
-    makeDom();
+    make_selection_options();
+    make_dom();
     show();
 }
 
-$('#selectA').on('click', () => setStrategy('A'));
-$('#selectB').on('click', () => setStrategy('B'));
-$('#selectC').on('click', () => setStrategy('C'));
-$('#selectD').on('click', () => setStrategy('D'));
+$('#selectA').on('click', () => set_strategy('A'));
+$('#selectB').on('click', () => set_strategy('B'));
+$('#selectC').on('click', () => set_strategy('C'));
+$('#selectD').on('click', () => set_strategy('D'));
 $('#selectA').click();
 
-tupleSelect.on('change', function () {
-    makeDom();
+tuple_select.on('change', function () {
+    make_dom();
     show();
 });
 
 $('#developer-mode').on('change', function () {
     developer_mode = this.checked;
-    makeSelectionOptions();
-    makeDom();
+    make_selection_options();
+    make_dom();
     make_event_buttons();
     show();
 });

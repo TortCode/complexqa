@@ -51,6 +51,7 @@
 #template-area {
     background-color: #eee;
     display: flex;
+    flex-wrap: wrap;
 }
 
 #relations-area {

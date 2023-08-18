@@ -14,8 +14,6 @@ def main():
 
     with configs.file as f:
         train_json = list(f)
-    with configs.question as f:
-        strategy_map = json.loads(f.read().encode('utf-8'))
     # load kairos roles
     global kairos_roles
     with configs.kairos as f:
@@ -24,7 +22,7 @@ def main():
     with configs.output as outfile:
         # write header
         writer = csv.writer(outfile)
-        field = ['docid', 'text', 'events', 'strategy']
+        field = ['docid', 'text', 'events']
         writer.writerow(field)
 
         # parse each line of jsonl file
@@ -51,7 +49,6 @@ def main():
 
             writer.writerow([
                 docid, indexed_text, json.dumps(events),
-                json.dumps(strategy_map.get(docid))
             ])
 
 def process_event(event, entity_map) -> dict:
@@ -125,8 +122,6 @@ def get_args() -> argparse.Namespace:
                         help='jsonl file to parse', metavar='src')
     parser.add_argument('-k', '--kairos', type=argparse.FileType("r"),
                         help='kairos roles file')
-    parser.add_argument('-q', '--question', type=argparse.FileType("r"),
-                        help='question file')
     parser.add_argument('-o', '--output', type=csv_filetype("w"), 
                         help='output file')
     parser.add_argument('-s', '--start', type=int, default=0, 

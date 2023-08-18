@@ -1,6 +1,6 @@
-#!/usr/bin/env python3
 import csv
 import argparse
+import json
 from pathlib import Path
 from typing import List, Tuple
 
@@ -13,11 +13,15 @@ def main():
     with configs.file as f:
         template = f.read() 
 
+    with configs.question as q:
+        questions = json.loads(q.read().encode('utf-8'))
+
     with configs.data as datafile:
         dataname = Path(datafile.name).stem
         reader = csv.DictReader(datafile)
 
         for i, line in enumerate(reader):
+            line['strategy'] = json.dumps(questions.get(line['docid']))
             text = template
             for k, v in line.items():
                 text = text.replace(f"${{{k}}}", v)
@@ -33,6 +37,8 @@ def get_args() -> argparse.Namespace:
                         help='data file')
     parser.add_argument('file', type=argparse.FileType("r"), 
                         help='template file to fill')
+    parser.add_argument('-q', '--question', type=argparse.FileType("r"),
+                        help='question file')
     parser.add_argument('-o', '--output', type=Path, 
                         help='output dir')
     parser.parse_args(namespace=configs)

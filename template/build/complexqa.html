@@ -27,12 +27,8 @@
       ${events}
     </div>
 
-    <div id='relations-data' hidden>
-      ${relations}
-    </div>
-
-    <div id="strategyB-tuples" hidden>
-      ${strategyB-tuples}
+    <div id='strategy-data' hidden>
+      ${strategy}
     </div>
 
     <p>
@@ -49,9 +45,13 @@
     <div class="strategies">
       <span id="strategy-btns">
         <button id="selectA" class="btn btn-default" type="button">
-          Strategy A</button>
+          Strategy 1: Event Relations</button>
         <button id="selectB" class="btn btn-default" type="button">
-          Strategy B</button>
+          Strategy 2: Entity Bridging</button>
+        <button id="selectC" class="btn btn-default" type="button">
+          Strategy 3: Listing and Counting</button>
+        <button id="selectD" class="btn btn-default" type="button">
+          Strategy 4: Comparisons</button>
       </span>
       <select id="tuple-select">
       </select>
@@ -73,6 +73,16 @@
       </div>
       <div class="strategy" id="strategyB">
       </div>
+      <div class="strategy" id="strategyC">
+      </div>
+    </div>
+    <div class="btn-container">
+      <button id="addbtn" class="btn btn-success" type="button">+</button>
+      <label for="addbtn">Add a QA pair</label>
+    </div>
+    <div class="btn-container">
+      <button id="rmbtn" class="btn btn-danger" type="button">-</button>
+      <label for="rmbtn">Remove a QA pair</label>
     </div>
     <div id="input-area">
     </div>
@@ -138,6 +148,7 @@
 #template-area {
     background-color: #eee;
     display: flex;
+    flex-wrap: wrap;
 }
 
 #relations-area {
@@ -224,24 +235,55 @@ input[disabled] {
 // Global
 // ---------------------------------------------------------
 
-var page_num_set = new Set();
+const page_num_set = new Set();
 let strategy = '';
 let developer_mode = false;
+let current_strategyD_window = [];
 
 // ---------------------------------------------------------
 // Create jQuery elements
 // ---------------------------------------------------------
 
-var submit = $('#submitButton');
+const submit = $('#submitButton');
 
 // list of text/offset objects 
 const events_data = JSON.parse($('#events-data').text().trim());
-const relations_data = JSON.parse($('#relations-data').text().trim());
-const strategyB_tuples = [[events_data[0].event_id, events_data[1].event_id, events_data[2].event_id]];//JSON.parse($('#strategyB-tuples').text().trim());
+const strategy_data = JSON.parse($('#strategy-data').text().trim());
 
-const empty_template_map = function () {
+function empty_template_map() {
     return $('<div class="template-map">');
 }
+
+const relations_data = strategy_data.strategy_1.map(query => {
+    return {
+        event1_id: query.events[0].id,
+        event2_id: query.events[1].id,
+        type: query.relation,
+    }
+});
+
+const template_record = [];
+
+function make_template_area() {
+    // make template areas
+    events_data.forEach(function (event, i) {
+        template_record[i] = empty_template_map();
+        // format template area with role mappings
+        // if template not null or undefined
+        if (event.template !== null) {
+            const template_area = template_record[i];
+            template_area.append($('<p>').text(event.event_type));
+            template_area.append($('<p>').text(event.template));
+            event.role_text_map.forEach(function (pairing) {
+                pairing.tokens.forEach(function (tk) {
+                    template_area.append(make_role_mapping_element(pairing.role, tk.text));
+                });
+            });
+        }
+    })
+}
+
+make_template_area();
 
 const save_record = {
     A: {
@@ -251,69 +293,65 @@ const save_record = {
     B: {
         qapairs: [],
     },
+    C: {
+        qapairs: [],
+    },
+    D: {
+        qapairs: [],
+    },
 };
 
-const strategyA_template = function (tno, event1, event2) {
-    return {
-        question: '',
-        answer: '',
-    }
-}
-
-const template_record = [];
 events_data.forEach(function (ei, i) {
-    template_record[i] = empty_template_map();
+    strategy_data.strategy_3
+    .filter(query => query.event.id == ei.event_id)
+    .forEach(query => {
+        save_record.C.qapairs.push({
+            event_id: query.event.id,
+            relation: query.relation,
+            question: query.init_question,
+            answer: query.expect_answer,
+        });
+    });
     events_data.forEach(function (ej, j) {
         if (i >= j) return;
 
-        for (let tno = 1; tno <= 4; tno++){
-            {
-                const { question, answer } = strategyA_template(tno, ei, ej);
-                save_record.A.qapairs.push({
-                    event1_id: ei.event_id,
-                    event2_id: ej.event_id,
-                    templateno: tno,
-                    question,
-                    answer,
-                });
-            }
-            {
-                const { question, answer } = strategyA_template(tno, ej, ei);
-                save_record.A.qapairs.push({
-                    event1_id: ej.event_id,
-                    event2_id: ei.event_id,
-                    templateno: tno,
-                    question,
-                    answer,
-                });
-            }
-        }
+        strategy_data.strategy_1
+        .filter(query => {
+            return (
+                query.events[0].id === ei.event_id &&
+                query.events[1].id === ej.event_id ||
+                query.events[0].id === ej.event_id &&
+                query.events[1].id === ei.event_id
+            );
+        })
+        .forEach(query => {
+            save_record.A.qapairs.push({
+                event1_id: query.events[0].id,
+                event2_id: query.events[1].id,
+                relation: query.relation,
+                question: query.init_question,
+                answer: query.answer,
+            });
+        });
     });
 });
 
-function strategyB_template(event1_id, event2_id, event3_id) {
-    const question = 'What is the participant in the event that interviews the transporter that flew the place that gone off the explosive device. ';
-    const answer = '';
-    return {
-        question, answer
-    };
-}
-
-strategyB_tuples.forEach(function (tuple, i) {
-    const { question, answer } = strategyB_template(tuple[0], tuple[1], tuple[2]);
+strategy_data.strategy_2.forEach(function (tuple, i) {
     save_record.B.qapairs.push({
-        event1_id: tuple[0],
-        event2_id: tuple[1],
-        event3_id: tuple[2],
-        question,
-        answer,
+        event1_id: tuple.events[0].id,
+        event2_id: tuple.events[1].id,
+        event3_id: tuple.events[2].id,
+        question: tuple.init_question,
+        answer: tuple.expect_answer,
     });
 });
+
+const event_types = Object.keys(strategy_data.strategy_4);
 
 // implementation of string formatting
 if (!String.prototype.format) {
     String.prototype.format = function () {
-        var args = arguments;
+        const args = arguments;
         return this.replace(/{(\d+)}/g, function (match, number) {
             return typeof args[number] != 'undefined'
                 ? args[number]
@@ -327,13 +365,13 @@ if (!String.prototype.format) {
 // Create elements
 // ---------------------------------------------------------
 
-var makeDom = function () {
-    recoverUserInput();
-    console.log(page_num_set);
-    highlightEvent();
+function make_dom() {
+    recover_user_input();
+    if (developer_mode) console.log(page_num_set);
+    highlight_event();
 };
 
-var highlightEvent = function () {
+function highlight_event() {
     /* highlight trigger within document */
     const pagenos = Array.from(page_num_set);
     pagenos.sort((a, b) => events_data[a].offset - events_data[b].offset);
@@ -343,94 +381,108 @@ var highlightEvent = function () {
     $('role').removeClass('highlight-role1 highlight-role2 highlight-role3');
 
     pagenos.forEach((trigger_num, i) => {
-        console.log("highlight trigger", trigger_num)
+        if (developer_mode) console.log("highlight trigger", trigger_num)
         // highlight trigger
         $('#trigger-' + trigger_num).addClass('highlight-trigger');
         $('role[trigno=' + trigger_num + ']').addClass('highlight-role'+(i+1));
     })
 }
 
-const relationTypes = [
-    "BEFORE",
-    "AFTER",
-    "OVERLAPS",
-    "EQUAL",
-    "CONTAINS",
-    "CONTAINED BY",
-    "CAUSES",
-    "CAUSED BY",
-]
+const relation_types = ['before', 'after', 'overlap', 'equal', 'contains'];
 
 // restore input from other trigger
-var recoverUserInput = function () {
+function recover_user_input() {
     const inputArea = $('#input-area');
     inputArea.empty();
     page_num_set.clear();
 
-    let pagenos = [];
     if (strategy === 'A') {
         // questions
         const event_pair = $('#tuple-select').val().split(',').map(x => parseInt(x));
         page_num_set.add(event_pair[0]);
         page_num_set.add(event_pair[1]);
 
-        pagenos = event_pair;
+        let pagenos = event_pair;
         pagenos.sort((a, b) => events_data[a].offset - events_data[b].offset);
 
         // relations
         const relationsArea = $('#relations-area');
         relationsArea.empty();
-        pagenos.forEach(i => {
-            pagenos.forEach(j => {
-                if (i >= j) return;
+        const event1 = events_data[pagenos[0]];
+        const event2 = events_data[pagenos[1]];
+        relationsArea.append(make_relation_select(event1, event2));
+        relationsArea.append(make_relation_select(event2, event1));
 
-                const event1 = events_data[i];
-                const event2 = events_data[j];
-                relationsArea.append(makeRelationSelect(event1, event2));
-                relationsArea.append(makeRelationSelect(event2, event1));
-            })
-        })
-
-        const matching_pairs = save_record.A.qapairs.filter(qa => {
+        save_record.A.qapairs
+        .filter(qa => {
             return (
                 (qa.event1_id === events_data[event_pair[0]].event_id &&
                 qa.event2_id === events_data[event_pair[1]].event_id) ||
                 (qa.event1_id === events_data[event_pair[1]].event_id &&
                 qa.event2_id === events_data[event_pair[0]].event_id)
             );
-        });
-        matching_pairs.forEach((qa, i) => {
+        })
+        .forEach(qa => {
             add_qa_input(qa.question, qa.answer, qa);
-            if (i % 2 === 1 && i < matching_pairs.length - 1)
-                inputArea.add($('<hr>'));
         });
     } else if (strategy === 'B') {
         const tuple = save_record.B.qapairs[$('#tuple-select').val()];
-        console.log("TUPLE", tuple)
         page_num_set.add(events_data.findIndex(e => e.event_id === tuple.event1_id));
         page_num_set.add(events_data.findIndex(e => e.event_id === tuple.event2_id));
         page_num_set.add(events_data.findIndex(e => e.event_id === tuple.event3_id));
-        pagenos = Array.from(page_num_set);
+        let pagenos = Array.from(page_num_set);
         pagenos.sort((a, b) => events_data[a].offset - events_data[b].offset);
         add_qa_input(tuple.question, tuple.answer, null, false);
         add_qa_input('', '', tuple, true);
+    } else if (strategy === 'C') {
+        const tuple = strategy_data.strategy_3[$('#tuple-select').val()];
+        const eventIdx = events_data.findIndex(e => e.event_id === tuple.event.id);
+        page_num_set.add(eventIdx);
+
+        save_record.C.qapairs
+        .filter(qa => {
+            return (
+                qa.event_id === tuple.event.id &&
+                qa.relation === tuple.relation
+            )
+        })
+        .forEach(qa => {
+            add_qa_input(qa.question, qa.answer, qa);
+        })
+    } else if (strategy === 'D') {
+        const event_type = $('#tuple-select').val();
+        events_data.forEach(function (event, i) {
+            if (event.event_type === event_type) {
+                page_num_set.add(i);
+            }
+        });
+
+        let current_strategyD_window = save_record.D.qapairs
+        .filter(qa => qa.event_type === event_type);
+
+        current_strategyD_window.forEach(qa => {
+            add_qa_input(qa.question, qa.answer, qa);
+        });
     }
+    
+    const pagenos = Array.from(page_num_set);
+    pagenos.sort((a, b) => events_data[a].offset - events_data[b].offset);
     // templates
     const templateArea = $('#template-area');
     templateArea.empty()
     pagenos.forEach(trigger_num => {
         const div = $('<div>')
-            .append($('<p>').text(describeEvent(events_data[trigger_num])))
+            .append($('<p>').text(describe_event(events_data[trigger_num])))
             .append(template_record[trigger_num]);
         templateArea.append(div);
     });
 };
 
-function describeEvent(event) {
+function describe_event(event) {
     return (developer_mode ? `ID: ${event.event_id} | ` : "") + `${event.text} @ ${event.offset}`;
 }
 
-function makeRelationSelect(event1, event2) {
+function make_relation_select(event1, event2) {
     const id1 = event1.event_id;
     const id2 = event2.event_id;
     const relation = relations_data.find(r =>
@@ -440,7 +492,7 @@ function makeRelationSelect(event1, event2) {
 
     const selectInput =
         $('<select class="relation-select">');
-    relationTypes.forEach(type => {
+    relation_types.forEach(type => {
         const option = $(`<option value="${type}">${type.toLowerCase()}</option>`);
         selectInput.append(option);
     });
@@ -466,20 +518,20 @@ function makeRelationSelect(event1, event2) {
     });
 
     const div = $('<div>')
-        .append($('<label>').text(describeEvent(event1)))
+        .append($('<label>').text(describe_event(event1)))
         .append(selectInput)
-        .append($('<label>').text(describeEvent(event2)))
+        .append($('<label>').text(describe_event(event2)))
 
     return div;
 }
 
 // ensure something is in the input box
-var canSubmit = function () {
+function can_submit() {
     return true;
 };
 
 // template role fields
-const make_role_mapping_element = function (role, text) {
+function make_role_mapping_element(role, text) {
     const role_text = $('<label>').html('<b>' + role + '</b>:');
     const role_field = $('<span>')
         .addClass('role-field')
@@ -497,8 +549,7 @@ const make_role_mapping_element = function (role, text) {
     return role_div;
 }
 
-
-const add_qa_input = function (question = '', answer = '', ref = null, editable = true) {
+function add_qa_input(question = '', answer = '', ref = null, editable = true) {
     let question_text = $('<label>').text('question:');
     let question_input = $('<textarea>')
         .addClass('question-input')
@@ -547,29 +598,29 @@ const add_qa_input = function (question = '', answer = '', ref = null, editable 
     show();
 };
 
-var enable_button = function (button) {
+function enable_button(button) {
     button.removeAttr("disabled");
     button.removeClass("btn-default");
     button.addClass("btn-success");
 };
 
-var disable_button = function (button) {
+function disable_button(button) {
     button.attr("disabled", "disabled");
     button.removeClass("btn-success");
     button.addClass("btn-default");
 };
 
-var select_button = function (button) {
+function select_button(button) {
     button.removeClass("btn-default");
     button.addClass("btn-primary");
 };
 
-var deselect_button = function (button) {
+function deselect_button(button) {
     button.removeClass("btn-primary");
     button.addClass("btn-default");
 };
 
-var is_wh_question = function (question) {
+function is_wh_question(question) {
     let tokens = question.split(' ');
     if (tokens.length <= 1) {
         return false;
@@ -582,7 +633,7 @@ var is_wh_question = function (question) {
 };
 
 
-var show = function () {
+function show() {
     for (button of document.getElementById('button-bar').getElementsByTagName('*')) {
         if (page_num_set.has(parseInt(button.getAttribute('page-no'))))
             select_button($(button));
@@ -597,12 +648,12 @@ function make_event_buttons() {
     // dynamically create buttons for each SRL arg
     events_data.forEach(function (event, i) {
         if (event.text.trim()) {
-            var button = document.createElement("button");
+            const button = document.createElement("button");
             button.setAttribute("type", "button");
             button.setAttribute("id", "button-page-" + i);
             button.setAttribute("page-no", i);
             button.setAttribute("class", "btn btn-default");
-            button.innerHTML = describeEvent(event);
+            button.innerHTML = describe_event(event);
             document.getElementById('button-bar').appendChild(button);
         }
     })
@@ -610,26 +661,12 @@ function make_event_buttons() {
 
 make_event_buttons();
 
-events_data.forEach(function (event, i) {
-    // format template area with role mappings
-    // if template not null or undefined
-    if (event.template !== null) {
-        const template_area = template_record[i];
-        const template = $('<p>').text(event.template);
-        template_area.append(template);
-        event.role_text_map.forEach(function (pairing) {
-            pairing.tokens.forEach(function (tk) {
-                template_area.append(make_role_mapping_element(pairing.role, tk.text));
-            });
-        });
-    }
-})
 
 // ---------------------------------------------------------
 // Initialize
 // ---------------------------------------------------------
 
-var submit_form = function (event) {
+function submit_form(event) {
     event.preventDefault();
     if (!window.confirm("Are you sure you want to submit?")) return;
     save_all();
@@ -663,7 +700,7 @@ var submit_form = function (event) {
 //$('#save').on('click', save_all);
 submit.on('click', submit_form);
 
-var popup_alert = function (alert_box, text) {
+function popup_alert(alert_box, text) {
     alert_box.html(text);
     alert_box.css({
         'background-color': 'fec5bb',
@@ -684,15 +721,17 @@ var popup_alert = function (alert_box, text) {
     }, 7000);
 };
 
-const selectA = $('#selectA');
-const selectB = $('#selectB');
-
-const tupleSelect = $('#tuple-select');
+const tuple_select = $('#tuple-select');
 
 
-function makeSelectionOptions() {
+function make_selection_options() {
+    function describeEventById(id) {
+        const event = events_data.find(e => e.event_id === id);
+        return describe_event(event);
+    }
+
+    tuple_select.empty();
     if (strategy === 'A') {
-        tupleSelect.empty();
         events_data.forEach(function (ei, i) {
             events_data.forEach(function (ej, j) {
                 if (i >= j) return;
@@ -700,76 +739,105 @@ function makeSelectionOptions() {
                     .attr({
                         value: `${i},${j}`,
                     })
-                    .text(`${describeEvent(ei)} & ${describeEvent(ej)}`);
-                tupleSelect.append(opt);
+                    .text(`${describe_event(ei)} & ${describe_event(ej)}`);
+                tuple_select.append(opt);
             });
         });
-        tupleSelect.children()[0].selected = true;
-    } else {
-        tupleSelect.empty();
-        function describeEventById(id) {
-            const event = events_data.find(e => e.event_id === id);
-            return describeEvent(event);
-        }
-        strategyB_tuples.forEach(function (tuple, i) {
+    } else if (strategy === 'B') {
+        strategy_data.strategy_2.forEach(function (tuple, i) {
             const opt = $('<option>')
                 .attr({
                     value: i,
                 })
-                .text(`${describeEventById(tuple[0])}, ${describeEventById(tuple[1])}, ${describeEventById(tuple[2])}`);
-            tupleSelect.append(opt);
+                .text(`${describeEventById(tuple.events[0])}, ${describeEventById(tuple.events[1])}, ${describeEventById(tuple.events[2])}`);
+            tuple_select.append(opt);
         });
-        tupleSelect.children()[0].selected = true;
+    } else if (strategy === 'C') {
+        strategy_data.strategy_3.forEach(function (tuple, i) {
+            const opt = $('<option>')
+                .attr({
+                    value: i,
+                })
+                .text(`${tuple.relation} ${describeEventById(tuple.event.id)}`);
+            tuple_select.append(opt);
+        });
+    } else if (strategy === 'D') {
+        Object.keys(strategy_data.strategy_4).forEach(function (event_type) {
+            const opt = $('<option>')
+                .attr({
+                    value: event_type,
+                })
+                .text(`${event_type}`);
+            tuple_select.append(opt);
+        }); 
+    }
+    const children = tuple_select.children();
+    if (children.length > 0) {
+        children[0].selected = true;
     }
 }
 
-selectA.on('click', function () {
-    if (strategy === 'A') return;
-    strategy = 'A';
-    $('#strategyA').show();
-    select_button(selectA);
-    $('#strategyB').hide();
-    deselect_button(selectB);
-    makeSelectionOptions();
-    makeDom();
+function set_strategy(newStrategy) {
+    if (strategy === newStrategy) return;
+    strategy = newStrategy;
+    // show correct elements
+    $('.strategy').hide();
+    $('#strategy'+strategy).show();
+    // highlight correct buttons
+    deselect_button($('#strategy-btns button'));
+    select_button($('#select'+strategy));
+    // update others
+    make_selection_options();
+    make_dom();
     show();
-});
+}
 
-selectB.on('click', function () {
-    if (strategy === 'B') return;
-    strategy = 'B';
-    $('#strategyA').hide();
-    deselect_button(selectA);
-    $('#strategyB').show();
-    select_button(selectB);
-    makeSelectionOptions();
-    makeDom();
-    show();
-});
+$('#selectA').on('click', () => set_strategy('A'));
+$('#selectB').on('click', () => set_strategy('B'));
+$('#selectC').on('click', () => set_strategy('C'));
+$('#selectD').on('click', () => set_strategy('D'));
+$('#selectA').click();
 
-selectA.click();
-
-tupleSelect.on('change', function () {
-    makeDom();
+tuple_select.on('change', function () {
+    make_dom();
     show();
 });
 
 $('#developer-mode').on('change', function () {
     developer_mode = this.checked;
-    makeSelectionOptions();
-    makeDom();
+    make_selection_options();
+    make_dom();
     make_event_buttons();
     show();
 });
 
+$('#addbtn').on('click', function () {
+    if (strategy !== 'D') return;
+    const event_type = $('#tuple-select').val();
+    const data = {
+        event_type,
+        question: '',
+        answer: '',
+    };
+    save_record.D.qapairs.push(data);
+    current_strategyD_window.push(data);
+    add_qa_input('', '', data);
+});
+$('#rmbtn').on('click', function () {
+    if (strategy !== 'D') return;
+    const data = current_strategyD_window.pop();
+    save_record.D.qapairs.splice(save_record.D.qapairs.indexOf(data), 1);
+    $('#input-area').children().last().remove();
+});
+
 // Instructions expand/collapse
-var content = $('#instructionBody');
-var instructions_trigger = $('#collapseTrigger');
+const content = $('#instructionBody');
+const instructions_trigger = $('#collapseTrigger');
 // content.hide();
 $('.collapse-text').text('(Click to collapse)');
 instructions_trigger.click(function () {
     content.toggle();
-    var isVisible = content.is(':visible');
+    const isVisible = content.is(':visible');
     if (isVisible) {
         $('.collapse-text').text('(Click to collapse)');
     } else {
