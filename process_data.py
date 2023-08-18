@@ -14,17 +14,18 @@ def main():
 
     with configs.file as f:
         train_json = list(f)
+    with configs.question as f:
+        strategy_map = json.loads(f.read().encode('utf-8'))
+    # load kairos roles
+    global kairos_roles
+    with configs.kairos as f:
+        kairos_roles = json.load(f)
 
     with configs.output as outfile:
         # write header
         writer = csv.writer(outfile)
-        field = ['docid', 'text', 'events', 'relations']
+        field = ['docid', 'text', 'events', 'strategy']
         writer.writerow(field)
-
-        # load kairos roles
-        global kairos_roles
-        with configs.kairos as f:
-            kairos_roles = json.load(f)
 
         # parse each line of jsonl file
         start_idx = configs.start
@@ -36,20 +37,24 @@ def main():
             docid = example['doc_id']
 
             entity_map = {entity['id']:
-                {'offset': entity['start'], 'length': entity['end'] - entity['start']}
+                {'offset': entity['start'],
+                 'length': entity['end'] - entity['start']}
             for entity in example['entity_mentions']}
+
             # convert events to metatriggers
-            metatriggers = [event_to_metatrigger(event, entity_map) for event in example['event_mentions']]
-            metatriggers.sort(key=lambda x: x['offset'])
+            events = [process_event(event, entity_map) for event in example['event_mentions']]
+            events.sort(key=lambda x: x['offset'])
 
             # add markup about triggers and their indices to tokens
-            add_indices(tokens, metatriggers)
+            add_indices(tokens, events)
             indexed_text = detokenize_and_collapsews(tokens)
 
-            relations = []
-            writer.writerow([docid, indexed_text, json.dumps(metatriggers), json.dumps(relations)])
+            writer.writerow([
+                docid, indexed_text, json.dumps(events),
+                json.dumps(strategy_map.get(docid))
+            ])
 
-def event_to_metatrigger(event, entity_map) -> dict:
+def process_event(event, entity_map) -> dict:
     """Converts an event to a metatrigger (trigger with additional info to aid QA gen) """
     template, role_text_map = get_template_and_role_mapping(event, entity_map)
     event_id = event['id']
@@ -120,6 +125,8 @@ def get_args() -> argparse.Namespace:
                         help='jsonl file to parse', metavar='src')
     parser.add_argument('-k', '--kairos', type=argparse.FileType("r"),
                         help='kairos roles file')
+    parser.add_argument('-q', '--question', type=argparse.FileType("r"),
+                        help='question file')
     parser.add_argument('-o', '--output', type=csv_filetype("w"), 
                         help='output file')
     parser.add_argument('-s', '--start', type=int, default=0, 

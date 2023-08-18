@@ -27,12 +27,8 @@
       ${events}
     </div>
 
-    <div id='relations-data' hidden>
-      ${relations}
-    </div>
-
-    <div id="strategyB-tuples" hidden>
-      ${strategyB-tuples}
+    <div id='strategy-data' hidden>
+      ${strategy}
     </div>
 
     <p>
@@ -49,9 +45,13 @@
     <div class="strategies">
       <span id="strategy-btns">
         <button id="selectA" class="btn btn-default" type="button">
-          Strategy A</button>
+          Strategy 1: Event Relations</button>
         <button id="selectB" class="btn btn-default" type="button">
-          Strategy B</button>
+          Strategy 2: Entity Bridging</button>
+        <button id="selectC" class="btn btn-default" type="button">
+          Strategy 3: Listing and Counting</button>
+        <button id="selectD" class="btn btn-default" type="button">
+          Strategy 4: Comparisons</button>
       </span>
       <select id="tuple-select">
       </select>
@@ -73,6 +73,16 @@
       </div>
       <div class="strategy" id="strategyB">
       </div>
+      <div class="strategy" id="strategyC">
+      </div>
+    </div>
+    <div class="btn-container">
+      <button id="addbtn" class="btn btn-success" type="button">+</button>
+      <label for="addbtn">Add a QA pair</label>
+    </div>
+    <div class="btn-container">
+      <button id="rmbtn" class="btn btn-danger" type="button">-</button>
+      <label for="rmbtn">Remove a QA pair</label>
     </div>
     <div id="input-area">
     </div>
