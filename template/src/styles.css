@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+}
 .question-input, .answer-input {
     margin: 5px 15px;
     vertical-align: middle;
@@ -60,6 +63,9 @@
     row-gap: 5px;
 }
 
+.template-container {
+    max-width: 33%;
+}
 .template-map {
     border: 1px solid gray;
     padding: 5px;

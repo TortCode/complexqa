@@ -95,7 +95,10 @@
 
   <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" rel="stylesheet" />
-  <style>.question-input, .answer-input {
+  <style>* {
+    box-sizing: border-box;
+}
+.question-input, .answer-input {
     margin: 5px 15px;
     vertical-align: middle;
 }
@@ -157,6 +160,9 @@
     row-gap: 5px;
 }
 
+.template-container {
+    max-width: 33%;
+}
 .template-map {
     border: 1px solid gray;
     padding: 5px;
@@ -238,7 +244,7 @@ input[disabled] {
 const page_num_set = new Set();
 let strategy = '';
 let developer_mode = false;
-let current_strategyD_window = [];
+let current_strategy_window = [];
 
 // ---------------------------------------------------------
 // Create jQuery elements
@@ -413,42 +419,50 @@ function recover_user_input() {
         relationsArea.append(make_relation_select(event1, event2));
         relationsArea.append(make_relation_select(event2, event1));
 
-        save_record.A.qapairs
-        .filter(qa => {
-            return (
-                (qa.event1_id === events_data[event_pair[0]].event_id &&
-                qa.event2_id === events_data[event_pair[1]].event_id) ||
-                (qa.event1_id === events_data[event_pair[1]].event_id &&
-                qa.event2_id === events_data[event_pair[0]].event_id)
-            );
-        })
-        .forEach(qa => {
+        current_strategy_window = save_record.A.qapairs
+        .filter(qa => (
+            (qa.event1_id === events_data[event_pair[0]].event_id &&
+            qa.event2_id === events_data[event_pair[1]].event_id) ||
+            (qa.event1_id === events_data[event_pair[1]].event_id &&
+            qa.event2_id === events_data[event_pair[0]].event_id)
+        ));
+
+        current_strategy_window.forEach(qa => {
             add_qa_input(qa.question, qa.answer, qa);
         });
     } else if (strategy === 'B') {
-        const tuple = save_record.B.qapairs[$('#tuple-select').val()];
-        page_num_set.add(events_data.findIndex(e => e.event_id === tuple.event1_id));
-        page_num_set.add(events_data.findIndex(e => e.event_id === tuple.event2_id));
-        page_num_set.add(events_data.findIndex(e => e.event_id === tuple.event3_id));
+        const [i, j, k] = $('#tuple-select').val().split(',').map(x => parseInt(x));
+        page_num_set.add(i);
+        page_num_set.add(j);
+        page_num_set.add(k);
         let pagenos = Array.from(page_num_set);
         pagenos.sort((a, b) => events_data[a].offset - events_data[b].offset);
-        add_qa_input(tuple.question, tuple.answer, null, false);
-        add_qa_input('', '', tuple, true);
+
+        current_strategy_window = save_record.B.qapairs
+        .filter(qa => (
+                qa.event1_id === events_data[i].event_id &&
+                qa.event2_id === events_data[j].event_id &&
+                qa.event3_id === events_data[k].event_id
+        ));
+
+        current_strategy_window.forEach(qa => {
+            add_qa_input(qa.question, qa.answer, null, false);
+            add_qa_input(qa.question, qa.answer, qa, true);
+        });
     } else if (strategy === 'C') {
         const tuple = strategy_data.strategy_3[$('#tuple-select').val()];
         const eventIdx = events_data.findIndex(e => e.event_id === tuple.event.id);
         page_num_set.add(eventIdx);
 
-        save_record.C.qapairs
-        .filter(qa => {
-            return (
+        current_strategy_window = save_record.C.qapairs
+        .filter(qa => (
                 qa.event_id === tuple.event.id &&
                 qa.relation === tuple.relation
-            )
-        })
-        .forEach(qa => {
+        ));
+
+        current_strategy_window.forEach(qa => {
             add_qa_input(qa.question, qa.answer, qa);
-        })
+        });
     } else if (strategy === 'D') {
         const event_type = $('#tuple-select').val();
         events_data.forEach(function (event, i) {
@@ -471,7 +485,7 @@ function recover_user_input() {
     const templateArea = $('#template-area');
     templateArea.empty()
     pagenos.forEach(trigger_num => {
-        const div = $('<div>')
+        const div = $('<div class="template-container">')
             .append($('<p>').text(describe_event(events_data[trigger_num])))
             .append(template_record[trigger_num]);
         templateArea.append(div);
@@ -648,13 +662,16 @@ function make_event_buttons() {
     // dynamically create buttons for each SRL arg
     events_data.forEach(function (event, i) {
         if (event.text.trim()) {
-            const button = document.createElement("button");
-            button.setAttribute("type", "button");
-            button.setAttribute("id", "button-page-" + i);
-            button.setAttribute("page-no", i);
-            button.setAttribute("class", "btn btn-default");
-            button.innerHTML = describe_event(event);
-            document.getElementById('button-bar').appendChild(button);
+            $('#button-bar').append(
+                $('<button>')
+                .attr({
+                    type: 'button',
+                    id: 'button-page-' + i,
+                    'page-no': i,
+                })
+                .addClass('btn btn-default')
+                .html(describe_event(event))
+            );
         }
     })
 }
@@ -725,7 +742,7 @@ const tuple_select = $('#tuple-select');
 
 
 function make_selection_options() {
-    function describeEventById(id) {
+    function describe_event_by_id(id) {
         const event = events_data.find(e => e.event_id === id);
         return describe_event(event);
     }
@@ -744,12 +761,14 @@ function make_selection_options() {
             });
         });
     } else if (strategy === 'B') {
-        strategy_data.strategy_2.forEach(function (tuple, i) {
+        strategy_data.strategy_2.forEach(function (tuple) {
+            const [ei, ej, ek] = tuple.events;
             const opt = $('<option>')
                 .attr({
-                    value: i,
+                    value: 
+                    `${events_data.findIndex(e => e.event_id === ei.id)},${events_data.findIndex(e => e.event_id === ej.id)},${events_data.findIndex(e => e.event_id === ek.id)})}`,
                 })
-                .text(`${describeEventById(tuple.events[0])}, ${describeEventById(tuple.events[1])}, ${describeEventById(tuple.events[2])}`);
+                .text(`${describe_event_by_id(ei.id)}, ${describe_event_by_id(ej.id)}, ${describe_event_by_id(ek.id)}`);
             tuple_select.append(opt);
         });
     } else if (strategy === 'C') {
@@ -758,7 +777,7 @@ function make_selection_options() {
                 .attr({
                     value: i,
                 })
-                .text(`${tuple.relation} ${describeEventById(tuple.event.id)}`);
+                .text(`${tuple.relation} ${describe_event_by_id(tuple.event.id)}`);
             tuple_select.append(opt);
         });
     } else if (strategy === 'D') {
@@ -812,21 +831,49 @@ $('#developer-mode').on('change', function () {
 });
 
 $('#addbtn').on('click', function () {
-    if (strategy !== 'D') return;
-    const event_type = $('#tuple-select').val();
-    const data = {
-        event_type,
-        question: '',
-        answer: '',
-    };
-    save_record.D.qapairs.push(data);
-    current_strategyD_window.push(data);
+    let data = {};
+    if (strategy === 'A') {
+        const [i, j] = $('#tuple-select').val().split(',').map(x => parseInt(x));
+        data = {
+            event1_id: events_data[i].event_id,
+            event2_id: events_data[j].event_id,
+            relation: '',
+            question: '',
+            answer: '',
+        };
+    } else if (strategy === 'B') {
+        const [i, j, k] = $('#tuple-select').val().split(',').map(x => parseInt(x));
+        data = {
+            event1_id: events_data[i].event_id,
+            event2_id: events_data[j].event_id,
+            event3_id: events_data[k].event_id,
+            question: '',
+            answer: '',
+        };
+    } else if (strategy === 'C') {
+        const tuple = strategy_data.strategy_3[$('#tuple-select').val()];
+        data = {
+            event_id: tuple.event.id,
+            relation: tuple.relation,
+            question: '',
+            answer: '',
+        };
+    } else if (strategy === 'D') {
+        const event_type = $('#tuple-select').val();
+        data = {
+            event_type,
+            question: '',
+            answer: '',
+        };
+    }
+    save_record[strategy].qapairs.push(data);
+    current_strategy_window.push(data);
     add_qa_input('', '', data);
 });
+
 $('#rmbtn').on('click', function () {
-    if (strategy !== 'D') return;
-    const data = current_strategyD_window.pop();
-    save_record.D.qapairs.splice(save_record.D.qapairs.indexOf(data), 1);
+    const data = current_strategy_window.pop();
+    save_record[strategy].qapairs.splice(save_record[strategy].qapairs.indexOf(data), 1);
     $('#input-area').children().last().remove();
 });
 
